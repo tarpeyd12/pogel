@@ -1,0 +1,3612 @@
+POGEL debug file.
+POGEL version 0.0.0-01
+started at: Fri Apr 16 23:44:35 2010
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_1" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_2" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_0
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_1
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_0
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_2
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_4" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_4
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_3" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_3
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_2" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_2" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_4" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_2" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_4" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_2
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_2
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_0
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_2
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_4
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_4
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	deconstructing Tree
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_0
+
+Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_0
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
+
+Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
+Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:35 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:  50.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:36 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:37 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:38 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:  75.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps: 100.0000000000
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:39 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
+
+Fri Apr 16 23:44:40 2010:	
+Fps:            inf
