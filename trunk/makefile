@@ -35,5 +35,5 @@ $(OUTPUT) : $(OBJ)
 	$(CC) $(LIBDIR) $(OBJ) $(LIBRARIES) -o $(OUTPUT)
 
 run:all
-	cd bin && ./ogl && cd ..
+	./run.sh
 

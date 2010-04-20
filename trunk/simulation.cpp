@@ -19,12 +19,12 @@ using namespace POGEL;
 #define numobjs 10
 #define grd 1
 #define sps 10.0f
-#define size 1.0f
+#define size 0.2f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
 
-POGEL::PHYSICS::DYNAMICS sim;
+POGEL::PHYSICS::SIMULATION sim;
 
 IMAGE *earth;
 IMAGE *defaultimg;
