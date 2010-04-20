@@ -1,3 +1,3 @@
 cd bin
-./ogl
+./ogl -oops
 cd ..

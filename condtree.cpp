@@ -165,7 +165,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//obj->build();
 	
 	
-	allofobj = obj->condense();
+	allofobj = obj->condense(); // creates a segmentation-fault or trys to free an invalid pointer within the calling of POGEL::OBJECT::addtriangle();
 	
 	POGEL::InitFps();
 	printf("\n");

@@ -16,7 +16,8 @@ POGEL::IMAGE::IMAGE(const char *filename) {
 };
 
 POGEL::IMAGE::~IMAGE() {
-	free(data);
+	//free(data);
+	delete[] data;
 	base=(GLuint)NULL;
 };
 
