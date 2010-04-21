@@ -57,7 +57,6 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 			objects[a]->direction += getpull(objects[a]);
 			
 			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
-			
 			objects[a]->spin /= airslowdown;
 			objects[a]->direction /= airslowdown;
 		}

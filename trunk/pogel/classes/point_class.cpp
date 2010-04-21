@@ -7,12 +7,14 @@ POGEL::VECTOR::VECTOR(POGEL::POINT p1, POGEL::POINT p2) {
 };
 
 void POGEL::VECTOR::normalize() {
-	float len=(float)sqrt(x*x+y*y+z*z);
-	x/=len; y/=len; z/=len;
+	float len=getdistance();
+	if(len != 0.0f) {
+		x/=len; y/=len; z/=len;
+	}
 };
 
 POGEL::VECTOR POGEL::VECTOR::normal() {
-	return *this/(float)sqrt(x*x+y*y+z*z);
+	return *this/getdistance();
 };
 
 float POGEL::VECTOR::getdistance() {

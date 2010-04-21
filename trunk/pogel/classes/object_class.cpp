@@ -398,7 +398,7 @@ void POGEL::OBJECT::draw() {
 			char *n = getancestory();
 			matrix.get();
 			POGEL::message("\nfor object: \"%s\":\n", n);
-			if(n!=NULL && parent==NULL)
+			if(n!=NULL && parent!=NULL)
 				free(n);
 			POGEL::message("object position: ");
 			position.print();
