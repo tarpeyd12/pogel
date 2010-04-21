@@ -23,6 +23,7 @@ bool POGEL::PHYSICS::line_triangle_collision(POGEL::POINT start, POGEL::POINT en
 	bool result = (bool)intersect_triangle(orig, dir, vert0, vert1, vert2, &collision2d->x, &collision2d->y, &collision2d->z);
 	//vct.normalize();
 	
+	// make it positive, for some reason it comes out negative sometimes.
 	collision2d->x = fabs(collision2d->x);
 	
 	*collision3d = start + vct.topoint() * collision2d->x;
@@ -54,9 +55,9 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 	}
 	
 	if(cols == 2) {
-		for(int a=0;a<6;a++) {
+		for( int a = 0; a < 6; a++ ) {
 			if(collided[a]) {
-				for(int b=0;b<6;b++) {
+				for( int b = (a+1); b < 6; b++ ) {
 					if(a!=b && collided[b]) {
 						(*p1) = p3d[a];
 						(*p2) = p3d[b];
@@ -78,6 +79,7 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::POINT* contact, POGEL::VECTOR* normal1, POGEL::VECTOR* normal2, float *area) {
 	POGEL::POINT p1, p2;
 	POGEL::TRIANGLE t1, t2;
+	POGEL::TRIANGLE obj1colidedtris[PHYSICS_NUMTRI_PROCESSED], obj2colidedtris[PHYSICS_NUMTRI_PROCESSED];
 	unsigned long numcols = 0;
 	unsigned long triprocess1 = 0, triprocess2 = 0;
 	bool ret = false;
@@ -113,7 +115,9 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 			if(POGEL::PHYSICS::triangle_collision(t1, t2, &p1, &p2)) {
 				// *contact += (p1+p2)/2.0f;
 				
+				obj1colidedtris[triprocess1] = t1;
 				triprocess1++;
+				obj2colidedtris[triprocess2] = t2;
 				triprocess2++;
 				
 				*area += p1.distance(p2);
@@ -136,8 +140,8 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 				obj1cols += ( mat1.transformPoint(p1) + mat1.transformPoint(p2) )/2.0f;
 				//obj2cols += ( mat2.transformPoint(p1) + mat2.transformPoint(p2) )/2.0f;
 				
-				*normal1 += ( t1.isinfront(obj2->position) ? t1.normal : t1.normal*-1.0f );
-				*normal2 += ( t2.isinfront(obj1->position) ? t2.normal : t2.normal*-1.0f );
+				/**normal1 += ( t1.isinfront(obj2->position) ? t1.normal : t1.normal*-1.0f );
+				*normal2 += ( t2.isinfront(obj1->position) ? t2.normal : t2.normal*-1.0f );*/
 				if(!ret) ret = true;
 				numcols++;
 				//return true;
@@ -149,12 +153,6 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 		obj1cols /= (float)numcols;
 		//obj2cols /= (float)numcols;
 		
-		/* make it that the normals are the actual normals of the facing triangles
-		vector from pos1 to col, collision point with triangle of obj2 ect. */
-		
-		/**normal1 /= (float)numcols;
-		*normal2 /= (float)numcols;*/
-		
 		transformmat1.transformPoint(&obj1cols);
 		//transformmat2.transformPoint(&obj2cols);
 		
@@ -164,6 +162,34 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 		
 		//transformmat1.transformVector(normal1);
 		//transformmat2.transformVector(normal2);
+		
+		/* make it that the normals are the actual normals of the facing triangles
+		vector from pos1 to col, collision point with triangle of obj2 ect. */
+		
+		POGEL::POINT ptmp1, ptmp2;
+		
+		for(unsigned long i = 0; i < PHYSICS_NUMTRI_PROCESSED && i < triprocess1 && i < triprocess2 ; i++) {
+			
+			POGEL::VECTOR v1 = POGEL::VECTOR(obj1->position, *contact)*10.0f;
+			if(POGEL::PHYSICS::line_triangle_collision(obj1->position, obj1->position+v1.topoint(), obj2colidedtris[i], &ptmp1, &ptmp2))
+				*normal2 += ( obj2colidedtris[i].isinfront(obj1->position) ? obj2colidedtris[i].normal : obj2colidedtris[i].normal*-1.0f );
+			
+			POGEL::VECTOR v2 = POGEL::VECTOR(obj2->position, *contact)*10.0f;
+			if(POGEL::PHYSICS::line_triangle_collision(obj2->position, obj2->position+v2.topoint(), obj1colidedtris[i], &ptmp1, &ptmp2))
+				*normal1 += ( obj1colidedtris[i].isinfront(obj2->position) ? obj1colidedtris[i].normal : obj1colidedtris[i].normal*-1.0f );
+				
+		}
+		
+		normal1->normalize();
+		normal2->normalize();
+		
+		/*normal1->print();
+		POGEL::message("\n");
+		normal2->print();
+		POGEL::message("\n");*/
+		
+		/**normal1 /= (float)numcols;
+		*normal2 /= (float)numcols;*/
 	}
 	//return false;
 	return ret;
