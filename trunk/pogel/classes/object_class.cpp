@@ -212,7 +212,7 @@ unsigned long POGEL::OBJECT::addtriangle(POGEL::TRIANGLE tri) {
 	POGEL::TRIANGLE *tmp = new POGEL::TRIANGLE[numfaces+1];
 	//memcpy(tmp, face, sizeof(POGEL::TRIANGLE)*numfaces);
 	for(unsigned long i = 0; i < numfaces; i++)
-		tmp[i] = face[i]; 
+		tmp[i] = face[i];
 	//printf("reallocating triangle faces from %p to: %p\n",face,tmp);
 	tmp[numfaces]=tri;
 	

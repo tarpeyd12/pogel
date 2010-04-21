@@ -8,11 +8,11 @@
 #include "collision.h"
 
 bool POGEL::PHYSICS::line_triangle_collision(POGEL::POINT start, POGEL::POINT end, POGEL::TRIANGLE triangle, POGEL::POINT* collision2d, POGEL::POINT* collision3d) {
-	float orig[] = {start.x, start.y, start.z};
+	float orig[] = { start.x, start.y, start.z };
 	POGEL::VECTOR vct;
 	vct.frompoints(start,end);
 	vct.normalize();
-	float dir[] = {vct.x, vct.y, vct.z};
+	float dir[] = { vct.x, vct.y, vct.z };
 	
 	// put the verticies into arrays so that the collision function can read them
 	float vert0[] = {triangle.vertex[0].x, triangle.vertex[0].y, triangle.vertex[0].z};
@@ -52,10 +52,11 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 		if(cols == 2)
 			break;
 	}
-	if(cols == 2)
-		for(int a=0;a<6;a++)
-			if(collided[a])
-				for(int b=0;b<6;b++)
+	
+	if(cols == 2) {
+		for(int a=0;a<6;a++) {
+			if(collided[a]) {
+				for(int b=0;b<6;b++) {
 					if(a!=b && collided[b]) {
 						(*p1) = p3d[a];
 						(*p2) = p3d[b];
@@ -64,6 +65,10 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 						#endif /* PHYSICS_COLLISION_LOGSTATS */
 						return true;
 					}
+				}
+			}
+		}
+	}
 	#ifdef PHYSICS_COLLISION_LOGSTATS
 		POGEL::logtofile("\tno occurence");
 	#endif /* PHYSICS_COLLISION_LOGSTATS */
