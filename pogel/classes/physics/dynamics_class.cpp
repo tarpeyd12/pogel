@@ -56,8 +56,10 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			objects[a]->direction += getpull(objects[a]);
 			
-			objects[a]->spin /= (objects[a]->behavior.air_friction+1.0f)*(air_dencity+1.0f);
-			objects[a]->direction /= (objects[a]->behavior.air_friction+1.0f)*(air_dencity+1.0f);
+			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
+			
+			objects[a]->spin /= airslowdown;
+			objects[a]->direction /= airslowdown;
 		}
 		objects[a]->step();
 	}
