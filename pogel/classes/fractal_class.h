@@ -20,7 +20,7 @@ class POGEL::FRACTAL : public POGEL::OBJECT {
 		unsigned long itterationMax;
 	public:
 		FRACTAL();
-		FRACTAL(void* dat, void (*cons)(POGEL::FRACTAL*,unsigned long), void (*dest)(POGEL::FRACTAL*,unsigned long), unsigned long totalItterations, unsigned long currentItteration);
+		FRACTAL( void* dat, void (*cons)(POGEL::FRACTAL*,unsigned long), void (*dest)(POGEL::FRACTAL*,unsigned long), unsigned long totalItterations, unsigned long currentItteration);
 		FRACTAL(void* dat, void (*cons)(POGEL::FRACTAL*,unsigned long), void (*dest)(POGEL::FRACTAL*,unsigned long), unsigned long totalItterations);
 		~FRACTAL();
 		

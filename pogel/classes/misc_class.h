@@ -12,12 +12,12 @@ class COLOR {
 	public:
 		float r, g, b, a;
 		
-		COLOR() {r=0.0f;g=0.0f;b=0.0f;a=0.0f;}
-		COLOR(float red, float green, float blue, float alpha) {r=red; g=green; b=blue; a=alpha;}
+		COLOR() { r=0.0f; g=0.0f; b=0.0f; a=0.0f; }
+		COLOR(float red, float green, float blue, float alpha) { r=red; g=green; b=blue; a=alpha; }
 		
-		void setcolors(float red, float green, float blue, float alpha) {r=red; g=green; b=blue; a=alpha;}
-		void getcolors(float *red, float *green, float *blue, float *alpha) {*red=r; *green=g; *blue=b; *alpha=a;}
-		void set() {glColor3f(r*a,g*a,b*a);}
+		void setcolors(float red, float green, float blue, float alpha) { r=red; g=green; b=blue; a=alpha; }
+		void getcolors(float *red, float *green, float *blue, float *alpha) { *red=r; *green=g; *blue=b; *alpha=a; }
+		void set() { glColor3f(r*a,g*a,b*a); }
 };
 }
 
