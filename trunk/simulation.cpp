@@ -24,7 +24,7 @@ OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
 
-POGEL::PHYSICS::SIMULATION sim;
+POGEL::PHYSICS::DYNAMICS sim;
 
 IMAGE *earth;
 IMAGE *defaultimg;
@@ -103,7 +103,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 150.0f));
 	//sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*5.0f;
-	sim.air_dencity = 0.0f;
+	sim.air_dencity = 1.0f;
 	
 	
 	POGEL::OBJECT *ring = new POGEL::OBJECT();
