@@ -110,6 +110,10 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
+	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
+	for(unsigned long a=0;a<numobjects;a++)
+		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
+	
 	for(unsigned long a=0;a<numobjects;a++) {
 		
 		for(unsigned long b=0;b<numobjects;b++) {
@@ -136,7 +140,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			
 			if(!objects[a]->sameposlegacy(precision))
-				objects[a]->direction += getpull(objects[a]);
+				objects[a]->direction += getpull(objects[a]) + pulls.getpull(objects[a]->position, objects[a]->behavior.mass)/PARTICLE_SLOWDOWN;
 			else if(deactivation)
 				objects[a]->direction = POGEL::VECTOR();
 			

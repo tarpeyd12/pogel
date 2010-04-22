@@ -4,7 +4,7 @@
 #include "../triangle_class.h"
 #include "../../pogel_internals.h"
 
-#define PHYSICS_NUMTRI_PROCESSED 10
+#define PHYSICS_NUMTRI_PROCESSED 100
 
 //#define PHYSICS_COLLISION_LOGSTATS
 

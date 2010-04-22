@@ -52,9 +52,13 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 };
 
 void POGEL::PHYSICS::DYNAMICS::increment() {
+	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
+	for(unsigned long a=0;a<numobjects;a++)
+		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
+	
 	for(unsigned long a=0;a<numobjects;a++) {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			objects[a]->direction += getpull(objects[a]);
+			objects[a]->direction += getpull(objects[a]) + pulls.getpull(objects[a]->position, objects[a]->behavior.mass)/PARTICLE_SLOWDOWN;
 			
 			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
 			objects[a]->spin /= airslowdown;
