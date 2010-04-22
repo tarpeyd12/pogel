@@ -16,7 +16,7 @@
 
 using namespace POGEL;
 
-#define numobjs 1000
+#define numobjs 100
 #define grd 1
 #define sps 1.0f
 #define size 0.0254f
@@ -82,14 +82,14 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setproperties(2);
 		//obj[i].build();
-		obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,0.0f));
+		obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
 		/*obj[i].moveto(POINT(
 			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f), (float)(i/(grd*grd))*sps-(10.0f-(size/2.0f))+0.0f, ((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f)
 		));*/
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
 		//obj[i].turnto(POINT());
-		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1000.0f, 1.0f, 1.0f, 1.0f, false, 0.0f), 2);
+		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 10000.0f, 1.0f, 1.0f, 1.0f, false, 0.0f), 2);
 		//sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
 		//sphs[i]->position.print();
 		//sphs[i]->turnto(POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
@@ -103,7 +103,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000.0f) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 150.0f));
 	//sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*1.0f;
-	sim.air_dencity = 10.0f;
+	sim.air_dencity = 1.0f;
 	
 	
 	POGEL::OBJECT *ring = new POGEL::OBJECT();
@@ -167,7 +167,7 @@ void DrawGLScene()
 	//glTranslatef(0.0f,0.0f,-25.0f*0.25f);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	//glRotatef( (float)frames * x,  1.0f, 0.0f, 0.0f );
-	//glRotatef( (float)frames * y,  0.0f, 1.0f, 0.0f );
+	glRotatef( (float)frames * y,  0.0f, 1.0f, 0.0f );
 	//glRotatef( (float)frames * z,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	//message("%ld: ",frames);
