@@ -27,16 +27,19 @@ class POGEL::PHYSICS::SINGULARITY {
 		
 		virtual POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(active) {
-				float dist = p.distance(center);
-				POGEL::VECTOR v;
 				if(p==center)
 					return POGEL::VECTOR();
-				else
+				float dist = p.distance(center);
+				
+				if(dist*dist > 0.00001) {
+					POGEL::VECTOR v;
 					v.frompoints(p, center);
-				v.normalize();
-				v *= intencity*mass * 0.0000000000667;
-				v /= (dist*dist);
-				return v;
+					v.normalize();
+					v *= intencity*mass * 0.0000000000667;
+					v /= (dist*dist);
+					return v;
+				}
+				return POGEL::VECTOR();
 			}
 			return POGEL::VECTOR();
 		}
