@@ -16,9 +16,9 @@
 
 using namespace POGEL;
 
-#define numobjs 100
+#define numobjs 25
 #define grd 1
-#define sps 1.0f
+#define sps 0.1f
 #define size 0.0254f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
@@ -82,28 +82,29 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setproperties(2);
 		//obj[i].build();
-		obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
+		//obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
 		/*obj[i].moveto(POINT(
-			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f), (float)(i/(grd*grd))*sps-(10.0f-(size/2.0f))+0.0f, ((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f)
+			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f), (float)(i/(grd*grd))*(sps), ((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f)
 		));*/
+		obj[i].moveto(POINT(0.0f, (float)pow(2.0f, (float)i)*sps, 0.0f));
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
 		//obj[i].turnto(POINT());
-		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 10000.0f, 1.0f, 1.0f, 1.0f, false, 0.0f), 2);
+		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0f), 2);
 		//sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
 		//sphs[i]->position.print();
 		//sphs[i]->turnto(POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 		sphs[i]->build();
 		//sphs[i]->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/2.0f * VECTOR(1.0f,1.0f,1.0f);
-		//sphs[i]->direction = POGEL::VECTOR(1.0f, 0.0f, 0.0f)/2.0f;
-		//sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
+		sphs[i]->direction = POGEL::VECTOR((float)sqrt((1000000000000.0f*0.0000000000667)/(obj[i].position.distance(POGEL::POINT())/sps )), 0.0f, 0.0f)*sps;
+		sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->visable = false;
 		sim.addSolid(sphs[i]);
 	}
-	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000.0f) );
+	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),1000000000000.0f) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 150.0f));
 	//sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*1.0f;
-	sim.air_dencity = 1.0f;
+	sim.air_dencity = 0.0f;
 	
 	
 	POGEL::OBJECT *ring = new POGEL::OBJECT();
@@ -154,7 +155,7 @@ void DrawGLScene()
 		p += sphs[i]->position;
 	p /= float(numobjs);
 	
-	float d = 0.0f;
+	/*float d = 0.0f;
 	for(unsigned int i = 0; i < numobjs; i++)
 		d += p.distance(sphs[i]->position);
 	d /= float(numobjs);
@@ -162,12 +163,12 @@ void DrawGLScene()
 		d=99.0f;
 	
 	glTranslatef(p.x*-1.0f, p.y*-1.0f, p.z*-1.0f);
-	glTranslatef(0.0f,0.0f,-(d*2.0f));
+	glTranslatef(0.0f,0.0f,-(d*2.0f));*/
 	
-	//glTranslatef(0.0f,0.0f,-25.0f*0.25f);
+	glTranslatef(0.0f,0.0f,-25.0f*1.0f);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	//glRotatef( (float)frames * x,  1.0f, 0.0f, 0.0f );
-	glRotatef( (float)frames * y,  0.0f, 1.0f, 0.0f );
+	//glRotatef( (float)frames * y*5.0f,  0.0f, 1.0f, 0.0f );
 	//glRotatef( (float)frames * z,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	//message("%ld: ",frames);
