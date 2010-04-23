@@ -15,6 +15,8 @@ class GRAVITYCLUSTER;
 #include "physics.h"
 #include "../point_class.h"
 
+#define			GRAVITYCONSTANT			((float)pow(10.0f, -11.0f)*6.673f)
+
 class POGEL::PHYSICS::SINGULARITY {
 	public:
 		bool active;
@@ -35,7 +37,7 @@ class POGEL::PHYSICS::SINGULARITY {
 					POGEL::VECTOR v;
 					v.frompoints(p, center);
 					v.normalize();
-					v *= intencity*mass * 0.0000000000667;
+					v *= intencity*mass * GRAVITYCONSTANT;
 					v /= (dist*dist);
 					return v;
 				}

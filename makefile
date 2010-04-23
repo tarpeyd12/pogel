@@ -1,7 +1,7 @@
 INCLUDE = -I/usr/include/
 LIBDIR  = -L/usr/X11R6/lib 
 
-COMPILERFLAGS = -Wall #-O3
+COMPILERFLAGS = -Wall -O3
 CC = g++
 CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
 #LIBRARIES = -lX11 -lXi -lXmu -lglut -lGL -lGLU -lm
@@ -36,4 +36,7 @@ $(OUTPUT) : $(OBJ)
 
 run:all
 	./run.sh
+
+edit:$(SRC)
+	gedit $(SRC)
 
