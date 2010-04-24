@@ -2,6 +2,12 @@
 
 = Images =
 
+== fractal tree generational algorithm ==
+
+http://pogel.googlecode.com/svn/wiki/pogel_tree.png
+
+== gravity wells ==
+
 http://pogel.googlecode.com/svn/wiki/pogel_spagetty.png
 
 http://pogel.googlecode.com/svn/wiki/pogel_gravspin.png
@@ -11,6 +17,8 @@ http://pogel.googlecode.com/svn/wiki/pogel_gravspin_1.png
 http://pogel.googlecode.com/svn/wiki/pogel_gravspin_2.png
 
 http://pogel.googlecode.com/svn/wiki/pogel_gravspin_3.png
+
+== rotational tracing ==
 
 http://pogel.googlecode.com/svn/wiki/pogel_flower_sphere.png
 
