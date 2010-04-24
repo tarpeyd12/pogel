@@ -2,6 +2,10 @@
 
 = Images =
 
+== rendering ==
+
+http://pogel.googlecode.com/svn/wiki/pogel_earth.png
+
 == fractal tree generational algorithm ==
 
 http://pogel.googlecode.com/svn/wiki/pogel_tree.png
