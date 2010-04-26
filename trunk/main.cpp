@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     glutInitWindowPosition(0, 0);  
 
     /* Open a window */  
-    window = glutCreateWindow("TarpeyD12's OpenGL Stuff.");  
+    window = glutCreateWindow("Physical Open Generative Engine Library example(s)");  
 
     /* Register the function to do all our OpenGL drawing. */
     glutDisplayFunc(&DrawGLScene);  

@@ -39,10 +39,26 @@ void POGEL::PHYSICS::DYNAMICS::addSolids(POGEL::PHYSICS::SOLID **obj, unsigned l
 
 POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	POGEL::VECTOR pull;
+	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
+	for(unsigned long a=0;a<numobjects;a++) {
+		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
+		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic)
+			if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge > 0.0f) || (obj->behavior.charge > 0.0f && objects[a]->behavior.charge < 0.0f))
+				pull += (POGEL::VECTOR(obj->position, objects[a]->position).normal()*(fabs(obj->behavior.charge) + fabs(objects[a]->behavior.charge)))/objects[a]->position.distance(obj->position);
+			
+			
+			else if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge < 0.0f) || (obj->behavior.charge > 0.0f && objects[a]->behavior.charge > 0.0f))
+				pull += (POGEL::VECTOR(objects[a]->position, obj->position).normal()*(fabs(obj->behavior.charge) + fabs(objects[a]->behavior.charge)))/objects[a]->position.distance(obj->position);
+			
+			else
+				{}
+			
+	}
 	
 	pull += gusts.getpull(obj->position, obj->behavior.mass);
 	pull += singularities.getpull(obj->position, obj->behavior.mass);
 	pull += gravity*obj->behavior.mass;
+	pull += pulls.getpull(obj->position, obj->behavior.mass);
 	return pull/PARTICLE_SLOWDOWN;
 	/*return 	( \
 			gusts.getpull(obj->position, obj->behavior.mass) + \
@@ -52,13 +68,10 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 };
 
 void POGEL::PHYSICS::DYNAMICS::increment() {
-	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
-	for(unsigned long a=0;a<numobjects;a++)
-		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
 	
 	for(unsigned long a=0;a<numobjects;a++) {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			objects[a]->direction += getpull(objects[a]) + pulls.getpull(objects[a]->position, objects[a]->behavior.mass)/PARTICLE_SLOWDOWN;
+			objects[a]->direction += getpull(objects[a]);
 			
 			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
 			objects[a]->spin /= airslowdown;

@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 #include "window.h"
+#include "pogel/pogel.h"
 
 int window;
 
@@ -23,6 +24,8 @@ void ReSizeGLScene(int Width, int Height)
 	gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);
 	glMatrixMode(GL_MODELVIEW);
 }
+
+//extern POGEL::POINT camrot;
 
 /* The function called whenever a key is pressed. */
 void keyPressed(unsigned char key, int x, int y) 
@@ -42,5 +45,18 @@ void keyPressed(unsigned char key, int x, int y)
 	
 	if(key=='\b')
 		glutFullScreen();
+	
+	/*if(key == 'w')
+		camrot.x+=1.0f;
+	if(key == 's')
+		camrot.x-=1.0f;
+	if(key == 'a')
+		camrot.y+=1.0f;
+	if(key == 'd')
+		camrot.y-=1.0f;
+	if(key == 'q')
+		camrot.z+=1.0f;
+	if(key == 'e')
+		camrot.z-=1.0f;*/
 }
 
