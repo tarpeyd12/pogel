@@ -10,6 +10,10 @@ http://pogel.googlecode.com/svn/wiki/pogel_earth.png
 
 http://pogel.googlecode.com/svn/wiki/pogel_tree.png
 
+== physics ==
+
+http://pogel.googlecode.com/svn/wiki/pogel_physics.png
+
 == gravity wells ==
 
 http://pogel.googlecode.com/svn/wiki/pogel_spagetty.png
