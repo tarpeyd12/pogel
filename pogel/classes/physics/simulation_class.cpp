@@ -19,12 +19,12 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		while(POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area) && bup < BUPMAX) {
 			if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 				tr[0]=vct2;//-vct1;
-				/*if(POGEL::about(tr[0].getdistance(), 0.0f, precision))
-					tr[0].frompoints(col,obj1->position);*/
+				if(POGEL::about(tr[0].getdistance(), 0.0f, precision/obj1->bounding.maxdistance))
+					tr[0] += POGEL::VECTOR(col,obj1->position);
 				tr[0].normalize();
-				obj1->translate(tr[0], precision/1.0f);
+				obj1->translate(tr[0], precision/obj1->bounding.maxdistance);
 				
-				POGEL::VECTOR pull = gusts.getpull(obj1->position, obj1->behavior.mass) + singularities.getpull(obj1->position, obj1->behavior.mass) + gravity*obj1->behavior.mass;
+				POGEL::VECTOR pull = getpull(obj1);
 				pull*=-1.0f;
 				POGEL::VECTOR axis = POGEL::TRIANGLE(pull.normal(),POGEL::POINT(),POGEL::VECTOR(obj1->position,col),(POGEL::IMAGE*)NULL,0).normal;
 				float angle = POGEL::VECTOR(obj1->position,col).normal().getangle(pull.normal(), axis);
@@ -34,12 +34,12 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			
 			if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 				tr[1]=vct1;//-vct2;
-				/*if(POGEL::about(tr[1].getdistance(), 0.0f, precision))
-					tr[1].frompoints(col,obj2->position);*/
+				if(POGEL::about(tr[1].getdistance(), 0.0f, precision/obj2->bounding.maxdistance))
+					tr[1] += POGEL::VECTOR(col,obj2->position);
 				tr[1].normalize();
-				obj2->translate(tr[1], precision/1.0f);
+				obj2->translate(tr[1], precision/obj2->bounding.maxdistance);
 				
-				POGEL::VECTOR pull = gusts.getpull(obj2->position, obj2->behavior.mass) + singularities.getpull(obj2->position, obj2->behavior.mass) + gravity*obj2->behavior.mass;
+				POGEL::VECTOR pull = getpull(obj2);
 				pull*=-1.0f;
 				POGEL::VECTOR axis = POGEL::TRIANGLE(pull.normal(),POGEL::POINT(),POGEL::VECTOR(obj2->position,col),(POGEL::IMAGE*)NULL,0).normal;
 				float angle = POGEL::VECTOR(obj2->position,col).normal().getangle(pull.normal(), axis);
@@ -57,7 +57,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				
 				obj1->spin /= (obj2->behavior.friction+1.0f); // compensate for friction
 				
-				POGEL::VECTOR pull = gusts.getpull(obj1->position, obj1->behavior.mass) + singularities.getpull(obj1->position, obj1->behavior.mass) + gravity*obj1->behavior.mass;
+				POGEL::VECTOR pull = getpull(obj1);
 				pull*=-1.0f;
 				POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj1->position,col),(POGEL::IMAGE*)NULL,0).normal;
 				float angle = POGEL::VECTOR(obj1->position,col).normal().getangle(pull, axis);
@@ -81,7 +81,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				
 				obj2->spin /= (obj1->behavior.friction+1.0f); // compensate for friction
 				
-				POGEL::VECTOR pull = gusts.getpull(obj2->position, obj2->behavior.mass) + singularities.getpull(obj2->position, obj2->behavior.mass) + gravity*obj2->behavior.mass;
+				POGEL::VECTOR pull = getpull(obj2);
 				pull*=-1.0f;
 				POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj2->position,col),(POGEL::IMAGE*)NULL,0).normal;
 				float angle = POGEL::VECTOR(obj2->position,col).normal().getangle(pull, axis);
@@ -99,9 +99,9 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		}
 		POGEL::VECTOR tmp = obj1->direction;
 		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-			obj1->direction += obj2->direction*0.8f;
+			obj1->direction += obj2->direction*((obj2->behavior.bounce*1.0f*0.8f+obj1->behavior.bounce*1.0f*0.8f+obj2->direction.getdistance()*0.8f)/PARTICLE_SLOWDOWN);
 		if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-			obj2->direction += tmp*0.8f;
+			obj2->direction += tmp*((obj1->behavior.bounce*1.0f*0.8f+obj2->behavior.bounce*1.0f*0.8f+obj1->direction.getdistance()*0.8f)/PARTICLE_SLOWDOWN);
 		
 		return true;
 	}
@@ -110,13 +110,10 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
-	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
-	for(unsigned long a=0;a<numobjects;a++)
-		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
 	
 	for(unsigned long a=0;a<numobjects;a++) {
-		
 		for(unsigned long b=0;b<numobjects;b++) {
+			
 			if(a!=b && objects[a]->bounding.checkbounding(objects[a]->position, objects[b]->position, objects[b]->bounding)/* && objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding) */) {
 				if( processcollision(objects[a], objects[b]) ) {
 					if(objects[a]->callback != NULL) {
@@ -135,12 +132,15 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 					}
 				}
 			}
-		}
 		
+		}
+	}
+	
+	for(unsigned long a=0;a<numobjects;a++) {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			
 			if(!objects[a]->sameposlegacy(precision))
-				objects[a]->direction += getpull(objects[a]) + pulls.getpull(objects[a]->position, objects[a]->behavior.mass)/PARTICLE_SLOWDOWN;
+				objects[a]->direction += getpull(objects[a]);
 			else if(deactivation)
 				objects[a]->direction = POGEL::VECTOR();
 			
