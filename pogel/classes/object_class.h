@@ -125,8 +125,11 @@ class OBJECT {
 		virtual void build();
 		virtual void draw();
 		
+		virtual void stepFunc() {}
+		
 		virtual void step() {
 			increment();
+			stepFunc();
 		}
 		
 		virtual void create() {}
