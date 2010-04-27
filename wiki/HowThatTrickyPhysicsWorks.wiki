@@ -22,3 +22,25 @@ Like this:
 http://pogel.googlecode.com/svn/wiki/pogel_intercection.png
 
 Impossibly intersecting.
+
+This is how we move them:
+ # check if the two objects are intersecting and if we have not exceeded the maximum iterations.
+ # translate the first object in the opposite direction that it came, in very small increments.
+ # repeat step #2 for the second object.
+ # increment the iteration count.
+ # repeat steps #1 to #5 until step #1 is false.
+
+Here it is in pseudo-code:
+{{{
+
+float precision = 0.01;
+int itter = 0;
+
+while( intersecting(object_1, object_2) && itter < 1000 ) {
+    object_1.translate(object_1.direction * -1.0 * precision);
+    object_2.translate(object_2.direction * -1.0 * precision);
+    itter++;
+}
+}}}
+
+this does not take into account rotation nor other complex physical dynamics and properties of the objects, but it is a simple example that works very well for small applications.
