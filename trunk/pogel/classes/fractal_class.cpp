@@ -90,34 +90,84 @@ void POGEL::FRACTAL::grow() {
 
 POGEL::FRACTAL* POGEL::FRACTAL::spawn() {
 	//POGEL::message("spawning\n");
-	POGEL::FRACTAL* spawnling = new POGEL::FRACTAL(data, creation, destruction, itterationMax, itterationLevel+1);
-	addobject(spawnling);
-	return spawnling;
+	if(itterationLevel+1 < itterationMax) {
+		POGEL::FRACTAL* spawnling = new POGEL::FRACTAL(data, creation, destruction, itterationMax, itterationLevel+1);
+		addobject(spawnling);
+		return spawnling;
+	}
+	return NULL;
 };
 
 POGEL::OBJECT* POGEL::FRACTAL::condense() {
+	POGEL::message("condensing level %u\n", itterationLevel);
+	
+	// the base-case
 	if(numchildren == 0) {
+		// create the transformation matrix
 		POGEL::MATRIX mat(position, rotation);
-		POGEL::TRIANGLE* tris = new POGEL::TRIANGLE[numfaces];
-		for(unsigned long i = 0; i<numfaces;i++) {
-			tris[i] = mat.transformTriangle(face[i]);
-		}
-		POGEL::OBJECT* obj = new POGEL::OBJECT();
+		
+		// object to be returned
+		char* n;
+		if(parent==NULL)
+			n = getname();
+		else
+			n = POGEL::string("condense_level_%u", itterationLevel);
+		POGEL::OBJECT* obj = new POGEL::OBJECT(n);
+		
+		/*if(parent!=NULL)
+			delete[] n;*/
+		
+		// add the transformed triangles into the object
 		for(unsigned long f = 0; f < this->getnumfaces() ; f++)
-				obj->addtriangle(tris[f]);
+			obj->addtriangle(mat.transformTriangle(face[f]));
+		
+		// return
 		return obj;
 	}
+	// the continuing case
 	else if(numchildren > 0) {
-		POGEL::OBJECT* obj = new POGEL::OBJECT(face, numfaces, 0);
+		
+		// create the transformation matrix
+		POGEL::MATRIX mat(position, rotation);
+		
+		// create a new object with this objects triangles.
+		char* n;
+		if(parent==NULL)
+			n = getname();
+		else
+			n = POGEL::string("condense_level_%u", itterationLevel);
+		POGEL::OBJECT* obj = new POGEL::OBJECT(n);
+		
+		/*if(parent!=NULL)
+			delete[] n;*/
+		
+		// add the transformed triangles into the object
+		for(unsigned long f = 0; f < this->getnumfaces() ; f++)
+			obj->addtriangle(mat.transformTriangle(face[f]));
+		
+		// pointer to temporary condensed childs
 		POGEL::OBJECT* chld;
+		
+		// go through all the children
 		for(unsigned long i = 0; i < numchildren; i++) {
-			chld = (static_cast<POGEL::FRACTAL*>(children[i]))->condense();
+			
+			// get the condensed child. statically cast to use the condense method.
+			POGEL::FRACTAL* tmp = static_cast <POGEL::FRACTAL*> ( children[i] );
+			chld = tmp->condense();
+			
+			// add the childs triangles
 			for(unsigned long f = 0; f < chld->getnumfaces() ; f++)
-				obj->addtriangle(chld->gettriangle(f));
+				obj->addtriangle(mat.transformTriangle(chld->gettriangle(f)));
+			
+			// cleanup
 			delete chld;
 		}
+		
+		// return
 		return obj;
 	}
+	
+	// if no cases were met, return NULL as a precaution
 	return NULL;
 };
 

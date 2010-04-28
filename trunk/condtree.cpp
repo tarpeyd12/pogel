@@ -39,83 +39,31 @@ void construct(FRACTAL_FNC_DEFS) {
 		addCylinder(obj, 8, 1, (startsize/((float)pow(size, (float)itter-1)))/size, (startsize/10.0f)/((float)pow(size, (float)itter-1))/2.0f, (startsize/10.0f)/((float)pow(size, (float)itter-1))/2.0f, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,startsize/((float)pow(size, (float)itter-1))/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	
 	
-	if(rand()%3 == 0) {
-	tmp = obj->spawn();
-	
-	tmp->setname(POGEL::string("itter%ld_branch_0", itter));
-	
-	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	
-	tmp->position = POGEL::POINT(0.0,height,0.0);
-	tmp->rotation = POGEL::POINT(0.0,POGEL::FloatRand(360.0f),0.0);
-	
-	//tmp->spin = POGEL::VECTOR(0.0,-0.0,0.0)/1;
-	///tmp->build();
-	//obj->addobject(tmp);
+	if(rand()%1 == 0) {
+		tmp = obj->spawn();
+		if(tmp != NULL) {
+			
+			tmp->setname(POGEL::string("itter%ld_branch_0", itter));
+			
+			addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
+			
+			tmp->position = POGEL::POINT(0.0,height,0.0);
+			tmp->rotation = POGEL::POINT(25.0,0.0f,0.0);
+		}
 	}
 	
-	
-	if(rand()%5 == 0) {
-	tmp = obj->spawn();
-	
-	tmp->setname(POGEL::string("itter%ld_branch_1", itter));
-	
-	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	
-	tmp->position = POGEL::POINT(0.0,height,0.0);
-	tmp->rotation = POGEL::POINT(0.0,0.0,25.0);
-	
-	tmp->spin = POGEL::VECTOR(0.0,-0.0,1.0)/1;
-	//tmp->build();
-	//obj->addobject(tmp);
+	if(rand()%1 == 0) {
+		tmp = obj->spawn();
+		if(tmp != NULL) {
+			
+			tmp->setname(POGEL::string("itter%ld_branch_1", itter));
+			
+			addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
+			
+			tmp->position = POGEL::POINT(0.0,height,0.0);
+			tmp->rotation = POGEL::POINT(-25.0,0.0f,0.0);
+		}
 	}
-	
-	if(rand()%5 == 0) {
-	tmp = obj->spawn();
-	
-	tmp->setname(POGEL::string("itter%ld_branch_2", itter));
-	
-	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	
-	tmp->position = POGEL::POINT(0.0,height,0.0);
-	tmp->rotation = POGEL::POINT(0.0,0.0,-25.0);
-	
-	tmp->spin = POGEL::VECTOR(0.0,0.0,-1.0)/1;
-	//tmp->build();
-	//obj->addobject(tmp);
-	}
-	
-	if(rand()%5 == 0) {
-	tmp = obj->spawn();
-	
-	tmp->setname(POGEL::string("itter%ld_branch_3", itter));
-	
-	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	
-	tmp->position = POGEL::POINT(0.0,height,0.0);
-	tmp->rotation = POGEL::POINT(25.0,0.0,0.0);
-	
-	tmp->spin = POGEL::VECTOR(1.0,-0.0,0.0)/1;
-	//tmp->build();
-	//obj->addobject(tmp);
-	}
-	
-	if(rand()%5 == 0) {
-	tmp = obj->spawn();
-	
-	tmp->setname(POGEL::string("itter%ld_branch_4", itter));
-	
-	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	
-	tmp->position = POGEL::POINT(0.0,height,0.0);
-	tmp->rotation = POGEL::POINT(-25.0,0.0,0.0);
-	
-	tmp->spin = POGEL::VECTOR(-1.0,0.0,0.0)/1;
-	//tmp->build();
-	//obj->addobject(tmp);
-	}
-	
-	//POGEL::message("itter = %u\n", itter);
 };
 
 void destruct(FRACTAL_FNC_DEFS) {

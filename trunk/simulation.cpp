@@ -31,7 +31,7 @@ POGEL::PHYSICS::DYNAMICS sim;
 IMAGE *earth;
 IMAGE *defaultimg;
 
-float x = POGEL::FloatRand(4.0f)-2.0f, y = POGEL::FloatRand(4.0f)-2.0f, z = POGEL::FloatRand(4.0f)-2.0f;
+float x = POGEL::FloatRand(10.0f)-5.0f, y = POGEL::FloatRand(10.0f)-5.0f, z = POGEL::FloatRand(10.0f)-5.0f;
 
 GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[]= { 2.0f, 2.0f, 2.0f, 1.0f };
