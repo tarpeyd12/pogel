@@ -132,6 +132,9 @@ POGEL::OBJECT::OBJECT(const char* n, POGEL::TRIANGLE *tri, unsigned long num, un
 };
 
 POGEL::OBJECT::~OBJECT() {
+	
+	destroy();
+	
 	//char *n = getancestory();
 	POGEL::message("deconstructing %s\n", getname());
 	/*if(n!=getname())
@@ -142,15 +145,6 @@ POGEL::OBJECT::~OBJECT() {
 	//free(face);
 	face=NULL;
 	
-	/*for(int i=0;i<numchildren;i++) {
-		delete children[i];
-		children[i]=NULL;
-	}
-	
-	delete[] children;
-	//free(children);
-	children=NULL;*/
-	
 	if(children != NULL)
 		killchildren();
 	
@@ -160,8 +154,6 @@ POGEL::OBJECT::~OBJECT() {
 	delete[] name;
 	//free(name);
 	name=NULL;
-	
-	destroy();
 };
 
 void POGEL::OBJECT::killchildren() {

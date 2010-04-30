@@ -28,9 +28,13 @@ class POGEL::PHYSICS::FOUNTAIN : public POGEL::PHYSICS::DYNAMICS, public POGEL::
 		
 		void increment();
 		
-		//void step();
+		void step() {
+			increment();
+		}
 		
 		void build();
+		
+		void draw();
 };
 
 #endif /* _FOUNTAIN_CLASS_H */

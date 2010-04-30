@@ -12,8 +12,8 @@ class MICROCOSM;
 #include "solid_class.h"
 #include "simulation_class.h"
 
-#define				MICROCOSM_COLLIDE_WITH_PATRONS				1
-#define				MICROCOSM_USE_MASTER_GRAVITY				2
+#define				MICROCOSM_USE_MASTER_GRAVITY				1
+#define				MICROCOSM_COLLIDE_WITH_PATRONS				2
 //#define				MICROCOSM_
 
 class POGEL::PHYSICS::MICROCOSM : public POGEL::PHYSICS::SIMULATION, public POGEL::PHYSICS::SOLID {
