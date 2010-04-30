@@ -26,7 +26,7 @@ OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
 
-POGEL::PHYSICS::DYNAMICS sim;
+POGEL::PHYSICS::FOUNTAIN sim;
 
 IMAGE *earth;
 IMAGE *defaultimg;
@@ -194,7 +194,7 @@ void DrawGLScene()
 	//frames++;
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);
 	//if(frames < 100)
-		sim.increment();
+		sim.step();
 	if(frames%1 == 0) {
 		sim.draw();
 	}

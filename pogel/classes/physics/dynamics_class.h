@@ -59,7 +59,7 @@ class POGEL::PHYSICS::DYNAMICS {
 		
 		virtual void increment();
 		
-		void draw();
+		virtual void draw();
 		
 		friend class POGEL::PHYSICS::SIMULATION;
 };

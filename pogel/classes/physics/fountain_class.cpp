@@ -45,3 +45,8 @@ void POGEL::PHYSICS::FOUNTAIN::build() {
 		gravity = mat.transformVector(master->gravity);
 	}
 };
+
+void POGEL::PHYSICS::FOUNTAIN::draw() {
+	POGEL::PHYSICS::SOLID::draw();
+	POGEL::PHYSICS::DYNAMICS::draw();
+};
