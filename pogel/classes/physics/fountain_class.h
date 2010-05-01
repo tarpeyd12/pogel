@@ -26,10 +26,14 @@ class POGEL::PHYSICS::FOUNTAIN : public POGEL::PHYSICS::DYNAMICS, public POGEL::
 		
 		PROPERTIES_METHODS;
 		
+		POGEL::VECTOR getpull(POGEL::PHYSICS::SOLID*);
+		
 		void increment();
 		
 		void step() {
 			increment();
+			steptrail();
+			getbounding();
 		}
 		
 		void build();

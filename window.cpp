@@ -25,7 +25,7 @@ void ReSizeGLScene(int Width, int Height)
 	glMatrixMode(GL_MODELVIEW);
 }
 
-//extern POGEL::POINT camrot;
+extern POGEL::POINT camrot;
 
 /* The function called whenever a key is pressed. */
 void keyPressed(unsigned char key, int x, int y) 
@@ -46,7 +46,7 @@ void keyPressed(unsigned char key, int x, int y)
 	if(key=='\b')
 		glutFullScreen();
 	
-	/*if(key == 'w')
+	if(key == 'w')
 		camrot.x+=1.0f;
 	if(key == 's')
 		camrot.x-=1.0f;
@@ -57,6 +57,6 @@ void keyPressed(unsigned char key, int x, int y)
 	if(key == 'q')
 		camrot.z+=1.0f;
 	if(key == 'e')
-		camrot.z-=1.0f;*/
+		camrot.z-=1.0f;
 }
 

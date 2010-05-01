@@ -16,8 +16,8 @@ class SOLID;
 #define			PHYSICS_SOLID_VOLITAL			2
 //#define			PHYSICS_SOLID_
 
-#define			PHYSICS_SOLID_TRAILSIZE			25
-#define			PHYSICS_SOLID_TRAILINDEX		(PHYSICS_SOLID_TRAILSIZE/10)
+#define			PHYSICS_SOLID_TRAILSIZE			250
+#define			PHYSICS_SOLID_TRAILINDEX		10
 
 #define			SOLID_DISPLAY_TRAIL_FADING
 #define			SOLID_DISPLAY_ROTATION_TRAIL
@@ -51,6 +51,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		unsigned int physproperties;
 	protected:
 		float maximumdistance;
+		
+		unsigned long trailsize;
 		POGEL::POINT *trail;
 		POGEL::POINT *rots;
 		
@@ -75,6 +77,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void setCallback(void (*func)(POGEL::PHYSICS::SOLID*,char*) )
 			{ callback = func; }
+		
+		void resizetrail(unsigned long);
 		
 		void steprottrail();
 		void steppostrail();

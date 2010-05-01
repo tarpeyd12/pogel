@@ -8,6 +8,8 @@ POGEL::PHYSICS::SOLID::SOLID() : POGEL::OBJECT() {
 	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
 	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
 	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	trailsize = PHYSICS_SOLID_TRAILSIZE;
+	
 	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) {
 		trail[i] = POGEL::POINT();
 		rots[i] = POGEL::POINT();
@@ -27,6 +29,8 @@ POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPR
 	//rotation=obj->rotation;
 	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
 	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	trailsize = PHYSICS_SOLID_TRAILSIZE;
+	
 	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) {
 		trail[i] = POGEL::POINT();
 		rots[i] = POGEL::POINT();
@@ -42,10 +46,25 @@ POGEL::PHYSICS::SOLID::~SOLID() {
 	delete rots;
 };
 
+void POGEL::PHYSICS::SOLID::resizetrail(unsigned long size) {
+	delete trail;
+	delete rots;
+	
+	trailsize = size;
+	
+	trail = new POGEL::POINT[size];
+	rots = new POGEL::POINT[size];
+	
+	for( int i = 0; i < trailsize; i++ ) {
+		trail[i] = position*PARTICLE_SLOWDOWN;
+		rots[i] = rotation*PARTICLE_SLOWDOWN;
+	}
+};
+
 void POGEL::PHYSICS::SOLID::steppostrail() {
 	trail[0] = position;
 	//rots[0] = rotation;
-	for(int i = PHYSICS_SOLID_TRAILSIZE-1;i>0;i--) {
+	for(int i = trailsize-1;i>0;i--) {
 		trail[i] = trail[i-1];
 		//rots[i] = rots[i-1];
 	}
@@ -54,7 +73,7 @@ void POGEL::PHYSICS::SOLID::steppostrail() {
 void POGEL::PHYSICS::SOLID::steprottrail() {
 	//trail[0] = position;
 	rots[0] = rotation;
-	for(int i = PHYSICS_SOLID_TRAILSIZE-1;i>0;i--) {
+	for(int i = trailsize-1;i>0;i--) {
 		//trail[i] = trail[i-1];
 		rots[i] = rots[i-1];
 	}
@@ -63,7 +82,7 @@ void POGEL::PHYSICS::SOLID::steprottrail() {
 void POGEL::PHYSICS::SOLID::steptrail() {
 	trail[0] = position;
 	rots[0] = rotation;
-	for(int i = PHYSICS_SOLID_TRAILSIZE-1;i>0;i--) {
+	for(int i = trailsize-1;i>0;i--) {
 		trail[i] = trail[i-1];
 		rots[i] = rots[i-1];
 	}
@@ -72,9 +91,9 @@ void POGEL::PHYSICS::SOLID::steptrail() {
 bool POGEL::PHYSICS::SOLID::sameposlegacy(float pres) {
 	bool ret = false;
 	bool legacy = true;
-	if(POGEL::frames<PHYSICS_SOLID_TRAILINDEX)
+	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<PHYSICS_SOLID_TRAILSIZE && i<POGEL::frames+1;i+=PHYSICS_SOLID_TRAILINDEX)
+	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres));
 		if(legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)))
 			ret = true;
@@ -89,9 +108,9 @@ bool POGEL::PHYSICS::SOLID::sameposlegacy(float pres) {
 bool POGEL::PHYSICS::SOLID::samerotlegacy(float pres) {
 	bool ret = false;
 	bool legacy = true;
-	if(POGEL::frames<PHYSICS_SOLID_TRAILINDEX)
+	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<PHYSICS_SOLID_TRAILSIZE && i<POGEL::frames+1;i+=PHYSICS_SOLID_TRAILINDEX)
+	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres));
 		if(legacy && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres)))
 			ret = true;
@@ -106,9 +125,9 @@ bool POGEL::PHYSICS::SOLID::samerotlegacy(float pres) {
 bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 	bool ret = false;
 	bool legacy = true;
-	if(POGEL::frames<PHYSICS_SOLID_TRAILINDEX)
+	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<PHYSICS_SOLID_TRAILSIZE && i<POGEL::frames+1;i+=PHYSICS_SOLID_TRAILINDEX)
+	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)) && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres));
 		if(legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)) && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres)))
 			ret = true;
@@ -156,9 +175,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 		mat[1] = POGEL::MATRIX(rots[0], MATRIX_CONSTRUCT_ROTATION);
 		#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		
-		for(unsigned int i=0; i<PHYSICS_SOLID_TRAILSIZE-1 && i<POGEL::frames; i++) {
+		for(unsigned int i=0; i<trailsize-1 && i<POGEL::frames; i++) {
 			#ifdef SOLID_DISPLAY_TRAIL_FADING
-				float color = ((float)((PHYSICS_SOLID_TRAILSIZE-1)-i)/(float)(PHYSICS_SOLID_TRAILSIZE-1));
+				float color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#else
 				float color = 1.0f;
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */

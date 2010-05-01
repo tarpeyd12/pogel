@@ -27,9 +27,15 @@ class POGEL::PHYSICS::MICROCOSM : public POGEL::PHYSICS::SIMULATION, public POGE
 		
 		PROPERTIES_METHODS;
 		
+		POGEL::VECTOR getpull(POGEL::PHYSICS::SOLID*);
+		
 		void increment();
 		
-		//void step();
+		void step() {
+			increment();
+			steptrail();
+			getbounding();
+		}
 		
 		void build();
 		void draw();
