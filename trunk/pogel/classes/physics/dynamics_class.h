@@ -55,7 +55,7 @@ class POGEL::PHYSICS::DYNAMICS {
 		unsigned long addSolid(POGEL::PHYSICS::SOLID*);
 		void addSolids(POGEL::PHYSICS::SOLID**,unsigned long);
 		
-		POGEL::VECTOR getpull(POGEL::PHYSICS::SOLID*);
+		virtual POGEL::VECTOR getpull(POGEL::PHYSICS::SOLID*);
 		
 		virtual void increment();
 		

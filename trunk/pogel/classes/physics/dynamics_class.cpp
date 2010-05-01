@@ -40,6 +40,8 @@ void POGEL::PHYSICS::DYNAMICS::addSolids(POGEL::PHYSICS::SOLID **obj, unsigned l
 POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	POGEL::VECTOR pull;
 	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
+	
+	// the magnetic charge attraction
 	for(unsigned long a=0;a<numobjects;a++) {
 		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
 		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic)

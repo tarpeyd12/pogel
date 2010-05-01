@@ -1,3 +1,3 @@
 cd bin
-./ogl -oops
+./ogl -oops --boundingbox -debug
 cd ..
