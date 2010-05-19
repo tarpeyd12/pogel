@@ -14,7 +14,8 @@ class SOLID;
 
 #define			PHYSICS_SOLID_STATIONARY		1
 #define			PHYSICS_SOLID_VOLITAL			2
-//#define			PHYSICS_SOLID_
+#define			PHYSICS_SOLID_CONVEX			4
+#define			PHYSICS_SOLID_CONCAVE			8
 
 #define			PHYSICS_SOLID_TRAILSIZE			250
 #define			PHYSICS_SOLID_TRAILINDEX		10
@@ -93,11 +94,7 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		void build();
 		void draw();
 		
-		void step() {
-			increment();
-			steptrail();
-			getbounding();
-		}
+		void step();
 		
 		friend class POGEL::PHYSICS::DYNAMICS;
 		friend class POGEL::PHYSICS::SIMULATION;

@@ -1,3 +1,3 @@
 cd bin
-./ogl -oops --boundingbox -debug
+./ogl --oops --boundingbox -collisions --trails -debug
 cd ..

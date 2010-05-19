@@ -7,7 +7,10 @@ unsigned long POGEL::PHYSICS::FLOW::addfan(POGEL::PHYSICS::FAN fan) {
 	if(numgusts > 0)
 		memcpy(tmp, gusts, sizeof(POGEL::PHYSICS::FAN)*numgusts);
 	tmp[numgusts]=fan;
-	delete[] gusts;
+	//printf("reallocating fans from %p to: %p\n",gusts,tmp);
+	if(gusts)
+		delete[] gusts;
+	gusts = NULL;
 	gusts=tmp;
 	numgusts++;
 	return numgusts-1;
@@ -37,7 +40,10 @@ unsigned long POGEL::PHYSICS::GRAVITYCLUSTER::addsingularity(POGEL::PHYSICS::SIN
 	if(numsingularities > 0)
 		memcpy(tmp, singularities, sizeof(POGEL::PHYSICS::SINGULARITY)*numsingularities);
 	tmp[numsingularities]=sig;
-	delete[] singularities;
+	//printf("reallocating singularities from %p to: %p\n",singularities,tmp);
+	if(singularities)
+		delete[] singularities;
+	singularities = NULL;
 	singularities=tmp;
 	numsingularities++;
 	return numsingularities-1;

@@ -1,4 +1,5 @@
 #include "../../pogel.h"
+#include "../../pogel_internals.h"
 #include "solid_class.h"
 
 POGEL::PHYSICS::SOLID::SOLID() : POGEL::OBJECT() {
@@ -140,24 +141,37 @@ bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 };
 
 void POGEL::PHYSICS::SOLID::getbounding() {
-	bounding.clear();
-	POGEL::MATRIX mat(rotation, MATRIX_CONSTRUCT_ROTATION);
-	for( int t = 0 ; t < numfaces ; t++ )
-		for( int v = 0 ; v < 3 ; v++ )
-			bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
-	bounding.fin();
+	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0) {
+		bounding.clear();
+		POGEL::MATRIX mat(rotation, MATRIX_CONSTRUCT_ROTATION);
+		for( int t = 0 ; t < numfaces ; t++ )
+			for( int v = 0 ; v < 3 ; v++ )
+				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
+		
+		bounding.finishactual();
+		
+		mat = POGEL::MATRIX(direction.topoint()*(float)container->boundingskips, rotation + spin.topoint()*(float)container->boundingskips);
+		for( int t = 0 ; t < numfaces ; t++ )
+			for( int v = 0 ; v < 3 ; v++ )
+				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
+		
+		bounding.fin();
+		bounding.offset(position);
+	}
 };
 
 void POGEL::PHYSICS::SOLID::build()  {
 	POGEL::OBJECT::build();
-	getbounding();
+	if(container != NULL)
+		getbounding();
 };
 
 void POGEL::PHYSICS::SOLID::draw() {
 	POGEL::OBJECT::draw();
-	getbounding();
+	//if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
+	//getbounding();
 	glLineWidth(3);
-	bounding.draw(position);
+	bounding.draw(POGEL::POINT());
 	glLineWidth(1);
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
@@ -298,4 +312,11 @@ void POGEL::PHYSICS::SOLID::draw() {
 		glEnable(GL_TEXTURE_2D);
 	}
 }
+
+void POGEL::PHYSICS::SOLID::step() {
+	increment();
+	steptrail();
+	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
+	getbounding();
+};
 

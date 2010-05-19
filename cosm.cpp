@@ -12,23 +12,22 @@
 #include "window.h"
 
 #include "pogel/pogel.h"
-#include "pogel/classes/physics/physics.h"
 
 using namespace POGEL;
 
 POGEL::POINT camrot;
 
-#define numobjs 10
-#define numcosms 10
+#define numobjs 50
+#define numcosms 5
 #define grd 1
-#define sps 0.25f
-#define size 0.05f
+#define sps 0.10f
+#define size 0.15f
 OBJECT obj;
 POGEL::PHYSICS::FOUNTAIN *sphs;
 
 POGEL::PHYSICS::DYNAMICS sim;
 
-IMAGE *earth;
+//IMAGE *earth;
 IMAGE *defaultimg;
 
 float x = POGEL::FloatRand(10.0f)-5.0f, y = POGEL::FloatRand(10.0f)-5.0f, z = POGEL::FloatRand(10.0f)-5.0f;
@@ -70,7 +69,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	srand((unsigned)time(NULL));
 	
-	earth=new IMAGE("Data/earth.bmp");
+	//earth=new IMAGE("Data/earth.bmp");
 	defaultimg=new IMAGE("Data/default_2.bmp");
 	
 	obj.setname("base_object");
@@ -80,9 +79,9 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//addCylinder(&obj, 8, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 	addCube(&obj, size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 	
-	obj.setproperties(8);
+	//obj.setproperties(8);
 	
-	obj.build();
+	//obj.build();
 	
 	sphs = new POGEL::PHYSICS::FOUNTAIN[numcosms];
 	
@@ -108,17 +107,17 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, (cosm%2==0?-1.0f:1.0f));
 			tmp->setOptions(2);
 			
-			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*10))*sps, 0.0f)));
-			tmp->direction = matobjtransform.transformVector(POGEL::VECTOR((float)sqrt((sps*1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(tmp->position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*30))*sps, 0.0f)));
+			tmp->direction = matobjtransform.transformVector(POGEL::VECTOR((float)sqrt((sps*20000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(tmp->position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 			tmp->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 			
-			tmp->resizetrail(50);
+			tmp->resizetrail(25);
 			
 			tmp->build();
 			
 			sphs[cosm].addSolid(tmp);
 		}
-		sphs[cosm].addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),sps*1000000000000.0f) );
+		sphs[cosm].addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),sps*20000000000000.0f) );
 		
 		sphs[cosm].setname(POGEL::string("microcosm_%ld", cosm));
 		
@@ -129,10 +128,10 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		sphs[cosm].setOptions(2);
 		
 		sphs[cosm].moveto(matcosmtransform.transformPoint(POGEL::POINT(0.0f, ((float)cosm+1)*sps, 0.0f)*(float)numobjs));
-		sphs[cosm].direction = matcosmtransform.transformVector(POGEL::VECTOR((float)sqrt((100000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(sphs[cosm].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+		sphs[cosm].direction = matcosmtransform.transformVector(POGEL::VECTOR((float)sqrt((1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(sphs[cosm].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		//sphs[cosm].spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/5.0f * VECTOR(1.0f,1.0f,1.0f);
 		
-		sphs[cosm].resizetrail(50);
+		sphs[cosm].resizetrail(250);
 		
 		//sphs[cosm].setproperties(FOUNTAIN_USE_MASTER_GRAVITY);
 		
@@ -140,9 +139,10 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sim.addSolid(&sphs[cosm]);
 	}
-	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),100000000000.0f) );
+	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),1000000000000.0f) );
 	
 	sim.addSolid(new POGEL::PHYSICS::SOLID(&obj, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, false, 0.0f), 1));
+	
 	
 	
 	POGEL::InitFps();
@@ -176,7 +176,8 @@ void DrawGLScene()
 	//frames++;
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);
 	//if(frames < 100)
-	for(int i = 0; i < 15; i++)
+	
+	for(int i = 0; i < 1; i++)
 		sim.increment();
 	if(frames%1 == 0) {
 		sim.draw();

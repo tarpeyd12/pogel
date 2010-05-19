@@ -1,4 +1,4 @@
-//#include <GL/glut.h>
+#include <GL/glut.h>
 
 #include <stdarg.h>
 #include <string.h>
@@ -274,14 +274,14 @@ float POGEL::GetFps() {
 };
 
 void POGEL::PrintFps() {
-	/*char buffer[32];
+	char buffer[32];
 	sprintf(buffer, "Fps: %14.10f", POGEL::GetFps());
-	int Nb = strlen(buffer);*/
+	int Nb = strlen(buffer);
 	POGEL::message("\nFps: %14.10f\n", POGEL::GetFps());
-	/*glRasterPos2i(0,0);
+	glRasterPos2i(0,0);
 	glDisable(GL_LIGHTING);
 	for (int i = 0; i < Nb; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
-	glEnable(GL_LIGHTING);*/
+	glEnable(GL_LIGHTING);
 };
 

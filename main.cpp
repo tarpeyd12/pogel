@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     glutDisplayFunc(&DrawGLScene);  
 
     /* Go fullscreen.  This is as soon as possible. */
-//    glutFullScreen();
+    //glutFullScreen();
 
     /* Even if there are no events, redraw our gl scene. */
     glutIdleFunc(&DrawGLScene);
