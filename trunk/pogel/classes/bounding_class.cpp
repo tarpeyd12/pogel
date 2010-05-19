@@ -1,8 +1,10 @@
 #include "bounding_class.h"
 
 void POGEL::BOUNDING::addpoint(POGEL::POINT middle, POGEL::POINT point) {
-	float dist = middle.distance(point);
-	if(dist > maxdistance) maxdistance = dist;
+	if(isactual) {
+		float dist = middle.distance(point);
+		if(dist > maxdistance) maxdistance = dist;
+	}
 	
 	if(numpoints==0) {
 		if(middle.x <= max.x) max.x = middle.x;
@@ -28,14 +30,19 @@ void POGEL::BOUNDING::addpoint(POGEL::POINT middle, POGEL::POINT point) {
 	numpoints++;
 };
 
-void POGEL::BOUNDING::fin(float offset) {
-	max.x+=offset;
-	max.y+=offset;
-	max.z+=offset;
+void POGEL::BOUNDING::fin(float f) {
+	max.x+=f;
+	max.y+=f;
+	max.z+=f;
 	
-	min.x-=offset;
-	min.y-=offset;
-	min.z-=offset;
+	min.x-=f;
+	min.y-=f;
+	min.z-=f;
+};
+
+void POGEL::BOUNDING::offset(POGEL::POINT offs) {
+	max += offs;
+	min += offs;
 };
 
 void POGEL::BOUNDING::draw(POGEL::POINT mid) {

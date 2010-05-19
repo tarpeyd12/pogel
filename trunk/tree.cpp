@@ -16,6 +16,8 @@
 
 using namespace POGEL;
 
+POGEL::POINT camrot;
+
 #define itterations 50
 #define startsize	1.0f
 #define size    	1.3f
@@ -177,10 +179,9 @@ void DrawGLScene()
 	glLoadIdentity();				// Reset The View
 	
 	glTranslatef(0.0f,-2.0f,-25.0f*0.25f);
-	//glRotatef( (float)frames * x,  1.0f, 0.0f, 0.0f );
-	glRotatef( (float)frames * y,  0.0f, 1.0f, 0.0f );
-	//glRotatef( 180,  0.0f, 0.0f, 1.0f );
-	//glRotatef( (float)frames * z,  0.0f, 0.0f, 1.0f );
+	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	
 	POGEL::IncrementFps();

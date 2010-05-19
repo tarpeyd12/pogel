@@ -5,22 +5,27 @@
 POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 	numobjects=0;
 	objects=(POGEL::PHYSICS::SOLID**)NULL;
+	boundingskips = 5;
 };
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
 	POGEL::PHYSICS::SOLID **tmp=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*(numobjects+1));
-	for(int i=0;i<numobjects;i++) {
-		//tmp[i]=(POGEL::PHYSICS::SOLID*)malloc(sizeof(POGEL::PHYSICS::SOLID)*1);
+	for(int i=0;i<numobjects;i++)
 		tmp[i]=objects[i];
-	}
 	
 	obj->container = this;
+	obj->getbounding();
 	
 	tmp[numobjects]=obj;
 	//for(int i=0;i<numobjects;i++) {
 		//free(objects[i]);
 	//}
-	delete[] objects;
+	
+	//printf("reallocating solid pointers from %p to: %p\n",objects,tmp);
+	
+	if(objects)
+		delete[] objects;
+	objects = NULL;
 	
 	objects=tmp;
 	numobjects++;

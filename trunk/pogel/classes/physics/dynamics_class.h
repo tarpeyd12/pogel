@@ -31,6 +31,8 @@ class POGEL::PHYSICS::DYNAMICS {
 		
 		
 	public:
+		unsigned long boundingskips;
+		
 		POGEL::VECTOR gravity;
 		float air_dencity;
 		

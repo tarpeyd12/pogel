@@ -140,20 +140,20 @@ POGEL::OBJECT::~OBJECT() {
 	/*if(n!=getname())
 		free(n);*/
 	
-	//if(face!=NULL || numfaces > 0)
-	delete[] face;
-	//free(face);
-	face=NULL;
+	if(face!=NULL) {
+		delete[] face;
+		face=NULL;
+	}
 	
 	if(children != NULL)
 		killchildren();
 	
 	parent=NULL;
 	
-	//if(name!=NULL)
-	delete[] name;
-	//free(name);
-	name=NULL;
+	if(name!=NULL) {
+		delete[] name;
+		name=NULL;
+	}
 };
 
 void POGEL::OBJECT::killchildren() {

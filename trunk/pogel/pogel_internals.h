@@ -50,19 +50,25 @@
 namespace POGEL {
 	extern char *logfilefilename;
 	extern unsigned int properties;
+	extern unsigned long frames;
+	
 	extern unsigned int getproperties();
 	extern void setproperties(unsigned int prop);
 	extern void addproperty(unsigned int prop);
 	extern void removeproperty(unsigned int prop);
 	extern bool hasproperty(unsigned int prop);
+	
 	extern char* string(const char* fmt, ...);
 	extern void fatality(int,const char* fmt, ...);
 	extern void error(const char* fmt, ...);
 	extern void warning(const char* fmt, ...);
 	extern void message(const char* fmt, ...);
 	extern void logtofile(const char* fmt, ...);
+	
 	extern float FloatRand(float);
+	
 	extern bool about(float,float,float);
+	
 	extern void InitFps();
 	extern void IncrementFps();
 	extern float GetFps();

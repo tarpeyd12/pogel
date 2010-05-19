@@ -6,7 +6,7 @@ CC = g++
 CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
 #LIBRARIES = -lX11 -lXi -lXmu -lglut -lGL -lGLU -lm
 #LIBRARIES = -lX11 -lglut -lGL -lGLU -lm
-LIBRARIES = -lX11 -lglut -lGL
+LIBRARIES = -lX11 -lglut -lGLU -lGL
 
 EXTENTION = cpp
 OUTPUT = bin/ogl
@@ -17,7 +17,7 @@ POGEL_OBJECT = pogel/classes/object_class.o pogel/classes/object_funcs.o pogel/c
 
 POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
-OTHER = main.o cosm.o window.o 
+OTHER = main.o simulation.o window.o 
 
 OBJ =  $(POGEL) $(OTHER)
 
