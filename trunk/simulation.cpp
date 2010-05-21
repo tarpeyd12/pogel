@@ -18,10 +18,10 @@ using namespace POGEL;
 
 POGEL::POINT camrot;
 
-#define numobjs 40
-#define grd 2
-#define sps 1.0f
-#define size 0.25f
+#define numobjs 100
+#define grd 1
+#define sps 1.01f
+#define size 1.0f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -112,14 +112,14 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,10.0f,0.0f);
 		//sphs[i]->visable = false;
 		
-		sphs[i]->resizetrail(15);
+		sphs[i]->resizetrail(25);
 		
 		sim.addSolid(sphs[i]);
 	}
-	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f) );
+	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f),100000000000.0f) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 150.0f));
 	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
-	sim.air_dencity = 1.0f;
+	//sim.air_dencity = 1.0f;
 	
 	POGEL::OBJECT *ring = new POGEL::OBJECT();
 	ring->setname("border");

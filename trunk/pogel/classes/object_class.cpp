@@ -169,17 +169,15 @@ void POGEL::OBJECT::killchildren() {
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v) {
-	position.x+=v.x;
-	position.y+=v.y;
-	position.z+=v.z;
+	position += v;
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v, float s) {
-	translate(POGEL::VECTOR(v.x*s,v.y*s,v.z*s));
+	translate(v*s);
 };
 
 void POGEL::OBJECT::rotate(POGEL::VECTOR v) {
-	rotation += POGEL::MATRIX(POGEL::POINT(v.x, v.y, v.z)*-1.0f, MATRIX_CONSTRUCT_ROTATION).getrotation();
+	rotation += POGEL::MATRIX(v.topoint()*-1.0f, MATRIX_CONSTRUCT_ROTATION).getrotation();
 	/*rotation.x+=v.x;
 	rotation.y+=v.y;
 	rotation.z+=v.z;*/
@@ -195,7 +193,7 @@ void POGEL::OBJECT::rotate(POGEL::VECTOR v) {
 };
 
 void POGEL::OBJECT::rotate(POGEL::VECTOR v, float s) {
-	rotate(POGEL::VECTOR(v.x*s,v.y*s,v.z*s));
+	rotate(v*s);
 };
 
 unsigned long POGEL::OBJECT::addtriangle(POGEL::TRIANGLE tri) {
