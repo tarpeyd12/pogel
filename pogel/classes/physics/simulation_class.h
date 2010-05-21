@@ -12,7 +12,7 @@ class SIMULATION;
 //#include "singularity_class.h"
 #include "solid_class.h"
 
-#define				BUPMAX						1000
+#define				BUPMAX						10
 
 class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 	private:
