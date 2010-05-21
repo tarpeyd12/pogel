@@ -1,3612 +1,2487 @@
 POGEL debug file.
 POGEL version 0.0.0-01
-started at: Fri Apr 16 23:44:35 2010
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+started at: Wed May 19 14:01:57 2010
+
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere0" ...
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_1" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_2" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_0" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere1" ...
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_0
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_1
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere2" ...
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_0
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_2
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere3" ...
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere4" ...
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_4" ...
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere5" ...
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_4
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere6" ...
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere7" ...
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_3" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere8" ...
+
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:57 2010:	Adding Cube to "sphere9" ...
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_3
+Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
+Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:57 2010:	Adding Disk to "border" ...
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:57 2010:	1 of 3 faces complete in disk.
+Wed May 19 14:01:57 2010:	2 of 3 faces complete in disk.
+Wed May 19 14:01:57 2010:	3 of 3 faces complete in disk.
 
-Fri Apr 16 23:44:35 2010:	
+Wed May 19 14:01:57 2010:	
 Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:57 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:57 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:57 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	
+Wed May 19 14:01:57 2010:	
 Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_2" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_2" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_4" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_0" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_2" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter2_branch_4" ...
-
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
-
-Fri Apr 16 23:44:35 2010:	
+Wed May 19 14:01:57 2010:	
 Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:57 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_2
+Wed May 19 14:01:57 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_2
+Wed May 19 14:01:58 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_0
+Wed May 19 14:01:58 2010:	
+Fps:            inf
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_2
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter2_branch_4
+Wed May 19 14:01:58 2010:	
+Fps:  32.1428565979
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_4
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:58 2010:	
+Fps:  32.1428565979
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter1_branch_0" ...
+Wed May 19 14:01:58 2010:	
+Fps:  32.1428565979
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  57.1428565979
 
-Fri Apr 16 23:44:35 2010:	deconstructing Tree
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter0_branch_0
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	deconstructing itter1_branch_0
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "Tree" ...
+Wed May 19 14:01:58 2010:	
+Fps:  28.8461532593
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	Adding Cylinder to "itter0_branch_0" ...
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	1 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	2 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	3 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	4 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	5 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	6 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	7 of 8 faces complete in cylinder.
-Fri Apr 16 23:44:35 2010:	8 of 8 faces complete in cylinder.
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  28.8461532593
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.8461532593
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  28.5714282990
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  28.5714282990
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  53.5714302063
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  54.1666679382
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:58 2010:	
+Fps:  29.1666660309
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  20.8333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  20.0000000000
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps: 100.0000000000
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	bup = 0
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	bup = 0
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	bup = 0
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps: 100.0000000000
+Wed May 19 14:01:59 2010:	
+Fps:  20.0000000000
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	bup = 0
+Wed May 19 14:01:59 2010:	
+Fps:  28.3333339691
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  53.3333320618
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  19.2982444763
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:01:59 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  19.4444427490
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.7777786255
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:35 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  19.6078414917
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  19.6078414917
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  27.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.9411773682
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  19.2982444763
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:00 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  19.2982444763
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  52.6315803528
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  53.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  53.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  19.7916660309
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  28.1250000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "sphere1" and "sphere0".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	bup = 0
+Wed May 19 14:02:01 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  52.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  18.9393939972
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  52.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  18.9393939972
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:01 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.2727279663
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  52.3809509277
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  52.3809509277
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  19.0476188660
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.3809528351
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  52.3809509277
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  19.2982444763
 
-Fri Apr 16 23:44:36 2010:	
-Fps:  50.0000000000
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	
+Fps:  27.6315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	bup = 1
+Wed May 19 14:02:02 2010:	
+Fps:  15.1315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	bup = 1
+Wed May 19 14:02:02 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	bup = 1
+Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere0".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	bup = 1
+Wed May 19 14:02:02 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	
+Fps:  15.1315784454
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:02 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:02 2010:	bup = 0
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	bup = 0
+Wed May 19 14:02:03 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	bup = 0
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	bup = 0
+Wed May 19 14:02:03 2010:	
+Fps:  26.9230766296
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	bup = 0
+Wed May 19 14:02:03 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	bup = 0
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  26.9230766296
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.4523811340
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  26.7857151031
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.4523811340
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  51.7857131958
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  26.7857151031
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.4523811340
 
-Fri Apr 16 23:44:36 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:03 2010:	
+Fps:  26.7857151031
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  26.7857151031
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.4523811340
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.4523811340
 
-Fri Apr 16 23:44:36 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:03 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:03 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.1739120483
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  27.1739120483
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:03 2010:	
+Fps:  18.8405799866
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.8405799866
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.8405799866
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  52.1739120483
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  14.6739130020
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:  75.0000000000
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:36 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:  75.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps: 100.0000000000
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  27.1739120483
 
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:37 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
-
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  14.6739130020
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere0".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	bup = 1
+Wed May 19 14:02:04 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  12.1739130020
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  14.1129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  14.1129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  11.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	bup = 0
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  26.6129035950
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  18.2795696259
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:04 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  52.0833320618
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  18.6666660309
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  14.5000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  18.6666660309
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  14.5000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  14.5000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere0".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "border" and "sphere0".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  12.0000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  14.5000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  12.0000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  12.0000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  14.5000000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  13.6904764175
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	bup = 0
+Wed May 19 14:02:05 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  26.1904754639
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:05 2010:	
+Fps:  26.1904754639
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.1904754639
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  17.8571414948
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.5185184479
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.5185184479
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.5185184479
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  26.8518524170
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.5185184479
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  27.0833339691
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	bup = 1
+Wed May 19 14:02:06 2010:	bup = 2
+Wed May 19 14:02:06 2010:	
+Fps:  18.7500000000
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	bup = 1
+Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	bup = 1
+Wed May 19 14:02:06 2010:	
+Fps:  14.5833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  14.5833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  12.0833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  12.0833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  12.0833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  12.0833330154
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:06 2010:	bup = 0
+Wed May 19 14:02:06 2010:	
+Fps:  11.2195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  11.2195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:   9.5528450012
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  13.7195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  11.2195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  13.7195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  13.7195119858
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  17.8861789703
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.2195129395
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.2195129395
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.3513507843
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:07 2010:	
+Fps:  13.8513517380
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  18.0180168152
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.3513507843
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  18.0180168152
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  18.0180168152
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.3513507843
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:07 2010:	
+Fps:  26.3513507843
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  26.3513507843
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	
+Fps:  18.0180168152
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:07 2010:	
+Fps:  26.9230766296
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  26.9230766296
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  11.9230766296
 
-Fri Apr 16 23:44:38 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	bup = 1
+Wed May 19 14:02:07 2010:	
+Fps:  18.5897426605
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	
+Fps:  11.9230766296
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:07 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  14.4230766296
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:   9.0659341812
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:38 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:38 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  14.4230766296
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  10.2564096451
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  14.4230766296
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  13.6363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  11.1363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  17.8030300140
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  26.1363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  13.6363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  17.8030300140
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  17.8030300140
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  26.1363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  17.8030300140
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:08 2010:	
+Fps:  26.1363639832
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:08 2010:	
+Fps:  26.6666660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  26.6666660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  26.6666660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	
+Fps:  11.6666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:08 2010:	bup = 0
+Wed May 19 14:02:08 2010:	bup = 1
+Wed May 19 14:02:08 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  14.1666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  14.1666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  14.1666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.6666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  10.0000000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  10.0000000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  14.1666669846
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	
+Fps:  18.3333320618
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  26.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:09 2010:	bup = 0
+Wed May 19 14:02:09 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  13.7500000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  17.9166660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  13.7500000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  17.9166660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	bup = 1
+Wed May 19 14:02:10 2010:	
+Fps:  11.2500000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.2500000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  17.9166660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.2500000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  17.9166660309
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:   8.3928565979
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:   8.3056478500
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:  75.0000000000
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:10 2010:	bup = 0
+Wed May 19 14:02:10 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere1" and "sphere2".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  13.6627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere0" and "sphere1".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere0" and "border".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  26.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  26.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	bup = 1
+Wed May 19 14:02:11 2010:	
+Fps:  17.8294563293
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  11.1627902985
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps: 100.0000000000
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  14.0625000000
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:39 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	
+Fps:  11.5625000000
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	collision between "sphere3" and "sphere4".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere4" and "sphere5".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	bup = 0
+Wed May 19 14:02:11 2010:	deconstructing sphere9
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere8
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere7
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere6
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere5
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere4
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere3
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere2
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere1
 
-Fri Apr 16 23:44:40 2010:	
-Fps:            inf
+Wed May 19 14:02:11 2010:	deconstructing sphere0
