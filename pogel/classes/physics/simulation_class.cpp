@@ -45,9 +45,9 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		
 		while(POGEL::about(ttldst, 0.0f, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f)) && (!obj1->hasOption(PHYSICS_SOLID_STATIONARY) || !obj2->hasOption(PHYSICS_SOLID_STATIONARY))) {
 			if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-				obj1->translate(POGEL::VECTOR(POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f)*(precision*obj1->bounding.maxdistance));
+				obj1->translate(POGEL::VECTOR(POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f)*(precision/obj1->bounding.maxdistance));
 			if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-				obj2->translate(POGEL::VECTOR(POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f)*(precision*obj2->bounding.maxdistance));
+				obj2->translate(POGEL::VECTOR(POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f, POGEL::FloatRand(2.0f)-1.0f)*(precision/obj2->bounding.maxdistance));
 			ttldst = obj1->position.distance(obj2->position);
 		}
 		
@@ -62,22 +62,24 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		if(ttldst <= obj1_dfc+obj2_dfc) {
 			//POGEL::message("***********************************8convex v convex collisions.\n");
 			vectcol = true;
-			do {
+			//if(!POGEL::about(dbt, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f), precision) && !isnan(dbt) && dbt < 1 && !dbt >= 0.0f)
+			do
+			{
 				//dbt = obj1->position.distance(obj2->position) - (obj1_dfc+obj2_dfc);
 				if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj1->translate(POGEL::VECTOR(obj1_ep, obj2_ep).normal()*(precision/obj1->bounding.maxdistance)*0.0025f);
+					obj1->translate(POGEL::VECTOR(obj1_ep, obj2_ep).normal()*(precision/obj1->bounding.maxdistance)*0.025f);
 				if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj2->translate(POGEL::VECTOR(obj2_ep, obj1_ep).normal()*(precision/obj2->bounding.maxdistance)*0.0025f);
+					obj2->translate(POGEL::VECTOR(obj2_ep, obj1_ep).normal()*(precision/obj2->bounding.maxdistance)*0.025f);
 				//POGEL::message("convex v. convex. dbt = %f\n", dbt);
 				dbt = obj1->position.distance(obj2->position) - (obj1_dfc+obj2_dfc);
 			}
-			while(!POGEL::about(dbt, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f), precision) && !(dbt!=dbt) && dbt < 10 && !dbt >= 0.0f && cnt++ < 1000);
+			while(!POGEL::about(dbt, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f), precision) && !isnan(dbt) && dbt < 1 && !dbt >= 0.0f && cnt++ < 10000000);
 			
-			if(dbt < 0.0f) {
+			if(dbt < 0.0f && !isnan(dbt)) {
 				if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj1->translate(POGEL::VECTOR(obj1_ep, obj2_ep).normal()*dbt*-2.0f);
+					obj1->translate(POGEL::VECTOR(obj1_ep, obj2_ep).normal()*dbt*-3.0f);
 				if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj2->translate(POGEL::VECTOR(obj2_ep, obj1_ep).normal()*dbt*-2.0f);
+					obj2->translate(POGEL::VECTOR(obj2_ep, obj1_ep).normal()*dbt*-3.0f);
 			}
 		}
 	}
@@ -190,9 +192,26 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 void POGEL::PHYSICS::SIMULATION::increment() {
 	
 	for(unsigned long a=0;a<numobjects;a++) {
+		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			
+			if(!objects[a]->sameposlegacy(precision))
+				objects[a]->direction += getpull(objects[a]);
+			else if(deactivation)
+				objects[a]->direction = POGEL::VECTOR();
+			
+			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
+			objects[a]->spin /= airslowdown;
+			objects[a]->direction /= airslowdown;
+		}
+		objects[a]->step();
+	}
+	
+	//int positer = 0;
+	//while(positer++ < 10)
+	for(unsigned long a=0;a<numobjects;a++) {
 		for(unsigned long b=a+1;b<numobjects;b++) {
 			if(a!=b && objects[a]->bounding.checkbounding(objects[b]->bounding) /*&& objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding)*/ ) {
-				if( processcollision(objects[a], objects[b]) ) {
+				if( processcollision(objects[a], objects[b])/* && positer == 10*/) {
 					if(objects[a]->callback != NULL) {
 						char* n = new char[strlen(objects[b]->getname())+1];
 						memset(n, '\0', strlen(objects[b]->getname())+1);
@@ -211,21 +230,6 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 			}
 		
 		}
-	//}
-	
-	//for(unsigned long a=0;a<numobjects;a++) {
-		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			
-			if(!objects[a]->sameposlegacy(precision))
-				objects[a]->direction += getpull(objects[a]);
-			else if(deactivation)
-				objects[a]->direction = POGEL::VECTOR();
-			
-			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
-			objects[a]->spin /= airslowdown;
-			objects[a]->direction /= airslowdown;
-		}
-		objects[a]->step();
 	}
 };
 
