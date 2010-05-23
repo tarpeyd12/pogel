@@ -96,6 +96,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void step();
 		
+		void closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri);
+		
 		friend class POGEL::PHYSICS::DYNAMICS;
 		friend class POGEL::PHYSICS::SIMULATION;
 		

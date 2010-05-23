@@ -57,6 +57,8 @@ class TRIANGLE {
 		
 		bool isinfront(POGEL::POINT);
 		
+		bool distcheck(POGEL::POINT, float);
+		
 		void getbounding();
 		
 		void draw();

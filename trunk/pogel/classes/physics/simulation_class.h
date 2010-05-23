@@ -26,6 +26,8 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 		void increment();
 		
 		bool processcollision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*);
+		
+		void reactcollision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT,POGEL::VECTOR*);
 };
 
 #endif /* _SIMULATION_CLASS_H */

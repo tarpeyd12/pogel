@@ -18,8 +18,8 @@ using namespace POGEL;
 
 POGEL::POINT camrot;
 
-#define numobjs 100
-#define grd 1
+#define numobjs 1
+#define grd 2
 #define sps 1.01f
 #define size 1.0f
 OBJECT obj[numobjs];
@@ -68,7 +68,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	sim.deactivation = false;
 	sim.precision = 0.01f;
 	
-	sim.boundingskips = 1;
+	sim.boundingskips = 10;
 	
 	srand((unsigned)time(NULL));
 	
