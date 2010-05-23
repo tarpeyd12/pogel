@@ -128,6 +128,28 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			}
 			POGEL::message("bup = %ld\r",bup++);
 		}
+		/*POGEL::POINT tmp_1, tmp_2;
+		POGEL::TRIANGLE tmptri;
+		obj1->closest(obj2, &tmp_1, &tmp_2, &tmptri);
+		
+		tr[0] = tmptri.normal;
+		tr[1] = tmptri.normal*-1.0f;
+		
+		col = (tmp_1+tmp_2)/2.0f;
+		
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glLineWidth(2);
+		glColor3f(0.0f,0.75f,0.75f);
+		glBegin(GL_LINES);
+			glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
+			glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);*/
+		
 		
 		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			//if(!obj1->samerotlegacy(precision)) {
@@ -206,12 +228,12 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		objects[a]->step();
 	}
 	
-	//int positer = 0;
-	//while(positer++ < 10)
+	int positer = 0;
+	while(positer++ < 3)
 	for(unsigned long a=0;a<numobjects;a++) {
 		for(unsigned long b=a+1;b<numobjects;b++) {
 			if(a!=b && objects[a]->bounding.checkbounding(objects[b]->bounding) /*&& objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding)*/ ) {
-				if( processcollision(objects[a], objects[b])/* && positer == 10*/) {
+				if( processcollision(objects[a], objects[b]) && positer == 3) {
 					if(objects[a]->callback != NULL) {
 						char* n = new char[strlen(objects[b]->getname())+1];
 						memset(n, '\0', strlen(objects[b]->getname())+1);
@@ -227,8 +249,41 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 						delete[] n;
 					}
 				}
-			}
+				
+				if(POGEL::hasproperty(POGEL_PAIRS)) {
+					glDisable(GL_TEXTURE_2D);
+					glDisable(GL_LIGHTING);
+					glLineWidth(2);
+					glColor3f(1.0f,0.75f,0.75f);
+					glBegin(GL_LINES);
+						glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
+						glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
+					glEnd();
+					glLineWidth(1);
+					glColor3f(1.0f,1.0f,1.0f);
+					glEnable(GL_LIGHTING);
+					glEnable(GL_TEXTURE_2D);
+				}
+				
+				POGEL::POINT tmp_1, tmp_2;
+		POGEL::TRIANGLE tmptri;
+		objects[a]->closest(objects[b], &tmp_1, &tmp_2, &tmptri);
 		
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glLineWidth(1);
+		glColor3f(0.0f,0.75f,0.75f);
+		glBegin(GL_LINES);
+			glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
+			glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);
+				
+			}
+			
 		}
 	}
 };

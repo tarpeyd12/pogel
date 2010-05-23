@@ -175,7 +175,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 	glLineWidth(1);
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
-		float len = bounding.maxdistance*1.25f;//0.5f;
+		float len = bounding.maxdistance*1.1f;//0.5f;
 		glDisable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);
 		#ifdef SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL
@@ -318,5 +318,77 @@ void POGEL::PHYSICS::SOLID::step() {
 	steptrail();
 	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
 	getbounding();
+};
+
+void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri) {
+	
+	//POGEL::TRIANGLE ;
+	//POGEL::POINT ;
+	float origdist = this->position.distance(other->position);
+	float dist = origdist;
+	//unsigned long obj1triindex, obj2triindex;
+	
+	for(unsigned long a = 0; a < this->getnumfaces(); a++) {
+		
+		POGEL::TRIANGLE obj1tritmp = POGEL::MATRIX(this->position, this->rotation).transformTriangle(this->gettriangle(a));
+		
+		if(obj1tritmp.distcheck(other->position, dist))
+			for(unsigned long b = 0; b < other->getnumfaces(); b++) {
+				
+				POGEL::TRIANGLE obj2tritmp = POGEL::MATRIX(other->position, other->rotation).transformTriangle(other->gettriangle(b));
+				
+				if(obj2tritmp.distcheck(this->position, dist)) {
+					for(unsigned int c = 0; c < 3; c++) {
+						POGEL::POINT pointtmp1 = obj1tritmp.vertex[c].topoint();
+						POGEL::POINT res2d, res3d;
+						
+						bool col = POGEL::PHYSICS::line_triangle_collision(pointtmp1, pointtmp1+(obj2tritmp.normal.topoint()*origdist)*(obj2tritmp.isinfront(pointtmp1) ? -1.0f : 1.0f), obj2tritmp, &res2d, &res3d);
+						if(col && res2d.z < dist) {
+							dist = res2d.z;
+							*obj1pt = pointtmp1;
+							*obj2pt = res3d;
+							*tri = obj2tritmp;
+						}
+						else {
+							for(unsigned int d = 0; d < 3; d++) {
+								POGEL::POINT pointtmp2 = obj2tritmp.vertex[d].topoint();
+								if(pointtmp2.distance(pointtmp1) < dist) {
+									dist = pointtmp2.distance(pointtmp1);
+									*obj1pt = pointtmp1;
+									*obj2pt = pointtmp2;
+									*tri = obj1tritmp;
+								}
+							}
+						}
+					}
+					
+					for(unsigned int c = 0; c < 3; c++) {
+						POGEL::POINT pointtmp2 = obj2tritmp.vertex[c].topoint();
+						POGEL::POINT res2d, res3d;
+						
+						bool col = POGEL::PHYSICS::line_triangle_collision(pointtmp2, pointtmp2+(obj1tritmp.normal.topoint()*origdist)*(obj1tritmp.isinfront(pointtmp2) ? -1.0f : 1.0f), obj1tritmp, &res2d, &res3d);
+						if(col && res2d.z < dist) {
+							dist = res2d.z;
+							*obj2pt = pointtmp2;
+							*obj1pt = res3d;
+							*tri = obj1tritmp;
+						}
+						else {
+							for(unsigned int d = 0; d < 3; d++) {
+								POGEL::POINT pointtmp1 = obj1tritmp.vertex[d].topoint();
+								if(pointtmp1.distance(pointtmp2) < dist) {
+									dist = pointtmp1.distance(pointtmp2);
+									*obj1pt = pointtmp1;
+									*obj2pt = pointtmp2;
+									*tri = obj2tritmp;
+								}
+							}
+						}
+					}
+				}
+				
+			}
+	}
+	
 };
 

@@ -33,9 +33,10 @@
 #define				POGEL_CMD_BOOL_FORMAT_TRAILS					"-trails"
 #define				POGEL_CMD_BOOL_FORMAT_COLLISIONS				"-collisions"
 #define				POGEL_CMD_BOOL_FORMAT_ANCESTORY					"-ancestory"
+#define				POGEL_CMD_BOOL_FORMAT_PAIRS						"-pairs"
 
 // mashable pogel global properties
-#define				POGEL_OOPS										( ( 1|2|4|8|16|32|64 ) ^ POGEL_LOGTOFILE )
+#define				POGEL_OOPS										( ( 1|2|4|8|16|32|64|128 ) ^ POGEL_LOGTOFILE )
 
 #define				POGEL_LOGTOFILE									1
 #define				POGEL_DEBUG										2
@@ -44,6 +45,7 @@
 #define				POGEL_TRAILS									16
 #define				POGEL_COLLISIONS								32
 #define				POGEL_ANCESTORY									64
+#define				POGEL_PAIRS										128
 
 
 #ifndef _POGEL_H

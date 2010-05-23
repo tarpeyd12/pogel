@@ -94,6 +94,27 @@ bool POGEL::TRIANGLE::isinfront(POGEL::POINT p) {
 			);
 };
 
+bool POGEL::TRIANGLE::distcheck(POGEL::POINT p, float dist) {
+	POGEL::POINT closest = middle();
+	POGEL::POINT points[] = {
+		vertex[0].topoint(), \
+		vertex[1].topoint(), \
+		vertex[2].topoint(), \
+		((vertex[0]+vertex[1])/2.0f).topoint(), \
+		((vertex[0]+vertex[2])/2.0f).topoint(), \
+		((vertex[1]+vertex[2])/2.0f).topoint(), \
+		(vertex[0].topoint()+closest)/2.0f, \
+		(vertex[1].topoint()+closest)/2.0f, \
+		(vertex[2].topoint()+closest)/2.0f
+	};
+	
+	for(int i=0;i<9;i++) // go through all the refrence points on the triangle
+		// find the closest one, but one that is not too close
+		if(p.distance(points[i]) < p.distance(closest))
+			closest = points[i];
+	return p.distance(closest) <= dist;
+};
+
 void POGEL::TRIANGLE::getbounding() {
 	bounding.clear();
 	POGEL::POINT mid = middle();
