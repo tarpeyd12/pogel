@@ -1,2487 +1,2972 @@
 POGEL debug file.
 POGEL version 0.0.0-01
-started at: Wed May 19 14:01:57 2010
+started at: Mon May 24 13:32:04 2010
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere0" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere0" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere1" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere1" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere2" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere2" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere3" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere3" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere4" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere4" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere5" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere5" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere6" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere6" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere7" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere7" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere8" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere8" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Cube to "sphere9" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere9" ...
 
-Wed May 19 14:01:57 2010:	1 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	2 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	3 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	4 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	5 of 6 faces complete in cube.
-Wed May 19 14:01:57 2010:	6 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	Adding Disk to "border" ...
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere10" ...
 
-Wed May 19 14:01:57 2010:	1 of 3 faces complete in disk.
-Wed May 19 14:01:57 2010:	2 of 3 faces complete in disk.
-Wed May 19 14:01:57 2010:	3 of 3 faces complete in disk.
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere11" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere12" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere13" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere14" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere15" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere16" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere17" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere18" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere19" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere20" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere21" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere22" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere23" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere24" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere25" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere26" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere27" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere28" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere29" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere30" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere31" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere32" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere33" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere34" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere35" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere36" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere37" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere38" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere39" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere40" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere41" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere42" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere43" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere44" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere45" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere46" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere47" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere48" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere49" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere50" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere51" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere52" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere53" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere54" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere55" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere56" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere57" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere58" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere59" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere60" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere61" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere62" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere63" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere64" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere65" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere66" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere67" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere68" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere69" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere70" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere71" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere72" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere73" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere74" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere75" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere76" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere77" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere78" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere79" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere80" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere81" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere82" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere83" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere84" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere85" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere86" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere87" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere88" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere89" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere90" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere91" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere92" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere93" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere94" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere95" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere96" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere97" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere98" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "sphere99" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	Adding Cube to "border" ...
+
+Mon May 24 13:32:04 2010:	1 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	2 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	3 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	4 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	5 of 6 faces complete in cube.
+Mon May 24 13:32:04 2010:	6 of 6 faces complete in cube.
+
+Mon May 24 13:32:04 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:04 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:04 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere1" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere10" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:04 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:05 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere1" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere81" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:05 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:05 2010:	collision between "sphere1" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "sphere12".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere10" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "sphere21".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "sphere97".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere88" and "sphere98".
+
+Mon May 24 13:32:05 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:05 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere10" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere81" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:05 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:05 2010:	collision between "sphere0" and "sphere20".
+
+Mon May 24 13:32:05 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "sphere12".
+
+Mon May 24 13:32:05 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere10" and "sphere20".
+
+Mon May 24 13:32:05 2010:	collision between "sphere10" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "sphere21".
+
+Mon May 24 13:32:05 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere12" and "sphere22".
+
+Mon May 24 13:32:05 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere21" and "sphere31".
+
+Mon May 24 13:32:05 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere77" and "sphere87".
+
+Mon May 24 13:32:05 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere78" and "sphere88".
+
+Mon May 24 13:32:05 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "sphere97".
+
+Mon May 24 13:32:05 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere89" and "sphere99".
+
+Mon May 24 13:32:05 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:05 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:05 2010:	
 Fps:            inf
 
-Wed May 19 14:01:57 2010:	
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere11" and "sphere21".
+
+Mon May 24 13:32:06 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "sphere31".
+
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "sphere87".
+
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere81" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:06 2010:	
 Fps:            inf
 
-Wed May 19 14:01:58 2010:	
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere21".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere10" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere20" and "sphere30".
+
+Mon May 24 13:32:06 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere22" and "sphere32".
+
+Mon May 24 13:32:06 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere31" and "sphere41".
+
+Mon May 24 13:32:06 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere67" and "sphere77".
+
+Mon May 24 13:32:06 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "sphere78".
+
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere79" and "sphere89".
+
+Mon May 24 13:32:06 2010:	collision between "sphere79" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere81" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "sphere98".
+
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:06 2010:	
 Fps:            inf
 
-Wed May 19 14:01:58 2010:	
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "sphere10".
+
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere11".
+
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere21".
+
+Mon May 24 13:32:06 2010:	collision between "sphere2" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere3" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere4" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere5" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere6" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere7" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere8" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere9" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere11" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere12" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere13" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere14" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere15" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere16" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere17" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere18" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere19" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere20" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere22" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere23" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere24" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere25" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere26" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere27" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere28" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere29" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere30" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere31" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere32" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere33" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere34" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere35" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere36" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere37" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere38" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere39" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere40" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere41" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere42" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere43" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere44" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere45" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere46" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere47" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere48" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere49" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere50" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere51" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere52" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere53" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere54" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere55" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere56" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere57" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere58" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere59" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere60" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere61" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere62" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere63" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere64" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere65" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere66" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere67" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "sphere78".
+
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere69" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere70" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere71" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere72" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere73" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere74" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere75" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere76" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere78" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere80" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere81" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere82" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere83" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere84" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere85" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere86" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere87" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "sphere98".
+
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere89" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere90" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere91" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere92" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere93" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere94" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere95" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere96" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere97" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere98" and "border".
+
+Mon May 24 13:32:06 2010:	collision between "sphere99" and "border".
+
+Mon May 24 13:32:06 2010:	
 Fps:            inf
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "sphere10".
 
-Wed May 19 14:01:58 2010:	
-Fps:  32.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere0" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "sphere11".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere1" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  32.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere2" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere3" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere4" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  32.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere5" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere6" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  57.1428565979
+Mon May 24 13:32:06 2010:	collision between "sphere7" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere8" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere9" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere10" and "sphere20".
 
-Wed May 19 14:01:58 2010:	
-Fps:  28.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere10" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere11" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere12" and "sphere22".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere12" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere13" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  28.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere14" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.8461532593
+Mon May 24 13:32:06 2010:	collision between "sphere15" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere16" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere18" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere19" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere20" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "sphere31".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere21" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere22" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere23" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere24" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere25" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere26" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere27" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere29" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere30" and "sphere40".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere30" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere31" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  28.5714282990
+Mon May 24 13:32:06 2010:	collision between "sphere32" and "sphere42".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere32" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  28.5714282990
+Mon May 24 13:32:06 2010:	collision between "sphere33" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  53.5714302063
+Mon May 24 13:32:06 2010:	collision between "sphere34" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere35" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere36" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere37" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere38" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere39" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere40" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere41" and "sphere51".
 
-Wed May 19 14:01:58 2010:	
-Fps:  54.1666679382
+Mon May 24 13:32:06 2010:	collision between "sphere41" and "border".
 
-Wed May 19 14:01:58 2010:	
-Fps:  29.1666660309
+Mon May 24 13:32:06 2010:	collision between "sphere42" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  20.8333320618
+Mon May 24 13:32:06 2010:	collision between "sphere43" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere44" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere45" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere46" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere47" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere48" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere49" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere50" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  20.0000000000
+Mon May 24 13:32:06 2010:	collision between "sphere51" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere52" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere53" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere54" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere55" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere56" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere57" and "sphere67".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere57" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere58" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere59" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere60" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere61" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere62" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere63" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere64" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere65" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere66" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere67" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "sphere78".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere68" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere69" and "sphere79".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere69" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere70" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere72" and "border".
 
-Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
+Mon May 24 13:32:06 2010:	collision between "sphere73" and "border".
 
-Wed May 19 14:01:59 2010:	bup = 0
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere74" and "border".
 
-Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
+Mon May 24 13:32:06 2010:	collision between "sphere75" and "border".
 
-Wed May 19 14:01:59 2010:	bup = 0
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere76" and "border".
 
-Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "sphere87".
 
-Wed May 19 14:01:59 2010:	bup = 0
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere77" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere78" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  20.0000000000
+Mon May 24 13:32:06 2010:	collision between "sphere79" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere80" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere81" and "border".
 
-Wed May 19 14:01:59 2010:	collision between "border" and "sphere0".
+Mon May 24 13:32:06 2010:	collision between "sphere83" and "border".
 
-Wed May 19 14:01:59 2010:	bup = 0
-Wed May 19 14:01:59 2010:	
-Fps:  28.3333339691
+Mon May 24 13:32:06 2010:	collision between "sphere84" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  53.3333320618
+Mon May 24 13:32:06 2010:	collision between "sphere85" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  19.2982444763
+Mon May 24 13:32:06 2010:	collision between "sphere86" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere87" and "border".
 
-Wed May 19 14:01:59 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "sphere98".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere88" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	collision between "sphere89" and "sphere99".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere89" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere90" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere91" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere92" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	collision between "sphere93" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere94" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere95" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere96" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere97" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere98" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	collision between "sphere99" and "border".
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	deconstructing sphere99
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.7777786255
+Mon May 24 13:32:06 2010:	deconstructing sphere98
 
-Wed May 19 14:02:00 2010:	
-Fps:  19.4444427490
+Mon May 24 13:32:06 2010:	deconstructing sphere97
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.7777786255
+Mon May 24 13:32:06 2010:	deconstructing sphere96
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere95
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere94
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere93
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere92
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere91
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere90
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere89
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere88
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere87
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere86
 
-Wed May 19 14:02:00 2010:	
-Fps:  19.6078414917
+Mon May 24 13:32:06 2010:	deconstructing sphere85
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere84
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere83
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere82
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere81
 
-Wed May 19 14:02:00 2010:	
-Fps:  19.6078414917
+Mon May 24 13:32:06 2010:	deconstructing sphere80
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere79
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere78
 
-Wed May 19 14:02:00 2010:	
-Fps:  27.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere77
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.9411773682
+Mon May 24 13:32:06 2010:	deconstructing sphere76
 
-Wed May 19 14:02:00 2010:	
-Fps:  19.2982444763
+Mon May 24 13:32:06 2010:	deconstructing sphere75
 
-Wed May 19 14:02:00 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	deconstructing sphere74
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere73
 
-Wed May 19 14:02:01 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	deconstructing sphere72
 
-Wed May 19 14:02:01 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	deconstructing sphere71
 
-Wed May 19 14:02:01 2010:	
-Fps:  19.2982444763
+Mon May 24 13:32:06 2010:	deconstructing sphere70
 
-Wed May 19 14:02:01 2010:	
-Fps:  52.6315803528
+Mon May 24 13:32:06 2010:	deconstructing sphere69
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere68
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere67
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere66
 
-Wed May 19 14:02:01 2010:	
-Fps:  53.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere65
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere64
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere63
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere62
 
-Wed May 19 14:02:01 2010:	
-Fps:  53.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere61
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere60
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere59
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere58
 
-Wed May 19 14:02:01 2010:	
-Fps:  19.7916660309
+Mon May 24 13:32:06 2010:	deconstructing sphere57
 
-Wed May 19 14:02:01 2010:	
-Fps:  28.1250000000
+Mon May 24 13:32:06 2010:	deconstructing sphere56
 
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
+Mon May 24 13:32:06 2010:	deconstructing sphere55
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
+Mon May 24 13:32:06 2010:	deconstructing sphere54
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "sphere1" and "sphere0".
+Mon May 24 13:32:06 2010:	deconstructing sphere53
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "border" and "sphere0".
+Mon May 24 13:32:06 2010:	deconstructing sphere52
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere51
 
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
+Mon May 24 13:32:06 2010:	deconstructing sphere50
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
+Mon May 24 13:32:06 2010:	deconstructing sphere49
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere48
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere47
 
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
+Mon May 24 13:32:06 2010:	deconstructing sphere46
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
+Mon May 24 13:32:06 2010:	deconstructing sphere45
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere44
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere43
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere42
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere41
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere40
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere39
 
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "sphere1".
+Mon May 24 13:32:06 2010:	deconstructing sphere38
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	collision between "sphere0" and "border".
+Mon May 24 13:32:06 2010:	deconstructing sphere37
 
-Wed May 19 14:02:01 2010:	bup = 0
-Wed May 19 14:02:01 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere36
 
-Wed May 19 14:02:01 2010:	
-Fps:  52.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere35
 
-Wed May 19 14:02:01 2010:	
-Fps:  18.9393939972
+Mon May 24 13:32:06 2010:	deconstructing sphere34
 
-Wed May 19 14:02:01 2010:	
-Fps:  52.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere33
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere32
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere31
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere30
 
-Wed May 19 14:02:01 2010:	
-Fps:  18.9393939972
+Mon May 24 13:32:06 2010:	deconstructing sphere29
 
-Wed May 19 14:02:01 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere28
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere27
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.2727279663
+Mon May 24 13:32:06 2010:	deconstructing sphere26
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere25
 
-Wed May 19 14:02:02 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere24
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere23
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere22
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere21
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere20
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere19
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere18
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere17
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere16
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere15
 
-Wed May 19 14:02:02 2010:	
-Fps:  52.3809509277
+Mon May 24 13:32:06 2010:	deconstructing sphere14
 
-Wed May 19 14:02:02 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere13
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere12
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere11
 
-Wed May 19 14:02:02 2010:	
-Fps:  52.3809509277
+Mon May 24 13:32:06 2010:	deconstructing sphere10
 
-Wed May 19 14:02:02 2010:	
-Fps:  19.0476188660
+Mon May 24 13:32:06 2010:	deconstructing sphere9
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere8
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.3809528351
+Mon May 24 13:32:06 2010:	deconstructing sphere7
 
-Wed May 19 14:02:02 2010:	
-Fps:  52.3809509277
+Mon May 24 13:32:06 2010:	deconstructing sphere6
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere5
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere4
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere3
 
-Wed May 19 14:02:02 2010:	
-Fps:  19.2982444763
+Mon May 24 13:32:06 2010:	deconstructing sphere2
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
+Mon May 24 13:32:06 2010:	deconstructing sphere1
 
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
-
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
-
-Wed May 19 14:02:02 2010:	
-Fps:  27.6315784454
-
-Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	bup = 1
-Wed May 19 14:02:02 2010:	
-Fps:  15.1315784454
-
-Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	bup = 1
-Wed May 19 14:02:02 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	bup = 1
-Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere0".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	bup = 1
-Wed May 19 14:02:02 2010:	collision between "border" and "sphere0".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	
-Fps:  15.1315784454
-
-Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:02 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:02 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:02 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:02 2010:	bup = 0
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:03 2010:	bup = 0
-Wed May 19 14:02:03 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:03 2010:	bup = 0
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:03 2010:	bup = 0
-Wed May 19 14:02:03 2010:	
-Fps:  26.9230766296
-
-Wed May 19 14:02:03 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:03 2010:	bup = 0
-Wed May 19 14:02:03 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:03 2010:	bup = 0
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	
-Fps:  26.9230766296
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.4523811340
-
-Wed May 19 14:02:03 2010:	
-Fps:  26.7857151031
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.4523811340
-
-Wed May 19 14:02:03 2010:	
-Fps:  51.7857131958
-
-Wed May 19 14:02:03 2010:	
-Fps:  26.7857151031
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.4523811340
-
-Wed May 19 14:02:03 2010:	
-Fps:  26.7857151031
-
-Wed May 19 14:02:03 2010:	
-Fps:  26.7857151031
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.4523811340
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.4523811340
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.1739120483
-
-Wed May 19 14:02:03 2010:	
-Fps:  27.1739120483
-
-Wed May 19 14:02:03 2010:	
-Fps:  18.8405799866
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.8405799866
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.8405799866
-
-Wed May 19 14:02:04 2010:	
-Fps:  52.1739120483
-
-Wed May 19 14:02:04 2010:	
-Fps:  14.6739130020
-
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  27.1739120483
-
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  14.6739130020
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere0".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	bup = 1
-Wed May 19 14:02:04 2010:	collision between "border" and "sphere0".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  12.1739130020
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  14.1129035950
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  14.1129035950
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  11.6129035950
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:04 2010:	bup = 0
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  26.6129035950
-
-Wed May 19 14:02:04 2010:	
-Fps:  18.2795696259
-
-Wed May 19 14:02:04 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:05 2010:	
-Fps:  52.0833320618
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:05 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:05 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:05 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:05 2010:	
-Fps:  18.6666660309
-
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  14.5000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  18.6666660309
-
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  14.5000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  14.5000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere0".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "border" and "sphere0".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  12.0000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  14.5000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  12.0000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  12.0000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  14.5000000000
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  13.6904764175
-
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:05 2010:	bup = 0
-Wed May 19 14:02:05 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:05 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:05 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:05 2010:	
-Fps:  26.1904754639
-
-Wed May 19 14:02:05 2010:	
-Fps:  26.1904754639
-
-Wed May 19 14:02:06 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:06 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.1904754639
-
-Wed May 19 14:02:06 2010:	
-Fps:  17.8571414948
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.5185184479
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.5185184479
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.5185184479
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  26.8518524170
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.5185184479
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:06 2010:	
-Fps:  27.0833339691
-
-Wed May 19 14:02:06 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	bup = 1
-Wed May 19 14:02:06 2010:	bup = 2
-Wed May 19 14:02:06 2010:	
-Fps:  18.7500000000
-
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	bup = 1
-Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	bup = 1
-Wed May 19 14:02:06 2010:	
-Fps:  14.5833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  14.5833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  12.0833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  12.0833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  12.0833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  12.0833330154
-
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:06 2010:	bup = 0
-Wed May 19 14:02:06 2010:	
-Fps:  11.2195119858
-
-Wed May 19 14:02:06 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  11.2195119858
-
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:   9.5528450012
-
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  13.7195119858
-
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  11.2195119858
-
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  13.7195119858
-
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  13.7195119858
-
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  17.8861789703
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.2195129395
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.2195129395
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.3513507843
-
-Wed May 19 14:02:07 2010:	
-Fps:  13.8513517380
-
-Wed May 19 14:02:07 2010:	
-Fps:  18.0180168152
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.3513507843
-
-Wed May 19 14:02:07 2010:	
-Fps:  18.0180168152
-
-Wed May 19 14:02:07 2010:	
-Fps:  18.0180168152
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.3513507843
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.3513507843
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.3513507843
-
-Wed May 19 14:02:07 2010:	
-Fps:  18.0180168152
-
-Wed May 19 14:02:07 2010:	
-Fps:  26.9230766296
-
-Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  26.9230766296
-
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  11.9230766296
-
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	bup = 1
-Wed May 19 14:02:07 2010:	
-Fps:  18.5897426605
-
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	
-Fps:  11.9230766296
-
-Wed May 19 14:02:07 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:07 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:07 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  14.4230766296
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:   9.0659341812
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  14.4230766296
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  10.2564096451
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  14.4230766296
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  13.6363639832
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  11.1363639832
-
-Wed May 19 14:02:08 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  17.8030300140
-
-Wed May 19 14:02:08 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  26.1363639832
-
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  13.6363639832
-
-Wed May 19 14:02:08 2010:	
-Fps:  17.8030300140
-
-Wed May 19 14:02:08 2010:	
-Fps:  17.8030300140
-
-Wed May 19 14:02:08 2010:	
-Fps:  26.1363639832
-
-Wed May 19 14:02:08 2010:	
-Fps:  17.8030300140
-
-Wed May 19 14:02:08 2010:	
-Fps:  26.1363639832
-
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:08 2010:	
-Fps:  26.6666660309
-
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:08 2010:	
-Fps:  26.6666660309
-
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:08 2010:	
-Fps:  26.6666660309
-
-Wed May 19 14:02:08 2010:	
-Fps:  11.6666669846
-
-Wed May 19 14:02:08 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:08 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:08 2010:	bup = 0
-Wed May 19 14:02:08 2010:	bup = 1
-Wed May 19 14:02:08 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  14.1666669846
-
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  14.1666669846
-
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  14.1666669846
-
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.6666669846
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  10.0000000000
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  10.0000000000
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  14.1666669846
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:09 2010:	
-Fps:  18.3333320618
-
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  26.1627902985
-
-Wed May 19 14:02:09 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:09 2010:	bup = 0
-Wed May 19 14:02:09 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  13.7500000000
-
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  17.9166660309
-
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  13.7500000000
-
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  17.9166660309
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	bup = 1
-Wed May 19 14:02:10 2010:	
-Fps:  11.2500000000
-
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.2500000000
-
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  17.9166660309
-
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.2500000000
-
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  17.9166660309
-
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:   8.3928565979
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:   8.3056478500
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:10 2010:	collision between "sphere2" and "sphere3".
-
-Wed May 19 14:02:10 2010:	bup = 0
-Wed May 19 14:02:10 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:11 2010:	collision between "sphere1" and "sphere2".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  13.6627902985
-
-Wed May 19 14:02:11 2010:	collision between "sphere0" and "sphere1".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere0" and "border".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	
-Fps:  26.1627902985
-
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	
-Fps:  26.1627902985
-
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	bup = 1
-Wed May 19 14:02:11 2010:	
-Fps:  17.8294563293
-
-Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  11.1627902985
-
-Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  14.0625000000
-
-Wed May 19 14:02:11 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere8" and "sphere9".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	
-Fps:  11.5625000000
-
-Wed May 19 14:02:11 2010:	collision between "sphere3" and "sphere4".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere4" and "sphere5".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere5" and "sphere6".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere6" and "sphere7".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	collision between "sphere7" and "sphere8".
-
-Wed May 19 14:02:11 2010:	bup = 0
-Wed May 19 14:02:11 2010:	deconstructing sphere9
-
-Wed May 19 14:02:11 2010:	deconstructing sphere8
-
-Wed May 19 14:02:11 2010:	deconstructing sphere7
-
-Wed May 19 14:02:11 2010:	deconstructing sphere6
-
-Wed May 19 14:02:11 2010:	deconstructing sphere5
-
-Wed May 19 14:02:11 2010:	deconstructing sphere4
-
-Wed May 19 14:02:11 2010:	deconstructing sphere3
-
-Wed May 19 14:02:11 2010:	deconstructing sphere2
-
-Wed May 19 14:02:11 2010:	deconstructing sphere1
-
-Wed May 19 14:02:11 2010:	deconstructing sphere0
+Mon May 24 13:32:06 2010:	deconstructing sphere0

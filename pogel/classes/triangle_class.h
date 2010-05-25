@@ -59,6 +59,8 @@ class TRIANGLE {
 		
 		bool distcheck(POGEL::POINT, float);
 		
+		float distance(POGEL::POINT);
+		
 		void getbounding();
 		
 		void draw();

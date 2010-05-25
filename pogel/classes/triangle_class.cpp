@@ -97,6 +97,7 @@ bool POGEL::TRIANGLE::isinfront(POGEL::POINT p) {
 bool POGEL::TRIANGLE::distcheck(POGEL::POINT p, float dist) {
 	POGEL::POINT closest = middle();
 	POGEL::POINT points[] = {
+		middle(), \
 		vertex[0].topoint(), \
 		vertex[1].topoint(), \
 		vertex[2].topoint(), \
@@ -108,11 +109,33 @@ bool POGEL::TRIANGLE::distcheck(POGEL::POINT p, float dist) {
 		(vertex[2].topoint()+closest)/2.0f
 	};
 	
-	for(int i=0;i<9;i++) // go through all the refrence points on the triangle
-		// find the closest one, but one that is not too close
-		if(p.distance(points[i]) < p.distance(closest))
-			closest = points[i];
-	return p.distance(closest) <= dist;
+	for(int i=0;i<1;i++)
+		if(p.distance(points[i]) <= dist)
+			return true;
+	return false;
+};
+
+float POGEL::TRIANGLE::distance(POGEL::POINT p) {
+	POGEL::POINT mid = middle();
+	float dist = 0.0f;// p.distance(mid);
+	POGEL::POINT points[] = {
+		mid, \
+		vertex[0].topoint(), \
+		vertex[1].topoint(), \
+		vertex[2].topoint(), \
+		((vertex[0]+vertex[1])/2.0f).topoint(), \
+		((vertex[0]+vertex[2])/2.0f).topoint(), \
+		((vertex[1]+vertex[2])/2.0f).topoint(), \
+		(vertex[0].topoint()+mid)/2.0f, \
+		(vertex[1].topoint()+mid)/2.0f, \
+		(vertex[2].topoint()+mid)/2.0f
+	};
+	
+	for(int i=0;i<10;i++)
+		if(p.distance(points[i]) < dist)
+			dist = p.distance(points[i]);
+		//dist += p.distance(points[i]);
+	return dist/10.0f;
 };
 
 void POGEL::TRIANGLE::getbounding() {
