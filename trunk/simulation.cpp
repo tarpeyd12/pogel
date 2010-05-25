@@ -18,10 +18,10 @@ using namespace POGEL;
 
 POGEL::POINT camrot;
 
-#define numobjs 1
-#define grd 2
-#define sps 1.01f
-#define size 1.0f
+#define numobjs 100
+#define grd 1
+#define sps 0.01f
+#define size 0.5f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -68,7 +68,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	sim.deactivation = false;
 	sim.precision = 0.01f;
 	
-	sim.boundingskips = 10;
+	sim.boundingskips = 1;
 	
 	srand((unsigned)time(NULL));
 	
@@ -87,7 +87,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//addDisk(&obj[i], 4, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 		//addSphere(&obj[i],5,10, size/2.0f, defaultimg,1,1, 0, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
-		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
+		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 		addCube(&obj[i], size,size,size, defaultimg, 1,1,0,POGEL::MATRIX());
 		
 		obj[i].setproperties(2);
@@ -109,15 +109,20 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->direction = /*m.transformVector*/(POGEL::VECTOR((float)sqrt((1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		//sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->direction = POGEL::VECTOR(0.0f,1.0f,0.0f);
-		//sphs[i]->spin=POGEL::VECTOR(0.0f,10.0f,0.0f);
+		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
 		//sphs[i]->visable = false;
+		
+		/*if(i == numobjs-1) {
+			sphs[i]->setOptions(1|4);
+			sphs[i]->moveto(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f));
+		}*/
 		
 		sphs[i]->resizetrail(25);
 		
 		sim.addSolid(sphs[i]);
 	}
-	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f),100000000000.0f) );
-	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 150.0f));
+	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f),1000000000000.0f) );
+	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 100.0f));
 	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
 	//sim.air_dencity = 1.0f;
 	
@@ -131,7 +136,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//addCylinder(ring, 16, 1, 2.01f, 20.0f, 20.0f, defaultimg, 1.0f, 1.0f, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,1.005,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	//addCylinder(ring, 4, 1, 5.0f, 20.0f, 5.0f, defaultimg, 1.0f, 1.0f, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,-2.5f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	
-	addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,180.0f)));
+	addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
 	
 	//addSphere(ring,2,4, 20.0f, earth,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 	
@@ -149,15 +154,17 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	border->behavior.bounce = 1.0f;
 	border->behavior.friction = 1.0f;
 	
-	border->behavior.magnetic = true;
+	border->behavior.magnetic = false;
 	border->behavior.charge = -0.01f;
 	border->build();
 	//border->visable = false;
+	//border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
 	sim.addSolid(border);
 	
 	
 	POGEL::InitFps();
 	printf("\n");
+	//camrot.x = 90.0f;
 }
 
 //unsigned long frames=0;
@@ -208,6 +215,7 @@ void DrawGLScene()
 	if(frames%1 == 0) {
 		sim.draw();
 	}
+	
 	//message("\n");
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.

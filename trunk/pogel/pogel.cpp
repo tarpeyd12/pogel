@@ -121,7 +121,7 @@ void POGEL::fatality(int ret,const char* fmt, ...) {
 	output=(char*)malloc(sizeof(char)*(strlen(tmpstr)+1));
 	memcpy(output, tmpstr, strlen(tmpstr)+1);
 	free(tmpstr);
-	if(POGEL::hasproperty(POGEL_DEBUG))
+	//if(POGEL::hasproperty(POGEL_DEBUG))
 		printf("\n\n\t***\tFATALITY: %s\t***\n\n",output);
 	if(POGEL::hasproperty(POGEL_LOGTOFILE))
 		POGEL::logtofile("\n\n\t***\tFATALITY: %s\t***\n\n",output);

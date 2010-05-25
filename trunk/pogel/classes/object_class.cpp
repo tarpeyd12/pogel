@@ -169,6 +169,7 @@ void POGEL::OBJECT::killchildren() {
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v) {
+	if(!v.isbad())
 	position += v;
 };
 
@@ -177,6 +178,7 @@ void POGEL::OBJECT::translate(POGEL::VECTOR v, float s) {
 };
 
 void POGEL::OBJECT::rotate(POGEL::VECTOR v) {
+	if(!v.isbad())
 	rotation += POGEL::MATRIX(v.topoint()*-1.0f, MATRIX_CONSTRUCT_ROTATION).getrotation();
 	/*rotation.x+=v.x;
 	rotation.y+=v.y;

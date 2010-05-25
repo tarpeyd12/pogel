@@ -90,6 +90,18 @@ class POINT {
 				return true;
 			return false;
 		}
+		
+		bool operator!=(POGEL::POINT p) {
+			return !((*this)==p);
+		}
+		
+		bool isbad() {
+			bool ret = (isnan(x) || isnan(y) || isnan(z));
+			//if(ret)
+				//POGEL::message("(%c, %c, %c)\n", (isnan(x)?'n':' '), (isnan(y)?'n':' '), (isnan(z)?'n':' '));
+				//POGEL::fatality(POGEL_FATALITY_NAN_POINT_RETNUM,"%s (%7.3f, %7.3f, %7.3f).",POGEL_FATALITY_NAN_POINT_STRING, x, y, z);
+			return ret;
+		}
 };
 
 class VECTOR: public POGEL::POINT {
@@ -167,10 +179,6 @@ class VECTOR: public POGEL::POINT {
 			if(p.x==x && p.y==y && p.z==z)
 				return true;
 			return false;
-		}
-		
-		bool isbad() {
-			return (isnan(x) || isnan(y) || isnan(z));
 		}
 };
 

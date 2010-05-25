@@ -320,24 +320,101 @@ void POGEL::PHYSICS::SOLID::step() {
 	getbounding();
 };
 
+void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POGEL::TRIANGLE* tri) {
+	*tri = POGEL::TRIANGLE();
+	float origdist = position.distance(point);
+	float dist = origdist;
+	unsigned long triindex = 0;
+	unsigned long ptcount = 0;
+	
+	for(unsigned long a = 0; a < getnumfaces(); a++) {
+		POGEL::TRIANGLE tritmp = POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(a));
+		
+		if(tritmp.distcheck(point, origdist)) {
+				POGEL::POINT pointtmp1 = point;
+				POGEL::POINT res2d, res3d;
+				
+				bool col = POGEL::PHYSICS::line_triangle_collision(point, point+(tritmp.normal.topoint()*origdist)*(tritmp.isinfront(point) ? -1.0f : 1.0f), tritmp, &res2d, &res3d);
+				if(col && res2d.z < dist) {
+					dist = res2d.z;
+					*objpt = res3d;
+					//if(tritmp.distance(point) < POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(triindex)).distance(point)) {
+						*tri = tritmp;
+						triindex = a;
+					//}
+					ptcount = 1;
+				}
+				else if(col && res2d.z == dist) {
+					ptcount++;
+					//dist = res2d.z;
+					*objpt += res3d;
+					//if(tritmp.distance(point) < POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(triindex)).distance(point)) {
+						*tri = tritmp;
+						triindex = a;
+					//}
+				}
+				else {
+					for(unsigned int c = 0; c < 3; c++) {
+						POGEL::POINT pointtmp2 = tritmp.vertex[c].topoint();
+						
+						if(pointtmp2.distance(pointtmp1) < dist) {
+							dist = pointtmp2.distance(pointtmp1);
+							*objpt = pointtmp2;
+							//if(tritmp.distance(pointtmp1) < POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(triindex)).distance(pointtmp1)) {
+								*tri = tritmp;
+								triindex = a;
+							//}
+							ptcount = 1;
+						}
+						else if(pointtmp2.distance(pointtmp1) == dist) {
+							ptcount++;
+							//dist = pointtmp2.distance(pointtmp1);
+							*objpt += pointtmp2;
+							//if(tritmp.distance(pointtmp1) < POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(triindex)).distance(pointtmp1)) {
+								*tri = tritmp;
+								triindex = a;
+							//}
+						}
+					}
+				}
+		}
+	}
+	
+	if(ptcount != 0)
+		*objpt /= (float)ptcount;
+};
+
 void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri) {
 	
+	*obj1pt = this->position, *obj2pt = other->position;
+	POGEL::POINT obj1ptold = *obj2pt, obj2ptold = *obj1pt;
+	unsigned int c = 0;
+	while(c++ < 5 && obj1ptold.distance(*obj1pt) > 0.0f && obj2ptold.distance(*obj2pt) > 0.0f && (obj1ptold != *obj1pt && obj2ptold != *obj2pt)) {
+		//POGEL::message("%f, %f\n", obj1ptold.distance(*obj1pt), obj2ptold.distance(*obj2pt));
+		obj1ptold = *obj1pt;
+		obj2ptold = *obj2pt;
+		other->closest(*obj1pt, obj2pt, tri);
+		this->closest(*obj2pt, obj1pt, tri);
+	}
+	
+	
+	/*
 	//POGEL::TRIANGLE ;
 	//POGEL::POINT ;
 	float origdist = this->position.distance(other->position);
 	float dist = origdist;
-	//unsigned long obj1triindex, obj2triindex;
+	unsigned long ptcount = 0;
 	
 	for(unsigned long a = 0; a < this->getnumfaces(); a++) {
 		
 		POGEL::TRIANGLE obj1tritmp = POGEL::MATRIX(this->position, this->rotation).transformTriangle(this->gettriangle(a));
 		
-		if(obj1tritmp.distcheck(other->position, dist))
+		//if(obj1tritmp.distcheck(other->position, origdist))
 			for(unsigned long b = 0; b < other->getnumfaces(); b++) {
 				
 				POGEL::TRIANGLE obj2tritmp = POGEL::MATRIX(other->position, other->rotation).transformTriangle(other->gettriangle(b));
 				
-				if(obj2tritmp.distcheck(this->position, dist)) {
+				//if(obj2tritmp.distcheck(this->position, origdist)) {
 					for(unsigned int c = 0; c < 3; c++) {
 						POGEL::POINT pointtmp1 = obj1tritmp.vertex[c].topoint();
 						POGEL::POINT res2d, res3d;
@@ -348,6 +425,14 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 							*obj1pt = pointtmp1;
 							*obj2pt = res3d;
 							*tri = obj2tritmp;
+							ptcount = 1;
+						}
+						else if(col && res2d.z == dist) {
+							ptcount++;
+							//dist = res2d.z;
+							*obj1pt += pointtmp1;
+							*obj2pt += res3d;
+							*tri = obj2tritmp;
 						}
 						else {
 							for(unsigned int d = 0; d < 3; d++) {
@@ -356,6 +441,14 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 									dist = pointtmp2.distance(pointtmp1);
 									*obj1pt = pointtmp1;
 									*obj2pt = pointtmp2;
+									*tri = obj1tritmp;
+									ptcount = 1;
+								}
+								else if(pointtmp2.distance(pointtmp1) == dist) {
+									ptcount++;
+									//dist = pointtmp2.distance(pointtmp1);
+									*obj1pt += pointtmp1;
+									*obj2pt += pointtmp2;
 									*tri = obj1tritmp;
 								}
 							}
@@ -372,6 +465,14 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 							*obj2pt = pointtmp2;
 							*obj1pt = res3d;
 							*tri = obj1tritmp;
+							ptcount = 1;
+						}
+						else if(col && res2d.z == dist) {
+							ptcount++;
+							//dist = res2d.z;
+							*obj2pt += pointtmp2;
+							*obj1pt += res3d;
+							*tri = obj2tritmp;
 						}
 						else {
 							for(unsigned int d = 0; d < 3; d++) {
@@ -381,14 +482,27 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 									*obj1pt = pointtmp1;
 									*obj2pt = pointtmp2;
 									*tri = obj2tritmp;
+									ptcount = 1;
+								}
+								else if(pointtmp2.distance(pointtmp1) == dist) {
+									ptcount++;
+									//dist = pointtmp1.distance(pointtmp2);
+									*obj1pt += pointtmp1;
+									*obj2pt += pointtmp2;
+									*tri = obj2tritmp;
 								}
 							}
 						}
-					}
+					//}
+					
 				}
 				
 			}
 	}
 	
+	if(ptcount != 0) {
+		*obj1pt /= (float)ptcount;
+		*obj2pt /= (float)ptcount;
+	}*/
 };
 

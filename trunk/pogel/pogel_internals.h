@@ -23,6 +23,9 @@
 #define				POGEL_FATALITY_BAD_FILE_RETNUM					16
 #define				POGEL_FATALITY_BAD_FILE_STRING					"Not a valid file"
 
+#define				POGEL_FATALITY_NAN_POINT_RETNUM					32
+#define				POGEL_FATALITY_NAN_POINT_STRING					"Encountered nan position or vector."
+
 // the pogel cmd option formats
 #define				POGEL_CMD_BOOL_FORMAT_OOPS						"-oops"
 
