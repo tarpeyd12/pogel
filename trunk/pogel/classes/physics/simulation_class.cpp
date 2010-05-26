@@ -14,7 +14,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 	bool vectcol = false;
 	POGEL::TRIANGLE tri;
 	POGEL::POINT c1, c2;
-	/*if(POGEL::PHYSICS::solid_line_collision(obj1, obj2->position, obj2->position+obj2->direction.normal()*PARTICLE_SLOWDOWN, &tri, &c1, &c2) || POGEL::PHYSICS::solid_line_collision(obj2, obj1->position, obj1->position+obj1->directiPOGEL::VECTOR(obj1_ep, obj2_ep).normal()on.normal()*PARTICLE_SLOWDOWN, &tri, &c1, &c2)) {
+	/*if(POGEL::PHYSICS::solid_line_collision(obj1, obj2->position, obj2->position+obj2->direction.normal()*PARTICLE_SLOWDOWN, &tri, &c1, &c2) || POGEL::PHYSICS::solid_line_collision(obj2, obj1->position, obj1->position+obj1->direction.normal()*PARTICLE_SLOWDOWN, &tri, &c1, &c2)) {
 		
 		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj1, obj1->position, obj1->position+obj1->direction*PARTICLE_SLOWDOWN, &tri, &c1, &c2);
@@ -51,25 +51,63 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			ttldst = obj1->position.distance(obj2->position);
 		}
 		
-		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj1, obj1->position, obj2->position, &tri, &tmp, &obj1_ep);
+		POGEL::POINT obj1_clptc, obj2_clptc;
+		POGEL::TRIANGLE tri1, tri2;
+		obj1->closest(obj2, &obj2_clptc, &obj1_clptc, &tri1, &tri2);
+		
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glLineWidth(2);
+		glColor3f(0.0f,0.75f,0.75f);
+		glBegin(GL_LINES);
+			glVertex3f(obj1_clptc.x,obj1_clptc.y,obj1_clptc.z);
+			glVertex3f(obj2_clptc.x,obj2_clptc.y,obj2_clptc.z);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);
+		
+		//obj1->closest(obj1->position + tri2.normal*(tri2.isinfront(obj1->position) ? -1.0f : 1.0f), &obj1_clptc, &tri1);
+		
+		//if(tri.normal.getdistance() != 0.0f && obj1_clptc != obj2->position)
+			obj1_nml = tri1.normal * (tri1.isinfront(obj1_clptc) ? -1.0f : 1.0f);
+		//else \
+			obj1_nml = POGEL::VECTOR(obj1_ep, obj2_ep).normal();
+		
+		//obj2->closest(obj2->position + tri1.normal*(tri1.isinfront(obj2->position) ? -1.0f : 1.0f), &obj2_clptc, &tri2);
+		
+		//if(tri.normal.getdistance() != 0.0f && obj2_clptc != obj1->position)
+			obj2_nml = tri2.normal * (tri2.isinfront(obj2_clptc) ? -1.0f : 1.0f);
+		//else \
+			obj2_nml = POGEL::VECTOR(obj2_ep, obj1_ep).normal();
+		
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glPointSize(5);
+		glColor3f(0.0f,1.75f,0.75f);
+		glBegin(GL_POINTS);
+			glVertex3f(obj1_clptc.x,obj1_clptc.y,obj1_clptc.z);
+			glVertex3f(obj2_clptc.x,obj2_clptc.y,obj2_clptc.z);
+		glEnd();
+		glPointSize(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);
+		
+		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj1, obj1->position, obj1_clptc, &tri, &tmp, &obj1_ep);
 		obj1_dfc = tmp.z;
 		
-		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj1->position, &tri, &tmp, &obj2_ep);
+		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj2_clptc, &tri, &tmp, &obj2_ep);
 		obj2_dfc = tmp.z;
 		
-		dbt = obj1_ep.distance(obj2_ep);
-		
-		POGEL::POINT obj1_clptc, obj2_clptc;
-		obj1->closest((obj1_ep+obj2_ep)/2.0f, &obj1_clptc, &tri);
-		if(tri.normal.getdistance() != 0.0f && obj1_clptc != obj2->position)
-			obj1_nml = tri.normal * (tri.isinfront(obj1_clptc) ? -1.0f : 1.0f);
-		else
+		if(tri.normal.getdistance() == 0.0f || obj1_clptc == obj2->position)
 			obj1_nml = POGEL::VECTOR(obj1_ep, obj2_ep).normal();
-		obj2->closest((obj1_ep+obj2_ep)/2.0f, &obj2_clptc, &tri);
-		if(tri.normal.getdistance() != 0.0f && obj2_clptc != obj1->position)
-			obj2_nml = tri.normal * (tri.isinfront(obj2_clptc) ? -1.0f : 1.0f);
-		else
+		if(tri.normal.getdistance() == 0.0f || obj2_clptc == obj1->position)
 			obj2_nml = POGEL::VECTOR(obj2_ep, obj1_ep).normal();
+		
+		dbt = obj1_ep.distance(obj2_ep);
+		ttldst = obj1_clptc.distance(obj2_clptc);
 		
 		int cnt = 0;
 		if(ttldst <= obj1_dfc+obj2_dfc) {
@@ -80,20 +118,20 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			{
 				//dbt = obj1->position.distance(obj2->position) - (obj1_dfc+obj2_dfc);
 				if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj1->translate(obj1_nml.normal()*(precision/obj1->bounding.maxdistance)*0.25f);
+					obj1->translate(obj2_nml.normal()*(precision/obj1->bounding.maxdistance)*0.025f);
 				if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj2->translate(obj2_nml.normal()*(precision/obj2->bounding.maxdistance)*0.25f);
+					obj2->translate(obj1_nml.normal()*(precision/obj2->bounding.maxdistance)*0.025f);
 				//POGEL::message("convex v. convex. dbt = %f\n", dbt);
 				dbt = obj1->position.distance(obj2->position) - (obj1_dfc+obj2_dfc);
 			}
-			while(!POGEL::about(dbt, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f), precision) && !isnan(dbt) && dbt < 1 && !dbt >= 0.0f && cnt++ < 100);
+			while(!POGEL::about(dbt, precision/((obj1->bounding.maxdistance+obj2->bounding.maxdistance)/2.0f), precision) && !isnan(dbt) && dbt < 1 && !dbt >= 0.0f && cnt++ < 10);
 			
 			if(!isnan(dbt) && dbt < 0.0f) {
 				//POGEL::message("dbt compensation.");
 				if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj1->translate(obj1_nml.normal()*dbt*-1.0f);
+					obj1->translate(obj2_nml.normal()*dbt*1.0f);
 				if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj2->translate(obj2_nml.normal()*dbt*-1.0f);
+					obj2->translate(obj1_nml.normal()*dbt*1.0f);
 			}
 		}
 	}
@@ -142,16 +180,16 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			}
 			POGEL::message("bup = %ld\r",bup++);
 		}
-		POGEL::POINT tmp_1, tmp_2;
+		/*POGEL::POINT tmp_1, tmp_2;
 		POGEL::TRIANGLE tmptri;
 		obj1->closest(obj2, &tmp_1, &tmp_2, &tmptri);
-		/*
-		tr[0] = tmptri.normal;
-		tr[1] = tmptri.normal*-1.0f;*/
+		
+		//tr[0] = tmptri.normal;
+		//tr[1] = tmptri.normal*-1.0f;
 		
 		col = (tmp_1+tmp_2)/2.0f;
 		
-		/*glDisable(GL_TEXTURE_2D);
+		glDisable(GL_TEXTURE_2D);
 		glDisable(GL_LIGHTING);
 		glLineWidth(2);
 		glColor3f(0.0f,0.75f,0.75f);
@@ -247,11 +285,11 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 	}
 	
 	int positer = 0;
-	while(positer++ < 2)
+	while(positer++ < 1)
 	for(unsigned long a=0;a<numobjects;a++) {
 		for(unsigned long b=a+1;b<numobjects;b++) {
 			if(a!=b && objects[a]->bounding.checkbounding(objects[b]->bounding) /*&& objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding)*/ ) {
-				if( processcollision(objects[a], objects[b]) && positer == 2) {
+				if( processcollision(objects[a], objects[b]) && positer == 1) {
 					if(objects[a]->callback != NULL) {
 						char* n = new char[strlen(objects[b]->getname())+1];
 						memset(n, '\0', strlen(objects[b]->getname())+1);
@@ -283,7 +321,10 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 					glEnable(GL_TEXTURE_2D);
 				}
 				
-				/*POGEL::POINT tmp_1, tmp_2;
+				
+			}
+			/*if(objects[a]->position.distance(objects[b]->position) <= 5){
+			POGEL::POINT tmp_1, tmp_2;
 		POGEL::TRIANGLE tmptri;
 		objects[a]->closest(objects[b], &tmp_1, &tmp_2, &tmptri);
 		
@@ -298,10 +339,8 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		glLineWidth(1);
 		glColor3f(1.0f,1.0f,1.0f);
 		glEnable(GL_LIGHTING);
-		glEnable(GL_TEXTURE_2D);*/
-				
-			}
-			
+		glEnable(GL_TEXTURE_2D);
+		}*/
 		}
 	}
 };
