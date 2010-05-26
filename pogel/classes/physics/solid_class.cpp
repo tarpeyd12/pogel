@@ -330,7 +330,7 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POG
 	for(unsigned long a = 0; a < getnumfaces(); a++) {
 		POGEL::TRIANGLE tritmp = POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(a));
 		
-		if(tritmp.distcheck(point, origdist)) {
+		if(true||tritmp.distcheck(point, origdist)) {
 				POGEL::POINT pointtmp1 = point;
 				POGEL::POINT res2d, res3d;
 				
@@ -384,7 +384,7 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POG
 		*objpt /= (float)ptcount;
 };
 
-void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri) {
+void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri1, POGEL::TRIANGLE* tri2) {
 	
 	*obj1pt = this->position, *obj2pt = other->position;
 	POGEL::POINT obj1ptold = *obj2pt, obj2ptold = *obj1pt;
@@ -393,8 +393,8 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 		//POGEL::message("%f, %f\n", obj1ptold.distance(*obj1pt), obj2ptold.distance(*obj2pt));
 		obj1ptold = *obj1pt;
 		obj2ptold = *obj2pt;
-		other->closest(*obj1pt, obj2pt, tri);
-		this->closest(*obj2pt, obj1pt, tri);
+		other->closest(*obj1pt, obj2pt, tri2);
+		this->closest(*obj2pt, obj1pt, tri1);
 	}
 	
 	
