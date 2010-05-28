@@ -30,7 +30,7 @@ int main(int argc, char **argv)
      RGBA color
      Alpha components supported 
      Depth buffer */  
-    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);  
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_MULTISAMPLE);  
 
     /* get a 640 x 480 window */
     glutInitWindowSize(640, 480);

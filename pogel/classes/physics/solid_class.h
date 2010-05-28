@@ -61,6 +61,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
 	public:
+		POGEL::VECTOR force;
+		
 		POGEL::BOUNDING bounding;
 		POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES behavior;
 		
@@ -93,6 +95,19 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void build();
 		void draw();
+		
+		void increment() {
+			if(!this->hasOption(PHYSICS_SOLID_STATIONARY)) {
+				rotate(spin);
+				translate(direction+force);
+				//direction = (direction+force);
+			}
+			else {
+				rotate(spin);
+				translate(direction);
+			}
+			force = POGEL::VECTOR();
+		}
 		
 		void step();
 		
