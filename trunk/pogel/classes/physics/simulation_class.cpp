@@ -141,14 +141,17 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 	POGEL::VECTOR vct1, vct2;
 	float area;
 	
-	if(vectcol||POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area)) {
+	if(vectcol/*||POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area)*/) {
 		POGEL::message("collision between \"%s\" and \"%s\".\n", obj1->getname(), obj2->getname());
 		POGEL::VECTOR tr[2];
+		POGEL::POINT tmp_1, tmp_2;
+		POGEL::TRIANGLE tmptri1, tmptri2;
 		
 		unsigned long bup = 0;
-		while(POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area) && bup < BUPMAX) {
+		while(false&&POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area) && bup < BUPMAX) {
+			obj1->closest(obj2, &tmp_1, &tmp_2, &tmptri1, &tmptri2);
 			if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-				tr[0]=vct2;// + obj1->direction*-1.0f;//-vct1;
+				tr[0]=tmptri2.normal;//vct2;// + obj1->direction*-1.0f;//-vct1;
 				if(POGEL::about(tr[0].getdistance(), 0.0f, precision/obj1->bounding.maxdistance))
 					tr[0] += POGEL::VECTOR(col,obj1->position);
 				tr[0].normalize();
@@ -164,7 +167,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			}
 			
 			if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
-				tr[1]=vct1;// + obj2->direction*-1.0f;//-vct2;
+				tr[1]=tmptri1.normal;//vct1;// + obj2->direction*-1.0f;//-vct2;
 				if(POGEL::about(tr[1].getdistance(), 0.0f, precision/obj2->bounding.maxdistance))
 					tr[1] += POGEL::VECTOR(col,obj2->position);
 				tr[1].normalize();
@@ -180,8 +183,8 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			}
 			POGEL::message("bup = %ld\r",bup++);
 		}
-		POGEL::POINT tmp_1, tmp_2;
-		POGEL::TRIANGLE tmptri1, tmptri2;
+		//POGEL::POINT tmp_1, tmp_2;
+		//POGEL::TRIANGLE tmptri1, tmptri2;
 		obj1->closest(obj2, &tmp_1, &tmp_2, &tmptri1, &tmptri2);
 		
 		tr[0] = tmptri1.normal;
@@ -226,7 +229,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//POGEL::VECTOR bounce = tr[0].normal()*obj1->direction.getdistance();
 				//if(obj1->direction.getdistance() != 0.0f)
 				//obj1->force -= tr[1]*((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction; // compensate for friction
-				//obj1->force += tr[1].normal()*precision;
+				obj1->force += tr[1].normal()*precision*obj1->direction.getdistance();
 				obj1->force -= ((tr[1].normal()*obj1->direction.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction)/10;
 				obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
 				//obj1->force -= ((bounce )/1.0f)/10;
@@ -255,7 +258,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//POGEL::VECTOR bounce = tr[1].normal()*obj2->direction.getdistance();
 				//if(obj2->direction.getdistance() != 0.0f)
 				//obj2->force -= tr[0]*((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction; // compensate for friction
-				//obj2->force += tr[0].normal()*precision;
+				obj2->force += tr[0].normal()*precision*obj2->direction.getdistance();
 				obj2->force -= ((tr[0].normal()*obj2->direction.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction)/10;
 				obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
 				//obj2->force -= ((bounce )/1.0f)/10;
@@ -287,10 +290,10 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 			//objects[a]->spin /= airslowdown;
 			//objects[a]->direction /= airslowdown;
 		}
-		objects[a]->step();
-	//}
+		//objects[a]->step();
+	}
 	
-	//for(unsigned long a=0;a<numobjects;a++) {
+	for(unsigned long a=0;a<numobjects;a++) {
 		for(unsigned long b=a+1;b<numobjects;b++) {
 			if(a!=b && objects[a]->bounding.checkbounding(objects[b]->bounding) /*&& objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding)*/ ) {
 				if( processcollision(objects[a], objects[b])) {
@@ -348,7 +351,6 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		}
 	}
 	
-	//for(unsigned long a=0;a<numobjects;a++)
-		//objects[a]->step();
+	for(unsigned long a=0;a<numobjects;a++) objects[a]->step();
 };
 
