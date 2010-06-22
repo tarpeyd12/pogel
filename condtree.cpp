@@ -16,7 +16,9 @@
 
 using namespace POGEL;
 
-#define itterations 5
+POGEL::POINT camrot;
+
+#define itterations 8
 #define startsize	1.0f
 #define size    	1.3f
 POGEL::FRACTAL* obj;
