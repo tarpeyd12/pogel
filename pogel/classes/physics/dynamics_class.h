@@ -11,8 +11,6 @@ class DYNAMICS;
 #include "singularity_class.h"
 #include "solid_class.h"
 
-#define				PARTICLE_SLOWDOWN			1000.0f
-
 class POGEL::PHYSICS::DYNAMICS {
 	private:
 		unsigned int properties; // the mushed properties

@@ -8,7 +8,6 @@
 #include <time.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
@@ -209,6 +208,15 @@ void DrawGLScene()
 	glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);
+	
+	if(POGEL::GetFps() < 10.0f)
+	{
+		POGEL::ThrotleFps(60);
+	}
+	else
+	{
+		POGEL::UnthrotleFps();
+	}
 	
 	//frames++;
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);
