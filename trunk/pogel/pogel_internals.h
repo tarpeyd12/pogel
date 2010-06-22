@@ -1,6 +1,8 @@
 #ifndef _POGEL_INTERNALS_H
 #define _POGEL_INTERNALS_H
 
+#include <time.h>
+
 #define		PROPERTIES_METHODS		unsigned int getproperties() {return properties;} \
 									void setproperties(unsigned int prop) {properties=prop;} \
 									void addproperty(unsigned int prop) {properties|=prop;} \
@@ -50,12 +52,21 @@
 #define				POGEL_ANCESTORY									64
 #define				POGEL_PAIRS										128
 
+// pogel global constants
+#define				PARTICLE_SLOWDOWN_RATIO							1000.0f
+#define				PARTICLE_SLOWDOWN								PARTICLE_SLOWDOWN_RATIO * POGEL::framerate_throtling_correction
 
 #ifndef _POGEL_H
 namespace POGEL {
+	// pogel global variables
 	extern char *logfilefilename;
 	extern unsigned int properties;
+	
+	extern clock_t start, finish, start_long, finish_long;
 	extern unsigned long frames;
+	extern float duration, fps, fps_long;
+	
+	extern float framerate_throtling_correction;
 	
 	extern unsigned int getproperties();
 	extern void setproperties(unsigned int prop);

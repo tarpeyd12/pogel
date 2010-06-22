@@ -18,6 +18,8 @@ namespace POGEL {
 	extern unsigned long frames;
 	extern float duration, fps, fps_long;
 	
+	extern float framerate_throtling_correction;
+	
 	// pogel global functions
 	void getcmd(int,char**);
 	
@@ -43,6 +45,11 @@ namespace POGEL {
 	void IncrementFps();
 	float GetFps();
 	void PrintFps();
+	
+	void SetFramerateThrotle(float);
+	
+	void ThrotleFps(int);
+	void UnthrotleFps();
 	
 	// pogel classes
 	class POINT;

@@ -7,13 +7,16 @@
 #include "pogel.h"
 #include "pogel_internals.h"
 
+// pogel global variables
 namespace POGEL {
-char *logfilefilename;
-unsigned int properties;
-
-clock_t start, finish, start_long, finish_long;
-unsigned long frames;
-float duration, fps, fps_long;
+	char *logfilefilename;
+	unsigned int properties;
+	
+	clock_t start, finish, start_long, finish_long;
+	unsigned long frames;
+	float duration, fps, fps_long;
+	
+	float framerate_throtling_correction = 1.0f;
 }
 
 void POGEL::getcmd(int argc, char **argv) {
@@ -289,4 +292,20 @@ void POGEL::PrintFps() {
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
 	glEnable(GL_LIGHTING);
 };
+
+void POGEL::SetFramerateThrotle(float framerate) {
+	POGEL::framerate_throtling_correction = framerate;
+};
+
+void POGEL::ThrotleFps(int desitredFramerate) {
+	float dfr = (float)desitredFramerate - POGEL::GetFps();
+	if(dfr < 0.0f)
+		dfr = 1.0f/dfr;
+	POGEL::SetFramerateThrotle(dfr/PARTICLE_SLOWDOWN_RATIO);
+};
+
+void POGEL::UnthrotleFps() {
+	POGEL::SetFramerateThrotle(1.0f);
+};
+
 

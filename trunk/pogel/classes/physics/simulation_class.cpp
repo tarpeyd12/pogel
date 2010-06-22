@@ -148,7 +148,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		POGEL::TRIANGLE tmptri1, tmptri2;
 		
 		unsigned long bup = 0;
-		while(false&&POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area) && bup < BUPMAX) {
+		while(POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area) && bup < BUPMAX) {
 			obj1->closest(obj2, &tmp_1, &tmp_2, &tmptri1, &tmptri2);
 			if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 				tr[0]=tmptri2.normal;//vct2;// + obj1->direction*-1.0f;//-vct1;
