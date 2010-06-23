@@ -99,8 +99,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		void increment() {
 			if(!this->hasOption(PHYSICS_SOLID_STATIONARY)) {
 				rotate(spin);
+				direction = (direction+force);
 				translate(direction+force);
-				//direction = (direction+force);
 			}
 			else {
 				rotate(spin);
