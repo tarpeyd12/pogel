@@ -298,10 +298,10 @@ void POGEL::SetFramerateThrotle(float framerate) {
 };
 
 void POGEL::ThrotleFps(int desitredFramerate) {
-	float dfr = (float)desitredFramerate - POGEL::GetFps();
+	float dfr = (float)desitredFramerate - POGEL::fps;
 	if(dfr < 0.0f)
 		dfr = 1.0f/dfr;
-	POGEL::SetFramerateThrotle(dfr/PARTICLE_SLOWDOWN_RATIO);
+	POGEL::SetFramerateThrotle(fabs(dfr));
 };
 
 void POGEL::UnthrotleFps() {
