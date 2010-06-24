@@ -110,8 +110,14 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 		if(tri.normal.getdistance() == 0.0f || obj2_clptc == obj2->position)
 			obj2_nml = POGEL::VECTOR(obj2->position, obj1->position).normal();
 		
+		obj1_ep.draw();
+		obj2_ep.draw();
+		
+		obj1_clptc.draw();
+		obj2_clptc.draw();
+		
 		dbt = obj1_ep.distance(obj2_ep);
-		ttldst = obj1_clptc.distance(obj2_clptc);// + obj1->position.distance(obj1_clptc) + obj2->position.distance(obj2_clptc);
+		ttldst = obj1_clptc.distance(obj2_clptc) + obj1->position.distance(obj1_clptc) + obj2->position.distance(obj2_clptc);
 		
 		int cnt = 0;
 		if(ttldst <= obj1_dfc+obj2_dfc) {
@@ -122,9 +128,9 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			{
 				//dbt = obj1->position.distance(obj2->position) - (obj1_dfc+obj2_dfc);
 				if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj1->translate(obj2_nml.normal()*(precision/obj1->bounding.maxdistance)*0.25f);
+					obj1->translate(obj2_nml.normal()*(precision/obj1->bounding.maxdistance)*0.0025f);// * (dbt >= 0.0f ? 1.0f : -1.0f));
 				if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-					obj2->translate(obj1_nml.normal()*(precision/obj2->bounding.maxdistance)*0.25f);
+					obj2->translate(obj1_nml.normal()*(precision/obj2->bounding.maxdistance)*0.0025f);// * (dbt >= 0.0f ? 1.0f : -1.0f));
 				//POGEL::message("convex v. convex. dbt = %f\n", dbt);
 				/*POGEL::POINT p1, p2;
 				POGEL::TRIANGLE t;
@@ -240,7 +246,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//obj1->force += tr[1].normal()*precision*obj1->direction.getdistance();
 				obj1->force -= ((tr[1].normal()*obj1->direction.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction)/10;
 				obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
-				//obj1->direction -= ((bounce )/1.0f)/20;
+				obj1->direction -= ((bounce )/1.0f)/20;
 			//}
 		}
 		if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
@@ -269,7 +275,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//obj2->force += tr[0].normal()*precision*obj2->direction.getdistance();
 				obj2->force -= ((tr[0].normal()*obj2->direction.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction)/10;
 				obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
-				//obj2->direction -= ((bounce )/1.0f)/20;
+				obj2->direction -= ((bounce )/1.0f)/20;
 			//}
 		}
 		/*POGEL::VECTOR tmp = obj1->direction;

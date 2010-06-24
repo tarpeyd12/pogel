@@ -282,15 +282,15 @@ float POGEL::GetFps() {
 };
 
 void POGEL::PrintFps() {
-	char buffer[32];
+	/*char buffer[32];
 	sprintf(buffer, "Fps: %14.10f", POGEL::GetFps());
 	int Nb = strlen(buffer);
-	POGEL::message("\nFps: %14.10f\n", POGEL::GetFps());
 	glDisable(GL_LIGHTING);
 	glRasterPos2i(0,0);
 	for (int i = 0; i < Nb; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
-	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);*/
+	POGEL::message("\nFps: %14.10f\n", POGEL::GetFps());
 };
 
 void POGEL::SetFramerateThrotle(float framerate) {
