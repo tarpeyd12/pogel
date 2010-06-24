@@ -29,6 +29,8 @@ class POINT {
 		
 		void print()
 			{POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z);}
+			
+		void draw();
 		
 		float distance(POGEL::POINT p)
 			{return (float)(sqrt( (p.x-x)*(p.x-x) + (p.y-y)*(p.y-y) + (p.z-z)*(p.z-z) )  );}

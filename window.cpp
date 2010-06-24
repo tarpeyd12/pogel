@@ -26,7 +26,7 @@ void ReSizeGLScene(int Width, int Height)
 }
 
 extern POGEL::POINT camrot;
-
+extern bool keypres, go;
 /* The function called whenever a key is pressed. */
 void keyPressed(unsigned char key, int x, int y) 
 {
@@ -58,5 +58,61 @@ void keyPressed(unsigned char key, int x, int y)
 		camrot.z+=1.0f;
 	if(key == 'e')
 		camrot.z-=1.0f;
+	
+	if(key == ' ')
+		keypres = true;
+	else keypres = false;
+	
+	if(key == '\r')
+		go = !go;
+	
+	
+	if(key == '0')
+		if(POGEL::hasproperty(POGEL_OOPS))
+			POGEL::setproperties(0);
+		else
+			POGEL::addproperty(POGEL_OOPS);
+	
+	if(key == '1')
+		if(POGEL::hasproperty(2))
+			POGEL::removeproperty(2);
+		else
+			POGEL::addproperty(2);
+	
+	if(key == '2')
+		if(POGEL::hasproperty(4))
+			POGEL::removeproperty(4);
+		else
+			POGEL::addproperty(4);
+	
+	if(key == '3')
+		if(POGEL::hasproperty(8))
+			POGEL::removeproperty(8);
+		else
+			POGEL::addproperty(8);
+	
+	if(key == '4')
+		if(POGEL::hasproperty(16))
+			POGEL::removeproperty(16);
+		else
+			POGEL::addproperty(16);
+	
+	if(key == '5')
+		if(POGEL::hasproperty(32))
+			POGEL::removeproperty(32);
+		else
+			POGEL::addproperty(32);
+	
+	if(key == '6')
+		if(POGEL::hasproperty(64))
+			POGEL::removeproperty(64);
+		else
+			POGEL::addproperty(64);
+	
+	if(key == '7')
+		if(POGEL::hasproperty(128))
+			POGEL::removeproperty(128);
+		else
+			POGEL::addproperty(128);
 }
 
