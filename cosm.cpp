@@ -8,7 +8,6 @@
 #include <time.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
@@ -151,7 +150,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 
 //unsigned long frames=0;
 
-
+bool keypres, go;
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -177,7 +176,13 @@ void DrawGLScene()
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);
 	//if(frames < 100)
 	
-	for(int i = 0; i < 1; i++)
+	/*for(int i = 0; i < 1; i++)
+		sim.increment();*/
+	if(keypres) {
+		sim.increment();
+		keypres = false;
+	}
+	else if(go)
 		sim.increment();
 	if(frames%1 == 0) {
 		sim.draw();

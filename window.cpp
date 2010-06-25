@@ -25,7 +25,7 @@ void ReSizeGLScene(int Width, int Height)
 	glMatrixMode(GL_MODELVIEW);
 }
 
-extern POGEL::POINT camrot;
+extern POGEL::POINT camrot, campos;
 extern bool keypres, go;
 /* The function called whenever a key is pressed. */
 void keyPressed(unsigned char key, int x, int y) 
@@ -58,6 +58,19 @@ void keyPressed(unsigned char key, int x, int y)
 		camrot.z+=1.0f;
 	if(key == 'e')
 		camrot.z-=1.0f;
+	
+	if(key == 'W')
+		campos.x+=1.0f;
+	if(key == 'S')
+		campos.x-=1.0f;
+	if(key == 'A')
+		campos.y+=1.0f;
+	if(key == 'D')
+		campos.y-=1.0f;
+	if(key == 'Q')
+		campos.z+=1.0f;
+	if(key == 'E')
+		campos.z-=1.0f;
 	
 	if(key == ' ')
 		keypres = true;

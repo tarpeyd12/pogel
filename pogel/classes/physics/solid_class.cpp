@@ -198,7 +198,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 			
 			// draw the position trail
 			glColor3f(1.0f*color,1.0f*color,0.0f);
-			glLineWidth(4);
+			glLineWidth(3);
 			glBegin(GL_LINES);
 				glVertex3f(trail[i+0].x, trail[i+0].y, trail[i+0].z);
 				glVertex3f(trail[i+1].x, trail[i+1].y, trail[i+1].z);
