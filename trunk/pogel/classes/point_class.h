@@ -32,6 +32,9 @@ class POINT {
 			
 		void draw();
 		
+		void translate()
+			{glTranslatef(x,y,z);}
+		
 		float distance(POGEL::POINT p)
 			{return (float)(sqrt( (p.x-x)*(p.x-x) + (p.y-y)*(p.y-y) + (p.z-z)*(p.z-z) )  );}
 		
