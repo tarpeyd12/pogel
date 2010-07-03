@@ -14,9 +14,7 @@
 
 using namespace POGEL;
 
-POGEL::POINT camrot;
-
-#define numobjs 50
+#define numobjs 25
 #define numcosms 5
 #define grd 1
 #define sps 0.10f
@@ -106,7 +104,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, (cosm%2==0?-1.0f:1.0f));
 			tmp->setOptions(2);
 			
-			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*30))*sps, 0.0f)));
+			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*40))*sps, 0.0f)));
 			tmp->direction = matobjtransform.transformVector(POGEL::VECTOR((float)sqrt((sps*20000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(tmp->position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 			tmp->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 			
@@ -126,7 +124,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		sphs[cosm].behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, (cosm%2==0?-1.0f:1.0f));
 		sphs[cosm].setOptions(2);
 		
-		sphs[cosm].moveto(matcosmtransform.transformPoint(POGEL::POINT(0.0f, ((float)cosm+1)*sps, 0.0f)*(float)numobjs));
+		sphs[cosm].moveto(matcosmtransform.transformPoint(POGEL::POINT(0.0f, ((float)cosm+1)*sps, 0.0f)*(float)numobjs*2));
 		sphs[cosm].direction = matcosmtransform.transformVector(POGEL::VECTOR((float)sqrt((1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(sphs[cosm].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		//sphs[cosm].spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/5.0f * VECTOR(1.0f,1.0f,1.0f);
 		
@@ -151,13 +149,15 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 //unsigned long frames=0;
 
 bool keypres, go;
+POGEL::POINT camrot, campos;
 /* The main drawing function. */
 void DrawGLScene()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glTranslatef(0.0f,0.0f,-25.0f*2.0f);
+	//glTranslatef(0.0f,0.0f,-25.0f*2.0f);
+	glTranslatef(0.0f+campos.x,0.0f+campos.y,-50.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );

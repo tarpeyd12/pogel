@@ -1,7 +1,7 @@
 #include "fountain_class.h"
 
 POGEL::PHYSICS::FOUNTAIN::FOUNTAIN() : POGEL::PHYSICS::SOLID(), POGEL::PHYSICS::DYNAMICS() {
-	
+	properties = 0;
 };
 
 POGEL::PHYSICS::FOUNTAIN::~FOUNTAIN() {

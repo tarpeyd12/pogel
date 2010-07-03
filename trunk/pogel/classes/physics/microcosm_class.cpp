@@ -1,7 +1,7 @@
 #include "microcosm_class.h"
 
 POGEL::PHYSICS::MICROCOSM::MICROCOSM() : POGEL::PHYSICS::SOLID(), POGEL::PHYSICS::SIMULATION() {
-	
+	properties = 0;
 };
 
 POGEL::PHYSICS::MICROCOSM::~MICROCOSM() {
