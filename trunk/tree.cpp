@@ -37,9 +37,9 @@ void construct(FRACTAL_FNC_DEFS) {
 		addCylinder(obj, 8, 1, (startsize/((float)pow(size, (float)itter-1)))/size, (startsize/10.0f)/((float)pow(size, (float)itter-1))/2.0f, (startsize/10.0f)/((float)pow(size, (float)itter-1))/2.0f, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,startsize/((float)pow(size, (float)itter-1))/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	
 	
-	if(rand()%5 == 0) {
+	if(rand()%2 == 0) {
 	tmp = obj->spawn();
-	
+	//if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_0", itter));
 	
 	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
@@ -53,9 +53,9 @@ void construct(FRACTAL_FNC_DEFS) {
 	}
 	
 	
-	if(rand()%5 == 0) {
+	if(rand()%4 == 0) {
 	tmp = obj->spawn();
-	
+	//if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_1", itter));
 	
 	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
@@ -68,9 +68,9 @@ void construct(FRACTAL_FNC_DEFS) {
 	//obj->addobject(tmp);
 	}
 	
-	if(rand()%5 == 0) {
+	if(rand()%4 == 0) {
 	tmp = obj->spawn();
-	
+	//if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_2", itter));
 	
 	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
@@ -83,9 +83,9 @@ void construct(FRACTAL_FNC_DEFS) {
 	//obj->addobject(tmp);
 	}
 	
-	if(rand()%5 == 0) {
+	if(rand()%4 == 0) {
 	tmp = obj->spawn();
-	
+	//if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_3", itter));
 	
 	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
@@ -98,9 +98,9 @@ void construct(FRACTAL_FNC_DEFS) {
 	//obj->addobject(tmp);
 	}
 	
-	if(rand()%5 == 0) {
+	if(rand()%4 == 0) {
 	tmp = obj->spawn();
-	
+	//if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_4", itter));
 	
 	addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));
@@ -178,10 +178,10 @@ void DrawGLScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
+	glTranslatef(0.0f+campos.x,-2.5f+campos.y,-10.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.1f,  0.0f, 1.0f, 0.0f );
 	glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	
@@ -196,7 +196,7 @@ void DrawGLScene()
 	/*if(frames%100 < 100 && frames%5 == 0)
 		obj->grow();*/
 	
-	if(frames%100 == 0 && frames >= 1){// && (go || keypres)) {
+	if(frames%36 == 0 && frames >= 1){// && (go || keypres)) {
 		//if(keypres) keypres = false;
 		delete obj;
 		obj = new FRACTAL(NULL, &construct, &destruct, itterations);

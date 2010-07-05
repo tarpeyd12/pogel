@@ -227,7 +227,8 @@ void POGEL::OBJECT::addtriangles(POGEL::TRIANGLE *tri, unsigned long num) {
 unsigned long POGEL::OBJECT::addobject(POGEL::OBJECT *obj) {
 	if(obj == (POGEL::OBJECT*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM,"%s to object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING);
-	POGEL::OBJECT **tmp=(POGEL::OBJECT**)malloc(sizeof(POGEL::OBJECT*)*(numchildren+1));
+	//POGEL::OBJECT **tmp=(POGEL::OBJECT**)malloc(sizeof(POGEL::OBJECT*)*(numchildren+1));
+	POGEL::OBJECT **tmp = new POGEL::OBJECT*[numchildren+1];
 	for(int i=0;i<numchildren;i++) {
 		//tmp[i]=(POGEL::OBJECT*)malloc(sizeof(POGEL::OBJECT)*1);
 		tmp[i]=children[i];
