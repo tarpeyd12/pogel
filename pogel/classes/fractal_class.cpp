@@ -58,7 +58,8 @@ POGEL::FRACTAL::~FRACTAL() {
 	
 	//deconstruct();
 	
-	//delete data;
+	if(data)
+		delete data;
 	creation = NULL;
 	destruction = NULL;
 };

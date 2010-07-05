@@ -17,7 +17,7 @@ POGEL_OBJECT = pogel/classes/object_class.o pogel/classes/object_funcs.o pogel/c
 
 POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
-OTHER = main.o orbit.o window.o 
+OTHER = main.o tree.o window.o 
 
 OBJ =  $(POGEL) $(OTHER)
 

@@ -8,7 +8,9 @@ class FRACTAL;
 #include "object_class.h"
 #include "point_class.h"
 
-#define			FRACTAL_FNC_DEFS		POGEL::FRACTAL* obj, unsigned long itter
+#define			FRACTAL_FNC_DEFS					POGEL::FRACTAL* obj, unsigned long itter
+
+#define			FRACTAL_DEFAULT_PROPERTIES			(0 | OBJECT_DRAW_CHILDREN)
 
 class POGEL::FRACTAL : public POGEL::OBJECT {
 	protected:

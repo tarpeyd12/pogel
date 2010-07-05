@@ -8,15 +8,12 @@
 #include <time.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
 #include "pogel/classes/physics/physics.h"
 
 using namespace POGEL;
-
-POGEL::POINT camrot;
 
 #define itterations 10
 #define startsize	1.0f
@@ -172,13 +169,17 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 //unsigned long frames=0;
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 
+bool keypres, go = false;
+POGEL::POINT camrot, campos;
+
 /* The main drawing function. */
 void DrawGLScene()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glTranslatef(0.0f,-2.0f,-25.0f*0.25f);
+	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
+	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
 	glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
@@ -195,7 +196,8 @@ void DrawGLScene()
 	/*if(frames%100 < 100 && frames%5 == 0)
 		obj->grow();*/
 	
-	if(frames%36 == 0 && frames >= 1) {
+	if(frames%100 == 0 && frames >= 1){// && (go || keypres)) {
+		//if(keypres) keypres = false;
 		delete obj;
 		obj = new FRACTAL(NULL, &construct, &destruct, itterations);
 		obj->setname("Tree\0");
