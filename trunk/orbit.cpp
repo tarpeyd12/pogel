@@ -19,6 +19,7 @@ using namespace POGEL;
 #define grd 5
 #define sps 1.0f
 #define size 0.5f
+#define gravity 10000000000000.0f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -28,7 +29,7 @@ POGEL::PHYSICS::DYNAMICS sim;
 IMAGE *earth;
 IMAGE *defaultimg;
 
-#define rndrnge 0.1f
+#define rndrnge 10.0f
 
 float x = POGEL::FloatRand(rndrnge)-(rndrnge/2.0f), y = POGEL::FloatRand(rndrnge)-(rndrnge/2.0f), z = POGEL::FloatRand(rndrnge)-(rndrnge/2.0f);
 
@@ -78,6 +79,14 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	POGEL::MATRIX m(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 	
+	float min_dist;
+	for(int i = 0; i < 10; i++) {
+		float cur = (float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN)))/(sps*(i+1));
+		if(cur < sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))))
+			min_dist = cur;
+	}
+	
+	
 	//printf("obj = %p\n",&obj);
 	for(int i=0;i<numobjs;i++) {
 		
@@ -86,7 +95,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//addDisk(&obj[i], 4, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 		//addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 		
@@ -98,7 +107,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			(float)(i/(grd*grd))*(sps) - (10.0f-(sps/2.0f)), \
 			((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f) \
 		));
-		obj[i].moveto(m.transformPoint(POINT(0.0f, ((float)i+1)*sps + (sqrt(10000000000000.0)/1000000.0), 0.0f)));
+		obj[i].moveto(m.transformPoint(POINT(0.0f, ((float)i+1)*sps + min_dist + sps, 0.0f)));
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
 		//obj[i].turnto(POINT());
@@ -109,7 +118,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
 		sphs[i]->build();
 		//sphs[i]->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/2.0f * VECTOR(1.0f,1.0f,1.0f);
-		sphs[i]->direction = m.transformVector(POGEL::VECTOR((float)sqrt((10000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+		sphs[i]->direction = m.transformVector(POGEL::VECTOR((float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.1f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->direction = POGEL::VECTOR(0.05f,0.25f,0.0f);
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
@@ -124,7 +133,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sim.addSolid(sphs[i]);
 	}
-	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f) );
+	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),gravity) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 20.0f));
 	//sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
 	//sim.air_dencity = 1.0f;
@@ -175,7 +184,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 
 //unsigned long frames=0;
 
-bool keypres, go = true;
+bool keypres, go = false;
 POGEL::POINT camrot, campos;
 
 /* The main drawing function. */
@@ -219,14 +228,15 @@ void DrawGLScene()
 	//frames++;
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);
 	//if(frames < 100)
-	//for(int i = 0; i < 1; i++)
+	for(int i = 0; i < 1; i++) {
 		//getchar();
 		if(keypres) {
 			sim.increment();
 			keypres = false;
 		}
-		else if(go) if(POGEL::frames < 75)
+		else if(go) //if(POGEL::frames < 75)
 			sim.increment();
+	}
 	if(frames%1 == 0) {
 		sim.draw();
 	}
