@@ -26,7 +26,7 @@ SRC := $(patsubst %.o,%.$(EXTENTION),$(OBJ))
 all: $(SRC) $(OBJ) $(OUTPUT)
 
 clean:
-	rm $(OBJ)
+	rm $(OBJ) $(OUTPUT)
 
 %(OBJ) : $(SRC)
 	$(CC) $(CFLAGS) -o $@

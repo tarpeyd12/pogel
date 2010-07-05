@@ -7,7 +7,7 @@ POGEL::FRACTAL::FRACTAL() : POGEL::OBJECT() {
 	
 	itterationLevel = 0;
 	
-	setproperties(8);
+	setproperties(FRACTAL_DEFAULT_PROPERTIES);
 };
 
 POGEL::FRACTAL::FRACTAL(
@@ -27,7 +27,7 @@ POGEL::FRACTAL::FRACTAL(
 	creation = cons;
 	destruction = dest;
 	
-	setproperties(8);
+	setproperties(FRACTAL_DEFAULT_PROPERTIES);
 	
 	//create();
 };
@@ -48,7 +48,7 @@ POGEL::FRACTAL::FRACTAL(
 	creation = cons;
 	destruction = dest;
 	
-	setproperties(8);
+	setproperties(FRACTAL_DEFAULT_PROPERTIES);
 	
 	//create();
 };
@@ -58,8 +58,8 @@ POGEL::FRACTAL::~FRACTAL() {
 	
 	//deconstruct();
 	
-	if(data)
-		delete data;
+	/*if(data)
+		delete data;*/
 	creation = NULL;
 	destruction = NULL;
 };
@@ -68,14 +68,14 @@ void POGEL::FRACTAL::step() {
 	rotate(spin);
 	translate(direction);
 	for(unsigned long i = 0; i < numchildren ; i++)
-			children[i]->step();
+		children[i]->step();
 };
 
 void POGEL::FRACTAL::create() {
-	if(itterationLevel != itterationMax) {
+	if(itterationLevel < itterationMax) { // this if statement must match the one in POGEL::FRACTAL::spawn()
 		creation(this, itterationLevel);
 		for(unsigned long i = 0; i < numchildren ; i++)
-			children[i]->create();
+			static_cast<POGEL::FRACTAL*>(children[i])->create();
 	}
 };
 
@@ -91,7 +91,7 @@ void POGEL::FRACTAL::grow() {
 
 POGEL::FRACTAL* POGEL::FRACTAL::spawn() {
 	//POGEL::message("spawning\n");
-	if(itterationLevel+1 < itterationMax) {
+	if(itterationLevel < itterationMax) { // this if statement must match the one in POGEL::FRACTAL::create()
 		POGEL::FRACTAL* spawnling = new POGEL::FRACTAL(data, creation, destruction, itterationMax, itterationLevel+1);
 		addobject(spawnling);
 		return spawnling;
@@ -103,7 +103,7 @@ POGEL::OBJECT* POGEL::FRACTAL::condense() {
 	POGEL::message("condensing level %u\n", itterationLevel);
 	
 	// the base-case
-	if(numchildren == 0) {
+	if(numchildren <= 0) {
 		// create the transformation matrix
 		POGEL::MATRIX mat(position, rotation);
 		

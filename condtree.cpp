@@ -8,15 +8,12 @@
 #include <time.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
 #include "pogel/classes/physics/physics.h"
 
 using namespace POGEL;
-
-POGEL::POINT camrot;
 
 #define itterations 8
 #define startsize	1.0f
@@ -122,7 +119,11 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 }
 
 //unsigned long frames=0;
-float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
+//loat x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
+float y = 0.0f;
+
+bool keypres, go = false;
+POGEL::POINT camrot, campos;
 
 /* The main drawing function. */
 void DrawGLScene()
@@ -130,9 +131,21 @@ void DrawGLScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glTranslatef(0.0f,-2.0f,-25.0f*0.25f);
+	
+	glTranslatef(0.0f+campos.x,-2.5f+campos.y,-10.0f+campos.z);
+	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
+	
+	//glTranslatef(0.0f,-2.0f,-25.0f*0.25f);
 	//glRotatef( (float)frames * x,  1.0f, 0.0f, 0.0f );
-	glRotatef( (float)frames * y,  0.0f, 1.0f, 0.0f );
+	if(keypres||go) {
+		if(keypres)
+			keypres=false;
+		y += 0.1;
+	}
+	glRotatef( y,  0.0f, 1.0f, 0.0f );
 	//glRotatef( 180,  0.0f, 0.0f, 1.0f );
 	//glRotatef( (float)frames * z,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );

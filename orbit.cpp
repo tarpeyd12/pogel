@@ -75,7 +75,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	sphs=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*numobjs);
 	
 	//earth=new IMAGE("Data/earth.bmp");
-	defaultimg=new IMAGE("Data/default_2.bmp");
+	defaultimg=new IMAGE("/usr/local/bin/Data/default_2.bmp");
 	
 	POGEL::MATRIX m(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 	
@@ -237,16 +237,14 @@ void DrawGLScene()
 		else if(go) //if(POGEL::frames < 75)
 			sim.increment();
 	}
-	if(frames%1 == 0) {
+	if(frames%1 == 0)
 		sim.draw();
-	}
 	
 	//message("\n");
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
-	if(frames%1 == 0) {
-	glutSwapBuffers();
-	}
+	if(frames%1 == 0)
+		glutSwapBuffers();
 	
 	//printf("POGEL::getproperties() = %u\n", POGEL::getproperties());
 }
