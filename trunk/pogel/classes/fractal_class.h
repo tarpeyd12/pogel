@@ -50,7 +50,7 @@ class POGEL::FRACTAL : public POGEL::OBJECT {
 		void grow();
 		
 		void destroy()
-			{ 
+			{
 				if(destruction != NULL)
 					destruction(this, itterationLevel);
 			}

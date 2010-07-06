@@ -378,10 +378,9 @@ POGEL::MATRIX POGEL::MATRIX::operator*(POGEL::MATRIX a) {
 
 POGEL::MATRIX& POGEL::MATRIX::operator=(const POGEL::MATRIX& m) {
 	// assignes one matrix the value of another
-	//for(int i=0;i<16;i++)
-		//matrix[i]=m.matrix[i];
+	for(int i=0;i<16;i++) matrix[i]=m.matrix[i];
 	
-	matrix[ 0]=m.matrix[ 0];
+	/*matrix[ 0]=m.matrix[ 0];
 	matrix[ 1]=m.matrix[ 1];
 	matrix[ 2]=m.matrix[ 2];
 	matrix[ 3]=m.matrix[ 3];
@@ -396,7 +395,7 @@ POGEL::MATRIX& POGEL::MATRIX::operator=(const POGEL::MATRIX& m) {
 	matrix[12]=m.matrix[12];
 	matrix[13]=m.matrix[13];
 	matrix[14]=m.matrix[14];
-	matrix[15]=m.matrix[15];
+	matrix[15]=m.matrix[15];*/
 	
 	return *this;
 	//return m;
