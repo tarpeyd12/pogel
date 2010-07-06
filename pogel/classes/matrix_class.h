@@ -82,15 +82,19 @@ class MATRIX {
 		
 		void print();
 		
+		
 		void transformPoint(POGEL::POINT*);
 		POGEL::POINT transformPoint(POGEL::POINT);
+		
 		void transformVector(POGEL::VECTOR*);
 		POGEL::VECTOR transformVector(POGEL::VECTOR);
+		
 		void transformVertex(POGEL::VERTEX*);
 		POGEL::VERTEX transformVertex(POGEL::VERTEX);
 		
 		void transformTriangle(POGEL::TRIANGLE*);
 		POGEL::TRIANGLE transformTriangle(POGEL::TRIANGLE);
+		
 		
 		QUAT toquat();
 		

@@ -34,6 +34,25 @@ void POGEL::PHYSICS::FOUNTAIN::build() {
 };
 
 void POGEL::PHYSICS::FOUNTAIN::draw() {
+	
+	if(POGEL::hasproperty(POGEL_ANCESTORY)) {
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glLineWidth(2);
+		glColor3f(0.75f,0.0f,0.75f);
+		for(unsigned long i=0;i<numobjects;i++) {
+			POGEL::POINT p = POGEL::MATRIX(position, rotation).transformPoint(objects[i]->position);
+			glBegin(GL_LINES);
+				glVertex3f(p.x,p.y,p.z);
+				glVertex3f(position.x,position.y,position.z);
+			glEnd();
+		}
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_TEXTURE_2D);
+	}
+	
 	POGEL::PHYSICS::SOLID::draw();
 	#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
 		glPushMatrix();
