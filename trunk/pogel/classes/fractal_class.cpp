@@ -7,7 +7,7 @@ POGEL::FRACTAL::FRACTAL() : POGEL::OBJECT() {
 	
 	itterationLevel = 0;
 	
-	setproperties(FRACTAL_DEFAULT_PROPERTIES);
+	POGEL::OBJECT::setproperties(FRACTAL_DEFAULT_BASE_PROPERTIES);
 };
 
 POGEL::FRACTAL::FRACTAL(
@@ -27,7 +27,7 @@ POGEL::FRACTAL::FRACTAL(
 	creation = cons;
 	destruction = dest;
 	
-	setproperties(FRACTAL_DEFAULT_PROPERTIES);
+	POGEL::OBJECT::setproperties(FRACTAL_DEFAULT_BASE_PROPERTIES);
 	
 	//create();
 };
@@ -48,7 +48,7 @@ POGEL::FRACTAL::FRACTAL(
 	creation = cons;
 	destruction = dest;
 	
-	setproperties(FRACTAL_DEFAULT_PROPERTIES);
+	POGEL::OBJECT::setproperties(FRACTAL_DEFAULT_BASE_PROPERTIES);
 	
 	//create();
 };
@@ -82,9 +82,9 @@ void POGEL::FRACTAL::create() {
 void POGEL::FRACTAL::grow() {
 	itterationMax++;
 	
-	if(numchildren == 0)
+	if( (numchildren == 0 || hasproperty(FRACTAL_BRANCH_CANGROW)) )// && !hasproperty(FRACTAL_BRANCH_CANTGROW))
 		creation(this, itterationLevel);
-	else
+	else if(numchildren > 0)
 		for(unsigned long i = 0; i < numchildren ; i++)
 			static_cast<POGEL::FRACTAL*>(children[i])->grow();
 };
