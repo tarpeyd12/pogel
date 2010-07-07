@@ -159,20 +159,22 @@ void POGEL::TRIANGLE::draw() {
 	else
 		glBegin(GL_TRIANGLES);
 		
-		if((hasproperty(TRIANGLE_LIT)) && !(hasproperty(TRIANGLE_VERTEX_NORMALS))) 
+		if((hasproperty(TRIANGLE_LIT)) && !(hasproperty(TRIANGLE_VERTEX_NORMALS))) {
 			if(hasproperty(TRIANGLE_INVERT_NORMALS))
 				glNormal3f(-normal.x,-normal.y,-normal.z);
 			else
 				glNormal3f( normal.x, normal.y, normal.z);
+		}
 		for(int i=0;i<(POGEL::hasproperty(POGEL_WIREFRAME) ? 4 : 3);i++) {
 			if(vertex[i%3].usable) {
 				if(hasproperty(TRIANGLE_COLORED))
 					vertex[i%3].color.set();
-				if(!(hasproperty(TRIANGLE_LIT)) && (hasproperty(TRIANGLE_VERTEX_NORMALS)))
+				if(!(hasproperty(TRIANGLE_LIT)) && (hasproperty(TRIANGLE_VERTEX_NORMALS))) {
 					if(hasproperty(TRIANGLE_INVERT_NORMALS))
 						glNormal3f(-vertex[i%3].normal.x,-vertex[i%3].normal.y,-vertex[i%3].normal.z);
 					else
 						glNormal3f( vertex[i%3].normal.x, vertex[i%3].normal.y, vertex[i%3].normal.z);
+				}
 				if(texture!=NULL)
 					glTexCoord2f(vertex[i%3].u,vertex[i%3].v); 
 				glVertex3f(vertex[i%3].x,vertex[i%3].y,vertex[i%3].z);
