@@ -157,7 +157,7 @@ POGEL::OBJECT::~OBJECT() {
 };
 
 void POGEL::OBJECT::killchildren() {
-	for(int i=0;i<numchildren;i++) {
+	for(unsigned long i=0;i<numchildren;i++) {
 		children[i]->killchildren();
 		delete children[i];
 		children[i]=NULL;
@@ -229,7 +229,7 @@ unsigned long POGEL::OBJECT::addobject(POGEL::OBJECT *obj) {
 		POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM,"%s to object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING);
 	//POGEL::OBJECT **tmp=(POGEL::OBJECT**)malloc(sizeof(POGEL::OBJECT*)*(numchildren+1));
 	POGEL::OBJECT **tmp = new POGEL::OBJECT*[numchildren+1];
-	for(int i=0;i<numchildren;i++) {
+	for(unsigned long i=0;i<numchildren;i++) {
 		//tmp[i]=(POGEL::OBJECT*)malloc(sizeof(POGEL::OBJECT)*1);
 		tmp[i]=children[i];
 	}
@@ -257,12 +257,12 @@ void POGEL::OBJECT::addobjects(POGEL::OBJECT **obj, unsigned long num) {
 };
 
 void POGEL::OBJECT::scroll_all_tex_values(float s, float t) {
-	for(int i=0;i<numfaces;i++) // loop through all the triangles
+	for(unsigned long i=0;i<numfaces;i++) // loop through all the triangles
 		face[i].scroll_tex_values(s,t); // scroll thier texture values
 };
 
 POGEL::OBJECT* POGEL::OBJECT::getchild(const char* n) {
-	for(int i=0;i<numchildren;i++) // loop through all the children
+	for(unsigned long i=0;i<numchildren;i++) // loop through all the children
 		if(strlen(n)==strlen(children[i]->getname()) && strcmp(n,children[i]->getname())==0) // if the childs name matches the desired one
 			return children[i]; // return it
 	return NULL; // otherwise null
@@ -272,7 +272,7 @@ POGEL::OBJECT* POGEL::OBJECT::getdecendant(const char* n, bool self) {
 	if(getchild(n)!=NULL) // if the decendant is the imediate child
 		return getchild(n); // return it
 	else if(getchild(n)==NULL) // if the desired object is not an imediate child
-		for(int i=0;i<numchildren;i++) // loop throgh all the children
+		for(unsigned long i=0;i<numchildren;i++) // loop throgh all the children
 			if(children[i]->getdecendant(n)!=NULL) // if the desired object is one of the childrens decendants
 				return children[i]->getdecendant(n); // return the childs decendant
 	else if(strlen(n)==strlen(getname()) && strcmp(getname(), n)==0 && self) // if the decendant you are looking for is this object
@@ -320,10 +320,11 @@ POGEL::MATRIX POGEL::OBJECT::getancestorialmatrix() {
 		return POGEL::MATRIX(position, rotation);
 	else if(parent!=NULL)
 		return parent->getancestorialmatrix() * POGEL::MATRIX(position, rotation);
+	return POGEL::MATRIX();
 };
 
 void POGEL::OBJECT::build() {
-	int i;
+	unsigned long i;
 	if(hasproperty(OBJECT_DRAW_DISPLAYLIST)) {
 		base=glGenLists(1);
 		glNewList(base,GL_COMPILE);
@@ -341,7 +342,7 @@ void POGEL::OBJECT::build() {
 
 void POGEL::OBJECT::draw() {
 	if(visable) {
-		int i;
+		unsigned long i;
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
 			glPushMatrix();
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */

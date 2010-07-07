@@ -31,7 +31,7 @@ void construct(FRACTAL_FNC_DEFS) {
 	POGEL::FRACTAL * tmp;
 	
 	float height = startsize/((float)pow(size, (float)itter));
-	float radius = (startsize/10.0f)/((float)pow(size, (float)itter))/2.0f;
+	//float radius = (startsize/10.0f)/((float)pow(size, (float)itter))/2.0f;
 	
 	if(itter == 0)
 		addCylinder(obj, 8, 1, \

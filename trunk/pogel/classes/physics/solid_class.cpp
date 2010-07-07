@@ -56,7 +56,7 @@ void POGEL::PHYSICS::SOLID::resizetrail(unsigned long size) {
 	trail = new POGEL::POINT[size];
 	rots = new POGEL::POINT[size];
 	
-	for( int i = 0; i < trailsize; i++ ) {
+	for( unsigned long i = 0; i < trailsize; i++ ) {
 		trail[i] = position*PARTICLE_SLOWDOWN;
 		rots[i] = rotation*PARTICLE_SLOWDOWN;
 	}
@@ -65,7 +65,7 @@ void POGEL::PHYSICS::SOLID::resizetrail(unsigned long size) {
 void POGEL::PHYSICS::SOLID::steppostrail() {
 	trail[0] = position;
 	//rots[0] = rotation;
-	for(int i = trailsize-1;i>0;i--) {
+	for(unsigned long i = trailsize-1;i>0;i--) {
 		trail[i] = trail[i-1];
 		//rots[i] = rots[i-1];
 	}
@@ -74,7 +74,7 @@ void POGEL::PHYSICS::SOLID::steppostrail() {
 void POGEL::PHYSICS::SOLID::steprottrail() {
 	//trail[0] = position;
 	rots[0] = rotation;
-	for(int i = trailsize-1;i>0;i--) {
+	for(unsigned long i = trailsize-1;i>0;i--) {
 		//trail[i] = trail[i-1];
 		rots[i] = rots[i-1];
 	}
@@ -83,7 +83,7 @@ void POGEL::PHYSICS::SOLID::steprottrail() {
 void POGEL::PHYSICS::SOLID::steptrail() {
 	trail[0] = position;
 	rots[0] = rotation;
-	for(int i = trailsize-1;i>0;i--) {
+	for(unsigned long i = trailsize-1;i>0;i--) {
 		trail[i] = trail[i-1];
 		rots[i] = rots[i-1];
 	}
@@ -144,15 +144,15 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0) {
 		bounding.clear();
 		POGEL::MATRIX mat(rotation, MATRIX_CONSTRUCT_ROTATION);
-		for( int t = 0 ; t < numfaces ; t++ )
-			for( int v = 0 ; v < 3 ; v++ )
+		for( unsigned long t = 0 ; t < numfaces ; t++ )
+			for( unsigned int v = 0 ; v < 3 ; v++ )
 				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
 		
 		bounding.finishactual();
 		
 		mat = POGEL::MATRIX(direction.topoint()*(float)container->boundingskips, rotation + spin.topoint()*(float)container->boundingskips);
-		for( int t = 0 ; t < numfaces ; t++ )
-			for( int v = 0 ; v < 3 ; v++ )
+		for( unsigned long t = 0 ; t < numfaces ; t++ )
+			for( unsigned int v = 0 ; v < 3 ; v++ )
 				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
 		
 		bounding.fin();

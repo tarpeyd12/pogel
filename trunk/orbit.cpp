@@ -79,7 +79,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	POGEL::MATRIX m(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 	
-	float min_dist;
+	float min_dist = 0.0f;
 	for(int i = 0; i < 10; i++) {
 		float cur = (float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN)))/(sps*(i+1));
 		if(cur < sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))))
@@ -124,10 +124,10 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
 		//sphs[i]->visable = false;
 		
-		//if(i == numobjs-1) { \
+		/*if(i == numobjs-1) { \
 			sphs[i]->setOptions(1|4); \
 			sphs[i]->moveto(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f)); \
-		}
+		}*/
 		
 		sphs[i]->resizetrail(75);
 		

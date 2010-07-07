@@ -10,7 +10,7 @@ POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
 	POGEL::PHYSICS::SOLID **tmp=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*(numobjects+1));
-	for(int i=0;i<numobjects;i++)
+	for(unsigned long i=0;i<numobjects;i++)
 		tmp[i]=objects[i];
 	
 	obj->container = this;
@@ -49,7 +49,9 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	// the magnetic charge attraction
 	for(unsigned long a=0;a<numobjects;a++) {
 		pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
-		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic)
+		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic) {
+			
+			
 			if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge > 0.0f) || (obj->behavior.charge > 0.0f && objects[a]->behavior.charge < 0.0f))
 				pull += (POGEL::VECTOR(obj->position, objects[a]->position).normal()*(fabs(obj->behavior.charge) + fabs(objects[a]->behavior.charge)))/objects[a]->position.distance(obj->position);
 			
@@ -60,6 +62,8 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 			else
 				{}
 			
+			
+		}
 	}
 	
 	pull += gusts.getpull(obj->position, obj->behavior.mass);

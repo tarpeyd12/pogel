@@ -109,7 +109,7 @@ POGEL::POINT POGEL::MATRIX::getrotation() {
 	float tr_x, tr_y;
 	
 	float angle_y =  asin( matrix[2]);        /* Calculate Y-axis angle */
-	float D = angle_y;
+	//float D = angle_y;
     float C           =  cos( angle_y );
     angle_y=POGEL::RadiansToDegrees(angle_y);
     if ( fabs( C ) > 0.005 )             /* Gimball lock? */

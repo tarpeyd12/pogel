@@ -32,6 +32,8 @@ all: lib bins test
 clean: clean_pogel clean_lib clean_test clean_bins
 
 
+
+# to satisfy the needs of the other cals to make
 $(OTHER) : $(patsubst %.o,%.cpp,$(OTHER))
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
 	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
@@ -42,6 +44,9 @@ $(POGEL) : $(patsubst %.o,%.cpp,$(POGEL))
 	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
 #	@echo "\033[0m"
 
+
+
+# to compile the main sections of code without too much hassle
 pogel: $(POGEL)
 	@echo "\033[0m"
 
@@ -76,9 +81,6 @@ clean_lib:
 
 # for the stuff Im working on
 
-test: $(SRC) $(OBJ) $(OUTPUT)
-	@echo "\033[0m"
-
 SRC := $(patsubst %.o,%.$(EXTENTION),$(OBJ))
 
 %(OBJ) : $(SRC)
@@ -89,6 +91,9 @@ $(OUTPUT) : $(OBJ)
 	@echo "\033[32mBuilding Binary: \033[34m\"$@\"\033[31m"
 	@$(CC) $(LIBDIR) -L./bin/ $(OBJ) $(LIBRARIES) -lpogel -o $@
 #	$(CC) $(LIBDIR) $(OBJ) $(LIBRARIES) -o $@
+
+test: $(SRC) $(OBJ) $(OUTPUT)
+	@echo "\033[0m"
 
 clean_test:
 	@echo "Removing Main Test Binary ..."
@@ -127,6 +132,12 @@ run: test
 edit:$(SRC)
 	gedit $(SRC)
 
+
+# incase the prety colors spill out of the paint bucket
 resetcolor:
 	@echo "\033[0m"
+
+# just cause I like things clean
+clear:
+	clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear
 
