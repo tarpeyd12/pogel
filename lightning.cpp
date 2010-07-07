@@ -134,8 +134,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 //unsigned long frames=0;
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 
-bool keypres, go = false;
-POGEL::POINT camrot, campos;
+bool keypres, go = true;
+POGEL::POINT camrot(90,0,0), campos(0,0,-7);
 
 /* The main drawing function. */
 void DrawGLScene()
@@ -143,10 +143,10 @@ void DrawGLScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glTranslatef(0.0f+campos.x,-2.5f+campos.y,-10.0f+campos.z);
+	glTranslatef(campos.x,campos.y,campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y + ((float)frames*y)*0.2f,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
 	glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	
@@ -167,7 +167,6 @@ void DrawGLScene()
 		obj = new FRACTAL(NULL, &construct, &destruct, itterations);
 		obj->setname("Tree\0");
 		obj->create();
-		//for(int i=0;i<10;i++) obj->grow();
 		//obj->build();
 	}
 	

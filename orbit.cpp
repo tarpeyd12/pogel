@@ -102,11 +102,11 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		obj[i].setproperties(0);
 		//obj[i].build();
 		//obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
-		//obj[i].moveto(POINT( \
+		/*obj[i].moveto(POINT( \
 			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f), \
 			(float)(i/(grd*grd))*(sps) - (10.0f-(sps/2.0f)), \
 			((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f) \
-		));
+		));*/
 		obj[i].moveto(m.transformPoint(POINT(0.0f, ((float)i+1)*sps + min_dist + sps, 0.0f)));
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));

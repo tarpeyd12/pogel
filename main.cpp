@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_MULTISAMPLE);  
 
     /* get a 640 x 480 window */
-    glutInitWindowSize(640, 480);
+    glutInitWindowSize(800, 600);
 
     /* the window starts at the upper left corner of the screen */
     glutInitWindowPosition(0, 0);  
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
     glutKeyboardFunc(&keyPressed);
 
     /* Initialize our window. */
-    InitGL(640, 480);
+    InitGL(800, 600);
   
     /* Start Event Processing Engine */  
     glutMainLoop();  

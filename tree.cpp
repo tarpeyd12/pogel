@@ -169,7 +169,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 //unsigned long frames=0;
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 
-bool keypres, go = false;
+bool keypres, go = true;
 POGEL::POINT camrot, campos;
 
 /* The main drawing function. */
@@ -193,11 +193,11 @@ void DrawGLScene()
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);*/
 	
 	obj->draw();
-	/*if(frames%100 < 100 && frames%5 == 0)
+	/*if(frames%100 < itterations*10 && frames%10 == 0)
 		obj->grow();*/
 	
-	if(frames%36 == 0 && frames >= 1){// && (go || keypres)) {
-		//if(keypres) keypres = false;
+	if(frames%100 == 0 && frames >= 1 && (go || keypres)) {
+		if(keypres) keypres = false;
 		delete obj;
 		obj = new FRACTAL(NULL, &construct, &destruct, itterations);
 		obj->setname("Tree\0");
