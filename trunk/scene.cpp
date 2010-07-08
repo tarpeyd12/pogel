@@ -7,7 +7,6 @@
 #include <stdlib.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
@@ -224,7 +223,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	circles->build();
 }
-
+bool keypres, go = true;
+POGEL::POINT camrot, campos;
 /* The main drawing function. */
 void DrawGLScene()
 {

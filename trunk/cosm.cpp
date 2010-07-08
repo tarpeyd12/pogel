@@ -101,7 +101,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			//tmp->setproperties(8);
 			//tmp->addobject(&obj);
 			
-			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, (cosm%2==0?-1.0f:1.0f));
+			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, false, (cosm%2==0?-1.0f:1.0f));
 			tmp->setOptions(2);
 			
 			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*40))*sps+sps*5, 0.0f)));

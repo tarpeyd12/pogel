@@ -63,7 +63,7 @@ void construct(FRACTAL_FNC_DEFS) {
 	
 	if(rnd == 0) {
 	tmp = obj->spawn();
-	//if(tmp == NULL) return;
+	if(tmp == NULL) return;
 	tmp->setname(POGEL::string("itter%ld_branch_1", itter));
 	
 	//addCylinder(tmp, 8, 1, height/size, radius, radius, defaultimg, 1.0f, 1.0f, 2, MATRIX(VERTEX(0.0f,height/(size*2.0f),0.0f), VERTEX(0.0f,0.0f,0.0f)));

@@ -21,61 +21,51 @@ POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
 OTHER = main.o window.o 
 
-TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o
-#scene.o simulation_2.o distchk.o in.o 
+TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
 OBJ =  $(OTHER) lightning.o
 
-all: lib bins test
+%.o : %.$(EXTENTION)
+	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
+	@$(CC) $(CFLAGS) -c $? -o $@
+	@echo -n "\033[0m"
+
+
+all: pogel lib bins test
 
 clean: clean_pogel clean_lib clean_test clean_bins
 
-
-
-# to satisfy the needs of the other cals to make
-$(OTHER) : $(patsubst %.o,%.cpp,$(OTHER))
-	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
-	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
-#	@echo "\033[0m"
-
-$(POGEL) : $(patsubst %.o,%.cpp,$(POGEL))
-	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
-	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
-#	@echo "\033[0m"
+POGELSRC := $(patsubst %.o,%.$(EXTENTION),$(POGEL))
 
 
 
 # to compile the main sections of code without too much hassle
 pogel: $(POGEL)
-	@echo "\033[0m"
+	@make -s $(POGEL)
+	@echo -n "\033[0m"
 
 clean_pogel:
 	@echo "Removing the Compiled Code Files ..."
-	@rm $(POGEL)
+	-@rm $(wildcard $(POGEL) )
 
 
 #for compiling a seperate lib file
-
-POGELSRC := $(patsubst %.o,%.$(EXTENTION),$(POGEL))
-
-POGELOBJ : $(POGELSRC)
-	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
-	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
 
 LIBPOGELOBJ := $(POGELSRC:%.cpp=%.o)
 
 $(LIBOUT) : $(LIBPOGELOBJ)
 	@echo "\n\033[32mBuilding Library \033[34m\"$@\"\033[31m"
 	@ar cq $(LIBOUT).a $(LIBPOGELOBJ)
-#	ld -G $(LIBPOGELOBJ).so -o $@
-
-lib: $(POGELSRC) $(POGELOBJ) $(LIBOUT)
 	@echo "\033[0m"
+#	ld -G $(LIBPOGELOBJ) -o $@.so
+
+lib: pogel $(LIBOUT)
+	@echo -n "\033[0m"
 
 clean_lib: 
 	@echo "Removing the Library File ..."
-	@rm $(LIBOUT).a
+	-@rm $(wildcard $(LIBOUT).a)
 
 
 
@@ -83,51 +73,44 @@ clean_lib:
 
 SRC := $(patsubst %.o,%.$(EXTENTION),$(OBJ))
 
-%(OBJ) : $(SRC)
-	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
-	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
-
-$(OUTPUT) : $(OBJ)
+$(OUTPUT) : lib $(OBJ)
 	@echo "\033[32mBuilding Binary: \033[34m\"$@\"\033[31m"
 	@$(CC) $(LIBDIR) -L./bin/ $(OBJ) $(LIBRARIES) -lpogel -o $@
+	@echo -n "\033[0m"
 #	$(CC) $(LIBDIR) $(OBJ) $(LIBRARIES) -o $@
 
-test: $(SRC) $(OBJ) $(OUTPUT)
-	@echo "\033[0m"
+test: lib $(OUTPUT)
+	@echo -n "\033[0m"
 
 clean_test:
 	@echo "Removing Main Test Binary ..."
-	@rm $(OBJ) $(OUTPUT)
+	-@rm $(wildcard $(OTHER) $(OUTPUT))
 
 
 
 # make all the test files into seperate rograms
 
 TESTBINARYS := $(patsubst %.o,%,$(TESTOBJS))
-BINSRC := $(patsubst %.o,%.$(EXTENTION),$(TESTOBJS))
 
-
-$(TESTOBJS) : $(BINSRC)
-	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
-	@$(CC) $(CFLAGS) -c -o $@ $(patsubst %.o,%.cpp,$@)
-
-$(TESTBINARYS) : $(TESTOBJS) $(OTHER) lib
+$(TESTBINARYS) : lib $(OTHER) $(TESTOBJS)
 	@echo "\033[32mBuilding Binary: \033[34m\"$@\"\033[31m"
 	@$(CC) $(LIBDIR) -L./bin/ $(OTHER) $(patsubst %,%.o,$@) $(LIBRARIES) -lpogel -o bin/$@
+	@echo -n "\033[0m"
 
 bins: lib $(TESTOBJS) $(TESTBINARYS) $(OTHER)
-	@echo "\033[0m"
+	@echo -n "\033[0m"
 
 clean_bins:
 	@echo "Removing Test Binary Files ..."
-	@rm $(TESTOBJS) $(patsubst %,bin/%,$(TESTBINARYS))
+	-@rm $(wildcard $(TESTOBJS) $(patsubst %,bin/%,$(TESTBINARYS)))
 
 
 
 
 # for running the test code
 run: test
-	./run.sh
+	@echo "\n\033[35mExecuting the test binary ... \033[0m\n"
+	@./run.sh
 
 edit:$(SRC)
 	gedit $(SRC)
@@ -140,4 +123,5 @@ resetcolor:
 # just cause I like things clean
 clear:
 	clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear
+
 

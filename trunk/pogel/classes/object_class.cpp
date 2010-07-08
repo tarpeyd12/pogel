@@ -157,14 +157,15 @@ POGEL::OBJECT::~OBJECT() {
 };
 
 void POGEL::OBJECT::killchildren() {
-	for(unsigned long i=0;i<numchildren;i++) {
-		children[i]->killchildren();
-		delete children[i];
-		children[i]=NULL;
-	}
-	
-	//delete[] children;
-	free(children);
+	if(numchildren > 0)
+		for(unsigned long i=0;i<numchildren;i++) {
+			children[i]->killchildren();
+			delete children[i];
+			children[i]=NULL;
+		}
+	delete[] children;
+	//delete children;
+	//free(children);
 	children=NULL;
 };
 

@@ -8,15 +8,12 @@
 #include <time.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
 #include "pogel/classes/physics/physics.h"
 
 using namespace POGEL;
-
-POGEL::POINT camrot;
 
 #define numobjs 2
 #define grd 1
@@ -126,7 +123,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	POGEL::InitFps();
 	printf("\n");
 }
-
+bool keypres, go = true;
+POGEL::POINT camrot, campos;
 /* The main drawing function. */
 void DrawGLScene()
 {

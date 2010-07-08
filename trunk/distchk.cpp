@@ -7,7 +7,6 @@
 #include <stdlib.h>
 
 #include "scene.h"
-#include "files.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
@@ -79,7 +78,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	box2->resizetrail(25);
 	box2->spin = VECTOR(0.0f,0.0f,1.0f);
 }
-POINT camrot;
+bool keypres, go = true;
+POGEL::POINT camrot, campos;
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -102,7 +102,7 @@ void DrawGLScene()
 	POGEL::POINT tmp_1, tmp_2;
 	POGEL::TRIANGLE tmptri;
 	
-	box1->closest(box2, &tmp_1, &tmp_2, &tmptri);
+	box1->closest(box2, &tmp_1, &tmp_2, &tmptri, &tmptri);
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHTING);
@@ -117,7 +117,7 @@ void DrawGLScene()
 	glEnable(GL_LIGHTING);
 	glEnable(GL_TEXTURE_2D);
 		
-	box2->closest(box1, &tmp_1, &tmp_2, &tmptri);
+	box2->closest(box1, &tmp_1, &tmp_2, &tmptri, &tmptri);
 	
 	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHTING);
