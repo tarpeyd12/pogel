@@ -32,9 +32,13 @@ class QUAT {
 			{printf("%9.3f,%9.3f,%9.3f,%9.3f",x,y,z,w);}
 		
 		
-		POGEL::QUAT		operator+ (float);
-		POGEL::QUAT		operator+ (POGEL::VECTOR);
-		POGEL::QUAT&	operator= (const POGEL::QUAT&);
+		POGEL::QUAT		operator+  (float);
+		POGEL::QUAT		operator+  (POGEL::VECTOR);
+		
+		POGEL::QUAT&	operator=  (const POGEL::QUAT&);
+		
+		POGEL::QUAT&	operator+= (POGEL::VECTOR);
+		POGEL::QUAT&	operator+= (float);
 		
 		
 		//friend class MATRIX;

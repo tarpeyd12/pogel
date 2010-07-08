@@ -8,6 +8,7 @@
 #include "classes/misc_class.h"
 #include "classes/object_class.h"
 #include "classes/fractal_class.h"
+#include "classes/sprite_class.h"
 #include "classes/object_funcs.h"
 #include "classes/point_class.h"
 #include "classes/quat_class.h"

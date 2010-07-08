@@ -57,4 +57,18 @@ POGEL::QUAT& POGEL::QUAT::operator= (const POGEL::QUAT& q) {
 	w = q.w;
 	
 	return *this;
-}
+};
+
+POGEL::QUAT& POGEL::QUAT::operator+= (POGEL::VECTOR v) {
+	x += v.x;
+	y += v.y;
+	z += v.z;
+	
+	return *this;
+};
+
+POGEL::QUAT& POGEL::QUAT::operator+= (float angle) {
+	w += angle;
+	
+	return *this;
+};

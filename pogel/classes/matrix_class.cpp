@@ -9,10 +9,10 @@ float POGEL::DegreesToRadians(float d) {return (d/180*PI);}; // ditto
 
 POGEL::MATRIX::MATRIX() {
 	// default constructor that sets the brand new matrix as the identity matrix
-	matrix[ 0]=1.0f;	matrix[ 4]=0.0f;	matrix[ 8]=0.0f;	matrix[12]=0.0f;
-	matrix[ 1]=0.0f;	matrix[ 5]=1.0f;	matrix[ 9]=0.0f;	matrix[13]=0.0f;
-	matrix[ 2]=0.0f;	matrix[ 6]=0.0f;	matrix[10]=1.0f;	matrix[14]=0.0f;
-	matrix[ 3]=0.0f;	matrix[ 7]=0.0f;	matrix[11]=0.0f;	matrix[15]=1.0f;
+	matrix[ 0] = 1.0f;	matrix[ 4] = 0.0f;	matrix[ 8] = 0.0f;	matrix[12] = 0.0f;
+	matrix[ 1] = 0.0f;	matrix[ 5] = 1.0f;	matrix[ 9] = 0.0f;	matrix[13] = 0.0f;
+	matrix[ 2] = 0.0f;	matrix[ 6] = 0.0f;	matrix[10] = 1.0f;	matrix[14] = 0.0f;
+	matrix[ 3] = 0.0f;	matrix[ 7] = 0.0f;	matrix[11] = 0.0f;	matrix[15] = 1.0f;
 };
 
 POGEL::MATRIX::MATRIX(float* m) {

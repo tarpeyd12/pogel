@@ -5,9 +5,14 @@
 
 #include "../pogel_internals.h"
 
+#define				IMAGE_NEAREST		0
+#define				IMAGE_LINEAR		1
+#define				IMAGE_MIPMAP		2
+
 namespace POGEL {
 class IMAGE {
 		/* properties */
+		int filtertype;
 		char *data; // the bytes of data in the pixels
 		unsigned short int channels; // the number of bytes per pixel
 		GLuint base; // the opengl texture identification number
@@ -18,6 +23,7 @@ class IMAGE {
 		/* constructors */
 		IMAGE();
 		IMAGE(const char*);
+		IMAGE(const char*,int);
 
 		/* deconstructor */
 		~IMAGE();
@@ -30,6 +36,9 @@ class IMAGE {
 		void set() {glBindTexture(GL_TEXTURE_2D, getbase());}
 		unsigned long getheight() {return sizeY;}
 		unsigned long getwidth() {return sizeX;}
+		void setfilter(int);
+		int getfilter()
+			{ return filtertype; }
 };
 }
 

@@ -68,6 +68,7 @@ namespace POGEL {
 	class OBJECT;
 	
 	class FRACTAL;
+	class SPRITE;
 }
 
 #include "pogel_classes.h"
