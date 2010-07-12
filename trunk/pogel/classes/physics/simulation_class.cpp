@@ -2,6 +2,8 @@
 
 #include "simulation_class.h"
 
+/* Just remember, in here, there is usualy no method to the madenss. */
+
 POGEL::PHYSICS::SIMULATION::SIMULATION() : POGEL::PHYSICS::DYNAMICS() {
 	precision=0.01f;
 	deactivation = false;
@@ -251,7 +253,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//POGEL::VECTOR bounce = tr[0].normal()*obj1->direction.getdistance();
 				//if(obj1->direction.getdistance() != 0.0f)
 				//obj1->force -= tr[1]*((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction; // compensate for friction
-				//obj1->force += tr[1].normal()*precision*obj1->direction.getdistance();
+				obj1->force += tr[1].normal()*precision*obj1->direction.getdistance();
 				obj1->force -= ((tr[1].normal()*obj1->direction.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction)/10;
 				obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
 				//obj1->direction -= ((bounce )/1.0f)/20;
@@ -280,7 +282,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 				//POGEL::VECTOR bounce = tr[1].normal()*obj2->direction.getdistance();
 				//if(obj2->direction.getdistance() != 0.0f)
 				//obj2->force -= tr[0]*((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction; // compensate for friction
-				//obj2->force += tr[0].normal()*precision*obj2->direction.getdistance();
+				obj2->force += tr[0].normal()*precision*obj2->direction.getdistance();
 				obj2->force -= ((tr[0].normal()*obj2->direction.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction)/10;
 				obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
 				//obj2->direction -= ((bounce )/1.0f)/20;

@@ -1,4 +1,4 @@
-#include <GL/glut.h>
+//#include <GL/glut.h>
 
 #include <stdarg.h>
 #include <string.h>
@@ -245,10 +245,10 @@ float rnd() {
     RND_INNER_LOOP(); RND_INNER_LOOP(); RND_INNER_LOOP();
     RND_INNER_LOOP(); RND_INNER_LOOP(); RND_INNER_LOOP();
   }
-  return *((float *)(&ret)); /* ignore all warnings concerning this line, there 
-  are reason for concers, but when the problem is fixed (which will 
-  produce: "return ((float )(ret));") the randomness of the number is 
-  reduced to nothing, so leave it be. */
+  float returned_value;
+  float * tmpval_1 = (float *)&ret;
+  returned_value = *tmpval_1;
+  return returned_value;
 }
 
 float POGEL::FloatRand(float MaxVal) {return /*float(rand()%100)/((100/MaxVal)+0.1);*/MaxVal*rnd();}
