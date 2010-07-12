@@ -11,7 +11,7 @@ LIBRARIES = -lX11 -lglut -lGLU -lGL
 EXTENTION = cpp
 OUTPUT = bin/ogl
 
-LIBOUT = bin/libpogel
+LIBOUT = bin/libpogel.a
 
 POGEL_PHYSICS = pogel/classes/physics/physics.o pogel/classes/physics/solid_class.o pogel/classes/physics/dynamics_class.o pogel/classes/physics/simulation_class.o pogel/classes/physics/singularity_class.o pogel/classes/physics/fountain_class.o pogel/classes/physics/microcosm_class.o
 POGEL_SUPPORT = pogel/classes/image_class.o pogel/classes/quat_class.o pogel/classes/matrix_class.o pogel/classes/point_class.o pogel/classes/triangle_class.o pogel/classes/bounding_class.o
@@ -52,11 +52,12 @@ clean_pogel:
 
 #for compiling a seperate lib file
 
-LIBPOGELOBJ := $(POGELSRC:%.cpp=%.o)
+#LIBPOGELOBJ := $(POGELSRC:%.cpp=%.o)
 
-$(LIBOUT) : $(LIBPOGELOBJ)
+$(LIBOUT) : pogel
+	@-rm $(wildcard $(LIBOUT))
 	@echo "\n\033[32mBuilding Library \033[34m\"$@\"\033[31m"
-	@ar cq $(LIBOUT).a $(LIBPOGELOBJ)
+	@ar cq $(LIBOUT) $(POGEL)
 	@echo "\033[0m"
 #	ld -G $(LIBPOGELOBJ) -o $@.so
 
@@ -65,7 +66,7 @@ lib: pogel $(LIBOUT)
 
 clean_lib: 
 	@echo "Removing the Library File ..."
-	-@rm $(wildcard $(LIBOUT).a)
+	-@rm $(wildcard $(LIBOUT))
 
 
 
