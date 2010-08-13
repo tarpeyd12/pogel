@@ -28,21 +28,20 @@ void POGEL::SPRITE::draw() {
 	
 	
 	//	POGEL::VECTOR 
-	/*float r = POGEL::POINT().distance(matrix.getposition());
-	POGEL::POINT cam_pos = matrix.getposition()*-1;
+	float r = POGEL::POINT().distance(matrix.getposition());
+	POGEL::POINT cam_pos = matrix.getposition();
 	POGEL::POINT rot = POGEL::POINT(POGEL::RadiansToDegrees(acos(cam_pos.y/r))+90, -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180, 0);
 	
 	rotation = (POGEL::MATRIX(rot.x, MATRIX_CONSTRUCT_X_ROTATION) * MATRIX(rot.y, MATRIX_CONSTRUCT_Y_ROTATION) * MATRIX(rot.z, MATRIX_CONSTRUCT_Z_ROTATION)).getrotation();
 	rot.print();printf("\n");
 	rotation.print();
-	POGEL::OBJECT::draw();*/
+	//POGEL::OBJECT::draw();
 	
-	POGEL::QUAT quat(POGEL::VECTOR(POGEL::POINT(), matrix.getposition()).normal(), ((float)(POGEL::frames)/10) );
+	moveto(POGEL::POINT());
+	rotate(POGEL::VECTOR(  ));
 	
-	rotation = quat.tomatrix().getrotation();
-	
-	printf("\n");
-	rotation.print();
+	/*printf("\n");
+	rotation.print();*/
 	
 	POGEL::OBJECT::draw();
 };
