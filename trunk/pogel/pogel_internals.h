@@ -31,9 +31,9 @@
 // the pogel cmd option formats
 #define				POGEL_CMD_BOOL_FORMAT_OOPS						"-oops"
 
+#define				POGEL_CMD_BOOL_FORMAT_LOGTOFILE					"-logfile"
 #define				POGEL_CMD_BOOL_FORMAT_DEBUG						"-debug"
 #define				POGEL_CMD_BOOL_FORMAT_WIREFRAME					"-wireframe"
-#define				POGEL_CMD_BOOL_FORMAT_LOGTOFILE					"-logfile"
 #define				POGEL_CMD_BOOL_FORMAT_BOUNDING					"-boundingbox"
 #define				POGEL_CMD_BOOL_FORMAT_TRAILS					"-trails"
 #define				POGEL_CMD_BOOL_FORMAT_COLLISIONS				"-collisions"
