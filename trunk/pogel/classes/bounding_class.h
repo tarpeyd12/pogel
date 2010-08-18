@@ -63,6 +63,20 @@ class BOUNDING {
 			{
 				return checkbounding(POGEL::POINT(), POGEL::POINT(), b);
 			}
+		bool isinside(POGEL::POINT,POGEL::POINT);
+		
+		bool surrounds(POGEL::POINT,POGEL::POINT,POGEL::BOUNDING);
+		
+		POGEL::BOUNDING& operator= (const POGEL::BOUNDING& b) {
+			numpoints = b.numpoints;
+			isactual = b.isactual;
+			maxdistance = b.maxdistance;
+			max = b.max;
+			min = b.min;
+			color = b.color;
+			
+			return *this;
+		}
 };
 }
 

@@ -6,6 +6,9 @@ POGEL::PHYSICS::SOLID::SOLID() : POGEL::OBJECT() {
 	behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES();
 	physproperties = 0;
 	maximumdistance = 0.0f;
+	stepstaken = 0;
+	objboundingskips = 0;
+	stepsatboundingcheck = 0;
 	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
 	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
 	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
@@ -25,6 +28,9 @@ POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPR
 	behavior = attr;
 	physproperties = prop;
 	maximumdistance = 0.0f;
+	stepstaken = 0;
+	objboundingskips = 0;
+	stepsatboundingcheck = 0;
 	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
 	//position=obj->position;
 	//rotation=obj->rotation;
@@ -141,7 +147,9 @@ bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 };
 
 void POGEL::PHYSICS::SOLID::getbounding() {
-	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0) {
+	setboundingskips();
+	
+	if( bounding.surrounds(position,position,refbounding) || bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()) || (stepstaken % objboundingskips == 0 && POGEL::frames > 0) ) {
 		bounding.clear();
 		POGEL::MATRIX mat(rotation, MATRIX_CONSTRUCT_ROTATION);
 		for( unsigned long t = 0 ; t < numfaces ; t++ )
@@ -149,27 +157,46 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
 		
 		bounding.finishactual();
+		refbounding = bounding;
 		
-		mat = POGEL::MATRIX(direction.topoint()*(float)container->boundingskips, rotation + spin.topoint()*(float)container->boundingskips);
-		for( unsigned long t = 0 ; t < numfaces ; t++ )
-			for( unsigned int v = 0 ; v < 3 ; v++ )
-				bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
+		if(objboundingskips > 1) {
+			mat = POGEL::MATRIX(direction.topoint()*(float)objboundingskips, rotation + spin.topoint()*(float)objboundingskips);
+			for( unsigned long t = 0 ; t < numfaces ; t++ )
+				for( unsigned int v = 0 ; v < 3 ; v++ )
+					bounding.addpoint(POGEL::POINT(), mat.transformPoint(face[t].vertex[v].topoint()));
+		}
 		
 		bounding.fin();
 		bounding.offset(position);
+		
+		stepsatboundingcheck = stepstaken;
 	}
+};
+
+void POGEL::PHYSICS::SOLID::setboundingskips() {
+	if( stepstaken >= (objboundingskips+stepsatboundingcheck) ) {
+		if(container != NULL && (container->boundingskips) > 0)
+			objboundingskips = container->boundingskips;
+		else
+			objboundingskips = (unsigned long)(2/(direction.getdistance()));
+	}
+	
+	//POGEL::message("skps = %u\n",objboundingskips);
+	
+	if(objboundingskips < 1)
+		objboundingskips = 1;
 };
 
 void POGEL::PHYSICS::SOLID::build()  {
 	POGEL::OBJECT::build();
-	if(container != NULL)
+	//if(container != NULL)
 		getbounding();
 };
 
 void POGEL::PHYSICS::SOLID::draw() {
 	POGEL::OBJECT::draw();
 	//if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
-	//getbounding();
+	getbounding();
 	glLineWidth(3);
 	bounding.draw(POGEL::POINT());
 	glLineWidth(1);
@@ -316,7 +343,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 void POGEL::PHYSICS::SOLID::step() {
 	increment();
 	steptrail();
-	if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
+	//if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
 	getbounding();
 };
 
