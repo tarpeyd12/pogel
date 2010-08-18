@@ -60,8 +60,14 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		POGEL::PHYSICS::DYNAMICS* container;
 		
 		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
+		
+		POGEL::BOUNDING refbounding;
 	public:
 		POGEL::VECTOR force;
+		
+		unsigned long objboundingskips;
+		unsigned long stepstaken;
+		unsigned long stepsatboundingcheck;
 		
 		POGEL::BOUNDING bounding;
 		POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES behavior;
@@ -92,6 +98,7 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		bool samelegacy(float);
 		
 		void getbounding();
+		void setboundingskips();
 		
 		void build();
 		void draw();
@@ -107,6 +114,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 				translate(direction);
 			}
 			force = POGEL::VECTOR();
+			
+			stepstaken++;
 		}
 		
 		void step();

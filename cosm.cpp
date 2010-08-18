@@ -134,13 +134,15 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sphs[cosm].build();
 		
+		sphs[cosm].boundingskips = 0;
+		
 		sim.addSolid(&sphs[cosm]);
 	}
 	sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),1000000000000.0f) );
 	
 	sim.addSolid(new POGEL::PHYSICS::SOLID(&obj, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, false, 0.0f), 1));
 	
-	
+	sim.boundingskips = 0;
 	
 	POGEL::InitFps();
 	printf("\n");
