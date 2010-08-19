@@ -24,7 +24,7 @@ OTHER = main.o window.o
 TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) orbit.o
+OBJ =  $(OTHER) simulation.o
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
@@ -54,12 +54,13 @@ clean_pogel:
 
 #LIBPOGELOBJ := $(POGELSRC:%.cpp=%.o)
 
-$(LIBOUT) : pogel
-	@-rm $(wildcard $(LIBOUT))
+$(LIBOUT) : clean_lib pogel
 	@echo "\n\033[32mBuilding Library \033[34m\"$@\"\033[31m"
 	@ar cq $(LIBOUT) $(POGEL)
 	@echo "\033[0m"
 #	ld -G $(LIBPOGELOBJ) -o $@.so
+
+#	@-rm $(wildcard $(LIBOUT))
 
 lib: pogel $(LIBOUT)
 	@echo -n "\033[0m"

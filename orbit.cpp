@@ -210,9 +210,9 @@ void DrawGLScene()
 	
 	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.x + ((float)frames*x)*0.1f/rndrnge,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y + ((float)frames*y)*0.1f/rndrnge,  0.0f, 1.0f, 0.0f );
-	glRotatef( camrot.z + ((float)frames*z)*0.1f/rndrnge,  0.0f, 0.0f, 1.0f );
+	glRotatef( camrot.x + ((float)frames*x)*0.0f/rndrnge,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.0f/rndrnge,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z + ((float)frames*z)*0.0f/rndrnge,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	//message("%ld: ",frames);
 	
