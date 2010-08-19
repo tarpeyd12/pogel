@@ -60,6 +60,7 @@ namespace POGEL {
 	
 	class COLOR;
 	class IMAGE;
+	class VIEW;
 	
 	class QUAT;
 	class MATRIX;

@@ -14,17 +14,17 @@ OUTPUT = bin/ogl
 LIBOUT = bin/libpogel.a
 
 POGEL_PHYSICS = pogel/classes/physics/physics.o pogel/classes/physics/solid_class.o pogel/classes/physics/dynamics_class.o pogel/classes/physics/simulation_class.o pogel/classes/physics/singularity_class.o pogel/classes/physics/fountain_class.o pogel/classes/physics/microcosm_class.o
-POGEL_SUPPORT = pogel/classes/image_class.o pogel/classes/quat_class.o pogel/classes/matrix_class.o pogel/classes/point_class.o pogel/classes/triangle_class.o pogel/classes/bounding_class.o
+POGEL_SUPPORT = pogel/classes/image_class.o pogel/classes/view_class.o pogel/classes/quat_class.o pogel/classes/matrix_class.o pogel/classes/point_class.o pogel/classes/triangle_class.o pogel/classes/bounding_class.o
 POGEL_OBJECT = pogel/classes/object_class.o pogel/classes/object_funcs.o pogel/classes/fractal_class.o pogel/classes/sprite_class.o
 
 POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
 OTHER = main.o window.o 
 
-TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o
+TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) simulation.o
+OBJ =  $(OTHER) texrend.o
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
