@@ -1,21 +1,21 @@
 #summary An explanation of pogel's physics engine.
 
-= Introduction =
+== Introduction ==
 
 Here I will outline the basic principals of the custom physics engine that pogel uses.
 I do not pretend that to know the actual math that goes into these things, nor the proper terms for them.
 
-= Wait... What? Its not automatic? =
+== Wait... What? Its not automatic? ==
 
 The one thing that drives pogel's physics engine is collision detection, which involves math that is way over my head, possibly yours as well, and no it doesn't just happen. In real life collisions happen when two things try to move into the same space they "touch" and stop, due to their densities and states of matter. On a computer, things can _occupy the same space_ wherever and whenever, so we must calculate when two things are touching (going through each other really).
 
-= "Frame" of reference =
+== Getting a "Frame" of reference ==
 
 Have you ever herd of the term "FPS", no not the First Person Shooter game genre, _Frames Per Second_, this is pretty much a speed, like miles per hour ("mph"), but it is more visual. FPS is literally how many times your screen is changed in one second, or there abouts. The human eye has a FPS of about 15 to 20, usually 18, an average theatrical movie is most likely going to be 24, maybe higher if it is in the new-fangled 3D, because they have to do one frame per eye per normal frame (2 eyes, 24fps normally, 2*24 = 48), so it would be about 50 to 60FPS. The point I am trying to make is that for every frame, there are millions of calculations within pogel, each frame is a step in time, an iteration. 
 
-= "Move out of the way!" =
+== "Move out of the way!" ==
 
-Now down to how things stop, as I said earlier, in reality things hit and touch to not occupy the same space, well in pogel first things move to be in the same space, then  we move them so that they are not occupying the same space. This is sort of like two cars crashing, the engine blocks 'fusing' together, and no damage to anything, they are just occupying the same space, then they start to slowly move apart, until they aren't touching anymore.
+Now down to how things stop, as I said earlier, in reality things hit and touch to not occupy the same space, well in pogel first things move to be in the same space, then  we move them so that they are not occupying the same space. This is sort of like two cars crashing, the engine blocks 'fusing' together, and no damage to anything, they are just occupying the same space, then they start to slowly move apart, until they aren't touching anymore. I know it is not a very good explanation.
 
 Like this:
 
