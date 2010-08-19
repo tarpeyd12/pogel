@@ -4,6 +4,7 @@
 // normal classes
 #include "classes/bounding_class.h"
 #include "classes/image_class.h"
+#include "classes/view_class.h"
 #include "classes/matrix_class.h"
 #include "classes/misc_class.h"
 #include "classes/object_class.h"

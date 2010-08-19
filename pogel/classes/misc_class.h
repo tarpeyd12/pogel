@@ -18,6 +18,10 @@ class COLOR {
 		void setcolors(float red, float green, float blue, float alpha) { r=red; g=green; b=blue; a=alpha; }
 		void getcolors(float *red, float *green, float *blue, float *alpha) { *red=r; *green=g; *blue=b; *alpha=a; }
 		void set() { glColor3f(r*a,g*a,b*a); }
+		void setasbgcolor() { glClearColor(r, g, b, a); }
+		
+		POGEL::COLOR& operator=(const POGEL::COLOR& c)
+			{ r = c.r; g = c.g; b = c.b; return *this; }
 };
 }
 

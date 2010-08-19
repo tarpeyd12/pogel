@@ -1,7 +1,11 @@
 #ifndef _IMAGE_CLASS_H
 #define _IMAGE_CLASS_H
 
-//class POGEL::IMAGE;
+namespace POGEL {
+class IMAGE;
+}
+
+//#include "view_class.h"
 
 #include "../pogel_internals.h"
 
@@ -11,6 +15,7 @@
 
 namespace POGEL {
 class IMAGE {
+	protected:
 		/* properties */
 		int filtertype;
 		char *data; // the bytes of data in the pixels
@@ -39,6 +44,7 @@ class IMAGE {
 		void setfilter(int);
 		int getfilter()
 			{ return filtertype; }
+		
 };
 }
 
