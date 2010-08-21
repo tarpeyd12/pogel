@@ -183,7 +183,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	view = new VIEW();
 	view->setretscreensize(&screenx, &screeny);
 	view->settexsize(600, 600);
-	view->setfilter(IMAGE_LINEAR);
+	view->setfilter(IMAGE_MIPMAP);
 	view->build();
 	
 	canvas.setname("canvas");
