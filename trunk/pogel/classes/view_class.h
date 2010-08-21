@@ -1,7 +1,7 @@
 #ifndef _VIEW_CLASS_H
 #define _VIEW_CLASS_H
 
-/* the view class is an adaptation of the render to texture functions here:
+/* the POGEL::VIEW class is an adaptation of the render to texture functions here:
  *  http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=36
  */
 
@@ -20,8 +20,8 @@ class VIEW : public IMAGE {
 	private:
 		unsigned int properties; // the mushed properties
 	protected:
-		unsigned long screensizeX;
-		unsigned long screensizeY;
+		static int* screensizeX;
+		static int* screensizeY;
 		
 		void (*renderfunc)(void);
 		void (*sceneinit)(void);
@@ -33,7 +33,7 @@ class VIEW : public IMAGE {
 		
 		void settexsize(unsigned long x, unsigned long y)
 			{ sizeX = x, sizeY = y; }
-		void setretscreensize(unsigned int x, unsigned int y)
+		void setretscreensize(int* x, int* y)
 			{ screensizeX = x; screensizeY = y; }
 		
 		void setrenderfunc(void (*f)(void))

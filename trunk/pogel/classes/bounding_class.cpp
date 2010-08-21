@@ -110,33 +110,33 @@ void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 };
 
 bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {
-	//if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
-		bool x, y, z;
+	if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
+		bool x = false, y = false, z = false;
 			x = ( (thatbounding.min.x+thatcenter.x <= max.x+thiscenter.x) && (thatbounding.max.x+thatcenter.x >= min.x+thiscenter.x) );
-		//if(x) {
+		if(x) {
 			y = ( (thatbounding.min.y+thatcenter.y <= max.y+thiscenter.y) && (thatbounding.max.y+thatcenter.y >= min.y+thiscenter.y) );
-		//if(y) {
+		if(y) {
 			z = ( (thatbounding.min.z+thatcenter.z <= max.z+thiscenter.z) && (thatbounding.max.z+thatcenter.z >= min.z+thiscenter.z) );
-		//if(z)
+		if(z)
 		if(x&&y&&z)
 			return true;
-		//}}
-	//}
+		}}
+	}
 	return false;
 };
 
 bool POGEL::BOUNDING::isinside(POGEL::POINT thiscenter, POGEL::POINT p) {
 	//if(thiscenter.distance(p) <= maxdistance) {
-		bool x, y, z;
+		bool x = false, y = false, z = false;
 			x = ( (p.x <= max.x+thiscenter.x) && (p.x >= min.x+thiscenter.x) );
-		//if(x) {
+		if(x) {
 			y = ( (p.y <= max.y+thiscenter.y) && (p.y >= min.y+thiscenter.y) );
-		//if(y) {
+		if(y) {
 			z = ( (p.z <= max.z+thiscenter.z) && (p.z >= min.z+thiscenter.z) );
-		//if(z)
+		if(z)
 		if(x&&y&&z)
 			return true;
-		//}}
+		}}
 	//}
 	return false;
 };

@@ -20,8 +20,8 @@ class COLOR {
 		void set() { glColor3f(r*a,g*a,b*a); }
 		void setasbgcolor() { glClearColor(r, g, b, a); }
 		
-		POGEL::COLOR& operator=(const POGEL::COLOR& c)
-			{ r = c.r; g = c.g; b = c.b; return *this; }
+		/*POGEL::COLOR& operator=(const POGEL::COLOR& c)
+			{ r = c.r; g = c.g; b = c.b; return *this; }*/
 };
 }
 

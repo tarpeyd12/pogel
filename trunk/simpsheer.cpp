@@ -13,7 +13,7 @@
 
 using namespace POGEL;
 
-OBJECT obj[2];
+OBJECT obj[3];
 
 IMAGE *img;
 
@@ -54,7 +54,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	view = new VIEW();
 	view->setretscreensize(&screenx, &screeny);
 	view->settexsize(512, 512);
-	view->setbgcolor(POGEL::COLOR(0.0f,0.0f,0.0f,0.0f));
+	view->setbgcolor(POGEL::COLOR(0.75f,0.75f,0.75f,1.0f));
 	view->build();
 	
 	obj[0].setname("box");
@@ -65,16 +65,27 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	obj[0].moveto(POINT(0.0f,0.0f,0.0f));
 	obj[0].spin = VECTOR(1.0f,1.0f,1.0f);
 	
+	float scalex = 0.25, scaley = 0.25f;
 	
 	obj[1].setname("box");
-	addCube(&obj[1], 10.0f,10.0f,10.0f, view, 1,1,0,POGEL::MATRIX());
+	//addCube(&obj[1], 10.0f,10.0f,10.0f, view, 1,1,0,POGEL::MATRIX());
 	//addSphere(&obj[1],32,32, 10, view,1,1, 0|TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,180.0f,0.0f)));
-	//addCylinder(&obj[1], 10, 1, 1, 1/2.0f, 1/2.0f, view, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	//addDisk(&obj[1], 32, 32, 5, 0.0f, view,4, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+	//addCylinder(&obj[1], 32, 32, 10, 10, 10, view, 1.0f, 1.0f, 0|TRIANGLE_LIT, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,180.0f,0.0f)));
+	addDisk(&obj[1], 64, 1, 5, 0.0f, view,scalex, scaley, 0, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	obj[1].setproperties(0);
 	obj[1].build();
 	obj[1].moveto(POINT(0.0f,0.0f,0.0f));
-	obj[1].spin = VECTOR(1.0f,1.0f,1.0f);
+	obj[1].spin = VECTOR(0.0f,0.0f,1.0f);
+	
+	obj[2].setname("box");
+	//addCube(&obj[2], 10.0f,10.0f,10.0f, view, 1,1,0,POGEL::MATRIX());
+	//addSphere(&obj[2],32,32, 10, view,1,1, 0|TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,180.0f,0.0f)));
+	//addCylinder(&obj[2], 32, 32, 10, 10, 10, view, 1.0f, 1.0f, 0|TRIANGLE_LIT, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,180.0f,0.0f)));
+	addDisk(&obj[2], 10, 1, 35, 0.0f, view,scalex, scaley, 0, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+	obj[2].setproperties(0);
+	obj[2].build();
+	obj[2].moveto(POINT(0.0f,0.0f,-0.01f));
+	obj[2].spin = VECTOR(1.0f,1.0f,1.0f);
 	
 }
 bool keypres, go = true;
@@ -104,8 +115,11 @@ void DrawGLScene()
 	
 	glTranslatef(0.0f,0.0f,-25.0f);
 	glTranslatef(campos.x,campos.y,campos.z);
-	glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
+	obj[2].draw();
+	if(go)
+	obj[2].scroll_all_tex_values(.010,.00);
+	//glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
+	//glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
 	glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
 	//rings.rotate(VECTOR(0.0f,0.6f,0.0f));
 	//glRotatef(23.0f,0.0f,0.0f,-1.0f);
@@ -114,7 +128,8 @@ void DrawGLScene()
 	POGEL::PrintFps();
 	
 	obj[1].draw();
-	
+	if(go){//obj[1].step();
+	obj[1].scroll_all_tex_values(.010,.00);}
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();
 }

@@ -6,6 +6,9 @@
 
 #include "view_class.h"
 
+int* POGEL::VIEW::screensizeX;
+int* POGEL::VIEW::screensizeY;
+
 POGEL::VIEW::VIEW() : POGEL::IMAGE(){
 	settexsize(128,128);
 	renderfunc = NULL;
@@ -20,8 +23,8 @@ POGEL::VIEW::~VIEW() {
 };
 
 GLuint POGEL::VIEW::build() {
-	data = (char*)new GLuint[((sizeX * sizeY)* 3 * sizeof(char))];
-	memset(data,'\0',((sizeX * sizeY)* 3 * sizeof(char)));
+	data = (char*)new GLuint[((sizeX * sizeY)* 4 * sizeof(char))];
+	memset(data,'\0',((sizeX * sizeY)* 4 * sizeof(char)));
 	
 	// Create Texture	
 	glGenTextures(1, &base);
@@ -62,8 +65,15 @@ void POGEL::VIEW::startrender() {
 	imgbgcolor.setasbgcolor(); // background color of the to be rendered texture
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	
 		// Clear The Screen And The Depth Buffer
-	glLoadIdentity();
+	//gluPerspective(45.0f,1.0f,0.1f,500.0f);
+	//glLoadIdentity();
 	glViewport(0,0,sizeX,sizeY);					// Set Our Viewport to match texture size
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	gluPerspective(45.0f,(float)sizeX/(float)sizeY,0.1f,100.0f);
+	glMatrixMode(GL_MODELVIEW);
 };
 
 
@@ -76,7 +86,13 @@ GLuint POGEL::VIEW::endrender() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
-	glViewport(0, 0, screensizeX ,screensizeY);					// Set Viewport to what it *should* be
+	glViewport(0, 0, *screensizeX ,*screensizeY);					// Set Viewport to what it *should* be
+	
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+	gluPerspective(45.0f,(float)*screensizeX/(float)*screensizeY,0.1f,100.0f);
+	glMatrixMode(GL_MODELVIEW);
 	
 	return base;
 };
