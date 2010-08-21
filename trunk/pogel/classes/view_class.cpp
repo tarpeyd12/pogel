@@ -34,6 +34,8 @@ GLuint POGEL::VIEW::build() {
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_NEAREST);
 		
+		glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
+		
 		//gluBuild2DMipmaps(GL_TEXTURE_2D, 3, sizeX, sizeY, GL_RGB, GL_UNSIGNED_BYTE, data);
 	}
 	else {
@@ -79,9 +81,9 @@ void POGEL::VIEW::startrender() {
 
 GLuint POGEL::VIEW::endrender() {
 	glBindTexture(GL_TEXTURE_2D,base);			// Bind To The Texture
-
+	
 	// Copy Our ViewPort To The Texture (From 0,0 To sizeX,sizeY... No Border)
-	glCopyTexImage2D(GL_TEXTURE_2D, (getfilter() == IMAGE_MIPMAP ? 3 : 0), GL_RGB, 0, 0, sizeX, sizeY, 0);
+	glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, sizeX, sizeY, 0);
 	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
