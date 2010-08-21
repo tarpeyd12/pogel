@@ -6,6 +6,7 @@
 
 /* The number of our GLUT window */
 extern int window;
+extern int screenx, screeny;
 
 void ReSizeGLScene(int Width, int Height);
 void keyPressed(unsigned char key, int x, int y);

@@ -15,9 +15,9 @@
 
 using namespace POGEL;
 
-#define numobjs 25
+#define numobjs 50
 #define grd 5
-#define sps 1.0f
+#define sps 0.75f
 #define size 0.5f
 #define gravity 10000000000000.0f
 OBJECT obj[numobjs];
@@ -95,7 +95,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//addDisk(&obj[i], 4, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		//addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addSphere(&obj[i],2,4, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 		//addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 		
@@ -210,9 +211,9 @@ void DrawGLScene()
 	
 	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.x + ((float)frames*x)*0.0f/rndrnge,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y + ((float)frames*y)*0.0f/rndrnge,  0.0f, 1.0f, 0.0f );
-	glRotatef( camrot.z + ((float)frames*z)*0.0f/rndrnge,  0.0f, 0.0f, 1.0f );
+	glRotatef( camrot.x + ((float)frames*x)*0.1f/rndrnge,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.1f/rndrnge,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z + ((float)frames*z)*0.1f/rndrnge,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	//message("%ld: ",frames);
 	

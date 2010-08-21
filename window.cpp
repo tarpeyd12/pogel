@@ -9,6 +9,7 @@
 #include "pogel/pogel.h"
 
 int window;
+int screenx, screeny;
 
 /* The function called when our window is resized (which shouldn't happen, because we're fullscreen) */
 void ReSizeGLScene(int Width, int Height)
@@ -23,6 +24,9 @@ void ReSizeGLScene(int Width, int Height)
 
 	gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);
 	glMatrixMode(GL_MODELVIEW);
+	
+	screenx = Width;
+	screeny = Height;
 }
 
 extern POGEL::POINT camrot, campos;

@@ -147,10 +147,16 @@ bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 };
 
 void POGEL::PHYSICS::SOLID::getbounding() {
+	
+	/*if(stepstaken <= 1 && container != NULL)
+		container->getpull(this);*/
+		
+	
 	setboundingskips();
 	//refbounding.draw(position);
 	if( 
-		(stepstaken % objboundingskips == 0 && POGEL::frames > 0)  /*|| \
+		(stepstaken % objboundingskips == 0 && POGEL::frames > 0) || \
+		stepstaken <= 1 /*|| \
 		(bounding.surrounds(position,position,refbounding) || bounding.surrounds(position,position+direction.topoint(),refbounding)) || \
 		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))*/
 	) {
@@ -165,7 +171,7 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 		refbounding.clear();
 		refbounding = bounding;
 		//refbounding.fin();
-		refbounding.offset(position);
+		refbounding.offset(POGEL::POINT());
 		
 		//if(objboundingskips > 1 || stepstaken == 0) {
 			mat = POGEL::MATRIX(direction.topoint()*(float)objboundingskips, rotation + spin.topoint()*(float)objboundingskips);
@@ -183,9 +189,10 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 
 void POGEL::PHYSICS::SOLID::setboundingskips() {
 	if( 
-		stepstaken >= (objboundingskips+stepsatboundingcheck) || \
+		stepstaken >= (objboundingskips/10+stepsatboundingcheck) || \
+		stepstaken <= 1 /*|| \
 		(bounding.surrounds(position,position,refbounding) || bounding.surrounds(position,position+direction.topoint(),refbounding)) || \
-		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))
+		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))*/
 	) {
 		if(container != NULL && (container->boundingskips) > 0)
 			objboundingskips = container->boundingskips;
@@ -198,7 +205,7 @@ void POGEL::PHYSICS::SOLID::setboundingskips() {
 	
 	//POGEL::message("%s skps = %u\n",getname(),objboundingskips);
 	
-	if(objboundingskips < 1)
+	if(objboundingskips < 1 || objboundingskips > 10)
 		objboundingskips = 1;
 };
 
