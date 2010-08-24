@@ -55,6 +55,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	view->setretscreensize(&screenx, &screeny);
 	view->settexsize(512, 512);
 	view->setbgcolor(POGEL::COLOR(0.75f,0.75f,0.75f,1.0f));
+	view->setfilter(IMAGE_MIPMAP);
 	view->build();
 	
 	obj[0].setname("box");
