@@ -28,34 +28,30 @@ GLuint POGEL::VIEW::build() {
 	
 	// Create Texture	
 	glGenTextures(1, &base);
-	glBindTexture(GL_TEXTURE_2D, base);   // 2d texture (x and y size)
+	glBindTexture(GL_TEXTURE_2D, base);
 	
-	if(getfilter() == IMAGE_MIPMAP) {
-		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_NEAREST);
+	switch(getfilter()) {
+		default:
+		case IMAGE_NEAREST:
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST); // scale linearly when image bigger than texture
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST); // scale linearly when image smaller than texture
+		break;
 		
-		glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
+		case IMAGE_LINEAR:
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smaller than texture
+		break;
 		
-		//gluBuild2DMipmaps(GL_TEXTURE_2D, 3, sizeX, sizeY, GL_RGB, GL_UNSIGNED_BYTE, data);
+		case IMAGE_MIPMAP:
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR_MIPMAP_NEAREST);	
+			glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE);
+		break;
 	}
-	else {
-		switch(getfilter()) {
-			default:
-			case IMAGE_NEAREST:
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_NEAREST); // scale linearly when image bigger than texture
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST); // scale linearly when image smaller than texture
-			break;
-			
-			case IMAGE_LINEAR:
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // scale linearly when image bigger than texture
-				glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); // scale linearly when image smaller than texture
-			break;
-		}
-		
-		// 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
-		// border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
-		//glTexImage2D(GL_TEXTURE_2D, 0, 3, sizeX, sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-	}
+	
+	// 2d texture, level of detail 0 (normal), 3 components (red, green, blue), x size from image, y size from image, 
+	// border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
+	//glTexImage2D(GL_TEXTURE_2D, 0, 3, sizeX, sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 	
 	delete data;
 	
