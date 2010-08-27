@@ -24,15 +24,13 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 };
 
 bool POGEL::PHYSICS::SIMULATION::processGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
-	
-	if(obj1->bounding.checkbounding(obj2->bounding)) {
-		POGEL::VECTOR vct1, vct2;
-		float area;
-		POGEL::POINT col;
-		POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area);
-		reactcollision(obj1, obj2, vct1, vct2, col);
-		return true;
-	}
+	POGEL::VECTOR vct1, vct2;
+	float area;
+	POGEL::POINT col;
+	if(obj1->bounding.checkbounding(obj2->bounding) && POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area)) {
+			reactcollision(obj1, obj2, vct1, vct2, col);
+			return true;
+		}
 	
 	return false;
 };
@@ -42,79 +40,81 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE(POGEL::PHYSICS::SOLID* obj1, POGE
 	if(obj1->position.distance(obj2->position) < (obj1->bounding.maxdistance + obj2->bounding.maxdistance)) {
 		POGEL::VECTOR v(obj1->position, obj2->position);
 		POGEL::POINT p = obj1->position + (v * obj1->bounding.maxdistance).topoint();
-		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, obj2->position), POGEL::VECTOR(obj2->position, obj1->position), p);
+		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, obj2->position).normal(), POGEL::VECTOR(obj2->position, obj1->position).normal(), p);
 		return true;
-	}	
+	}
 	
 	return false;
 };
 
 void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::VECTOR obj1vect, POGEL::VECTOR obj2vect, POGEL::POINT colpoint) {
 	
-	POGEL::VECTOR tr[2];
+	POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>, %0.3f.\n", obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z, (obj2->direction+obj1->direction).getdistance());
+	
+	POGEL::VECTOR tr[2], obj1dirtmp = obj1->direction, obj2dirtmp = obj2->direction, bounce1, bounce2;
 	tr[0] = obj1vect;
 	tr[1] = obj2vect;
 	
+	//(tr[0]+tr[1]).print();
+	
 	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			//if(!obj1->samerotlegacy(precision)) {
-				
-				POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(colpoint-obj1->position);
-				obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;
-				
-				if(obj1->spin.getdistance() != 0.0f)
-				obj1->spin /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
-				
-				/*POGEL::VECTOR pull = getpull(obj1);
-				pull*=-1.0f;
-				POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj1->position,col),(POGEL::IMAGE*)NULL,0).normal;
-				float angle = POGEL::VECTOR(obj1->position,col).normal().getangle(pull, axis);*/
-				/*if(!POGEL::about(angle, 0.0f, precision*100))
-				obj1->spin += POGEL::VECTOR(POGEL::POINT(),
-				(POGEL::MATRIX(axis,angle).getrotation())*obj1->direction.getdistance()*obj2->behavior.bounce
-				)/-PARTICLE_SLOWDOWN;*/
-			//}
-			//if(!obj1->sameposlegacy(precision)) {
-				//POGEL::VECTOR bounce = (tr[0]*(obj2->behavior.bounce*1.0f*0.8f+obj1->behavior.bounce*1.0f*0.8f+obj1->direction.getdistance()*0.8f) + obj1->direction*0.0f);
-				POGEL::VECTOR bounce = tr[0].normal()*obj1->direction.getdistance();
-				//if(obj1->direction.getdistance() != 0.0f)
-				//obj1->force -= tr[1]*((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction; // compensate for friction
-				obj1->force += tr[1].normal()*obj1->direction.getdistance();
-				obj1->force -= ((tr[1].normal()*obj1->direction.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1->direction)/10;
-				obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
-				obj1->direction -= ((bounce )/1.0f)/20;
-			//}
-		}
-		if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			//if(!obj2->samerotlegacy(precision)) {
-				
-				POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj2->spin).transformPoint(colpoint-obj2->position);
-				obj2->direction -= (POGEL::VECTOR(p)*obj2->spin.getdistance())/PARTICLE_SLOWDOWN;
-				
-				if(obj2->spin.getdistance() != 0.0f)
-				obj2->spin /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
-				
-				/*POGEL::VECTOR pull = getpull(obj2);
-				pull*=-1.0f;
-				POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj2->position,col),(POGEL::IMAGE*)NULL,0).normal;
-				float angle = POGEL::VECTOR(obj2->position,col).normal().getangle(pull, axis);*/
-				/*if(!POGEL::about(angle, 0.0f, precision*100))
-				obj2->spin += POGEL::VECTOR(POGEL::POINT(),
-				(POGEL::MATRIX(axis,angle).getrotation())*obj2->direction.getdistance()*obj1->behavior.bounce
-				)/-PARTICLE_SLOWDOWN;*/
-			//}
-			//if(!obj2->sameposlegacy(precision)) {
-				//POGEL::VECTOR bounce = (tr[1]*(obj1->behavior.bounce*1.0f*0.8f+obj2->behavior.bounce*1.0f*0.8f+obj1->direction.getdistance()*0.8f) + obj2->direction*0.0f);
-				POGEL::VECTOR bounce = tr[1].normal()*obj2->direction.getdistance();
-				//if(obj2->direction.getdistance() != 0.0f)
-				//obj2->force -= tr[0]*((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction; // compensate for friction
-				obj2->force += tr[0].normal()*obj2->direction.getdistance();
-				obj2->force -= ((tr[0].normal()*obj2->direction.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2->direction)/10;
-				obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
-				obj2->direction -= ((bounce )/1.0f)/20;
-			//}
-		}
+		POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(colpoint-obj1->position);
+		obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;
+		
+		if(obj1->spin.getdistance() != 0.0f)
+		obj1->spin /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
+		
+		/*POGEL::VECTOR pull = getpull(obj1);
+		pull*=-1.0f;
+		POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj1->position,col),(POGEL::IMAGE*)NULL,0).normal;
+		float angle = POGEL::VECTOR(obj1->position,col).normal().getangle(pull, axis);*/
+		/*if(!POGEL::about(angle, 0.0f, precision*100))
+		obj1->spin += POGEL::VECTOR(POGEL::POINT(),
+		(POGEL::MATRIX(axis,angle).getrotation())*obj1->direction.getdistance()*obj2->behavior.bounce
+		)/-PARTICLE_SLOWDOWN;*/
+		obj1->force += tr[1].normal()*obj1dirtmp.getdistance();
+		obj1->force -= ((tr[1].normal()*obj1dirtmp.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1dirtmp)/10;
+		obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
+		
+		//POGEL::VECTOR bounce;
+		if(obj2dirtmp.getdistance() != 0.0f)
+			bounce1 = tr[1].normal()*((obj2dirtmp)/1.0f).getdistance();
+		/*else
+			bounce1 = tr[1].normal()*((obj1dirtmp)/1.0f).getdistance();*/
+		//obj1->force -= ((bounce1*(obj1->behavior.bounce/10.0f))*obj2->behavior.mass)/obj1->behavior.mass;
+	}
 	
+	if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj2->spin).transformPoint(colpoint-obj2->position);
+		obj2->direction -= (POGEL::VECTOR(p)*obj2->spin.getdistance())/PARTICLE_SLOWDOWN;
+		
+		if(obj2->spin.getdistance() != 0.0f)
+		obj2->spin /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
+		
+		/*POGEL::VECTOR pull = getpull(obj2);
+		pull*=-1.0f;
+		POGEL::VECTOR axis = POGEL::TRIANGLE(pull,POGEL::POINT(),POGEL::VECTOR(obj2->position,col),(POGEL::IMAGE*)NULL,0).normal;
+		float angle = POGEL::VECTOR(obj2->position,col).normal().getangle(pull, axis);*/
+		/*if(!POGEL::about(angle, 0.0f, precision*100))
+		obj2->spin += POGEL::VECTOR(POGEL::POINT(),
+		(POGEL::MATRIX(axis,angle).getrotation())*obj2->direction.getdistance()*obj1->behavior.bounce
+		)/-PARTICLE_SLOWDOWN;*/
+		obj2->force += tr[0].normal()*obj2dirtmp.getdistance();
+		obj2->force -= ((tr[0].normal()*obj2dirtmp.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2dirtmp)/10;
+		obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
+		
+		//POGEL::VECTOR bounce;
+		if(obj1dirtmp.getdistance() != 0.0f)
+			bounce2 = tr[0].normal()*((obj1dirtmp)/1.0f).getdistance();
+		/*else
+			bounce2 = tr[0].normal()*((obj2dirtmp)/1.0f).getdistance();*/
+		//obj2->force -= ((bounce2*(obj2->behavior.bounce/10.0f))*obj1->behavior.mass)/obj2->behavior.mass;
+	}
 	
+	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
+		obj1->force -= bounce2*(obj2->behavior.bounce/10.0f);
+	if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
+		obj2->force -= bounce1*(obj1->behavior.bounce/10.0f);
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
@@ -154,7 +154,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 					}
 				}
 				
-				if(POGEL::hasproperty(POGEL_PAIRS)) {
+				/*if(POGEL::hasproperty(POGEL_PAIRS)) {
 					glDisable(GL_TEXTURE_2D);
 					glDisable(GL_LIGHTING);
 					glLineWidth(2);
@@ -167,7 +167,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 					glColor3f(1.0f,1.0f,1.0f);
 					glEnable(GL_LIGHTING);
 					glEnable(GL_TEXTURE_2D);
-				}
+				}*/
 				
 				
 			}

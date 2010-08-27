@@ -100,7 +100,7 @@ bool POGEL::PHYSICS::SOLID::sameposlegacy(float pres) {
 	bool legacy = true;
 	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
+	for(unsigned long i=0;i<trailsize && i<stepstaken+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres));
 		if(legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)))
 			ret = true;
@@ -117,7 +117,7 @@ bool POGEL::PHYSICS::SOLID::samerotlegacy(float pres) {
 	bool legacy = true;
 	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
+	for(unsigned long i=0;i<trailsize && i<stepstaken+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres));
 		if(legacy && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres)))
 			ret = true;
@@ -134,7 +134,7 @@ bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 	bool legacy = true;
 	if(POGEL::frames<(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		return false;
-	for(unsigned long i=0;i<trailsize && i<POGEL::frames+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
+	for(unsigned long i=0;i<trailsize && i<stepstaken+1;i+=(trailsize/PHYSICS_SOLID_TRAILINDEX))
 		//ret = legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)) && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres));
 		if(legacy && (POGEL::about(position.x, trail[i].x, pres) && POGEL::about(position.y, trail[i].y, pres) && POGEL::about(position.z, trail[i].z, pres)) && (POGEL::about(rotation.x, rots[i].x, pres) && POGEL::about(rotation.y, rots[i].y, pres) && POGEL::about(rotation.z, rots[i].z, pres)))
 			ret = true;
