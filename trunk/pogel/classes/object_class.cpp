@@ -390,12 +390,16 @@ void POGEL::OBJECT::draw() {
 			POGEL::message("\nfor object: \"%s\":\n", n);
 			if(n!=NULL && parent!=NULL)
 				free(n);
-			POGEL::message("object position: ");
+			POGEL::message("object position:  ");
 			position.print();
+			POGEL::message("\nobject rotation:  ");
+			rotation.print();
+			POGEL::message("\nobject direction: ");
+			direction.print();
+			POGEL::message("\nobject spin:      ");
+			spin.print();
 			POGEL::message("\nposition from matrix: ");
 			matrix.getposition().print();
-			POGEL::message("\nobject rotation: ");
-			rotation.print();
 			POGEL::message("\nrotation from matrix: ");
 			matrix.getrotation().print();
 			POGEL::message("\nthe matrix: ");

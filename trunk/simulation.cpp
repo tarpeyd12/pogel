@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define numobjs 15
+#define numobjs 1
 #define grd 1
 #define sps 5.0f
 #define size 1.0f
@@ -86,7 +86,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//addDisk(&obj[i], 4, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 		//addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 		
@@ -102,15 +102,15 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
 		//obj[i].turnto(POINT());
-		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|16);
+		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|16);
 		//sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
 		//sphs[i]->position.print();
 		//sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
 		//sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
 		sphs[i]->build();
-		//sphs[i]->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/2.0f * VECTOR(1.0f,1.0f,1.0f);
+		//sphs[i]->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/2.0f * VECTOR(0.0f,1.0f,0.0f) * (i%2 == 0 ? 1.0f : -1.0f);
 		//sphs[i]->direction = m.transformVector(POGEL::VECTOR((float)sqrt((10000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
-		//sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
+		//sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.10f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->direction = POGEL::VECTOR(0.05f,0.25f,0.0f);
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
 		//sphs[i]->visable = false;
@@ -126,8 +126,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	}
 	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f) );
 	//sim.addfan(PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 20.0f));
-	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*0.5f;
-	sim.air_dencity = 1.0f;
+	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
+	//sim.air_dencity = 0.0f;
 	
 	POGEL::OBJECT *ring = new POGEL::OBJECT();
 	ring->setname("border");
@@ -140,26 +140,27 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//addCylinder(ring, 4, 1, 5.0f, 20.0f, 5.0f, defaultimg, 1.0f, 1.0f, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,-2.5f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 	
 	//addCube(ring, 20.0f,200.0f,200.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
-	addCube(ring, 3.0f,3.0f,3.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
-	
+	//addCube(ring, 3.0f,3.0f,3.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
+	//
 	/*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
 	addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
 	
-	//addSphere(ring,8,8, 2.5f, defaultimg,1,1, 0 | TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+	addSphere(ring,32,32, 25.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 	
 	//addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 	//addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
 	//addDisk(ring, 16, 1, 20.0f, 0.0f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,-10.0f), VERTEX(0.0f,0.0f,180.0f)));
 	
 	ring->setproperties(0);
-	ring->moveto(POGEL::POINT(0.0f,-10.0f,0.0f));
+	ring->moveto(POGEL::POINT(0.0f,-35.0f,0.0f));
 	ring->turnto(POGEL::POINT(0.0f,0.0f,0.0f));
 	//ring->build();
 	border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), PHYSICS_SOLID_STATIONARY/* | PHYSICS_SOLID_CONVEX*/|16);
 	//border->spin = POGEL::VECTOR(POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f))*1.0f;
 	//border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
-	border->behavior.bounce = 1.0f;
-	border->behavior.friction = 1.0f;
+	border->behavior.bounce = 0.0f;
+	border->behavior.friction = 10.0f;
+	border->behavior.mass = 1.0f;
 	
 	border->behavior.magnetic = false;
 	border->behavior.charge = -0.01f;
