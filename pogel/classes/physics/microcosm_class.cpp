@@ -22,6 +22,12 @@ POGEL::VECTOR POGEL::PHYSICS::MICROCOSM::getpull(POGEL::PHYSICS::SOLID* obj) {
 };
 
 void POGEL::PHYSICS::MICROCOSM::increment() {
+	if(hasproperty(MICROCOSM_IGNORE_PARENT_TRANSLATION)) {
+		for(unsigned long i = 0; i < numobjects; i++) {
+			objects[i]->translate(direction*-1.0f);
+		}
+	}
+	
 	// increment the microcosm as a solid
 	POGEL::PHYSICS::SOLID::increment();
 	

@@ -51,7 +51,12 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 	
 	POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>, %0.3f.\n", obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z, (obj2->direction+obj1->direction).getdistance());
 	
-	POGEL::VECTOR tr[2], obj1dirtmp = obj1->direction, obj2dirtmp = obj2->direction, bounce1, bounce2;
+	POGEL::VECTOR tr[2], obj1dirtmp = obj1->direction, obj2dirtmp = obj2->direction;
+	float bounce1, bounce2;
+	float obj1energy = obj1dirtmp.getdistance(), obj2energy = obj2dirtmp.getdistance();
+	float obj1bounce = obj1->behavior.bounce, obj2bounce = obj2->behavior.bounce;
+	float totalenergy = obj1energy + obj2energy;
+	POGEL::VECTOR totaldirection = obj1dirtmp + obj2dirtmp;
 	tr[0] = obj1vect;
 	tr[1] = obj2vect;
 	
@@ -72,16 +77,10 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		obj1->spin += POGEL::VECTOR(POGEL::POINT(),
 		(POGEL::MATRIX(axis,angle).getrotation())*obj1->direction.getdistance()*obj2->behavior.bounce
 		)/-PARTICLE_SLOWDOWN;*/
-		obj1->force += tr[1].normal()*obj1dirtmp.getdistance();
-		obj1->force -= ((tr[1].normal()*obj1dirtmp.getdistance())/((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj1dirtmp)/10;
-		obj1->direction /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f));
+		bounce1 = ((obj1bounce)/(obj2->hasOption(PHYSICS_SOLID_STATIONARY) ? 100.0f : 200.0f))/100;
+		obj1->force += tr[1].normal()*(obj1energy-(obj2energy*bounce1));
 		
-		//POGEL::VECTOR bounce;
-		if(obj2dirtmp.getdistance() != 0.0f)
-			bounce1 = tr[1].normal()*((obj2dirtmp)/1.0f).getdistance();
-		/*else
-			bounce1 = tr[1].normal()*((obj1dirtmp)/1.0f).getdistance();*/
-		//obj1->force -= ((bounce1*(obj1->behavior.bounce/10.0f))*obj2->behavior.mass)/obj1->behavior.mass;
+		obj1->direction -= obj2dirtmp.normal()*(obj1energy+(obj2energy*bounce1));
 	}
 	
 	if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
@@ -99,22 +98,18 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		obj2->spin += POGEL::VECTOR(POGEL::POINT(),
 		(POGEL::MATRIX(axis,angle).getrotation())*obj2->direction.getdistance()*obj1->behavior.bounce
 		)/-PARTICLE_SLOWDOWN;*/
-		obj2->force += tr[0].normal()*obj2dirtmp.getdistance();
-		obj2->force -= ((tr[0].normal()*obj2dirtmp.getdistance())/((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)) + obj2dirtmp)/10;
-		obj2->direction /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f));
+		bounce2 = ((obj2bounce)/(obj1->hasOption(PHYSICS_SOLID_STATIONARY) ? 100.0f : 200.0f))/100;
+		obj2->force += tr[0].normal()*(obj2energy-(obj1energy*bounce2));
 		
-		//POGEL::VECTOR bounce;
-		if(obj1dirtmp.getdistance() != 0.0f)
-			bounce2 = tr[0].normal()*((obj1dirtmp)/1.0f).getdistance();
-		/*else
-			bounce2 = tr[0].normal()*((obj2dirtmp)/1.0f).getdistance();*/
-		//obj2->force -= ((bounce2*(obj2->behavior.bounce/10.0f))*obj1->behavior.mass)/obj2->behavior.mass;
+		obj2->direction -= obj1dirtmp.normal()*(obj2energy+(obj1energy*bounce2));
 	}
 	
-	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-		obj1->force -= bounce2*(obj2->behavior.bounce/10.0f);
-	if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-		obj2->force -= bounce1*(obj1->behavior.bounce/10.0f);
+	/*if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		
+	}
+	if(!obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		
+	}*/
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
@@ -131,11 +126,11 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 			objects[a]->spin /= airslowdown;
 			objects[a]->direction /= airslowdown;
 		}
-		//objects[a]->step();
+		objects[a]->increment();
 	}
 	
 	for(unsigned long a=0;a<numobjects;a++) {
-		for(unsigned long b=a+1;b<numobjects;b++) {
+		for(unsigned long b=0;b<numobjects;b++) {
 			if(a!=b /*&& objects[a]->bounding.checkbounding(objects[b]->bounding) && objects[b]->bounding.checkbounding(objects[b]->position, objects[a]->position, objects[a]->bounding)*/ ) {
 				if( processcollision(objects[a], objects[b])) {
 					if(objects[a]->callback != NULL) {
@@ -192,6 +187,9 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		}
 	}
 	
-	for(unsigned long a=0;a<numobjects;a++) objects[a]->step();
+	for(unsigned long a=0;a<numobjects;a++) {
+		objects[a]->step();
+		objects[a]->clearForce();
+	}
 };
 

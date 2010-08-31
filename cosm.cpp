@@ -130,7 +130,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sphs[cosm].resizetrail(100);
 		
-		//sphs[cosm].setproperties(FOUNTAIN_USE_MASTER_GRAVITY);
+		sphs[cosm].setproperties(1|2);
 		
 		sphs[cosm].build();
 		

@@ -13,7 +13,7 @@ class FOUNTAIN;
 #include "simulation_class.h"
 
 #define				FOUNTAIN_USE_MASTER_GRAVITY					1
-//#define				FOUNTAIN_
+#define				FOUNTAIN_IGNORE_PARENT_TRANSLATION			2
 
 class POGEL::PHYSICS::FOUNTAIN : public POGEL::PHYSICS::DYNAMICS, public POGEL::PHYSICS::SOLID {
 	private:
