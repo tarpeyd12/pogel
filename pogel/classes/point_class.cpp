@@ -32,7 +32,10 @@ POGEL::VECTOR POGEL::VECTOR::normal() {
 };
 
 float POGEL::VECTOR::getdistance() {
-	return (float)sqrt(x*x+y*y+z*z);
+	float r = (float)sqrt(x*x+y*y+z*z);
+	if(isnan(r))
+		return 0.0f;
+	return r;
 };
 
 float POGEL::VECTOR::getangle(POGEL::VECTOR other, POGEL::VECTOR ref) {

@@ -102,7 +102,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
 		//obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
 		//obj[i].turnto(POINT());
-		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(0.0f, 50.0f, 1.0f, 0.0f, 0.0f, 0.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|16);
+		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|16);
 		//sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
 		//sphs[i]->position.print();
 		//sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
@@ -158,7 +158,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), PHYSICS_SOLID_STATIONARY/* | PHYSICS_SOLID_CONVEX*/|16);
 	//border->spin = POGEL::VECTOR(POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f))*1.0f;
 	//border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
-	border->behavior.bounce = 50.0f;
+	border->behavior.bounce = 1.0f;
 	border->behavior.friction = 0.0f;
 	border->behavior.mass = 0.0f;
 	
@@ -216,7 +216,7 @@ void DrawGLScene()
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);
 	
-	//POGEL::ThrotleFps(1);
+	//POGEL::ThrotleFps(6);
 	
 	//frames++;
 	//border->rotate(POGEL::VECTOR(0.0f,1.0f,0.0f)/1.0f);

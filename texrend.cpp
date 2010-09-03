@@ -92,7 +92,10 @@ void DrawGLScene()
 		/*glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
 		glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
 		glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );*/
+		//unsigned int prp = POGEL::getproperties();
+		//POGEL::addproperty(POGEL_WIREFRAME);
 		obj[0].draw();
+		//POGEL::setproperties(prp);
 		if(go)
 			obj[0].step();
 		glPopMatrix();

@@ -114,12 +114,17 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 				rotate(spin);
 				translate(direction);
 			}
-			
+			//force = POGEL::VECTOR();
 			stepstaken++;
 		}
 		
 		void clearForce() {
 			force = POGEL::VECTOR();
+		}
+		
+		void addForce() {
+			if(!this->hasOption(PHYSICS_SOLID_STATIONARY))
+				direction += force;
 		}
 		
 		void step();

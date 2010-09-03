@@ -244,3 +244,18 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 	}
 	return ret;
 };
+
+void inline engclc(float m1, float m2, POGEL::VECTOR v1, POGEL::VECTOR v2, POGEL::VECTOR *v) {
+	
+	
+};
+
+void POGEL::PHYSICS::calcenergy(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
+	float m1 = s1->behavior.mass, m2 = s2->behavior.mass;
+	POGEL::VECTOR v1 = s1->direction, v2 = s2->direction;
+	POGEL::VECTOR v3, v4;
+	
+	if(s1->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		
+	}
+};
