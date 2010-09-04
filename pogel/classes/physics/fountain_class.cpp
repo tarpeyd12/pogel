@@ -25,6 +25,7 @@ void POGEL::PHYSICS::FOUNTAIN::increment() {
 	if(hasproperty(FOUNTAIN_IGNORE_PARENT_TRANSLATION)) {
 		for(unsigned long i = 0; i < numobjects; i++) {
 			objects[i]->translate(direction*-1.0f);
+			objects[i]->offsettrail(direction*-1.0f);
 		}
 	}
 	

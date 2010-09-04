@@ -26,7 +26,8 @@ class SOLID;
 //#define			SOLID_DISPLAY_NEGATIVE_ROTATION_TRAIL
 //#define			SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL
 
-#define			SOLID_FNC_DEF					POGEL::PHYSICS::SOLID* obj, char* othername
+#define			SOLID_CALLBACK_FNC_DEF			POGEL::PHYSICS::SOLID* obj, char* othername
+#define			SOLID_FNC_DEF					POGEL::PHYSICS::SOLID* obj
 
 class POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES {
 	public:
@@ -61,6 +62,7 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		POGEL::PHYSICS::DYNAMICS* container;
 		
 		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
+		void (*function)(POGEL::PHYSICS::SOLID*);
 		
 		POGEL::BOUNDING refbounding;
 	public:
@@ -87,6 +89,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void setCallback(void (*func)(POGEL::PHYSICS::SOLID*,char*) )
 			{ callback = func; }
+		void setStepFunc(void (*func)(POGEL::PHYSICS::SOLID*) )
+			{ function = func; }
 		
 		void resizetrail(unsigned long);
 		
@@ -97,6 +101,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		bool sameposlegacy(float);
 		bool samerotlegacy(float);
 		bool samelegacy(float);
+		
+		void offsettrail(POGEL::VECTOR);
 		
 		void getbounding();
 		void setboundingskips();

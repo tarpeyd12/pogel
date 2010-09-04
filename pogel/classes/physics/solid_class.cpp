@@ -22,6 +22,7 @@ POGEL::PHYSICS::SOLID::SOLID() : POGEL::OBJECT() {
 	container = NULL;
 	
 	callback = NULL;
+	function = NULL;
 };
 
 POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES attr, unsigned int prop) : POGEL::OBJECT(obj) {
@@ -46,6 +47,7 @@ POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPR
 	container = NULL;
 	
 	callback = NULL;
+	function = NULL;
 };
 
 POGEL::PHYSICS::SOLID::~SOLID() {
@@ -146,6 +148,11 @@ bool POGEL::PHYSICS::SOLID::samelegacy(float pres) {
 	return ret;
 };
 
+void POGEL::PHYSICS::SOLID::offsettrail(POGEL::VECTOR v) {
+	for(unsigned long i = trailsize-1;i>0;i--)
+		trail[i] += v;
+}
+
 void POGEL::PHYSICS::SOLID::getbounding() {
 	
 	/*if(stepstaken <= 1 && container != NULL)
@@ -239,7 +246,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 		mat[1] = POGEL::MATRIX(rots[0], MATRIX_CONSTRUCT_ROTATION);
 		#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		
-		for(unsigned int i=0; i<trailsize-1 && i<POGEL::frames; i++) {
+		for(unsigned int i=0; i<trailsize-1 && i<stepstaken; i++) {
 			#ifdef SOLID_DISPLAY_TRAIL_FADING
 				float color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#else
@@ -368,6 +375,8 @@ void POGEL::PHYSICS::SOLID::step() {
 	steptrail();
 	//if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
 	getbounding();
+	if(function != NULL)
+		function(this);
 };
 
 void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POGEL::TRIANGLE* tri) {

@@ -25,6 +25,7 @@ void POGEL::PHYSICS::MICROCOSM::increment() {
 	if(hasproperty(MICROCOSM_IGNORE_PARENT_TRANSLATION)) {
 		for(unsigned long i = 0; i < numobjects; i++) {
 			objects[i]->translate(direction*-1.0f);
+			objects[i]->offsettrail(direction*-1.0f);
 		}
 	}
 	
@@ -34,23 +35,24 @@ void POGEL::PHYSICS::MICROCOSM::increment() {
 	// increment the simulation
 	POGEL::PHYSICS::SIMULATION::increment();
 	
-	// save the current properties
-	unsigned int prop = getOptions();
-	POGEL::POINT pos = position;
-	position = POGEL::POINT();
-	POGEL::POINT rot = rotation;
-	rotation = POGEL::POINT();
-	// makes it that the simulation cannot move the microcosm
-	addOption(PHYSICS_SOLID_STATIONARY);
-	
-	if(hasproperty(MICROCOSM_COLLIDE_WITH_PATRONS))
-		for(unsigned long i = 0; i < numobjects; i++)
-			processcollision(this, objects[i]);
-	
-	// reset the properties to what they were
-	setOptions(prop);
-	position = pos;
-	rotation = rot;
+	if(hasproperty(MICROCOSM_COLLIDE_WITH_PATRONS)) {
+		// save the current properties
+		unsigned int prop = getOptions();
+		POGEL::POINT pos = position;
+		position = POGEL::POINT();
+		POGEL::POINT rot = rotation;
+		rotation = POGEL::POINT();
+		// makes it that the simulation cannot move the microcosm
+		addOption(PHYSICS_SOLID_STATIONARY);
+		
+			for(unsigned long i = 0; i < numobjects; i++)
+				processcollision(this, objects[i]);
+		
+		// reset the properties to what they were
+		setOptions(prop);
+		position = pos;
+		rotation = rot;
+	}
 }
 
 void POGEL::PHYSICS::MICROCOSM::build() {
