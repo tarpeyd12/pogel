@@ -43,13 +43,13 @@ float POGEL::VECTOR::getangle(POGEL::VECTOR other, POGEL::VECTOR ref) {
 	tmp = *this;
 	tmp.normalize();
 	other.normalize();
-	float angle = POGEL::RadiansToDegrees(acos(tmp.dotproduct(other).getdistance()));
+	float angle = POGEL::RadiansToDegrees(acos(tmp.dodotproduct(other).getdistance()));
 	tmp1 = *this;
 	tmp1.normalize();
-	return tmp1.dotproduct(other).getdistance() < 0.0f ? -angle : angle;
+	return tmp1.dodotproduct(other).getdistance() < 0.0f ? -angle : angle;
 };
 
-POGEL::VECTOR& POGEL::VECTOR::dotproduct(POGEL::VECTOR in) {
+POGEL::VECTOR& POGEL::VECTOR::dodotproduct(POGEL::VECTOR in) {
 	POGEL::VECTOR a(x,y,z), b(in.x,in.y,in.z);
 	//a.set_values(x,y,z);
 	//b.set_values(in.x,in.y,in.z);
@@ -58,6 +58,11 @@ POGEL::VECTOR& POGEL::VECTOR::dotproduct(POGEL::VECTOR in) {
 	y=((a.z*b.x)-(a.x*b.z));
 	z=((a.x*b.y)-(a.y*b.x));
 	return *this;
+};
+
+float POGEL::VECTOR::dotproduct(POGEL::VECTOR in) {
+	POGEL::VECTOR a(x,y,z), b(in.x,in.y,in.z);
+	return a.dodotproduct(b).getdistance();
 };
 
 void POGEL::VECTOR::frompoints(POGEL::POINT a, POGEL::POINT b) {

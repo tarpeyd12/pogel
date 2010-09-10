@@ -20,15 +20,15 @@ class POINT {
 		
 		POINT() {x=0.0f; y=0.0f; z=0.0f;}
 		POINT(float a, float b, float c)
-			{x=a; y=b; z=c;}
+			{ x=a; y=b; z=c; }
 		
 		void get_values(float *a, float *b, float *c)
-			{*a=x; *b=y; *c=z;}
+			{ *a=x; *b=y; *c=z; }
 		void set_values(float a, float b, float c)
-			{x=a; y=b; z=c;}
+			{ x=a; y=b; z=c; }
 		
 		void print()
-			{POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z);}
+			{ POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z); }
 			
 		void draw();
 		
@@ -36,7 +36,7 @@ class POINT {
 			{glTranslatef(x,y,z);}
 		
 		float distance(POGEL::POINT p)
-			{return (float)(sqrt( (p.x-x)*(p.x-x) + (p.y-y)*(p.y-y) + (p.z-z)*(p.z-z) )  );}
+			{ return (float)(sqrt( (p.x-x)*(p.x-x) + (p.y-y)*(p.y-y) + (p.z-z)*(p.z-z) )  ); }
 		
 		POGEL::POINT operator*(float a) {
 			return POGEL::POINT(x*a, y*a, z*a);
@@ -122,7 +122,8 @@ class VECTOR: public POGEL::POINT {
 		POGEL::VECTOR normal();
 		float getdistance();
 		float getangle(POGEL::VECTOR,POGEL::VECTOR);
-		POGEL::VECTOR& dotproduct(POGEL::VECTOR);
+		POGEL::VECTOR& dodotproduct(POGEL::VECTOR);
+		float dotproduct(POGEL::VECTOR);
 		void frompoints(POGEL::POINT,POGEL::POINT);
 		
 		POGEL::POINT topoint()

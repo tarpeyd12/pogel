@@ -24,7 +24,7 @@ OTHER = main.o window.o
 TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) firelike.o
+OBJ =  $(OTHER) simulation.o
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"

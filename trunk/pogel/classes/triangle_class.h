@@ -26,10 +26,16 @@ class TRIANGLE {
 		POGEL::IMAGE *texture; // a pointer to the image to use as the texture
 		POGEL::VECTOR normal; // the normal vector
 		
-		TRIANGLE() {texture=NULL;}
-		TRIANGLE(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop) {load(a,b,c,tex,prop);}
-		TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c,POGEL::IMAGE *tex,unsigned int prop) {load(POGEL::VERTEX(a),POGEL::VERTEX(b),POGEL::VERTEX(c),tex,prop);}
-		TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop) {load(verts,tex,prop);}
+		TRIANGLE()
+			{texture=NULL;}
+		TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c)
+			{load(POGEL::VERTEX(a),POGEL::VERTEX(b),POGEL::VERTEX(c),NULL,0);}
+		TRIANGLE(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop) 
+			{load(a,b,c,tex,prop);}
+		TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c,POGEL::IMAGE *tex,unsigned int prop)
+			{load(POGEL::VERTEX(a),POGEL::VERTEX(b),POGEL::VERTEX(c),tex,prop);}
+		TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop) 
+			{load(verts,tex,prop);}
 		
 		void load(POGEL::VERTEX,POGEL::VERTEX,POGEL::VERTEX,POGEL::IMAGE*,unsigned int);
 		void load(POGEL::VERTEX*,POGEL::IMAGE*,unsigned int);

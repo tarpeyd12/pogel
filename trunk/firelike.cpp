@@ -14,7 +14,7 @@
 
 using namespace POGEL;
 
-#define numobjs 15
+#define numobjs 50
 #define numcosms 10
 #define grd 1
 #define sps 0.10f
@@ -35,8 +35,8 @@ GLfloat LightPosition[]= { 0.0f, 0.0f, 0.0f, 1.0f };
 
 
 void fireyness(SOLID_FNC_DEF) {
-	if(obj->stepstaken >= 25-(rand()%25 - 10) ) {
-		obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(0.5));
+	if(obj->stepstaken >= 25-(rand()%25) ) {
+		obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(0.25));
 		obj->direction = POGEL::VECTOR(0.0f,-20.0f,0.0f)/PARTICLE_SLOWDOWN * POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5);
 		obj->stepstaken = 0;
 	}
@@ -96,10 +96,11 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	sphs = new POGEL::PHYSICS::FOUNTAIN[numcosms];
 	
-	POGEL::MATRIX matcosmtransform(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
+	//POGEL::MATRIX matcosmtransform(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
+	POGEL::MATRIX matcosmtransform(POGEL::POINT(), POGEL::POINT(0.0f,0.0f,0.0f));
 	
 	for(unsigned long cosm = 0; cosm < numcosms; cosm++) {
-		matcosmtransform = matcosmtransform * POGEL::MATRIX(POGEL::POINT(), POGEL::POINT(x,y,z));
+		//matcosmtransform = matcosmtransform * POGEL::MATRIX(POGEL::POINT(), POGEL::POINT(x,y,z));
 		
 		POGEL::MATRIX matobjtransform;//(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 		
@@ -111,18 +112,18 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			
 			tmp->setname(POGEL::string("object%ld_of_microcosm_%ld", objs, cosm));
 			
-			//addCube(tmp, size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
-			addSphere(tmp,2,4, size/2.0f*POGEL::FloatRand(1.0f), defaultimg,1,1, 0 /*| TRIANGLE_VERTEX_NORMALS*/, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+			//addCube(tmp, size,size,size, defaultimg, 1,1,0,POGEL::MATRIX());
+			addSphere(tmp,2,4, size/2.0f, defaultimg,1,1, 0 /*| TRIANGLE_VERTEX_NORMALS*/, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 			//tmp->setproperties(8);
 			//tmp->addobject(&obj);
 			
-			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, false, (cosm%2==0?-1.0f:1.0f));
+			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 1.0f, 2.0f, 0.0f, 0.0f, 0.0f, false, (cosm%2==0?-1.0f:1.0f));
 			tmp->setOptions(2);
 			
 			tmp->setStepFunc(fireyness);
 			
 			//tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*40))*sps+sps*5, 0.0f)));
-			tmp->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(0.5));
+			//tmp->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(0.5));
 			tmp->direction = POGEL::VECTOR(0.0f,-5.0f,0.0f)/PARTICLE_SLOWDOWN;
 			tmp->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 			
@@ -133,7 +134,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			sphs[cosm].addSolid(tmp);
 		}
 		//sphs[cosm].addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),sps*20000000000000.0f) );
-		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 5.8f;
+		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 1.8f;
 		
 		sphs[cosm].setname(POGEL::string("microcosm_%ld", cosm));
 		
@@ -149,7 +150,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sphs[cosm].resizetrail(100);
 		
-		sphs[cosm].setproperties(2);
+		sphs[cosm].setproperties(1|2);
 		
 		sphs[cosm].build();
 		
@@ -178,7 +179,7 @@ void DrawGLScene()
 	glLoadIdentity();				// Reset The View
 	
 	//glTranslatef(0.0f,0.0f,-25.0f*2.0f);
-	glTranslatef(0.0f+campos.x,0.0f+campos.y,-20.0f+campos.z);
+	glTranslatef(0.0f+campos.x,0.0f+campos.y,-10.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
