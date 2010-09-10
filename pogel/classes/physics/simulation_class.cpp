@@ -69,6 +69,14 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 	
 	//(tr[0]+tr[1]).print();
 	
+	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		POGEL::VECTOR vtmp[2];
+		calcElasticDirections(obj1, obj2, vtmp);
+		obj1->direction = vtmp[1];
+		obj2->direction = vtmp[0];
+		return;
+	}
+	
 	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 		POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(colpoint-obj1->position);
 		obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;

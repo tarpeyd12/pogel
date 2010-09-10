@@ -171,7 +171,7 @@ void POGEL::OBJECT::killchildren() {
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v) {
 	if(!v.isbad())
-	position += v;
+	position += v.topoint();
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v, float s) {

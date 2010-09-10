@@ -245,17 +245,45 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 	return ret;
 };
 
-void inline engclc(float m1, float m2, POGEL::VECTOR v1, POGEL::VECTOR v2, POGEL::VECTOR *v) {
-	
-	
+float inline getvprime(float m1, float m2, float v1, float v2) {
+	return (v1*(m1-m2)+(2*m2*v2))/(m1+m2);
 };
 
-void POGEL::PHYSICS::calcenergy(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
-	float m1 = s1->behavior.mass, m2 = s2->behavior.mass;
-	POGEL::VECTOR v1 = s1->direction, v2 = s2->direction;
-	POGEL::VECTOR v3, v4;
+void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
-	if(s1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-		
-	}
+	POGEL::VECTOR un(s1->position, s2->position), ut1(un, s1->direction), ut2(un, s2->direction);
+	float v1prime, v2prime;
+	
+	un.normalize();
+	ut1.normalize();
+	ut2.normalize();
+	
+	float v1n, v1t, v2n, v2t;
+	
+	v1n = un.dotproduct(s1->direction);
+	v1t = ut1.dotproduct(s1->direction);
+	
+	v2n = un.dotproduct(s2->direction);
+	v2t = ut2.dotproduct(s2->direction);
+	
+	v1prime = getvprime(s1->behavior.mass, s2->behavior.mass, v1n, v2n);
+	v2prime = getvprime(s2->behavior.mass, s1->behavior.mass, v2n, v1n);
+	
+	POGEL::VECTOR v1nprimevector, v2nprimevector, v1tprimevector, v2tprimevector;
+	
+	v1nprimevector = un*v1prime;
+	v2nprimevector = un*v2prime;
+	
+	v1tprimevector = ut1*v1t;
+	v2tprimevector = ut2*v2t;
+	
+	v[0] = v1nprimevector + v1tprimevector;
+	v[1] = v2nprimevector + v2tprimevector;
+	
+	//v[0].print();
+	//v[1].print();
+	
+	//POGEL::message("v1n = %0.3f, v1t = %0.3f, v2n = %0.3f, v2t = %0.3f", v1n, v1t, v2n, v2t);
 };
+
+
