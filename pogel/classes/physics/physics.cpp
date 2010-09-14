@@ -245,20 +245,38 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 	return ret;
 };
 
-float inline getvprime(float m1, float m2, float v1, float v2) {
+float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
 	return (v1*(m1-m2)+(2*m2*v2))/(m1+m2);
 };
 
 void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
-	POGEL::VECTOR un(s1->position, s2->position), ut1(un, s1->direction), ut2(un, s2->direction);
+	POGEL::VECTOR un(s2->position, s1->position), ut1(s1->direction, un), ut2(s2->direction, un);
 	float v1prime, v2prime;
+	float v1n, v1t, v2n, v2t;
 	
 	un.normalize();
+	
+	if(
+		s1->direction.normal() == un || \
+		s1->direction.normal()*-1.0f == un || \
+		s2->direction.normal() == un || \
+		s2->direction.normal()*-1.0f == un
+	) {
+		v1n = s1->direction.getdistance();
+		v2n = s2->direction.getdistance();
+		
+		v1prime = POGEL::PHYSICS::getvprime(s1->behavior.mass, s2->behavior.mass, v1n, v2n);
+		v2prime = POGEL::PHYSICS::getvprime(s2->behavior.mass, s1->behavior.mass, v2n, v1n);
+		
+		v[0] = s2->direction.normal() * v1prime;
+		v[1] = s1->direction.normal() * v2prime;
+		
+		return;
+	}
+	
 	ut1.normalize();
 	ut2.normalize();
-	
-	float v1n, v1t, v2n, v2t;
 	
 	v1n = un.dotproduct(s1->direction);
 	v1t = ut1.dotproduct(s1->direction);
@@ -266,24 +284,19 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHY
 	v2n = un.dotproduct(s2->direction);
 	v2t = ut2.dotproduct(s2->direction);
 	
-	v1prime = getvprime(s1->behavior.mass, s2->behavior.mass, v1n, v2n);
-	v2prime = getvprime(s2->behavior.mass, s1->behavior.mass, v2n, v1n);
+	v1prime = POGEL::PHYSICS::getvprime(s1->behavior.mass, s2->behavior.mass, v1n, v2n);
+	v2prime = POGEL::PHYSICS::getvprime(s2->behavior.mass, s1->behavior.mass, v2n, v1n);
 	
 	POGEL::VECTOR v1nprimevector, v2nprimevector, v1tprimevector, v2tprimevector;
 	
 	v1nprimevector = un*v1prime;
 	v2nprimevector = un*v2prime;
 	
-	v1tprimevector = ut1*v1t;
-	v2tprimevector = ut2*v2t;
+	v1tprimevector = s1->direction - un * s1->direction.dotproduct(un);
+	v2tprimevector = s2->direction - un * s2->direction.dotproduct(un);
 	
 	v[0] = v1nprimevector + v1tprimevector;
 	v[1] = v2nprimevector + v2tprimevector;
-	
-	//v[0].print();
-	//v[1].print();
-	
-	//POGEL::message("v1n = %0.3f, v1t = %0.3f, v2n = %0.3f, v2t = %0.3f", v1n, v1t, v2n, v2t);
 };
 
 
