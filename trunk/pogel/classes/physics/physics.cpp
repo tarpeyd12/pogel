@@ -245,18 +245,19 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 	return ret;
 };
 
-float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
+inline float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
 	return (v1*(m1-m2)+(2*m2*v2))/(m1+m2);
 };
 
 void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
-	POGEL::VECTOR un(s2->position, s1->position), ut1(s1->direction, un), ut2(s2->direction, un);
+	POGEL::VECTOR un(s2->position, s1->position);
 	float v1prime, v2prime;
 	float v1n, v1t, v2n, v2t;
 	
 	un.normalize();
 	
+	// check to see if the objects can be treated as a 1 dimensional collision
 	if(
 		s1->direction.normal() == un || \
 		s1->direction.normal()*-1.0f == un || \
@@ -274,6 +275,8 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHY
 		
 		return;
 	}
+	
+	POGEL::VECTOR ut1(s1->direction, un), ut2(s2->direction, un);
 	
 	ut1.normalize();
 	ut2.normalize();
@@ -295,8 +298,8 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHY
 	v1tprimevector = s1->direction - un * s1->direction.dotproduct(un);
 	v2tprimevector = s2->direction - un * s2->direction.dotproduct(un);
 	
-	v[0] = v1nprimevector + v1tprimevector;
-	v[1] = v2nprimevector + v2tprimevector;
+	v[0] = (v1nprimevector + v1tprimevector);
+	v[1] = (v2nprimevector + v2tprimevector);
 };
 
 

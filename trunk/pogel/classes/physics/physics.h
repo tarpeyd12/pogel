@@ -37,7 +37,7 @@ namespace PHYSICS {
 	bool solid_line_collision(POGEL::PHYSICS::SOLID*, POGEL::POINT, POGEL::POINT, POGEL::TRIANGLE*, POGEL::POINT*, POGEL::POINT*);
 	bool solid_collision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT*,POGEL::VECTOR*,POGEL::VECTOR*,float*);
 	
-	float getvprime(float m1, float m2, float v1, float v2);
+	inline float getvprime(float m1, float m2, float v1, float v2);
 	void calcElasticDirections(POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR*);
 }
 }

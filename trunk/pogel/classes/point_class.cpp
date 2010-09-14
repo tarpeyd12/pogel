@@ -60,9 +60,8 @@ POGEL::VECTOR& POGEL::VECTOR::dodotproduct(POGEL::VECTOR in) {
 	return *this;
 };
 
-float POGEL::VECTOR::dotproduct(POGEL::VECTOR in) {
-	POGEL::VECTOR a(x,y,z), b(in.x,in.y,in.z);
-	return a.dodotproduct(b).getdistance();
+float POGEL::VECTOR::dotproduct(POGEL::VECTOR a) {
+	return (x*a.x)+(y*a.y)+(z*a.z);
 };
 
 void POGEL::VECTOR::frompoints(POGEL::POINT a, POGEL::POINT b) {
