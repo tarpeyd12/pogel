@@ -14,7 +14,7 @@
 
 using namespace POGEL;
 
-#define numobjs 50
+#define numobjs 11
 #define numcosms 10
 #define grd 1
 #define sps 0.10f

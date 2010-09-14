@@ -11,12 +11,16 @@ class DYNAMICS;
 #include "singularity_class.h"
 #include "solid_class.h"
 
+#define				DYNAMICS_HAS_MAGNETIC_OBJECT			1
+
 class POGEL::PHYSICS::DYNAMICS {
 	private:
 		unsigned int properties; // the mushed properties
 	protected:
 		POGEL::PHYSICS::SOLID** objects;
 		unsigned long numobjects;
+		
+		POGEL::PHYSICS::GRAVITYCLUSTER objectmasses;
 		
 		POGEL::PHYSICS::GRAVITYCLUSTER singularities;
 		POGEL::PHYSICS::FLOW gusts;
@@ -26,8 +30,6 @@ class POGEL::PHYSICS::DYNAMICS {
 		
 		//POGEL::PHYSICS::GRAVITYCLUSTER** ;
 		//unsigned long ;
-		
-		
 	public:
 		unsigned long boundingskips;
 		
@@ -45,6 +47,8 @@ class POGEL::PHYSICS::DYNAMICS {
 				//delete currents[i];
 			//delete[] currents;
 		}
+		
+		PROPERTIES_METHODS;
 		
 		unsigned long addsingularity(POGEL::PHYSICS::SINGULARITY sig) {return singularities.addsingularity(sig);}
 		void addsingularities(POGEL::PHYSICS::SINGULARITY* sig, unsigned long num) {singularities.addsingularities(sig,num);}

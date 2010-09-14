@@ -15,9 +15,11 @@
 
 using namespace POGEL;
 
-#define numobjs 30
-#define grd 1
-#define sps 5.0f
+#define frameskip 1
+
+#define numobjs 8*8*8+1
+#define grd 8
+#define sps 1.01f
 #define size 1.0f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
@@ -37,24 +39,24 @@ GLfloat LightDiffuse[]= { 2.0f, 2.0f, 2.0f, 1.0f };
 GLfloat LightPosition[]= { 10.0f, 0.0f, 5.0f, 1.0f };
 
 void oob(SOLID_FNC_DEF) {
-	if(obj->position.distance(POGEL::POINT()) >= 18.0f) {// || obj->position.y <= -16.0f ) {
+	/*if(obj->position.distance(POGEL::POINT()) >= 28.0f ) {//  || obj->position.y <= -15.0f ) {
 		obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(20.0f));
 		//obj->moveto(POGEL::POINT());
 		//obj->direction  = POGEL::VECTOR(0.0f,0.0f,0.0f);
 		obj->stepstaken = 0;
 		obj->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/100;
 	}
-	if(obj->position.distance(POGEL::POINT()) >= 15.0f ) {
+	if(obj->position.distance(POGEL::POINT()) >= 25.0f ) {
 		//obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(5.0f));
-		obj->direction += POGEL::VECTOR(obj->position, POGEL::POINT()).normal()*obj->direction.getdistance();
+		obj->direction += POGEL::VECTOR(obj->position, POGEL::POINT()).normal()*obj->direction.getdistance()*1.0f;
 		//obj->direction *= -1.0f;
 		//obj->stepstaken = 0;
-	}
-	/*if(obj->position.y <= -15.0f ) {
+	}*/
+	/*if(obj->position.y <= -13.0f ) {
 		//obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(5.0f));
 		//obj->direction = POGEL::VECTOR(obj->position, POGEL::POINT()).normal()*obj->direction.getdistance()*0.8;
 		//obj->direction *= -1.0f;
-		obj->direction = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*obj->direction.getdistance()*0.8;
+		obj->direction += POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*obj->direction.getdistance()*1.0;
 		//obj->stepstaken = 0;
 	}*/
 	//obj->position.z = 0.0f;
@@ -89,12 +91,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	glEnable(GL_LIGHTING);
 	
 	//sim = new POGEL::PHYSICS::SIMULATION();
-	sim.deactivation = false;
-	sim.precision = 0.01f;
+	//sim.deactivation = false;
+	//sim.precision = 0.01f;
 	
 	sim.boundingskips = 0;
 	
-	srand((unsigned)time(NULL));
+	//srand((unsigned)time(NULL));
 	
 	sphs=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*numobjs);
 	
@@ -111,7 +113,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//addDisk(&obj[i], 4, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-		addSphere(&obj[i],8,16, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addSphere(&obj[i],4,8, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 		//addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 		
@@ -120,7 +122,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
 		obj[i].moveto(POINT( \
 			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f), \
-			(float)(i/(grd*grd))*(sps) - (10.0f-(sps/2.0f)), \
+			(float)(i/(grd*grd))*(sps) - sps*grd/2,  /* - (10.0f-(sps/2.0f)), \*/
 			((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f) \
 		));
 		//obj[i].translate(POGEL::VECTOR(1.0f,0.0f,0.0f)*(POGEL::FloatRand(2.0f)-1.0f));
@@ -141,20 +143,21 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
 		//sphs[i]->visable = false;
 		
-		/*if(i == numobjs-1) { \
-			sphs[i]->setOptions(1|4); \
-			sphs[i]->moveto(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f)); \
-		}*/
+		if(i == numobjs-1) {
+			//sphs[i]->setOptions(1|4);
+			sphs[i]->moveto(POGEL::POINT(-20.5f,0.5f,0.0f));
+			sphs[i]->direction = POGEL::VECTOR(.1,0,0)*5;
+		}
 		
-		sphs[i]->resizetrail(50);
+		sphs[i]->resizetrail(10);
 		
 		sphs[i]->setStepFunc(oob);
 		
 		sim.addSolid(sphs[i]);
 	}
-	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f) );
+	//sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),10000000000000.0f*.5) );
 	//sim.addfan(PHYSICPOGEL::OBJECT *ringS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 20.0f));
-	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
+	//sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f)*9.8f;
 	//sim.air_dencity = 500.0f;
 	
 	POGEL::OBJECT* ring = new POGEL::OBJECT();
@@ -183,7 +186,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	ring->moveto(POGEL::POINT(0.0f,-35.0f,0.0f));
 	ring->turnto(POGEL::POINT(0.0f,0.0f,0.0f));
 	ring->build();
-	border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), PHYSICS_SOLID_STATIONARY/* | PHYSICS_SOLID_CONVEX*/|16);
+	border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), PHYSICS_SOLID_STATIONARY/* | PHYSICS_SOLID_CONVEX*/|4|16);
 	//border->spin = POGEL::VECTOR(POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f))*1.0f;
 	//border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
 	border->behavior.bounce = 1.0f;
@@ -238,6 +241,7 @@ void DrawGLScene()
 	//message("%ld: ",frames);
 	
 	POGEL::IncrementFps();
+	if(frames%frameskip == 0)
 	POGEL::PrintFps();
 	
 	glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
@@ -257,14 +261,14 @@ void DrawGLScene()
 		}
 		else if(go)
 			sim.increment();
-	if(frames%1 == 0) {
+	if(frames%frameskip == 0) {
 		sim.draw();
 	}
 	
 	//message("\n");
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
-	if(frames%1 == 0) {
+	if(frames%frameskip == 0) {
 	glutSwapBuffers();
 	}
 	

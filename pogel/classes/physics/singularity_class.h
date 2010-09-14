@@ -20,24 +20,34 @@ class GRAVITYCLUSTER;
 class POGEL::PHYSICS::SINGULARITY {
 	public:
 		bool active;
+		POGEL::POINT *pcenter;
+		float *pintencity;
 		POGEL::POINT center;
 		float intencity;
 		
-		SINGULARITY() {center=POGEL::POINT(); intencity=0.0f; active=true;}
-		SINGULARITY(POGEL::POINT p, float i) {center=p; intencity=i; active=true;}
-		SINGULARITY(float x, float y, float z, float i) {center=POGEL::POINT(x,y,z); intencity=i; active=true;}
+		bool notpointing;
+		
+		SINGULARITY() { center=POGEL::POINT(); intencity=0.0f; active=true; notpointing=true; }
+		SINGULARITY(POGEL::POINT p, float i) { center=p; intencity=i; active=true; notpointing=true; }
+		SINGULARITY(POGEL::POINT *p, float *i) { pcenter=p; pintencity=i; active=true; notpointing=false; }
+		SINGULARITY(float x, float y, float z, float i) { center=POGEL::POINT(x,y,z); intencity=i; active=true; notpointing=true; }
+		
+		//~SINGULARITY() { if(notpointing) { delete pcenter; delete pintencity; } }
+		
+		POGEL::POINT getCenter() { if(notpointing) return center; return *pcenter; }
+		float getIntencity() { if(notpointing) return intencity; return *pintencity; }
 		
 		virtual POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(active) {
-				if(p==center)
+				if(p==getCenter())
 					return POGEL::VECTOR();
-				float dist = p.distance(center);
+				float dist = p.distance(getCenter());
 				
 				if(dist*dist > 0.00001) {
 					POGEL::VECTOR v;
-					v.frompoints(p, center);
+					v.frompoints(p, getCenter());
 					v.normalize();
-					v *= intencity*mass * GRAVITYCONSTANT;
+					v *= getIntencity()*mass * GRAVITYCONSTANT;
 					v /= (dist*dist);
 					return v;
 				}
@@ -50,21 +60,19 @@ class POGEL::PHYSICS::SINGULARITY {
 class POGEL::PHYSICS::FAN : public POGEL::PHYSICS::SINGULARITY {
 	public:
 		POGEL::VECTOR direction;
+		POGEL::VECTOR *pdirection;
 		
-		FAN() : SINGULARITY()
-			{ direction=POGEL::VECTOR(); }
-		FAN(POGEL::POINT p, POGEL::VECTOR v, float i) : SINGULARITY(p,i)
-			{ direction=v; }
-		FAN(float x, float y, float z, POGEL::VECTOR v, float i) : SINGULARITY(x,y,z,i)
-			{ direction=v; }
-		FAN(POGEL::POINT p, float x, float y, float z, float i) : SINGULARITY(p,i)
-			{ direction=POGEL::VECTOR(x,y,z); }
-		FAN(float x, float y, float z, float vx, float vy, float vz, float i) : SINGULARITY(x,y,z,i)
-			{ direction=POGEL::VECTOR(vx,vy,vz); }
+		FAN() : SINGULARITY() { direction=POGEL::VECTOR(); }
+		FAN(POGEL::POINT p, POGEL::VECTOR v, float i) : SINGULARITY(p,i) { direction=v; }
+		FAN(float x, float y, float z, POGEL::VECTOR v, float i) : SINGULARITY(x,y,z,i) { direction=v; }
+		FAN(POGEL::POINT p, float x, float y, float z, float i) : SINGULARITY(p,i) { direction=POGEL::VECTOR(x,y,z); }
+		FAN(float x, float y, float z, float vx, float vy, float vz, float i) : SINGULARITY(x,y,z,i) { direction=POGEL::VECTOR(vx,vy,vz); }
+		
+		POGEL::VECTOR getDirection() { if(notpointing) return direction; return *pdirection; }
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(active)
-				return ((direction*intencity)/p.distance(center))/(mass+1.0f);
+				return ((getDirection()*getIntencity())/p.distance(getCenter()))/(mass+1.0f);
 			return POGEL::VECTOR();
 		}
 };
