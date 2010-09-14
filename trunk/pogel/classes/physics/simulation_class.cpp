@@ -65,17 +65,28 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 	POGEL::VECTOR v[4];
 	float m[2];
 	
-	POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>, %0.3f.\n", obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z, totalinertia);
+	POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>, %0.3f.\n", \
+		obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z, totalinertia);
 	
 	//(tr[0]+tr[1]).print();
 	
-	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+	//if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 		POGEL::VECTOR vtmp[2];
-		calcElasticDirections(obj1, obj2, vtmp);
-		obj1->direction = vtmp[1];
-		obj2->direction = vtmp[0];
+		POGEL::PHYSICS::calcElasticDirections(obj1, obj2, vtmp);
+		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			obj1->direction = vtmp[0];
+			obj2->direction = vtmp[1];
+		}
+		if(obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			//obj1->direction = vtmp[1];
+			obj2->direction = vtmp[1];
+		}
+		if(obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			obj1->direction = vtmp[0];
+			//obj2->direction = vtmp[0];
+		}
 		return;
-	}
+	//}
 	
 	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
 		POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(colpoint-obj1->position);

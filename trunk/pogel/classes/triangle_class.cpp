@@ -18,7 +18,7 @@ void POGEL::TRIANGLE::load(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL
 	vct[1].frompoints(vertex[0].topoint(),vertex[2].topoint());
 	vct[1].normalize();
 	
-	vct[0].dotproduct(vct[1]);
+	vct[0].dodotproduct(vct[1]);
 	normal=vct[0];
 	normal.normalize();
 	bounding = POGEL::BOUNDING(BOUNDING_TRIANGLE);
