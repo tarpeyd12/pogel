@@ -80,7 +80,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHEREGENERAL(POGEL::PHYSICS::SOLID* obj
 	
 	if(obj1->position.distance(tmp_2) <= (obj1->bounding.maxdistance)) {
 		POGEL::VECTOR v = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
-		reactcollision(obj1, obj2, v.normal()*0, v.normal()*-1, tmp_2);
+		reactcollision(obj1, obj2, v.normal()*1, v.normal()*-1, tmp_2);
 		return true;
 	}
 	
@@ -118,7 +118,8 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHEREGENERAL(POGEL::PHYSICS::SOL
 	obj2->closest(p, &tmp, &tmptri);
 	
 	if(obj1->position.distance(tmp) >= obj1->bounding.maxdistance) {
-		reactcollision(obj1, obj2, v.normal(), v.normal(), p);
+		POGEL::VECTOR c = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
+		reactcollision(obj1, obj2, (v+c).normal(), (v+c).normal(), p);
 		return true;
 	}
 	
