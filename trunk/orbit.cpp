@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define numobjs 8
+#define numobjs 50
 #define grd 5
 #define sps 1.75f
 #define size 0.5f
@@ -130,7 +130,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			sphs[i]->moveto(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f)); \
 		}*/
 		
-		sphs[i]->resizetrail(2);
+		sphs[i]->resizetrail(50);
 		
 		sim.addSolid(sphs[i]);
 	}

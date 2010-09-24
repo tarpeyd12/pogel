@@ -286,7 +286,7 @@ POGEL::TRIANGLE POGEL::MATRIX::transformTriangle(POGEL::TRIANGLE tri) {
 };
 
 POGEL::QUAT POGEL::MATRIX::toquat() {
-	// converts the matrix to a Quatranation (dont knopw how it works)
+	// converts the matrix to a Quatranation (dont know how it works)
 	POGEL::QUAT q;
 	float t=1.0+matrix[0]+matrix[5]+matrix[10];
 	if(t>0.00000001) { // testing for gimble lock (I think)
