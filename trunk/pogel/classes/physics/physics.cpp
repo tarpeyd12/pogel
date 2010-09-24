@@ -249,9 +249,17 @@ inline float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
 	return (v1*(m1-m2)+(2*m2*v2))/(m1+m2);
 };
 
-void POGEL::PHYSICS::calcElasticDirections(POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
+void POGEL::PHYSICS::calcElasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
-	POGEL::VECTOR un(s2->position, s1->position);
+	POGEL::VECTOR un;
+	
+	//vn.print();
+	
+	if(vn == POGEL::VECTOR())
+		un.frompoints(s2->position, s1->position);
+	else
+		un = vn;
+	
 	float v1prime, v2prime;
 	float v1n, v1t, v2n, v2t;
 	

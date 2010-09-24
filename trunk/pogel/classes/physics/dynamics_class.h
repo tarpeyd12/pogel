@@ -46,6 +46,7 @@ class POGEL::PHYSICS::DYNAMICS {
 			//for(unsigned long i=0;i<numcurrents;i++)
 				//delete currents[i];
 			//delete[] currents;
+			//delete bounds;
 		}
 		
 		PROPERTIES_METHODS;
@@ -64,6 +65,8 @@ class POGEL::PHYSICS::DYNAMICS {
 		virtual void increment();
 		
 		virtual void draw();
+		
+		//void build();
 		
 		friend class POGEL::PHYSICS::SIMULATION;
 };

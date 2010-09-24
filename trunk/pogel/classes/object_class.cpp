@@ -432,5 +432,18 @@ void POGEL::OBJECT::draw() {
 		glTranslatef(-position.x, -position.y, -position.z);
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
 	}
+	if(POGEL::hasproperty(POGEL_LABEL)) {
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glColor3f(0.2f,0.5f,1.0f);
+		glPointSize(4);
+		glBegin(GL_POINTS);
+			glVertex3f(position.x, position.y, position.z);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_LIGHTING);
+	}
 };
 

@@ -16,6 +16,8 @@
 namespace POGEL {
 namespace PHYSICS {
 	
+	class BOUNDINGCONTAINER;
+	
 	class SINGULARITY;
 	class FAN;
 	
@@ -38,7 +40,7 @@ namespace PHYSICS {
 	bool solid_collision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT*,POGEL::VECTOR*,POGEL::VECTOR*,float*);
 	
 	inline float getvprime(float m1, float m2, float v1, float v2);
-	void calcElasticDirections(POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR*);
+	void calcElasticDirections(POGEL::VECTOR, POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR*);
 }
 }
 

@@ -46,6 +46,8 @@ class BOUNDING {
 			{maxdistance=maximum; max.x=gx; min.x=lx; max.y=gy; min.y=ly; max.z=gz; min.z=lz; numpoints=1;isactual = true;}
 		
 		void addpoint(POGEL::POINT,POGEL::POINT);
+		void addpoint(POGEL::POINT p)
+			{ addpoint(POGEL::POINT(), p); }
 		void fin(float f = 0.0f);
 		
 		void offset(POGEL::POINT);
@@ -55,6 +57,9 @@ class BOUNDING {
 		
 		void finishactual()
 			{isactual = false;}
+		
+		void unsetactual()
+			{isactual = true;}
 		
 		void draw(POGEL::POINT);
 		
