@@ -66,6 +66,11 @@ void POGEL::getcmd(int argc, char **argv) {
 					POGEL::addproperty(POGEL_PAIRS);
 				#endif
 				
+				#ifdef POGEL_LABEL
+				else if(strcmp(argv[i], POGEL_CMD_BOOL_FORMAT_LABEL)==0)
+					POGEL::addproperty(POGEL_LABEL);
+				#endif
+				
 				#ifdef POGEL_LOGTOFILE
 				else if(strcmp(argv[i], POGEL_CMD_BOOL_FORMAT_LOGTOFILE)==0) {
 					if((i+1)>=argc || argv[i+1]==NULL) {

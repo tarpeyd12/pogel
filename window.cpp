@@ -139,5 +139,12 @@ void keyPressed(unsigned char key, int x, int y)
 		else
 			POGEL::addproperty(128);
 	}
+	
+	if(key == '8') {
+		if(POGEL::hasproperty(256))
+			POGEL::removeproperty(256);
+		else
+			POGEL::addproperty(256);
+	}
 }
 

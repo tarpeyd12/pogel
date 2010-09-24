@@ -128,11 +128,11 @@ bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatce
 bool POGEL::BOUNDING::isinside(POGEL::POINT thiscenter, POGEL::POINT p) {
 	//if(thiscenter.distance(p) <= maxdistance) {
 		bool x = false, y = false, z = false;
-			x = ( (p.x <= max.x+thiscenter.x) && (p.x >= min.x+thiscenter.x) );
+			x = ( (p.x <= max.x+thiscenter.x) || (p.x >= min.x+thiscenter.x) );
 		if(x) {
-			y = ( (p.y <= max.y+thiscenter.y) && (p.y >= min.y+thiscenter.y) );
+			y = ( (p.y <= max.y+thiscenter.y) || (p.y >= min.y+thiscenter.y) );
 		if(y) {
-			z = ( (p.z <= max.z+thiscenter.z) && (p.z >= min.z+thiscenter.z) );
+			z = ( (p.z <= max.z+thiscenter.z) || (p.z >= min.z+thiscenter.z) );
 		if(z)
 		if(x&&y&&z)
 			return true;

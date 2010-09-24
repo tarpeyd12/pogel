@@ -15,9 +15,9 @@
 
 using namespace POGEL;
 
-#define numobjs 50
+#define numobjs 8
 #define grd 5
-#define sps 0.75f
+#define sps 1.75f
 #define size 0.5f
 #define gravity 10000000000000.0f
 OBJECT obj[numobjs];
@@ -90,7 +90,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//printf("obj = %p\n",&obj);
 	for(int i=0;i<numobjs;i++) {
 		
-		m = m * POGEL::MATRIX(POGEL::POINT(), POGEL::POINT(x,y,z));
+		//m = m * POGEL::MATRIX(POGEL::POINT(), POGEL::POINT(x,y,z));
 		//POGEL::MATRIX m(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
 		
 		obj[i].setname(POGEL::string("sphere%d",i));
@@ -130,7 +130,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			sphs[i]->moveto(POGEL::POINT(0.0f,-10.0f+sps/2.0f,0.0f)); \
 		}*/
 		
-		sphs[i]->resizetrail(75);
+		sphs[i]->resizetrail(2);
 		
 		sim.addSolid(sphs[i]);
 	}
@@ -177,7 +177,6 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
 	//sim.addSolid(border);
 	
-	
 	POGEL::InitFps();
 	printf("\n");
 	//camrot.x = 90.0f;
@@ -211,9 +210,9 @@ void DrawGLScene()
 	
 	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.x + ((float)frames*x)*0.1f/rndrnge,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y + ((float)frames*y)*0.1f/rndrnge,  0.0f, 1.0f, 0.0f );
-	glRotatef( camrot.z + ((float)frames*z)*0.1f/rndrnge,  0.0f, 0.0f, 1.0f );
+	glRotatef( camrot.x + ((float)frames*x)*0.0f/rndrnge,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.0f/rndrnge,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z + ((float)frames*z)*0.0f/rndrnge,  0.0f, 0.0f, 1.0f );
 	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	//message("%ld: ",frames);
 	
@@ -235,8 +234,9 @@ void DrawGLScene()
 			sim.increment();
 			keypres = false;
 		}
-		else if(go) //if(POGEL::frames < 75)
+		else if(go) {//if(POGEL::frames < 75)
 			sim.increment();
+			}
 	}
 	if(frames%1 == 0)
 		sim.draw();
