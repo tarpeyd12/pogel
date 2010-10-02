@@ -61,7 +61,13 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE(POGEL::PHYSICS::SOLID* obj1, POGE
 	if(obj1->position.distance(obj2->position) < (obj1->bounding.maxdistance + obj2->bounding.maxdistance)) {
 		POGEL::VECTOR v(obj1->position, obj2->position);
 		POGEL::POINT p = obj1->position + (v.normal() * obj1->bounding.maxdistance).topoint();
-		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, obj2->position).normal()*0, POGEL::VECTOR(obj2->position, obj1->position).normal(), p);
+		
+		float d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + obj2->bounding.maxdistance);
+		
+		obj1->translate(v.normal() * d *.5);
+		obj2->translate(v.normal() * -d *.5);
+		
+		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, obj2->position).normal(), POGEL::VECTOR(obj2->position, obj1->position).normal(), p);
 		return true;
 	}
 	
@@ -77,10 +83,10 @@ bool POGEL::PHYSICS::SIMULATION::processSPHEREGENERAL(POGEL::PHYSICS::SOLID* obj
 	POGEL::TRIANGLE tmptri;
 	
 	obj2->closest(obj1->position, &tmp_2, &tmptri);
-	
 	if(obj1->position.distance(tmp_2) <= (obj1->bounding.maxdistance)) {
+		//tmp_2.draw();
 		POGEL::VECTOR v = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
-		reactcollision(obj1, obj2, v.normal()*1, v.normal()*-1, tmp_2);
+		reactcollision(obj1, obj2, POGEL::VECTOR(tmp_2, obj2->position).normal()*1, v.normal()*-1, tmp_2);
 		return true;
 	}
 	
@@ -94,7 +100,15 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHERE(POGEL::PHYSICS::SOLID* obj
 	
 	if(obj1->position.distance(obj2->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance)) {
 		POGEL::VECTOR v(obj1->position, obj2->position);
-		POGEL::POINT p = obj1->position + (v * obj1->bounding.maxdistance).topoint();
+		POGEL::POINT p = obj1->position + (v.normal() * obj1->bounding.maxdistance).topoint();
+		
+		float d = obj1->position.distance(obj2->position) - fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance);
+		
+		//if((obj2->position + obj2->direction.normal().topoint()).distance(obj1->position) < obj1->position.distance(obj2->position))
+			//obj2->translate(v.normal() * d  );
+		//else if((obj2->position - obj2->direction.normal().topoint()).distance(obj1->position) < obj1->position.distance(obj2->position))
+			obj2->translate(v.normal() * -d  );
+		
 		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, p).normal(), POGEL::VECTOR(obj2->position, p).normal(), p);
 		return true;
 	}
@@ -128,8 +142,9 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHEREGENERAL(POGEL::PHYSICS::SOL
 
 void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::VECTOR obj1vect, POGEL::VECTOR obj2vect, POGEL::POINT colpoint) {
 	
-	POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>.\n", \
-		obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z);
+	if(POGEL::hasproperty(POGEL_COLLISIONS))
+		POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>.\n", \
+			obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z);
 	
 	//(tr[0]+tr[1]).print();
 	
@@ -142,10 +157,10 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		}
 		else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			//obj1->direction = vtmp[0];
-			obj2->direction = vtmp[1] + vtmp[0].normal()*vtmp[0].getdistance()*-1;
+			obj2->direction = vtmp[1] + vtmp[0]*-1;
 		}
 		else if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			obj1->direction = vtmp[0] + vtmp[1].normal()*vtmp[1].getdistance()*-1;
+			obj1->direction = vtmp[0] + vtmp[1]*-1;
 			//obj2->direction = vtmp[1];
 		}
 		return;
@@ -245,24 +260,6 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 				
 				
 			}
-			/*if(objects[a]->position.distance(objects[b]->position) <= 1){
-			POGEL::POINT tmp_1, tmp_2;
-		POGEL::TRIANGLE tmptri;
-		objects[a]->closest(objects[b], &tmp_1, &tmp_2, &tmptri, &tmptri);
-		
-		glDisable(GL_TEXTURE_2D);
-		glDisable(GL_LIGHTING);
-		glLineWidth(2);
-		glColor3f(0.0f,0.75f,0.75f);
-		glBegin(GL_LINES);
-			glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
-			glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
-		glEnd();
-		glLineWidth(1);
-		glColor3f(1.0f,1.0f,1.0f);
-		glEnable(GL_LIGHTING);
-		glEnable(GL_TEXTURE_2D);
-		}*/
 		}
 	//}
 	
