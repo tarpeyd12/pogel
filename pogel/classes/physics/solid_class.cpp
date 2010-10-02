@@ -173,11 +173,41 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 		(bounding.surrounds(position,position,refbounding) || bounding.surrounds(position,position+direction.topoint(),refbounding)) || \
 		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))*/
 	) {
-		setboundingskips();
+		if(stepstaken > 0 && hasOption(PHYSICS_SOLID_SPHERE)) {
+			float max = refbounding.maxdistance;
+			bounding.clear();
+			refbounding.clear();
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0, 1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0, 0, 1)*max);
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT(-1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0,-1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0, 0,-1)*max);
+			
+			refbounding = bounding;
+			
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 0, 1)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT(-1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0,-1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 0,-1)*max);
+			
+			bounding.finishactual();
+			bounding.fin();
+			bounding.offset(position);
+			refbounding.offset(POGEL::POINT());
+			bounding.maxdistance = max;
+			refbounding.maxdistance = max;
+			stepsatboundingcheck = stepstaken;
+			return;
+		}
+		//setboundingskips();
 		bounding.clear();
+		refbounding.clear();
 		POGEL::MATRIX mat1(rotation, MATRIX_CONSTRUCT_ROTATION);
 		POGEL::MATRIX mat2(direction.topoint()*(float)objboundingskips, rotation + spin.topoint()*(float)objboundingskips);
-		for( unsigned long t = 0 ; t < numfaces ; t++ )
+		for( unsigned long t = 0 ; t < numfaces ; t+=2 )
 			for( unsigned int v = 0 ; v < 3 ; v++ ) {
 				bounding.addpoint(POGEL::POINT(), mat1.transformPoint(face[t].vertex[v].topoint()));
 				refbounding.addpoint(POGEL::POINT(), mat1.transformPoint(face[t].vertex[v].topoint()));
@@ -187,7 +217,6 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 			}
 		
 		//bounding.finishactual();
-		refbounding.clear();
 		//refbounding = bounding;
 		//refbounding.fin();
 		refbounding.offset(POGEL::POINT());
@@ -224,8 +253,10 @@ void POGEL::PHYSICS::SOLID::setboundingskips() {
 	
 	//POGEL::message("%s skps = %u\n",getname(),objboundingskips);
 	
-	if(objboundingskips < 1)// || objboundingskips > 10)
+	if(objboundingskips < 1)
 		objboundingskips = 1;
+	//if(objboundingskips > 100)
+		//objboundingskips = 100;
 };
 
 void POGEL::PHYSICS::SOLID::build()  {
@@ -238,7 +269,7 @@ void POGEL::PHYSICS::SOLID::build()  {
 void POGEL::PHYSICS::SOLID::draw() {
 	POGEL::OBJECT::draw();
 	//if(container != NULL && (POGEL::frames)%(container->boundingskips) == 0)
-	getbounding();
+	//getbounding();
 	glLineWidth(3);
 	bounding.draw(POGEL::POINT());
 	glLineWidth(1);
