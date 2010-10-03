@@ -17,7 +17,7 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs 6*6*6*2
+#define numobjs 6*6*2 + 11
 #define grd 6
 #define sps 1.05f
 #define size 1.0f
@@ -122,7 +122,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		obj[i].setname(POGEL::string("sphere%d",i));
 		//if(i != numobjs-1)
 		//addDisk(&obj[i], 3, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-		addSphere(&obj[i],2,3, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addSphere(&obj[i],3,6, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 		//addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 		//else//if(i%2==0)
 		//addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
@@ -166,7 +166,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		if(i == numobjs-1)
 		sphs[i]->resizetrail(5);
 		
-		//sphs[i]->setStepFunc(oob);
+		sphs[i]->setStepFunc(oob);
 		
 		sphs[i]->visable = false;
 		
@@ -227,7 +227,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 
 //unsigned long frames=0;
 
-bool keypres, go;
+bool keypres, go = true;
 POGEL::POINT camrot, campos;
 
 /* The main drawing function. */
@@ -251,7 +251,7 @@ void DrawGLScene()
 	glTranslatef(p.x*-1.0f, p.y*-1.0f, p.z*-1.0f);
 	glTranslatef(0.0f,0.0f,-(d*2.0f));*/
 	
-	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
+	glTranslatef(0.0f+campos.x,0.0f+campos.y,-10.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
