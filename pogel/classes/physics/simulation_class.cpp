@@ -49,9 +49,9 @@ bool POGEL::PHYSICS::SIMULATION::processGENERAL(POGEL::PHYSICS::SOLID* obj1, POG
 	float area;
 	POGEL::POINT col;
 	if(obj1->bounding.checkbounding(obj2->bounding) && POGEL::PHYSICS::solid_collision(obj1, obj2, &col, &vct1, &vct2, &area)) {
-			reactcollision(obj1, obj2, vct1, vct2, col);
-			return true;
-		}
+		reactcollision(obj1, obj2, vct1, vct2, col);
+		return true;
+	}
 	
 	return false;
 };
@@ -61,6 +61,9 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE(POGEL::PHYSICS::SOLID* obj1, POGE
 	if(obj1->position.distance(obj2->position) < (obj1->bounding.maxdistance + obj2->bounding.maxdistance)) {
 		POGEL::VECTOR v(obj1->position, obj2->position);
 		POGEL::POINT p = obj1->position + (v.normal() * obj1->bounding.maxdistance).topoint();
+		
+		if(POGEL::hasproperty(POGEL_COLLISIONS))
+			p.draw();
 		
 		float d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + obj2->bounding.maxdistance);
 		
@@ -84,7 +87,8 @@ bool POGEL::PHYSICS::SIMULATION::processSPHEREGENERAL(POGEL::PHYSICS::SOLID* obj
 	
 	obj2->closest(obj1->position, &tmp_2, &tmptri);
 	if(obj1->position.distance(tmp_2) <= (obj1->bounding.maxdistance)) {
-		//tmp_2.draw();
+		if(POGEL::hasproperty(POGEL_COLLISIONS))
+			tmp_2.draw();
 		POGEL::VECTOR v = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
 		reactcollision(obj1, obj2, POGEL::VECTOR(tmp_2, obj2->position).normal()*1, v.normal()*-1, tmp_2);
 		return true;
@@ -98,9 +102,12 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHERE(POGEL::PHYSICS::SOLID* obj
 	if(obj2->hasOption(PHYSICS_SOLID_CONCAVE) && !obj1->hasOption(PHYSICS_SOLID_CONCAVE))
 		return processCONCAVESPHERE(obj2, obj1);
 	
-	if(obj1->position.distance(obj2->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance)) {
+	if(obj1->position.distance(obj2->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance)) {
 		POGEL::VECTOR v(obj1->position, obj2->position);
-		POGEL::POINT p = obj1->position + (v.normal() * obj1->bounding.maxdistance).topoint();
+		POGEL::POINT p = obj1->position + (v.normal() * obj1->bounding.maxdistance).topoint();		
+		
+		if(POGEL::hasproperty(POGEL_COLLISIONS))
+			p.draw();
 		
 		float d = obj1->position.distance(obj2->position) - fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance);
 		
@@ -132,6 +139,8 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHEREGENERAL(POGEL::PHYSICS::SOL
 	obj2->closest(p, &tmp, &tmptri);
 	
 	if(obj1->position.distance(tmp) >= obj1->bounding.maxdistance) {
+		if(POGEL::hasproperty(POGEL_COLLISIONS))
+			p.draw();
 		POGEL::VECTOR c = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
 		reactcollision(obj1, obj2, (v+c).normal(), (v+c).normal(), p);
 		return true;
@@ -171,25 +180,25 @@ inline bool boundingcheck(POGEL::PHYSICS::SOLID *obj1, POGEL::PHYSICS::SOLID *ob
 	
 	if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) || obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
 		if(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
-			if(obj2->position.distance(obj1->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
+			if(obj2->position.distance(obj1->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
 				return true;
 			return false;
 		}
 		else
 		if(obj2->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj1->hasOption(PHYSICS_SOLID_SPHERE) && !obj1->hasOption(PHYSICS_SOLID_CONCAVE)) {
-			if(obj2->position.distance(obj1->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
+			if(obj2->position.distance(obj1->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
 				return true;
 			return false;
 		}
 		else
 		if(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && !obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
-			if(obj2->position.distance(obj1->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
+			if(obj2->position.distance(obj1->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
 				return true;
 			return false;
 		}
 		else
 		if(obj2->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && !obj1->hasOption(PHYSICS_SOLID_CONCAVE)) {
-			if(obj2->position.distance(obj1->position) >= fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
+			if(obj2->position.distance(obj1->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
 				return true;
 			return false;
 		}
@@ -198,7 +207,7 @@ inline bool boundingcheck(POGEL::PHYSICS::SOLID *obj1, POGEL::PHYSICS::SOLID *ob
 	}
 	else
 	if(obj1->hasOption(PHYSICS_SOLID_SPHERE) && obj2->hasOption(PHYSICS_SOLID_SPHERE)) {
-		if(obj1->position.distance(obj2->position) <= (obj1->bounding.maxdistance + obj2->bounding.maxdistance))
+		if(obj1->position.distance(obj2->position) < (obj1->bounding.maxdistance + obj2->bounding.maxdistance))
 			return true;
 		return false;
 	}
@@ -248,10 +257,32 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 					glDisable(GL_LIGHTING);
 					glLineWidth(2);
 					glColor3f(1.0f,0.75f,0.75f);
-					glBegin(GL_LINES);
-						glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
-						glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
-					glEnd();
+					if(objects[a]->hasOption(PHYSICS_SOLID_CONCAVE) && objects[a]->hasOption(PHYSICS_SOLID_SPHERE)) {
+						POGEL::VECTOR vr(objects[a]->position, objects[b]->position);
+						vr.normalize();
+						vr *= objects[a]->bounding.maxdistance;
+						vr += objects[a]->position;
+						glBegin(GL_LINES);
+							glVertex3f(vr.x,vr.y,vr.z);
+							glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
+						glEnd();
+					}
+					else if(objects[b]->hasOption(PHYSICS_SOLID_CONCAVE) && objects[b]->hasOption(PHYSICS_SOLID_SPHERE)) {
+						POGEL::VECTOR vr(objects[b]->position, objects[a]->position);
+						vr.normalize();
+						vr *= objects[b]->bounding.maxdistance;
+						vr += objects[b]->position;
+						glBegin(GL_LINES);
+							glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
+							glVertex3f(vr.x,vr.y,vr.z);
+						glEnd();
+					}
+					else {
+						glBegin(GL_LINES);
+							glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
+							glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
+						glEnd();
+					}
 					glLineWidth(1);
 					glColor3f(1.0f,1.0f,1.0f);
 					glEnable(GL_LIGHTING);

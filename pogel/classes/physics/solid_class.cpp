@@ -255,8 +255,8 @@ void POGEL::PHYSICS::SOLID::setboundingskips() {
 	
 	if(objboundingskips < 1)
 		objboundingskips = 1;
-	//if(objboundingskips > 100)
-		//objboundingskips = 100;
+	if(objboundingskips > 50)
+		objboundingskips = 1;
 };
 
 void POGEL::PHYSICS::SOLID::build()  {
