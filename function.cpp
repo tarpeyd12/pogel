@@ -25,14 +25,18 @@ IMAGE *defaultimg;
 
 GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[]= { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat LightPosition[]= { -50.0f, 0.0f, 0.0f, 1.0f };
+GLfloat LightPosition[]= { 10.0f, 10.0f, 10.0f, 1.0f };
 
 
 float operation(float x, unsigned long i, unsigned long itermax) {
 	if(i >= itermax)
 		return 0.0f;
 	float g = float(pow(2.0, (float)i));
-	float ret = (float)cos(x*g)/g;
+	float ret;
+	//if(i%2 == 0)
+		ret = (float)cos(x*g)/g;
+	//else
+		//ret = (float)sin(x*g)/g;
 	
 	return ret + operation(x, i+1, itermax);
 };
@@ -48,7 +52,7 @@ SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
 	POGEL::POINT ret;
 	
 	ret.x = x;
-	ret.y = operation(x,0,c);
+	ret.y = operation(x,0,c+1);
 	ret.z = z;
 	
 	return ret;
@@ -91,7 +95,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	obj = new OBJECT();
 	obj->setname("graph\0");
 	
-	addFunctionShape(obj, func, "xz", defaultimg, 0/*TRIANGLE_LIT*/, 3.14*2, 3.14*2, 3.14*2, 1000, 1, 20);
+	addFunctionShape(obj, func, "xz", defaultimg, TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, 3.14*2, 3.14*2, 1, 1000, 1, 10);
 	
 	obj->build();
 	
