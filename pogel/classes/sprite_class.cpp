@@ -3,11 +3,25 @@
 #include <math.h>
 
 void POGEL::SPRITE::draw() {
-	matrix.get();
+	/*matrix.get();
+	POGEL::POINT cam_pos = matrix.getposition() - position;
+	POGEL::MATRIX(matrix.getrotation()*1, MATRIX_CONSTRUCT_ROTATION).transformPoint(&cam_pos);
+	cam_pos*-1;
+	cam_pos.print();
+	float radius = cam_pos.distance(position);
+	POGEL::message("radius = %f\n",radius);
 	
-	/*matrix.print();
-	rotation = (matrix.getrotation() - POGEL::POINT(0.0f,360.0f,0.0f))*-1;
-	rotation.print();*/
+	rotation.x = POGEL::RadiansToDegrees(acos(cam_pos.y/radius))+90;
+	rotation.y = -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180;
+	rotation.z = 0;*/
+	
+	//matrix.print();
+	POGEL::POINT rot = matrix.getrotation();
+	rotation = (POGEL::MATRIX(rot.y*-1, MATRIX_CONSTRUCT_Y_ROTATION) * MATRIX(rot.x, MATRIX_CONSTRUCT_X_ROTATION)).getrotation();
+	rotation.x +=90;
+	rotation.y +=180;
+	rotation.z = 0;
+	//rotation.print();
 	
 	//POGEL::OBJECT::draw();
 	
@@ -27,21 +41,7 @@ void POGEL::SPRITE::draw() {
 	return ret;*/
 	
 	
-	//	POGEL::VECTOR 
-	float r = POGEL::POINT().distance(matrix.getposition());
-	POGEL::POINT cam_pos = matrix.getposition();
-	POGEL::POINT rot = POGEL::POINT(POGEL::RadiansToDegrees(acos(cam_pos.y/r))+90, -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180, 0);
 	
-	rotation = (POGEL::MATRIX(rot.x, MATRIX_CONSTRUCT_X_ROTATION) * MATRIX(rot.y, MATRIX_CONSTRUCT_Y_ROTATION) * MATRIX(rot.z, MATRIX_CONSTRUCT_Z_ROTATION)).getrotation();
-	rot.print();printf("\n");
-	rotation.print();
-	//POGEL::OBJECT::draw();
-	
-	moveto(POGEL::POINT());
-	rotate(POGEL::VECTOR(  ));
-	
-	/*printf("\n");
-	rotation.print();*/
 	
 	POGEL::OBJECT::draw();
 };

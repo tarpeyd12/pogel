@@ -29,7 +29,7 @@ class QUAT {
 		POGEL::VECTOR getvector();
 		
 		void print()
-			{printf("%9.3f,%9.3f,%9.3f,%9.3f",x,y,z,w);}
+			{POGEL::message("%9.3f,%9.3f,%9.3f,%9.3f",x,y,z,w);}
 		
 		
 		POGEL::QUAT		operator+  (float);

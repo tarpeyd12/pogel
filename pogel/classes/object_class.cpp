@@ -185,14 +185,14 @@ void POGEL::OBJECT::rotate(POGEL::VECTOR v) {
 	rotation.y+=v.y;
 	rotation.z+=v.z;*/
 	
-	if(rotation.x<0.0f) rotation.x+=360.0f;
+	/*if(rotation.x<0.0f) rotation.x+=360.0f;
 	if(rotation.x>360.0f) rotation.x-=360.0f;
 	
 	if(rotation.y<0.0f) rotation.y+=360.0f;
 	if(rotation.y>360.0f) rotation.y-=360.0f;
 	
 	if(rotation.z<0.0f) rotation.z+=360.0f;
-	if(rotation.z>360.0f) rotation.z-=360.0f;
+	if(rotation.z>360.0f) rotation.z-=360.0f;*/
 };
 
 void POGEL::OBJECT::rotate(POGEL::VECTOR v, float s) {
@@ -343,16 +343,45 @@ void POGEL::OBJECT::build() {
 
 void POGEL::OBJECT::draw() {
 	if(visable) {
+		if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
+			/*matrix.get();
+			POGEL::POINT rot = matrix.getrotation();
+			rotation = (POGEL::MATRIX(rot.y*-1, MATRIX_CONSTRUCT_Y_ROTATION) * MATRIX(rot.x, MATRIX_CONSTRUCT_X_ROTATION)).getrotation();
+			rotation.x +=90;
+			rotation.y +=180;*/
+			
+			/*matrix.get();
+			POGEL::POINT cam_pos = matrix.getposition() - position;
+			POGEL::MATRIX(matrix.getrotation()*1, MATRIX_CONSTRUCT_ROTATION).transformPoint(&cam_pos);
+			cam_pos*1;
+			cam_pos.print();
+			float radius = cam_pos.distance(position);
+			POGEL::message("radius = %f\n",radius);
+			
+			rotation.x = POGEL::RadiansToDegrees(acos(cam_pos.y/radius))+90;
+			rotation.y = -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180;
+			rotation.z = 0;
+			turnto(rotation);*/
+			
+			matrix.get();
+			turnto(matrix.getrotation()*POGEL::POINT(1,1,0));
+		}
 		unsigned long i;
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
 			glPushMatrix();
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
 		glTranslatef(position.x, position.y, position.z);
+		
 		if(hasproperty(OBJECT_ROTATE_XYZ)) {
 			glRotatef(rotation.x, 1.0f, 0.0f, 0.0f);
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
 			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
 		}
+		/*else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
+			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
+			glRotatef(rotation.x, 1.0f, 0.0f, 0.0f);
+			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
+		}*/
 		else {
 			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
@@ -419,11 +448,16 @@ void POGEL::OBJECT::draw() {
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
 			glPopMatrix();
 		#else
-		if(OBJECT_ROTATE_XYZ & properties) {
+		if(hasproperty(OBJECT_ROTATE_XYZ)) {
 			glRotatef(rotation.z, 0.0f, 0.0f, -1.0f);
 			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);
 			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
 		}
+		/*else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
+			glRotatef(rotation.z, 0.0f, 0.0f, -1.0f);
+			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
+			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);
+		}*/
 		else {
 			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
 			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);
