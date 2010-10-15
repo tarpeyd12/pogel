@@ -10,16 +10,19 @@ POGEL::PHYSICS::SIMULATION::SIMULATION() : POGEL::PHYSICS::DYNAMICS() {
 };
 
 bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
+	// if both are stationary do nothing
 	if(obj1 == obj2 || (obj1->hasOption(PHYSICS_SOLID_STATIONARY) && obj2->hasOption(PHYSICS_SOLID_STATIONARY)))
 		return false;
 	
+	// if either are concave do the concave checking
 	if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) || obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
+		// concave sphere vs. assumed caonvex sphere
 		if(
 			(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_SPHERE)) || 
 			(obj2->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj1->hasOption(PHYSICS_SOLID_SPHERE))
 		)
 			return processCONCAVESPHERE(obj1, obj2);
-		
+		// concave sphere vs. assumed convex general shape
 		if(
 			(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE)) || 
 			(obj2->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE))
@@ -27,22 +30,73 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 			return processCONCAVESPHEREGENERAL(obj1, obj2);
 	}
 	
-	/*if(obj1->hasOption(PHYSICS_SOLID_CONVEX) && obj2->hasOption(PHYSICS_SOLID_CONVEX))
-		return processCONVEX(obj1, obj2);
-	if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_CONCAVE))
-		return processCONCAVE(obj1, obj2);*/
-	
+	// convex sphere vs. assumed convex general shape
 	if(
 		(obj1->hasOption(PHYSICS_SOLID_SPHERE) && !obj2->hasOption(PHYSICS_SOLID_SPHERE)) || 
 		(obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE))
 	)
 		return processSPHEREGENERAL(obj1, obj2);
 	
+	// convex sphere vs. convex sphere
 	else if(obj1->hasOption(PHYSICS_SOLID_SPHERE) && obj2->hasOption(PHYSICS_SOLID_SPHERE))
 		return processSPHERE(obj1, obj2);
 	
+	// convex general vs. convex general
+	if(obj1->hasOption(PHYSICS_SOLID_CONVEX) && obj2->hasOption(PHYSICS_SOLID_CONVEX))
+		return processCONVEX(obj1, obj2);
+	/*if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_CONCAVE))
+		return processCONCAVE(obj1, obj2);*/
+		
+	// unknown general vs. unknown general
 	return processGENERAL(obj1, obj2);
 };
+
+
+/* *************************** Does not work ******************************** */
+bool POGEL::PHYSICS::SIMULATION::processCONVEX(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
+	POGEL::POINT p1, p2, tmp, tmp1, tmp2, obj1_ep, obj2_ep;
+	POGEL::TRIANGLE t1, t2, tri;
+	obj1->closest(obj2, &p1, &p2, &t1, &t2);
+	
+	obj1->closest(p2, &tmp1, &tri);
+	if(tmp1 == obj1->position)
+		POGEL::message("hello 1\n");
+	obj2->closest(p1, &tmp2, &tri);
+	if(tmp2 == obj2->position)
+		POGEL::message("hello 2\n");
+	
+	//p1.draw();
+	//p2.draw();
+	//p1.drawto(p2);
+	tmp1.drawto(tmp2);
+	
+	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj1, obj1->position, p1, &tri, &tmp, &obj1_ep);
+	//obj1_ep.draw();
+	float dst1 = tmp.z;
+	
+	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, p2, &tri, &tmp, &obj2_ep);
+	//obj2_ep.draw();
+	float dst2 = tmp.z;
+
+	//POGEL::message("hello %f, %f\n", (obj1_ep.distance(obj2_ep) + dst1+dst2), obj1->position.distance(obj2->position));
+	
+	//if( (obj1_ep.distance(obj2_ep) + dst1+dst2) > obj1->position.distance(obj2->position)  ) {
+	if(obj1->position.distance(obj2->position) < (dst1+dst2)) {
+		POGEL::VECTOR v(p1,p2);
+		//if(p1 != obj1->position && p2 != obj2->position && p1 != obj2->position && p2 != obj1->position) {
+		//if(p1 != p2) {
+			obj1->translate(v.normal() * p1.distance(p2)*-.5);
+			obj2->translate(v.normal() * p1.distance(p2)*.5);
+		//}
+		reactcollision(obj1, obj2, (v.normal()+t1.normal).normal(), t2.normal, (p1+p2)/2.0f);
+	
+		//if(p1 == obj1->position || p2 == obj2->position)
+		return true;
+	}
+	return false;
+};
+
+
 
 bool POGEL::PHYSICS::SIMULATION::processGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
 	POGEL::VECTOR vct1, vct2;
@@ -142,6 +196,11 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHEREGENERAL(POGEL::PHYSICS::SOL
 		if(POGEL::hasproperty(POGEL_COLLISIONS))
 			p.draw();
 		POGEL::VECTOR c = tmptri.normal * (tmptri.isinfront(obj1->position) ? 1 : -1);
+		
+		//float d = obj1->position.distance(tmp) - obj1->bounding.maxdistance;
+		
+		//obj2->translate(v.normal() * -d  );
+		
 		reactcollision(obj1, obj2, (v+c).normal(), (v+c).normal(), p);
 		return true;
 	}

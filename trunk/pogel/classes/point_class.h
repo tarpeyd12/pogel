@@ -31,6 +31,7 @@ class POINT {
 			{ POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z); }
 			
 		void draw();
+		void drawto(POGEL::POINT);
 		
 		void translate()
 			{glTranslatef(x,y,z);}

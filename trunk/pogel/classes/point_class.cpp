@@ -16,6 +16,21 @@ void POGEL::POINT::draw() {
 	glEnable(GL_TEXTURE_2D);
 };
 
+void POGEL::POINT::drawto(POGEL::POINT p) {
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_LIGHTING);
+	//glPointSize(5);
+	glColor3f(0.0f,1.75f,0.75f);
+	glBegin(GL_LINES);
+		glVertex3f(x,y,z);
+		glVertex3f(p.x,p.y,p.z);
+	glEnd();
+	//glPointSize(1);
+	glColor3f(1.0f,1.0f,1.0f);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_TEXTURE_2D);
+};
+
 POGEL::VECTOR::VECTOR(POGEL::POINT p1, POGEL::POINT p2) {
 	this->frompoints(p1, p2);
 };

@@ -5,28 +5,61 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "scene.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
+#include "pogel/classes/physics/physics.h"
 
 using namespace POGEL;
 
-SPRITE obj;
+#define itterations 10
+#define startsize	1.0f
+#define size    	1.3f
+POGEL::OBJECT* obj;
 
-IMAGE *img;
+//IMAGE *earth;
+IMAGE *defaultimg;
 
-GLfloat LightAmbient[]= { 1.0f, 1.0f, 1.0f, 1.0f };
-GLfloat LightDiffuse[]= { 5.0f, 5.0f, 5.0f, 5.0f };
-GLfloat LightPosition[]= { 5.0f, 0.0f, 0.0f, 1.0f };
+GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
+GLfloat LightDiffuse[]= { 1.0f, 1.0f, 1.0f, 1.0f };
+GLfloat LightPosition[]= { -50.0f, 0.0f, 0.0f, 1.0f };
+
+
+float operation(float x, unsigned long i, unsigned long itermax) {
+	if(i >= itermax)
+		return 0.0f;
+	float g = float(pow(2.0, (float)i));
+	float ret = (float)cos(x*g)/g;
+	
+	return ret + operation(x, i+1, itermax);
+};
+
+SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
+	// b is the number of itterations to complete
+	// c is the cuttent itteration
+	
+	// x is theta
+	
+	//POGEL::message("\nhello\n");
+	
+	POGEL::POINT ret;
+	
+	ret.x = x;
+	ret.y = operation(x,0,c);
+	ret.z = z;
+	
+	return ret;
+};
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)	        // We call this right after our OpenGL window is created.
 {
 	glEnable(GL_TEXTURE_2D);				// Enable Texture Mapping
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);	// Clear The Background Color To Blue 
-	glClearDepth(1.0);						// Enables Clearing Of The Depth Buffer
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);	// Clear The Background Color To Black 
+	glClearDepth(500.0);					// Enables Clearing Of The Depth Buffer
 	glDepthFunc(GL_LESS);					// The Type Of Depth Test To Do
 	glEnable(GL_DEPTH_TEST);				// Enables Depth Testing
 	glShadeModel(GL_SMOOTH);				// Enables Smooth Color Shading
@@ -48,17 +81,30 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	glEnable(GL_LIGHT1);
 	glEnable(GL_LIGHTING);
 	
-	img=new IMAGE("Data/default_2.bmp");
-	obj.setname("sprite_disk");
-	addDisk(&obj, 10, 1, 1/2.0f, 0.0f, img,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
-	obj.setproperties(1 | OBJECT_DRAW_DISPLAYLIST);
-	obj.build();
+	srand((unsigned)time(NULL));
 	
-	POGEL::addproperty(POGEL_DEBUG);
+	//earth=new IMAGE("Data/earth.bmp");
+	defaultimg=new IMAGE("Data/default_2.bmp");
+	
+	//getchar();
+	
+	obj = new OBJECT();
+	obj->setname("graph\0");
+	
+	addFunctionShape(obj, func, "xz", defaultimg, 0/*TRIANGLE_LIT*/, 3.14*2, 3.14*2, 3.14*2, 1000, 1, 20);
+	
+	obj->build();
+	
+	POGEL::InitFps();
+	printf("\n");
 }
+
+//unsigned long frames=0;
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
+
 bool keypres, go = true;
-POGEL::POINT camrot(0,0,0), campos(0,0,-10);
+POGEL::POINT camrot(0,0,0), campos(0,0,-7);
+
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -66,20 +112,21 @@ void DrawGLScene()
 	glLoadIdentity();				// Reset The View
 	
 	glTranslatef(campos.x,campos.y,campos.z);
-	glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
-	glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
-	glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
+	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
+	glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
+	glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
+	//glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
 	
 	POGEL::IncrementFps();
 	POGEL::PrintFps();
 	
-	//camrot.print();
-	//POGEL::message("\n");
+	/*glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
+	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);*/
 	
-	//rings.rotate(VECTOR(0.0f,0.6f,0.0f));
-	//glRotatef(23.0f,0.0f,0.0f,-1.0f);
-	obj.draw();
-	//obj.scroll_all_tex_values(0.0004f,0.0005f);
+	obj->draw();
+	
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();
 }

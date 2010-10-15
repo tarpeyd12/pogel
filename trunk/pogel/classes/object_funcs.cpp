@@ -241,6 +241,108 @@ void addCylinder(POGEL::OBJECT *obj, float divisions, float rings_in, float heig
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
 }
 
+void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHAPE_FUNCTION_ARGS), const char* axesToLoop, POGEL::IMAGE* img, unsigned int triprop, float xSize, float ySize, float zSize, unsigned long xRes, unsigned long yRes, unsigned long zRes) {
+	
+	if(axesToLoop == NULL || strlen(axesToLoop) < 2 || strlen(axesToLoop) > 3)
+		return;
+	
+	bool loopX = false, loopY = false, loopZ = false;
+	
+	unsigned int l = strlen(axesToLoop);
+	for(unsigned int i = 0; i < l; i++)
+		switch(axesToLoop[i]) {
+			case 'x': case 'X': loopX = true; break;
+			case 'y': case 'Y': loopY = true; break;
+			case 'z': case 'Z': loopZ = true; break;
+		}
+	
+	if( !loopX && !loopY && !loopZ)
+		return;
+	
+	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Function Graph looped upon %s axies to \"%s\" ...\n", axesToLoop, obj->getname());
+	
+	float xMax = xSize/2.0f, yMax = ySize/2.0f, zMax = zSize/2.0f;
+	float xMin = xMax*-1.0f, yMin = yMax*-1.0f, zMin = zMax*-1.0f;
+	
+	float xStep = xSize/float(xRes), yStep = ySize/float(yRes), zStep = zSize/float(zRes);
+	
+	if(!loopX) xRes = 1;
+	if(!loopY) yRes = 1;
+	if(!loopZ) zRes = 1;
+	
+	unsigned long face_count = 0;
+	
+	unsigned long a = 0;
+	for(float xpos = xMin; ( /*(a>0 ? loopX : true) &&*/ a < xRes); a++, xpos += xStep) {
+		unsigned long b = 0;
+		for(float ypos = yMin; ( /*(b>0 ? loopY : true) &&*/ b < yRes); b++, ypos += yStep) {
+			unsigned long c = 0;
+			for(float zpos = zMin;( /*(c>0 ? loopZ : true) &&*/ c < zRes); c++, zpos += zStep) {
+				
+				POGEL::VERTEX verts[4];
+				POGEL::POINT tmp;
+				
+				if(loopX && loopY) {
+					tmp = function(xpos, ypos, 0, a, b, 0);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos+xStep, ypos, 0, a+1, b, 0);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos, ypos+yStep, 0, a, b+1, 0);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos+xStep, ypos+yStep, 0, a+1, b+1, 0);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					POGEL::TRIANGLE tri;
+					tri.load(verts[0],verts[1],verts[2], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+					tri.load(verts[2],verts[1],verts[3], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+				}
+				else if(loopX && loopZ) {
+					tmp = function(xpos, 0, zpos, a, 0, c);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos+xStep, 0, zpos, a+1, 0, c);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos, 0, zpos+zStep, a, 0, c+1);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(xpos+xStep, 0, zpos+zStep, a+1, 0, c+1);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					POGEL::TRIANGLE tri;
+					tri.load(verts[0],verts[1],verts[2], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+					tri.load(verts[2],verts[1],verts[3], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+				}
+				else if(loopY && loopZ) {
+					tmp = function(0, ypos, zpos, 0, b, c);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(0, ypos+yStep, zpos, 0, b+1, c);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(0, ypos, zpos+zStep, 0, b, c+1);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					tmp = function(0, ypos+yStep, zpos+zStep, 0, b+1, c+1);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					POGEL::TRIANGLE tri;
+					tri.load(verts[0],verts[1],verts[2], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+					tri.load(verts[2],verts[1],verts[3], img, triprop);
+					//mat.transformVector(&tri.normal);
+					obj->addtriangle(tri);
+				}
+				
+				face_count++;
+				
+				if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld estimated faces complete in function graph.\r", face_count, xRes*yRes*zRes);
+			}
+		}
+	}
+	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+};
+
 void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::IMAGE* img, float imgscale_h, float imgscale_w, unsigned int triprop, POGEL::MATRIX mat) {
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Cube to \"%s\" ...\n", obj->getname());
 	POGEL::VERTEX verts[4];
