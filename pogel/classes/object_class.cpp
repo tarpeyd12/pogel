@@ -9,6 +9,7 @@ POGEL::OBJECT::OBJECT() {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
 	face=NULL;
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=p;
 	rotation=p;
@@ -25,6 +26,7 @@ POGEL::OBJECT::OBJECT(unsigned int prop) {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
 	face=NULL;
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=p;
 	rotation=p;
@@ -40,6 +42,7 @@ POGEL::OBJECT::OBJECT(unsigned int prop) {
 POGEL::OBJECT::OBJECT(POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop) {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=p;
 	rotation=p;
@@ -55,6 +58,7 @@ POGEL::OBJECT::OBJECT(POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop
 
 POGEL::OBJECT::OBJECT(POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop, POGEL::POINT pos, POGEL::POINT rot) {
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=pos;
 	rotation=rot;
@@ -70,6 +74,7 @@ POGEL::OBJECT::OBJECT(POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop
 
 POGEL::OBJECT::OBJECT(const char* n) {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
+	triangle_allocation_total=0;
 	face=NULL;
 	numfaces=0;
 	base=NULL;
@@ -87,6 +92,7 @@ POGEL::OBJECT::OBJECT(const char* n) {
 POGEL::OBJECT::OBJECT(const char* n, unsigned int prop) {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
 	face=NULL;
+	triangle_allocation_total=0;
 	numfaces=0;
 	base=NULL;
 	position=p;
@@ -103,6 +109,7 @@ POGEL::OBJECT::OBJECT(const char* n, unsigned int prop) {
 POGEL::OBJECT::OBJECT(const char* n, POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop) {
 	POGEL::POINT p(0.0f,0.0f,0.0f);
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=p;
 	rotation=p;
@@ -118,6 +125,7 @@ POGEL::OBJECT::OBJECT(const char* n, POGEL::TRIANGLE *tri, unsigned long num, un
 
 POGEL::OBJECT::OBJECT(const char* n, POGEL::TRIANGLE *tri, unsigned long num, unsigned int prop, POGEL::POINT pos, POGEL::POINT rot) {
 	numfaces=0;
+	triangle_allocation_total=0;
 	base=NULL;
 	position=pos;
 	rotation=rot;
@@ -202,27 +210,34 @@ void POGEL::OBJECT::rotate(POGEL::VECTOR v, float s) {
 unsigned long POGEL::OBJECT::addtriangle(POGEL::TRIANGLE tri) {
 	if((tri.vertex[0].topoint()==tri.vertex[1].topoint()) || (tri.vertex[0].topoint()==tri.vertex[2].topoint()) || (tri.vertex[1].topoint()==tri.vertex[2].topoint()))
 		return (unsigned long)NULL;
-	POGEL::TRIANGLE *tmp = new POGEL::TRIANGLE[numfaces+1];
-	//memcpy(tmp, face, sizeof(POGEL::TRIANGLE)*numfaces);
-	for(unsigned long i = 0; i < numfaces; i++)
-		tmp[i] = face[i];
-	//printf("reallocating triangle faces of \"%s\" from %p to: %p\n",getname(),face,tmp);
-	tmp[numfaces]=tri;
-	
-	if(face)
-		delete[] face;
-	face = NULL;
-	face=tmp;
+	if( numfaces >= triangle_allocation_total )
+		addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
+	//else if(numfaces%OBJECT_TRIAGLE_ALLOCATION_SKIP == 0)
+		//addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
+	else
+		face[numfaces]=tri;
 	numfaces++;
-	return numfaces-1;
+	return numfaces-1;	
 };
 
 void POGEL::OBJECT::addtriangles(POGEL::TRIANGLE *tri, unsigned long num) {
 	if(tri == (POGEL::TRIANGLE*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_ARRAY_POINTER_RETNUM,"%s to Triangle(s).",POGEL_FATALITY_NULL_ARRAY_POINTER_STRING);
+	addtrianglespace(num);
 	for(unsigned long i=0;i<num;i++) {
 		addtriangle(tri[i]);
 	}
+};
+
+void POGEL::OBJECT::addtrianglespace(unsigned long num) {
+	POGEL::TRIANGLE *tmp = new POGEL::TRIANGLE[numfaces+num];
+	for(unsigned long i = 0; i < numfaces; i++)
+		tmp[i] = face[i];
+	if(face)
+		delete[] face;
+	face = NULL;
+	face = tmp;
+	triangle_allocation_total += num;
 };
 
 unsigned long POGEL::OBJECT::addobject(POGEL::OBJECT *obj) {

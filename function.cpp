@@ -15,9 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 10
-#define startsize	1.0f
-#define size    	1.3f
+#define itterations 6
 POGEL::OBJECT* obj;
 
 //IMAGE *earth;
@@ -28,17 +26,87 @@ GLfloat LightDiffuse[]= { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat LightPosition[]= { 10.0f, 10.0f, 10.0f, 1.0f };
 
 
-float operation(float x, unsigned long i, unsigned long itermax) {
+float square(const float x)
+{
+// Period
+static const float period = PI;
+static const float amplitude = 1.0;
+
+// Force positive argument.
+const float xx = x < 0.0 ? -x : x;
+
+// Scale the argument.
+const float nT = xx / period;
+const float x_scaled = xx - floor(nT) * period;
+const float period_half = period / 2.0;
+
+// Return square wave.
+return x_scaled < period_half ? amplitude : -amplitude;
+}
+
+float triangle(float x) {
+	// Period
+	static const float period = PI;
+	static const float amplitude = 1.0;
+	
+	// Force positive argument.
+	const float xx = x < 0.0 ? -x : x;
+	
+	// Scale the argument.
+	const float nT = xx / period;
+	const float x_scaled = fmod(xx,period);// - floor(nT) * period;
+	const float period_half = period / 2.0;
+	float r;
+	
+	if(x_scaled <= period_half)
+		r = (-amplitude)*(x_scaled) + (amplitude)*(period_half-x_scaled);
+	/*else if(x_scaled == period_half)
+		r = 0;*/
+	else
+		r = (amplitude)*(x_scaled) + (-amplitude)*(period-x_scaled) - period/2;
+	
+	// Return triangle wave.
+	return r/2;
+};
+
+float sqrop(float x, float i, float itermax) {
 	if(i >= itermax)
 		return 0.0f;
 	float g = float(pow(2.0, (float)i));
-	float ret;
-	//if(i%2 == 0)
-		ret = (float)cos(x*g)/g;
-	//else
-		//ret = (float)sin(x*g)/g;
-	
-	return ret + operation(x, i+1, itermax);
+	float ret = (float)square(x*g)/g;
+	return ret + sqrop(x, i+1, itermax);
+};
+
+float triop(float x, float i, float itermax) {
+	if(i >= itermax)
+		return 0.0f;
+	float g = float(pow(2.0, (float)i));
+	float ret = (float)triangle(x*g)/g;
+	return ret + triop(x, i+1, itermax);
+};
+
+float cosop(float x, float i, float itermax) {
+	if(i >= itermax)
+		return 0.0f;
+	float g = float(pow(2.0, (float)i));
+	float ret = (float)cos(x*g)/g;
+	return ret + cosop(x, i+1, itermax);
+};
+
+float sinop(float x, float i, float itermax) {
+	if(i >= itermax)
+		return 0.0f;
+	float g = float(pow(2.0, (float)i));
+	float ret = (float)sin(x*g)/g;
+	return ret + sinop(x, i+1, itermax);
+};
+
+float tanop(float x, float i, float itermax) {
+	if(i >= itermax)
+		return 0.0f;
+	float g = float(pow(2.0, (float)i));
+	float ret = (float)tan(x*g)/g;
+	return ret + sinop(x, i+1, itermax);
 };
 
 SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
@@ -51,9 +119,41 @@ SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
 	
 	POGEL::POINT ret;
 	
-	ret.x = x;
-	ret.y = operation(x,0,c+1);
-	ret.z = z;
+	/*ret.x = sinop(x,0,c+1);
+	ret.y = cosop(x,0,c+1);
+	ret.z = tanop(x,0,c+1);*/
+	
+	/*ret.x = sinop(x,0,c+1);
+	ret.y = cosop(x,0,c+1);
+	ret.z = z;*/
+	
+	ret.x = x/5;
+	ret.y = cosop(x,0,itterations) + cosop(z,0,itterations);
+	ret.z = z/5;
+	
+	/*ret.x = x;
+	ret.y = cosop(x,0,c+1);
+	ret.z = z;*/
+	
+	/*ret.x = x;
+	ret.y = (sqrop(x,0,itterations) + sqrop(z,0,itterations))/1;
+	ret.z = z;*/
+	
+	/*ret.x = x;
+	ret.y = sqrop(x,0,c+1);
+	ret.z = z;*/
+	
+	/*ret.x = x;
+	ret.y = (triop(x,0,itterations) + triop(z,0,itterations))/1;
+	ret.z = z;*/
+	
+	/*ret.x = x;
+	ret.y = triop(x,0,c+1);
+	ret.z = z;*/
+	
+	/*ret.y = x*z/2;
+	ret.z=z;
+	ret.x=x;*/
 	
 	return ret;
 };
@@ -95,7 +195,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	obj = new OBJECT();
 	obj->setname("graph\0");
 	
-	addFunctionShape(obj, func, "xz", defaultimg, TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, 3.14*2, 3.14*2, 1, 1000, 1, 10);
+	addFunctionShape(obj, func, "xz", defaultimg, 0/*|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS*/, PI*2, PI*2, PI*2, 512, 0, 512);
 	
 	obj->build();
 	
@@ -107,7 +207,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 
 bool keypres, go = true;
-POGEL::POINT camrot(0,0,0), campos(0,0,-7);
+POGEL::POINT camrot(90,0,0), campos(0,0,-10);
 
 /* The main drawing function. */
 void DrawGLScene()
