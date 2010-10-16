@@ -25,6 +25,8 @@ class OBJECT;
 
 //#define			OBJECT_USE_OPNEGL_MATRIX_RECURSION
 
+#define			OBJECT_TRIAGLE_ALLOCATION_SKIP	1000
+
 namespace POGEL {
 class OBJECT {
 	private:
@@ -36,6 +38,8 @@ class OBJECT {
 		POGEL::OBJECT *parent; // the parent of this object if it is a child object
 		unsigned long numchildren; // the number of children objects
 		char* name; // the name of the object, used for identification in the tree of children objects
+		
+		unsigned long triangle_allocation_total;
 	public:
 		POGEL::POINT position; // the center position of the object
 		POGEL::POINT rotation; // the rotation arround the center of the object
@@ -94,6 +98,7 @@ class OBJECT {
 		
 		unsigned long addtriangle(POGEL::TRIANGLE);
 		void addtriangles(POGEL::TRIANGLE*,unsigned long);
+		void addtrianglespace(unsigned long);
 		
 		unsigned long addobject(POGEL::OBJECT*);
 		void addobjects(POGEL::OBJECT**,unsigned long);

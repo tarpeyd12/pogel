@@ -270,6 +270,8 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 	if(!loopY) yRes = 1;
 	if(!loopZ) zRes = 1;
 	
+	obj->addtrianglespace(xRes*yRes*zRes*2);
+	
 	unsigned long face_count = 0;
 	
 	unsigned long a = 0;
@@ -281,57 +283,61 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 				
 				POGEL::VERTEX verts[4];
 				POGEL::POINT tmp;
+				POGEL::TRIANGLE tri[2];
 				
 				if(loopX && loopY) {
 					tmp = function(xpos, ypos, 0, a, b, 0);
-					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize-0.5, ypos/ySize-0.5);
 					tmp = function(xpos+xStep, ypos, 0, a+1, b, 0);
-					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize+xStep/xSize-0.5, ypos/ySize-0.5);
 					tmp = function(xpos, ypos+yStep, 0, a, b+1, 0);
-					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize-0.5, ypos/ySize+yStep/ySize-0.5);
 					tmp = function(xpos+xStep, ypos+yStep, 0, a+1, b+1, 0);
-					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
-					POGEL::TRIANGLE tri;
-					tri.load(verts[0],verts[1],verts[2], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
-					tri.load(verts[2],verts[1],verts[3], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize+xStep/xSize-0.5, ypos/ySize+yStep/ySize-0.5);
+					tri[0].load(verts[0],verts[1],verts[2], img, triprop);
+					tri[1].load(verts[2],verts[1],verts[3], img, triprop);
+					/*POGEL::VECTOR v = tri[0].normal+tri[1].normal;
+					v.normalize();
+					tri[0].normal = v;
+					tri[1].normal = v;*/
+					obj->addtriangle(tri[0]);
+					obj->addtriangle(tri[1]);
 				}
 				else if(loopX && loopZ) {
 					tmp = function(xpos, 0, zpos, a, 0, c);
-					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize-0.5, zpos/zSize-0.5);
 					tmp = function(xpos+xStep, 0, zpos, a+1, 0, c);
-					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize+xStep/xSize-0.5, zpos/zSize-0.5);
 					tmp = function(xpos, 0, zpos+zStep, a, 0, c+1);
-					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize-0.5, zpos/zSize+zStep/zSize-0.5);
 					tmp = function(xpos+xStep, 0, zpos+zStep, a+1, 0, c+1);
-					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
-					POGEL::TRIANGLE tri;
-					tri.load(verts[0],verts[1],verts[2], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
-					tri.load(verts[2],verts[1],verts[3], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize+xStep/xSize-0.5, zpos/zSize+zStep/zSize-0.5);
+					tri[0].load(verts[0],verts[1],verts[2], img, triprop);
+					tri[1].load(verts[2],verts[1],verts[3], img, triprop);
+					/*POGEL::VECTOR v = tri[0].normal+tri[1].normal;
+					v.normalize();
+					tri[0].normal = v;
+					tri[1].normal = v;*/
+					obj->addtriangle(tri[0]);
+					obj->addtriangle(tri[1]);
 				}
 				else if(loopY && loopZ) {
 					tmp = function(0, ypos, zpos, 0, b, c);
-					verts[0].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[0].set_values(tmp.x, tmp.y, tmp.z, ypos/ySize-0.5, zpos/zSize-0.5);
 					tmp = function(0, ypos+yStep, zpos, 0, b+1, c);
-					verts[1].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[1].set_values(tmp.x, tmp.y, tmp.z, ypos/ySize+yStep/ySize-0.5, zpos/zSize-0.5);
 					tmp = function(0, ypos, zpos+zStep, 0, b, c+1);
-					verts[2].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
+					verts[2].set_values(tmp.x, tmp.y, tmp.z, ypos/ySize-0.5, zpos/zSize+zStep/zSize-0.5);
 					tmp = function(0, ypos+yStep, zpos+zStep, 0, b+1, c+1);
-					verts[3].set_values(tmp.x, tmp.y, tmp.z, xpos/xSize, ypos/ySize);
-					POGEL::TRIANGLE tri;
-					tri.load(verts[0],verts[1],verts[2], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
-					tri.load(verts[2],verts[1],verts[3], img, triprop);
-					//mat.transformVector(&tri.normal);
-					obj->addtriangle(tri);
+					verts[3].set_values(tmp.x, tmp.y, tmp.z, ypos/ySize+yStep/ySize-0.5, zpos/zSize+zStep/zSize-0.5);
+					tri[0].load(verts[0],verts[1],verts[2], img, triprop);
+					tri[1].load(verts[2],verts[1],verts[3], img, triprop);
+					/*POGEL::VECTOR v = tri[0].normal+tri[1].normal;
+					v.normalize();
+					tri[0].normal = v;
+					tri[1].normal = v;*/
+					obj->addtriangle(tri[0]);
+					obj->addtriangle(tri[1]);
 				}
 				
 				face_count++;
