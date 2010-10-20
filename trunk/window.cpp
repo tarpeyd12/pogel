@@ -11,6 +11,8 @@
 int window;
 int screenx, screeny;
 
+bool keys[256];
+
 /* The function called when our window is resized (which shouldn't happen, because we're fullscreen) */
 void ReSizeGLScene(int Width, int Height)
 {
@@ -46,6 +48,8 @@ void keyPressed(unsigned char key, int x, int y)
 		/* exit the program...normal termination. */
 		exit(0);
 	}
+	
+	keys[key] = true;
 	
 	if(key=='\b')
 		glutFullScreen();
@@ -147,4 +151,44 @@ void keyPressed(unsigned char key, int x, int y)
 			POGEL::addproperty(256);
 	}
 }
+
+void keyUnpressed(unsigned char key, int x, int y) 
+{
+	keys[key] = false;
+}
+
+int mouse_x;
+int mouse_y;
+int mouse_static_x;
+int mouse_static_y;
+int mouse_button;
+int mouse_state;
+
+int prevmousex;
+int prevmousey;
+
+POGEL::POINT prot;
+
+void mouseClicked(int button, int state, int x, int y)
+{
+	if(state == GLUT_UP) {
+		prevmousex = x;
+		prevmousey = y;
+	}
+	if(state == GLUT_DOWN) {
+		prot = camrot;
+		mouse_static_x = mouse_x = x;
+		mouse_static_y = mouse_y = y;
+	}
+	mouse_button = button;
+	mouse_state = state;
+};
+
+void mouseMoved(int x, int y)
+{
+	//prevmousex = mouse_x;
+	//prevmousey = mouse_y;
+	mouse_x = x;
+	mouse_y = y;
+};
 
