@@ -55,6 +55,10 @@ int main(int argc, char **argv)
 
     /* Register the function called when the keyboard is pressed. */
     glutKeyboardFunc(&keyPressed);
+    glutKeyboardUpFunc(&keyUnpressed);
+    glutMouseFunc(&mouseClicked);
+    glutMotionFunc(&mouseMoved);
+    glutPassiveMotionFunc(&mouseMoved);
 
     /* Initialize our window. */
     InitGL(640, 480);

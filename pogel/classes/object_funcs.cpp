@@ -259,7 +259,7 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 	if( !loopX && !loopY && !loopZ)
 		return;
 	
-	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Function Graph looped upon %s axies to \"%s\" ...\n", axesToLoop, obj->getname());
+	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Function Graph to \"%s\" ...\n", obj->getname());
 	
 	float xMax = xSize/2.0f, yMax = ySize/2.0f, zMax = zSize/2.0f;
 	float xMin = xMax*-1.0f, yMin = yMax*-1.0f, zMin = zMax*-1.0f;
@@ -342,7 +342,7 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 				
 				face_count++;
 				
-				if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld estimated faces complete in function graph.\r", face_count, xRes*yRes*zRes);
+				if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld in graph of function.\r", face_count, xRes*yRes*zRes);
 			}
 		}
 	}

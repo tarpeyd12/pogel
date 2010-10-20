@@ -15,8 +15,10 @@
 
 using namespace POGEL;
 
-#define itterations 6
+#define itterations 1
 POGEL::OBJECT* obj;
+
+int itt=1;
 
 //IMAGE *earth;
 IMAGE *defaultimg;
@@ -53,20 +55,12 @@ float triangle(float x) {
 	const float xx = x < 0.0 ? -x : x;
 	
 	// Scale the argument.
-	const float nT = xx / period;
+	//const float nT = xx / period;
 	const float x_scaled = fmod(xx,period);// - floor(nT) * period;
 	const float period_half = period / 2.0;
-	float r;
-	
-	if(x_scaled <= period_half)
-		r = (-amplitude)*(x_scaled) + (amplitude)*(period_half-x_scaled);
-	/*else if(x_scaled == period_half)
-		r = 0;*/
-	else
-		r = (amplitude)*(x_scaled) + (-amplitude)*(period-x_scaled) - period/2;
 	
 	// Return triangle wave.
-	return r/2;
+	return (x_scaled <= period_half ? (-amplitude)*(x_scaled) + (amplitude)*(period_half-x_scaled) : (amplitude)*(x_scaled) + (-amplitude)*(period-x_scaled) - period/2)/2;
 };
 
 float sqrop(float x, float i, float itermax) {
@@ -127,16 +121,16 @@ SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
 	ret.y = cosop(x,0,c+1);
 	ret.z = z;*/
 	
-	ret.x = x/5;
-	ret.y = cosop(x,0,itterations) + cosop(z,0,itterations);
-	ret.z = z/5;
-	
 	/*ret.x = x;
-	ret.y = cosop(x,0,c+1);
+	ret.y = cosop(x,0,itt) + cosop(z,0,itt);
 	ret.z = z;*/
 	
+	ret.x = x;
+	ret.y = cosop(x,0,c+1);
+	ret.z = z;
+	
 	/*ret.x = x;
-	ret.y = (sqrop(x,0,itterations) + sqrop(z,0,itterations))/1;
+	ret.y = (sqrop(x,0,itt) + sqrop(z,0,itt))/1;
 	ret.z = z;*/
 	
 	/*ret.x = x;
@@ -144,7 +138,7 @@ SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
 	ret.z = z;*/
 	
 	/*ret.x = x;
-	ret.y = (triop(x,0,itterations) + triop(z,0,itterations))/1;
+	ret.y = triop(x,0,itt) + triop(z,0,itt);
 	ret.z = z;*/
 	
 	/*ret.x = x;
@@ -192,22 +186,25 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	//getchar();
 	
-	obj = new OBJECT();
-	obj->setname("graph\0");
 	
-	addFunctionShape(obj, func, "xz", defaultimg, 0/*|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS*/, PI*2, PI*2, PI*2, 512, 0, 512);
+	obj = new OBJECT[itterations];
 	
-	obj->build();
+	for(int i = 0; i<itterations; i++) {
+		obj[i].setname(POGEL::string("graph%d\0",i));
+		itt = i + 1;
+		addFunctionShape(&obj[i], func, "xz", defaultimg, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, PI*2, PI*2, PI*2, 1024+0*pow(2,itt)*2, 0, 10+0*pow(2,itt)*2);
+		obj[i].build();
+	}
 	
 	POGEL::InitFps();
 	printf("\n");
 }
 
 //unsigned long frames=0;
-float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
+float x = 1, y = 1, z =1;
 
 bool keypres, go = true;
-POGEL::POINT camrot(90,0,0), campos(0,0,-10);
+POGEL::POINT camrot(45,0,0), campos(0,0,-10);
 
 /* The main drawing function. */
 void DrawGLScene()
@@ -225,11 +222,25 @@ void DrawGLScene()
 	POGEL::IncrementFps();
 	POGEL::PrintFps();
 	
+	/*campos.print();
+	camrot.print();*/
+	
 	/*glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);*/
 	
-	obj->draw();
+	if(POGEL::frames%12 == 0)
+	//if(keypres)
+	{
+		//keypres = false;
+		itt++;
+	}
+	if(itt >= itterations || keypres) {
+		keypres = false;
+		itt = 0;
+	}
+	
+	obj[itt].draw();
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();
