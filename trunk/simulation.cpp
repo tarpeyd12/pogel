@@ -17,10 +17,10 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs (10*10+1)
-#define grd 10
-#define sps 1.05f
-#define size 1.0f
+#define numobjs (20*20+1)
+#define grd 30
+#define sps 1.05f/5
+#define size 1.0f/5
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -67,6 +67,12 @@ void oob(SOLID_FNC_DEF) {
                 obj->direction += POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*obj->direction.getdistance()*1.0;
                 //obj->stepstaken = 0;
         }*/
+        
+        if(obj->stepstaken >= rand()%1000+100) {
+        	obj->stepstaken = 0;
+        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,7,POGEL::FloatRand(4.0)-2.0-8));
+        	obj->direction = POGEL::VECTOR(1,0,0).normal()/4;
+        }
         obj->position.z = 0.0f;
         obj->direction.z = 0.0f;
 };
@@ -162,10 +168,10 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 }
                 
                 if(i != numobjs-1)
-                sphs[i]->resizetrail(10);
+                sphs[i]->resizetrail(5);
                 
                 if(i == numobjs-1)
-                sphs[i]->resizetrail(10);
+                sphs[i]->resizetrail(5);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -177,7 +183,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),-100000000000.0f) );
         //sim.addfan(POGEL::PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 50.0f));
         sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f;
-        sim.air_dencity = 100.0f;
+        sim.air_dencity = 20.0f;
         
         POGEL::OBJECT* ring = new POGEL::OBJECT();
         ring->setname("border");
@@ -195,7 +201,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        addSphere(ring,10,10, 4.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(ring,10,10, 8.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));

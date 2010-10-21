@@ -162,7 +162,7 @@ int mouse_y;
 int mouse_static_x;
 int mouse_static_y;
 int mouse_button;
-int mouse_state;
+int mouse_state = 1;
 
 int prevmousex;
 int prevmousey;

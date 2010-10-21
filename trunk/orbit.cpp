@@ -207,7 +207,7 @@ void DrawGLScene()
 	
 	glTranslatef(p.x*-1.0f, p.y*-1.0f, p.z*-1.0f);
 	glTranslatef(0.0f,0.0f,-(d*2.0f));*/
-	
+	MOUSE_ROT_FUNC
 	glTranslatef(0.0f+campos.x,0.0f+campos.y,-30.0f+campos.z);
 	//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.x + ((float)frames*x)*0.0f/rndrnge,  1.0f, 0.0f, 0.0f );
