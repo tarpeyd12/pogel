@@ -292,7 +292,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 	//}
 	
 	//for(unsigned long a=0;a<numobjects;a++) {
-		for(unsigned long b=a+1;b<numobjects;b++) {
+		for(unsigned long b=0;b<numobjects;b++) {
 			if( a!=b && boundingcheck(objects[a], objects[b]) ) {
 				if( processcollision(objects[a], objects[b])) {
 					if(objects[a]->callback != NULL) {

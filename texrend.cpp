@@ -105,7 +105,7 @@ void DrawGLScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	
 		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();
-	
+	MOUSE_ROT_FUNC
 	glTranslatef(0.0f,0.0f,-25.0f);
 	glTranslatef(campos.x,campos.y,campos.z);
 	glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
