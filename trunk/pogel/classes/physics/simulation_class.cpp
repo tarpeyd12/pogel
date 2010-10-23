@@ -121,8 +121,18 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE(POGEL::PHYSICS::SOLID* obj1, POGE
 		
 		float d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + obj2->bounding.maxdistance);
 		
-		obj1->translate(v.normal() * d *.5);
-		obj2->translate(v.normal() * -d *.5);
+		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			obj1->translate(v.normal() * d *.5);
+			obj2->translate(v.normal() * -d *.5);
+		}
+		else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			//obj1->translate(v.normal() * d *.5);
+			obj2->translate(v.normal() * -d *1);
+		}
+		else if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			obj1->translate(v.normal() * d *1);
+			//obj2->translate(v.normal() * -d *.5);
+		}
 		
 		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, obj2->position).normal(), POGEL::VECTOR(obj2->position, obj1->position).normal(), p);
 		return true;
@@ -170,7 +180,7 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHERE(POGEL::PHYSICS::SOLID* obj
 		//else if((obj2->position - obj2->direction.normal().topoint()).distance(obj1->position) < obj1->position.distance(obj2->position))
 			obj2->translate(v.normal() * -d  );
 		
-		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, p).normal(), POGEL::VECTOR(obj2->position, p).normal(), p);
+		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, p).normal()*0, POGEL::VECTOR(obj2->position, p).normal()*0, p);
 		return true;
 	}
 	
@@ -209,7 +219,7 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHEREGENERAL(POGEL::PHYSICS::SOL
 };
 
 void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::VECTOR obj1vect, POGEL::VECTOR obj2vect, POGEL::POINT colpoint) {
-	
+	POGEL::POINT col = colpoint;
 	if(POGEL::hasproperty(POGEL_COLLISIONS))
 		POGEL::message("collision between \"%s\" and \"%s\", at <%0.3f,%0.3f,%0.3f>.\n", \
 			obj1->getname(), obj2->getname(), colpoint.x, colpoint.y, colpoint.z);
@@ -218,18 +228,45 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 	
 	//if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 		POGEL::VECTOR vtmp[2];
-		POGEL::PHYSICS::calcElasticDirections(obj1vect, obj1, obj2, vtmp);
+		POGEL::PHYSICS::calcInelasticDirections(obj1vect, obj1, obj2, vtmp);
 		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			obj1->direction = vtmp[0];
 			obj2->direction = vtmp[1];
+			
+			POGEL::POINT p;
+			p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(col-obj1->position);
+			obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;
+			//if(obj1->spin.getdistance() != 0.0f)
+			//obj1->spin /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
+			
+			p = POGEL::MATRIX(POGEL::POINT(),obj2->spin).transformPoint(col-obj2->position);
+			obj2->direction -= (POGEL::VECTOR(p)*obj2->spin.getdistance())/PARTICLE_SLOWDOWN;
+			//if(obj2->spin.getdistance() != 0.0f)
+			//obj2->spin /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
 		}
 		else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			//obj1->direction = vtmp[0];
-			obj2->direction = vtmp[1] + vtmp[0]*-1;
+			if(obj2->direction.getdistance() == 0.0f)
+				obj2->direction = vtmp[1] + vtmp[0]*-1;
+			else
+				obj2->direction = vtmp[1];
+			
+			POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj2->spin).transformPoint(col-obj2->position);
+			obj2->direction -= (POGEL::VECTOR(p)*obj2->spin.getdistance())/PARTICLE_SLOWDOWN;
+			//if(obj2->spin.getdistance() != 0.0f)
+			//obj2->spin /= ((obj1->behavior.friction/1.0f)+(obj1->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
 		}
 		else if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			obj1->direction = vtmp[0] + vtmp[1]*-1;
+			if(obj2->direction.getdistance() == 0.0f)
+				obj1->direction = vtmp[0] + vtmp[1]*-1;
+			else
+				obj1->direction = vtmp[0];
 			//obj2->direction = vtmp[1];
+			
+			POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(col-obj1->position);
+			obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;
+			//if(obj1->spin.getdistance() != 0.0f)
+			//obj1->spin /= ((obj2->behavior.friction/1.0f)+(obj2->behavior.friction >= 0.0f ? 1.0f : -1.0f)); // compensate for friction
 		}
 		return;
 	//}
@@ -292,7 +329,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 	//}
 	
 	//for(unsigned long a=0;a<numobjects;a++) {
-		for(unsigned long b=0;b<numobjects;b++) {
+		for(unsigned long b=a+1;b<numobjects;b++) {
 			if( a!=b && boundingcheck(objects[a], objects[b]) ) {
 				if( processcollision(objects[a], objects[b])) {
 					if(objects[a]->callback != NULL) {

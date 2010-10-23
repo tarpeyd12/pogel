@@ -310,4 +310,78 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOL
 	v[1] = (v2nprimevector + v2tprimevector);
 };
 
+inline float POGEL::PHYSICS::getvf(float m1, float m2, float v1, float v2, float cr) {
+	return (cr*m2*(v2-v1)+m1*v1+m2*v2)/(m1+m2);
+};
+
+void POGEL::PHYSICS::calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
+	
+	// these next two lines of code are to compensate for a weard bug, that when the bounce of a solid object that is PHYSICS_SOLID_CONVEX, is 4, and the other objects bounce is 1, that then it is as if both were set to 1.
+	float b1 = s1->behavior.bounce*(s1->hasOption(PHYSICS_SOLID_CONCAVE) ? 4 : 1);
+	float b2 = s2->behavior.bounce*(s2->hasOption(PHYSICS_SOLID_CONCAVE) ? 4 : 1);
+	
+	float cn = (b1+b2)/2;
+	float cn1 = cn;
+	float cn2 = cn;
+	
+	POGEL::VECTOR un;
+	
+	//vn.print();
+	
+	if(vn == POGEL::VECTOR())
+		un.frompoints(s2->position, s1->position);
+	else
+		un = vn;
+	
+	float v1prime, v2prime;
+	float v1n, v1t, v2n, v2t;
+	
+	un.normalize();
+	
+	// check to see if the objects can be treated as a 1 dimensional collision
+	if(
+		s1->direction.normal() == un || \
+		s1->direction.normal()*-1.0f == un || \
+		s2->direction.normal() == un || \
+		s2->direction.normal()*-1.0f == un
+	) {
+		v1n = s1->direction.getdistance();
+		v2n = s2->direction.getdistance();
+		
+		v1prime = POGEL::PHYSICS::getvf(s1->behavior.mass, s2->behavior.mass, v1n, v2n, cn1);
+		v2prime = POGEL::PHYSICS::getvf(s2->behavior.mass, s1->behavior.mass, v2n, v1n, cn2);
+		
+		v[0] = s2->direction.normal() * v1prime;
+		v[1] = s1->direction.normal() * v2prime;
+		
+		return;
+	}
+	
+	POGEL::VECTOR ut1(s1->direction, un), ut2(s2->direction, un);
+	
+	ut1.normalize();
+	ut2.normalize();
+	
+	v1n = un.dotproduct(s1->direction);
+	v1t = ut1.dotproduct(s1->direction);
+	
+	v2n = un.dotproduct(s2->direction);
+	v2t = ut2.dotproduct(s2->direction);
+	
+	v1prime = POGEL::PHYSICS::getvf(s1->behavior.mass, s2->behavior.mass, v1n, v2n, cn1);
+	v2prime = POGEL::PHYSICS::getvf(s2->behavior.mass, s1->behavior.mass, v2n, v1n, cn2);
+	
+	POGEL::VECTOR v1nprimevector, v2nprimevector, v1tprimevector, v2tprimevector;
+	
+	v1nprimevector = un*v1prime;
+	v2nprimevector = un*v2prime;
+	
+	v1tprimevector = s1->direction - un * s1->direction.dotproduct(un);
+	v2tprimevector = s2->direction - un * s2->direction.dotproduct(un);
+	
+	v[0] = (v1nprimevector + v1tprimevector);
+	v[1] = (v2nprimevector + v2tprimevector);
+};
+
+
 

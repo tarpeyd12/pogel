@@ -41,6 +41,9 @@ namespace PHYSICS {
 	
 	inline float getvprime(float m1, float m2, float v1, float v2);
 	void calcElasticDirections(POGEL::VECTOR, POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR*);
+	
+	inline float getvf(float m1, float m2, float v1, float v2, float cr);
+	void calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v);
 }
 }
 

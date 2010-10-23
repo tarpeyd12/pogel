@@ -274,6 +274,21 @@ void POGEL::PHYSICS::SOLID::draw() {
 	bounding.draw(POGEL::POINT());
 	glLineWidth(1);
 	
+	if(POGEL::hasproperty(POGEL_LABEL)) {
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glColor3f(1.0f,0.5f,0.0f);
+		glLineWidth(1);
+		glBegin(GL_LINES);
+			glVertex3f(position.x, position.y, position.z);
+			glVertex3f(position.x+direction.x*2, position.y+direction.y*2, position.z+direction.z*2);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_LIGHTING);
+	}
+	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
 		float len = bounding.maxdistance*1.1f;//0.5f;
 		glDisable(GL_TEXTURE_2D);
