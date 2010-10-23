@@ -214,7 +214,7 @@ unsigned long POGEL::OBJECT::addtriangle(POGEL::TRIANGLE tri) {
 		addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
 	//else if(numfaces%OBJECT_TRIAGLE_ALLOCATION_SKIP == 0)
 		//addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
-	else
+	//else
 		face[numfaces]=tri;
 	numfaces++;
 	return numfaces-1;	
@@ -489,7 +489,7 @@ void POGEL::OBJECT::draw() {
 		glBegin(GL_POINTS);
 			glVertex3f(position.x, position.y, position.z);
 		glEnd();
-		glLineWidth(1);
+		glPointSize(1);
 		glColor3f(1.0f,1.0f,1.0f);
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_LIGHTING);

@@ -134,7 +134,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			sphs[cosm].addSolid(tmp);
 		}
 		//sphs[cosm].addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),sps*20000000000000.0f) );
-		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 1.8f;
+		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 9.8f;
 		
 		sphs[cosm].setname(POGEL::string("microcosm_%ld", cosm));
 		
@@ -150,7 +150,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		
 		sphs[cosm].resizetrail(100);
 		
-		sphs[cosm].setproperties(1|2);
+		sphs[cosm].setproperties(/*1|*/2);
 		
 		sphs[cosm].build();
 		

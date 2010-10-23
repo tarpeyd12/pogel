@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 11
+#define itterations 10
 #define startsize	2.0f
 #define size    	0.6f
 POGEL::FRACTAL* obj;
@@ -52,7 +52,7 @@ void construct(FRACTAL_FNC_DEFS) {
 		}
 	
 	
-	switch(itter%2) {
+	switch(itter%1) {
 	case 0:
 		tmp = obj->spawn();
 		if(tmp != NULL) {

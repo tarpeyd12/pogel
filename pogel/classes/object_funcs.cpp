@@ -22,6 +22,7 @@ void addSphere(POGEL::OBJECT *obj, float spacev, float spaceh, float R, POGEL::I
 	spacev=180.0f/spacev;
 	spaceh=360.0f/spaceh;
 	unsigned long vertcount=(180 / spacev) * (360 / spaceh);
+	//obj->addtrianglespace(vertcount);
 	for( b = 0.0f; b <= 180.0f - spacev+0.001f; b+=spacev){
 		if(vertcount==cur_vert) break;
 		for( a = 0.0f; a <= 360.0f - spaceh+0.001f; a+=spaceh){
@@ -84,6 +85,7 @@ void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radiu
 	
 	divisions=360.0f/divisions;
 	unsigned long vertcount=((360/divisions)*rings);
+	//obj->addtrianglespace(vertcount);
 	rings=(outer_radius-inner_radius)/rings;
 	for(a=inner_radius;a<outer_radius;a+=rings) { // rings
 		if(vertcount==cur_vert) break;
@@ -170,6 +172,7 @@ void addCylinder(POGEL::OBJECT *obj, float divisions, float rings_in, float heig
 	if(texdiv==0.0f) texdiv=1.0f;
 	divisions=360.0f/divisions;
 	unsigned long vertcount=((360/divisions)*rings_in);
+	//obj->addtrianglespace(vertcount);
 	float hinc=height/rings_in;
 	float rings=(lower_radius-upper_radius)/rings_in;
 	if(lower_radius>upper_radius) {
@@ -352,6 +355,8 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::IMAGE* img, float imgscale_h, float imgscale_w, unsigned int triprop, POGEL::MATRIX mat) {
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Cube to \"%s\" ...\n", obj->getname());
 	POGEL::VERTEX verts[4];
+	
+	//obj->addtrianglespace(12);
 	
 	//front
 	verts[0].set_values(-width/2.0f,-height/2.0f, depth/2.0f,       0.0f,      0.0f); // lowerleft
