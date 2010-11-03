@@ -105,7 +105,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			tmp->setOptions(2);
 			
 			tmp->moveto(matobjtransform.transformPoint(POGEL::POINT(0.0f, ((float)objs+(sps*40))*sps+sps*5, 0.0f)));
-			tmp->direction = matobjtransform.transformVector(POGEL::VECTOR((float)sqrt((sps*20000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(tmp->position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+			tmp->direction = matobjtransform.transformVector(POGEL::VECTOR((float)sqrt((sps*20000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN_RATIO))/(tmp->position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 			tmp->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.05f * VECTOR(1.0f,1.0f,1.0f);
 			
 			tmp->resizetrail(10);
@@ -125,7 +125,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		sphs[cosm].setOptions(2);
 		
 		sphs[cosm].moveto(matcosmtransform.transformPoint(POGEL::POINT(0.0f, ((float)cosm+1)*sps, 0.0f)*(float)numobjs*2));
-		sphs[cosm].direction = matcosmtransform.transformVector(POGEL::VECTOR((float)sqrt((1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(sphs[cosm].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+		sphs[cosm].direction = matcosmtransform.transformVector(POGEL::VECTOR((float)sqrt((1000000000000.0f*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN_RATIO))/(sphs[cosm].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		sphs[cosm].spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/5.0f * VECTOR(1.0f,1.0f,1.0f);
 		
 		sphs[cosm].resizetrail(100);

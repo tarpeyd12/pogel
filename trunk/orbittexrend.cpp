@@ -85,8 +85,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	float min_dist = 0.0f;
 	for(int i = 0; i < 10; i++) {
-		float cur = (float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN)))/(sps*(i+1));
-		if(cur < sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))))
+		float cur = (float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN_RATIO)))/(sps*(i+1));
+		if(cur < sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN_RATIO))))
 			min_dist = cur;
 	}
 	
@@ -122,7 +122,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
 		sphs[i]->build();
 		//sphs[i]->direction=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/2.0f * VECTOR(1.0f,1.0f,1.0f);
-		sphs[i]->direction = m.transformVector(POGEL::VECTOR((float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
+		sphs[i]->direction = m.transformVector(POGEL::VECTOR((float)sqrt((gravity*(GRAVITYCONSTANT/PARTICLE_SLOWDOWN_RATIO))/(obj[i].position.distance(POGEL::POINT()) )), 0.0f, 0.0f));
 		sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.1f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->direction = POGEL::VECTOR(0.05f,0.25f,0.0f);
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);

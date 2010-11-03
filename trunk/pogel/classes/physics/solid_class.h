@@ -112,13 +112,13 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void increment() {
 			if(!this->hasOption(PHYSICS_SOLID_STATIONARY)) {
-				rotate(spin);
-				direction += force;
-				translate(direction);
+				rotate(spin*POGEL::GetSecondsPerFrame());
+				direction += force;//*POGEL::GetSecondsPerFrame();
+				translate(direction*POGEL::GetSecondsPerFrame());
 			}
 			else {
-				rotate(spin);
-				translate(direction);
+				rotate(spin*POGEL::GetSecondsPerFrame());
+				translate(direction*POGEL::GetSecondsPerFrame());
 			}
 			//force = POGEL::VECTOR();
 			stepstaken++;
