@@ -267,6 +267,7 @@ bool POGEL::about(float a, float b, float pres) {
 void POGEL::InitFps() {
 	POGEL::start = clock();
 	POGEL::start_long = clock();
+	POGEL::duration = 0.0f;
 };
 
 void POGEL::IncrementFps() {
@@ -282,6 +283,7 @@ void POGEL::IncrementFps() {
 	POGEL::fps = 1.0f/((float)(POGEL::finish - POGEL::start)/CLOCKS_PER_SEC);
 	POGEL::fps += POGEL::fps_long;
 	POGEL::fps /= 2.0f;
+	duration += POGEL::GetSecondsPerFrame();
 	POGEL::start = clock();
 };
 
@@ -305,11 +307,21 @@ void POGEL::SetFramerateThrotle(float framerate) {
 	POGEL::framerate_throtling_correction = framerate;
 };
 
+float POGEL::GetSecondsPerFrame() {
+	if(POGEL::hasproperty(POGEL_TIMEBASIS))
+		return (1.0f/(POGEL::fps));// * POGEL::framerate_throtling_correction;
+	return 1.0f;
+};
+
+float POGEL::GetTimePassed() {
+	return duration;
+};
+
 void POGEL::ThrotleFps(int desitredFramerate) {
-	float dfr = (float)desitredFramerate - POGEL::fps;
+	float dfr = (float)desitredFramerate - (POGEL::fps*2-POGEL::fps_long);
 	if(dfr < 0.0f)
 		dfr = 1.0f/dfr;
-	POGEL::SetFramerateThrotle(fabs(dfr));
+	POGEL::SetFramerateThrotle(1.0/fabs(dfr));
 };
 
 void POGEL::UnthrotleFps() {

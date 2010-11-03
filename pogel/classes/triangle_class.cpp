@@ -147,6 +147,22 @@ void POGEL::TRIANGLE::getbounding() {
 };
 
 void POGEL::TRIANGLE::draw() {
+	
+	/*if(POGEL::hasproperty(POGEL_LABEL)) {
+		glDisable(GL_TEXTURE_2D);
+		glDisable(GL_LIGHTING);
+		glColor3f(1.0f,0.5f,0.0f);
+		glLineWidth(1);
+		glBegin(GL_LINES);
+			glVertex3f(middle().x, middle().y, middle().z);
+			glVertex3f(middle().x+normal.x, middle().y+normal.y, middle().z+normal.z);
+		glEnd();
+		glLineWidth(1);
+		glColor3f(1.0f,1.0f,1.0f);
+		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_LIGHTING);
+	}*/
+	
 	if(texture!=NULL)
 		texture->set();
 	if(((hasproperty(TRIANGLE_LIT)) || (hasproperty(TRIANGLE_VERTEX_NORMALS))) /*&& !POGEL::hasproperty(POGEL_WIREFRAME)*/)

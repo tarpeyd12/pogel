@@ -281,7 +281,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 		glLineWidth(1);
 		glBegin(GL_LINES);
 			glVertex3f(position.x, position.y, position.z);
-			glVertex3f(position.x+direction.x*2, position.y+direction.y*2, position.z+direction.z*2);
+			glVertex3f(position.x+direction.x*POGEL::GetSecondsPerFrame(), position.y+direction.y*POGEL::GetSecondsPerFrame(), position.z+direction.z*POGEL::GetSecondsPerFrame());
 		glEnd();
 		glLineWidth(1);
 		glColor3f(1.0f,1.0f,1.0f);
@@ -443,9 +443,13 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POG
 	float dist = origdist;
 	unsigned long triindex = 0;
 	unsigned long ptcount = 0;
+	POGEL::MATRIX mat(position, rotation);
+	
+	//if(getnumfaces() > 0)
+		origdist = mat.transformTriangle(gettriangle(0)).vertex[0].topoint().distance(point);
 	
 	for(unsigned long a = 0; a < getnumfaces(); a++) {
-		POGEL::TRIANGLE tritmp = POGEL::MATRIX(position, rotation).transformTriangle(gettriangle(a));
+		POGEL::TRIANGLE tritmp = mat.transformTriangle(gettriangle(a));
 		
 		if(true||tritmp.distcheck(point, origdist)) {
 				POGEL::POINT pointtmp1 = point;
