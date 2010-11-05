@@ -22,6 +22,12 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 	
 	// if either are concave do the concave checking
 	if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) || obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
+		// concave general shape vs. assumed convex sphere
+		if(
+			(obj1->hasOption(PHYSICS_SOLID_CONCAVE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE) && obj2->hasOption(PHYSICS_SOLID_SPHERE)) ||
+			(obj2->hasOption(PHYSICS_SOLID_CONCAVE) && !obj2->hasOption(PHYSICS_SOLID_SPHERE) && obj1->hasOption(PHYSICS_SOLID_SPHERE))
+		)
+			return processSPHERE_CONCAVEGENERAL(obj1, obj2);
 		// concave sphere vs. assumed convex sphere
 		if(
 			(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_SPHERE)) || 
@@ -212,7 +218,6 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOL
 	return false;
 };
 
-// TODO: tweak this to work
 bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
 	// make object 1 the sphere
 	if(obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE))
@@ -223,23 +228,25 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 	
 	POGEL::POINT c3d, c2d;
 	
-	obj2->closest(obj1->position, &tmp_2, &tmptri);
+	//obj2->closest(obj1->position, &tmp_2, &tmptri);
+	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_LEAST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
 	
 	POGEL::VECTOR v;
 	float d;
 	bool inside = false;
 	
-	if(tmptri.isinfront(obj2->position) != tmptri.isinfront(obj1->position) || tmp_2 == obj2->position) {
-		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
-		v = obj1->direction.normal() - obj2->direction.normal();
-		d = (obj1->bounding.maxdistance + tmp_2.distance(obj2->position)) - obj1->position.distance(obj2->position);
+	if(tmptri.isinfront(obj2->position) != tmptri.isinfront(obj1->position) || obj1->position.distance(obj2->position) > obj2->position.distance(tmp_2) ) {
+		//POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_LEAST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
+		v = obj2->position - obj1->position;
+		d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + tmp_2.distance(obj2->position));
 		unocupyobjs(obj1,obj2,v,d);
-		obj2->closest(obj1->position, &tmp_2, &tmptri);
+		//obj2->closest(obj1->position, &tmp_2, &tmptri);
 		inside = true;
 	}
+	obj2->closest(obj1->position, &tmp_2, &tmptri);
 	
 	//if(obj1->position.distance(obj2->position) < (obj1->bounding.maxdistance + tmp_2.distance(obj2->position))) {
-	if((obj1->position.distance(tmp_2) < obj1->bounding.maxdistance && tmptri.isinfront(obj1->position) == tmptri.isinfront(obj2->position)) || inside) {
+	if((obj1->position.distance(tmp_2) < obj1->bounding.maxdistance && tmptri.isinfront(obj1->position) == tmptri.isinfront(obj2->position) && tmp_2 != obj2->position) || inside) {
 		if(POGEL::hasproperty(POGEL_COLLISIONS))
 			tmp_2.draw();
 		v = POGEL::VECTOR(obj1->position, tmp_2);
@@ -247,16 +254,14 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		
 		unocupyobjs(obj1,obj2,v,d);
 		
-		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY)) {
-			if(tmptri.isinfront(v.normal().topoint()+tmptri.middle()))
-				obj1->translate(v.normal()*obj1->bounding.maxdistance*-1);
-			else
-				obj1->translate(v.normal()*obj1->bounding.maxdistance*1);
-		}
+		if(tmptri.isinfront(v.normal().topoint()+tmptri.middle()))
+			unocupyobjs(obj1, obj2, v, -obj1->bounding.maxdistance);
+		else
+			unocupyobjs(obj1, obj2, v,  obj1->bounding.maxdistance);
 			
-		v = POGEL::VECTOR(obj1->position,obj2->position).normal() + tmptri.normal*1000;
+		v = POGEL::VECTOR(obj1->position,obj2->position).normal()/100000 + tmptri.normal*100000;
 		v.normalize();
-		reactcollision(obj1, obj2, v.normal()*1, v.normal()*-1, tmp_2);
+		reactcollision(obj1, obj2, v, v * -1, tmp_2);
 		return true;
 	}
 	

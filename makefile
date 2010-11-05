@@ -127,4 +127,7 @@ resetcolor:
 clear:
 	clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear && clear
 
+todolist:
+	-@for file in $(POGELSRC); do fgrep -H -e TODO -e FIXME $$file; done; true
+
 

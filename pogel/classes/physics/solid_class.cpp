@@ -185,13 +185,13 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0, 0,-1)*max);
 			
 			refbounding = bounding;
-			
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 1, 0, 0)*max);
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 1, 0)*max);
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 0, 1)*max);
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT(-1, 0, 0)*max);
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0,-1, 0)*max);
-			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips + POGEL::POINT( 0, 0,-1)*max);
+			float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0, 1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0, 0, 1)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT(-1, 0, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0,-1, 0)*max);
+			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0, 0,-1)*max);
 			
 			bounding.finishactual();
 			bounding.fin();
