@@ -59,8 +59,14 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 bool boundingcheck(POGEL::PHYSICS::SOLID *obj1, POGEL::PHYSICS::SOLID *obj2) {
 	// if eather are concave
 	if(obj1->hasOption(PHYSICS_SOLID_CONCAVE) || obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
+		// if obj1 is concave general and obj2 is convex sphere
+		if(
+			(obj1->hasOption(PHYSICS_SOLID_CONCAVE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE) && obj2->hasOption(PHYSICS_SOLID_SPHERE)) ||
+			(obj2->hasOption(PHYSICS_SOLID_CONCAVE) && !obj2->hasOption(PHYSICS_SOLID_SPHERE) && obj1->hasOption(PHYSICS_SOLID_SPHERE))
+		)
+			return true;
 		// if obj1 is a concave sphere and obj2 is convex sphere
-		if(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
+		else if(obj1->hasOption(PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_CONCAVE) && obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj2->hasOption(PHYSICS_SOLID_CONCAVE)) {
 			if(obj2->position.distance(obj1->position) > fabs(obj2->bounding.maxdistance - obj1->bounding.maxdistance))
 				return true;
 			return false;
