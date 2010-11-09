@@ -68,6 +68,8 @@ namespace POGEL {
 	class QUAT;
 	class MATRIX;
 	
+	class LINE;
+	
 	class TRIANGLE;
 	class OBJECT;
 	

@@ -47,40 +47,43 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 				}
 				
 				if(POGEL::hasproperty(POGEL_PAIRS)) {
-					glDisable(GL_TEXTURE_2D);
+					/*glDisable(GL_TEXTURE_2D);
 					glDisable(GL_LIGHTING);
 					glLineWidth(2);
-					glColor3f(1.0f,0.75f,0.75f);
+					glColor3f(1.0f,0.75f,0.75f);*/
 					if(objects[a]->hasOption(PHYSICS_SOLID_CONCAVE) && objects[a]->hasOption(PHYSICS_SOLID_SPHERE)) {
 						POGEL::VECTOR vr(objects[a]->position, objects[b]->position);
 						vr.normalize();
 						vr *= objects[a]->bounding.maxdistance;
 						vr += objects[a]->position;
-						glBegin(GL_LINES);
+						POGEL::LINE(vr.topoint(),objects[b]->position,2,POGEL::COLOR(1,.75,.75,1)).draw();
+						/*glBegin(GL_LINES);
 							glVertex3f(vr.x,vr.y,vr.z);
 							glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
-						glEnd();
+						glEnd();*/
 					}
 					else if(objects[b]->hasOption(PHYSICS_SOLID_CONCAVE) && objects[b]->hasOption(PHYSICS_SOLID_SPHERE)) {
 						POGEL::VECTOR vr(objects[b]->position, objects[a]->position);
 						vr.normalize();
 						vr *= objects[b]->bounding.maxdistance;
 						vr += objects[b]->position;
-						glBegin(GL_LINES);
+						POGEL::LINE(objects[a]->position,vr.topoint(),2,POGEL::COLOR(1,.75,.75,1)).draw();
+						/*glBegin(GL_LINES);
 							glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
 							glVertex3f(vr.x,vr.y,vr.z);
-						glEnd();
+						glEnd();*/
 					}
 					else {
-						glBegin(GL_LINES);
+						POGEL::LINE(objects[a]->position,objects[b]->position,2,POGEL::COLOR(1,.75,.75,1)).draw();
+						/*glBegin(GL_LINES);
 							glVertex3f(objects[a]->position.x,objects[a]->position.y,objects[a]->position.z);
 							glVertex3f(objects[b]->position.x,objects[b]->position.y,objects[b]->position.z);
-						glEnd();
+						glEnd();*/
 					}
-					glLineWidth(1);
+					/*glLineWidth(1);
 					glColor3f(1.0f,1.0f,1.0f);
 					glEnable(GL_LIGHTING);
-					glEnable(GL_TEXTURE_2D);
+					glEnable(GL_TEXTURE_2D);*/
 				}
 				
 				

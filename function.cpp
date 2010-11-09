@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 8
+#define itterations 5
 POGEL::OBJECT* obj;
 
 int itt=1;

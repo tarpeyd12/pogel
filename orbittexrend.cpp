@@ -126,7 +126,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.1f * VECTOR(1.0f,1.0f,1.0f);
 		//sphs[i]->direction = POGEL::VECTOR(0.05f,0.25f,0.0f);
 		//sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
-		//sphs[i]->visable = false;
+		sphs[i]->visable = false;
 		
 		/*if(i == numobjs-1) { \
 			sphs[i]->setOptions(1|4); \
@@ -182,8 +182,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	view = new VIEW();
 	view->setretscreensize(&screenx, &screeny);
-	view->settexsize(600, 600);
-	view->setfilter(IMAGE_MIPMAP);
+	view->settexsize(1000, 1000);
+	view->setfilter(IMAGE_LINEAR);
 	view->build();
 	
 	canvas.setname("canvas");

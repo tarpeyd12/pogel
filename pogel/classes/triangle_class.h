@@ -6,6 +6,7 @@ class TRIANGLE;
 }
 
 #include "point_class.h"
+#include "line_class.h"
 #include "image_class.h"
 #include "matrix_class.h"
 #include "bounding_class.h"
@@ -55,6 +56,14 @@ class TRIANGLE {
 			printf("\n");
 			vertex[2].topoint().print();
 			printf("\n");
+		}
+		
+		POGEL::LINE getEdge(unsigned int l) {
+			if(l > 2) {
+				POGEL::error("Tried to access vertex 4 in triangle.\n");
+				return POGEL::LINE(POGEL::POINT(),POGEL::POINT());
+			}
+			return POGEL::LINE(vertex[l].topoint(), vertex[(l+1)%3].topoint());
 		}
 		
 		POGEL::TRIANGLE transform(POGEL::MATRIX*);

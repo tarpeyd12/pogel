@@ -4,6 +4,7 @@
 #include "../bounding_class.h"
 #include "../matrix_class.h"
 #include "../point_class.h"
+//#include "../line_class.h"
 
 #include "collision.h"
 
@@ -193,20 +194,8 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 				
 				*area += p1.distance(p2);
 				
-				if(POGEL::hasproperty(POGEL_COLLISIONS)) {
-					glDisable(GL_TEXTURE_2D);
-					glDisable(GL_LIGHTING);
-					glLineWidth(5);
-					glColor3f(0.0f,1.0f,1.0f);
-					glBegin(GL_LINES);
-						glVertex3f(p1.x,p1.y,p1.z);
-						glVertex3f(p2.x,p2.y,p2.z);
-					glEnd();
-					glLineWidth(1);
-					glColor3f(1.0f,1.0f,1.0f);
-					glEnable(GL_LIGHTING);
-					glEnable(GL_TEXTURE_2D);
-				}
+				if(POGEL::hasproperty(POGEL_COLLISIONS))
+					POGEL::LINE(p1,p2,5,POGEL::COLOR(0,1,1,1)).draw();
 				
 				obj1cols += ( mat1.transformPoint(p1) + mat1.transformPoint(p2) )/2.0f;
 				//obj2cols += ( mat2.transformPoint(p1) + mat2.transformPoint(p2) )/2.0f;
@@ -243,6 +232,80 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 		normal2->normalize();
 	}
 	return ret;
+};
+
+
+float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, POGEL::POINT* pol) {
+	POGEL::POINT start = line.getStart();
+	POGEL::POINT end = line.getEnd();
+	POGEL::POINT middle = line.getMiddle();
+	POGEL::POINT closest = middle;
+	
+	float pdist = 0;
+	float curdist = point.distance(middle);
+	unsigned int i = 0;
+	while( pdist != curdist && i < 100) {
+		if(point.distance(start)+point.distance(middle) < point.distance(end)+point.distance(middle)) {
+			if(point.distance(start) < point.distance(closest)) closest = start;
+			else closest = middle;
+			pdist = curdist;
+			curdist = point.distance(start)+point.distance(closest);
+			end = middle;
+			middle = (start+end)/2;
+		}
+		else {
+			if(point.distance(end) < point.distance(closest)) closest = end;
+			else closest = middle;
+			pdist = curdist;
+			curdist = point.distance(end)+point.distance(closest);
+			start = middle;
+			middle = (start+end)/2;
+		}
+		i++;
+	}
+	if(pol != NULL)
+		*pol = closest;
+	return point.distance(closest);
+};
+
+float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGLE triangle, POGEL::POINT* pol) {
+	
+	POGEL::POINT pointtmp1 = point;
+	POGEL::POINT res2d, res3d;
+				
+	bool col = POGEL::PHYSICS::line_triangle_collision(point, point+(triangle.normal.normal().topoint()*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1.0f : 1.0f), triangle, &res2d, &res3d);
+	
+	if(col) {
+		if(pol != NULL) *pol = res3d;
+		return res2d.z;
+	}
+	
+	POGEL::LINE edges[3];
+	POGEL::POINT verts[3];
+	for(unsigned int i = 0; i< 3; i++) {
+		edges[i] = triangle.getEdge(i);
+		verts[i] = triangle.vertex[i].topoint();
+	}
+	
+	for(unsigned int i = 0; i< 3; i++)
+		if(point.distance(verts[(i+0)%3]) < point.distance(verts[(i+1)%3]) && point.distance(verts[i]) < point.distance(verts[(i+2)%3])) {
+			POGEL::LINE a = edges[(i+0)%3];
+			POGEL::LINE b = edges[(i+2)%3];
+			POGEL::POINT tmp1, tmp2;
+			float dist1 = POGEL::PHYSICS::line_point_distance(point, a, &tmp1);
+			float dist2 = POGEL::PHYSICS::line_point_distance(point, a, &tmp2);
+			
+			if(dist1 <= dist2) {
+				if(pol != NULL) *pol = tmp1;
+				return dist1;
+			}
+			else {
+				if(pol != NULL) *pol = tmp2;
+				return dist2;
+			}
+		}
+	
+	return 0;
 };
 
 inline float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
