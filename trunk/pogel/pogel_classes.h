@@ -14,6 +14,7 @@
 #include "classes/point_class.h"
 #include "classes/quat_class.h"
 #include "classes/triangle_class.h"
+#include "classes/line_class.h"
 
 // the physics classes
 

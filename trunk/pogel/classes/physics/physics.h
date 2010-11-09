@@ -2,6 +2,7 @@
 #define _PHYSICS_H
 
 #include "../triangle_class.h"
+#include "../line_class.h"
 #include "../../pogel_internals.h"
 
 #define PHYSICS_NUMTRI_PROCESSED 1000
@@ -38,6 +39,10 @@ namespace PHYSICS {
 	bool solid_line_collision(int, POGEL::PHYSICS::SOLID*, POGEL::POINT, POGEL::POINT, POGEL::TRIANGLE*, POGEL::POINT*, POGEL::POINT*);
 	bool solid_line_collision(POGEL::PHYSICS::SOLID*, POGEL::POINT, POGEL::POINT, POGEL::TRIANGLE*, POGEL::POINT*, POGEL::POINT*);
 	bool solid_collision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT*,POGEL::VECTOR*,POGEL::VECTOR*,float*);
+	
+	// TODO: implement these two methods:
+	float line_point_distance(POGEL::POINT, POGEL::LINE, POGEL::POINT*);
+	float point_triangle_distance(POGEL::POINT, POGEL::TRIANGLE, POGEL::POINT*);
 	
 	inline float getvprime(float m1, float m2, float v1, float v2);
 	void calcElasticDirections(POGEL::VECTOR, POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR*);

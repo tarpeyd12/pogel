@@ -274,21 +274,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 	bounding.draw(POGEL::POINT());
 	glLineWidth(1);
 	
-	if(POGEL::hasproperty(POGEL_LABEL)) {
-		glDisable(GL_TEXTURE_2D);
-		glDisable(GL_LIGHTING);
-		glColor3f(1.0f,0.5f,0.0f);
-		glLineWidth(1);
-		glBegin(GL_LINES);
-			glVertex3f(position.x, position.y, position.z);
-			glVertex3f(position.x+direction.x*POGEL::GetSecondsPerFrame(), position.y+direction.y*POGEL::GetSecondsPerFrame(), position.z+direction.z*POGEL::GetSecondsPerFrame());
-		glEnd();
-		glLineWidth(1);
-		glColor3f(1.0f,1.0f,1.0f);
-		glEnable(GL_TEXTURE_2D);
-		glEnable(GL_LIGHTING);
-	}
-	
+	if(POGEL::hasproperty(POGEL_LABEL))
+		POGEL::LINE(position, position+(direction*POGEL::GetSecondsPerFrame()).topoint(), 1, POGEL::COLOR(1,0.5,0,1)).draw();
+	// TODO: get the trail drawing to work with the happy new line class
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
 		float len = bounding.maxdistance*1.1f;//0.5f;
 		glDisable(GL_TEXTURE_2D);
@@ -437,6 +425,7 @@ void POGEL::PHYSICS::SOLID::step() {
 		function(this);
 };
 
+// TODO: make this handle the perimiter of triangles as lines
 void POGEL::PHYSICS::SOLID::closest(POGEL::POINT point, POGEL::POINT* objpt, POGEL::TRIANGLE* tri) {
 	*tri = POGEL::TRIANGLE();
 	float origdist = position.distance(point);
