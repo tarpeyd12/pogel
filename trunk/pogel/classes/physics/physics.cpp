@@ -234,7 +234,7 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 	return ret;
 };
 
-
+// this is brute force
 float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, POGEL::POINT* pol) {
 	POGEL::POINT start = line.getStart();
 	POGEL::POINT end = line.getEnd();
@@ -244,7 +244,7 @@ float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, 
 	float pdist = 0;
 	float curdist = point.distance(middle);
 	unsigned int i = 0;
-	while( pdist != curdist && i < 100) {
+	while( pdist != curdist && i < 10) {
 		if(point.distance(start)+point.distance(middle) < point.distance(end)+point.distance(middle)) {
 			if(point.distance(start) < point.distance(closest)) closest = start;
 			else closest = middle;
@@ -261,22 +261,33 @@ float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, 
 			start = middle;
 			middle = (start+end)/2;
 		}
+		//middle.draw();
 		i++;
 	}
 	if(pol != NULL)
 		*pol = closest;
+	//closest.draw();
+	//POGEL::LINE(point, closest, 1, POGEL::COLOR(0,0,1,1)).draw();
 	return point.distance(closest);
 };
 
+// this is a brute force and direct way
 float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGLE triangle, POGEL::POINT* pol) {
 	
 	POGEL::POINT pointtmp1 = point;
 	POGEL::POINT res2d, res3d;
-				
-	bool col = POGEL::PHYSICS::line_triangle_collision(point, point+(triangle.normal.normal().topoint()*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1.0f : 1.0f), triangle, &res2d, &res3d);
+	
+	bool col = POGEL::PHYSICS::line_triangle_collision( \
+		point, \
+		point+(triangle.normal.topoint()*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1.0f : 1.0f), \
+		triangle, \
+		&res2d, \
+		&res3d \
+	);
 	
 	if(col) {
 		if(pol != NULL) *pol = res3d;
+		//POGEL::LINE(point, res3d, 1, POGEL::COLOR(0,0,1,1)).draw();
 		return res2d.z;
 	}
 	
@@ -288,7 +299,7 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 	}
 	
 	for(unsigned int i = 0; i< 3; i++)
-		if(point.distance(verts[(i+0)%3]) < point.distance(verts[(i+1)%3]) && point.distance(verts[i]) < point.distance(verts[(i+2)%3])) {
+		if(point.distance(verts[(i+0)%3]) < point.distance(verts[(i+1)%3]) && point.distance(verts[(i+0)%3]) < point.distance(verts[(i+2)%3])) {
 			POGEL::LINE a = edges[(i+0)%3];
 			POGEL::LINE b = edges[(i+2)%3];
 			POGEL::POINT tmp1, tmp2;
@@ -297,15 +308,17 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 			
 			if(dist1 <= dist2) {
 				if(pol != NULL) *pol = tmp1;
+				//POGEL::LINE(point, tmp1, 1, POGEL::COLOR(0,0,1,1)).draw();
 				return dist1;
 			}
 			else {
 				if(pol != NULL) *pol = tmp2;
+				//POGEL::LINE(point, tmp2, 1, POGEL::COLOR(0,0,1,1)).draw();
 				return dist2;
 			}
 		}
 	
-	return 0;
+	return point.distance(triangle.middle());
 };
 
 inline float POGEL::PHYSICS::getvprime(float m1, float m2, float v1, float v2) {
@@ -380,8 +393,8 @@ inline float POGEL::PHYSICS::getvf(float m1, float m2, float v1, float v2, float
 void POGEL::PHYSICS::calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
 	// these next two lines of code are to compensate for a weard bug, that when the bounce of a solid object that is PHYSICS_SOLID_CONVEX, is 4, and the other objects bounce is 1, that then it is as if both were set to 1.
-	float b1 = s1->behavior.bounce*(s1->hasOption(PHYSICS_SOLID_CONCAVE) ? 4 : 1);
-	float b2 = s2->behavior.bounce*(s2->hasOption(PHYSICS_SOLID_CONCAVE) ? 4 : 1);
+	float b1 = s1->behavior.bounce*(s1->hasOption(PHYSICS_SOLID_CONCAVE) && s1->hasOption(PHYSICS_SOLID_SPHERE) ? 4 : 1);
+	float b2 = s2->behavior.bounce*(s2->hasOption(PHYSICS_SOLID_CONCAVE) && s2->hasOption(PHYSICS_SOLID_SPHERE) ? 4 : 1);
 	
 	float cn = (b1+b2)/2;
 	float cn1 = cn;
