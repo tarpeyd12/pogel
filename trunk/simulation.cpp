@@ -17,8 +17,8 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs 121
-#define grd 11
+#define numobjs 8*8*2
+#define grd 24
 #define sps 1.05f/1
 #define size 1.0f/2
 OBJECT obj[numobjs];
@@ -73,13 +73,17 @@ void oob(SOLID_FNC_DEF) {
         }*/
         if(keys['/'])
         	obj->stepstaken = rand()%numobjs;
-        
-        if((obj->stepstaken*1) >= numobjs*1 || keys['o']  /*|| obj->stepstaken == (int)(POGEL::duration*20-fmod(POGEL::duration*20, 1.0))%numobjs  */) {
-        	obj->stepstaken = 0;
-        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,0,1)*10);
-        	//obj->direction = POGEL::VECTOR(cos((float)POGEL::frames/100)*20,20,sin((float)POGEL::frames/100)*20).normal()/2*POGEL::VECTOR(1,1,0);
-        	//obj->direction = POGEL::VECTOR(.3,1,0).normal()/3;
-        	obj->direction = POGEL::VECTOR();
+        unsigned int tm = (((unsigned int)(POGEL::duration*10-fmod(POGEL::duration*10, 1)))%(numobjs));
+        //POGEL::message("tm = %d\n", tm );
+        if(/*(obj->stepstaken*1) >= numobjs*5 ||*/ keys['o'] || obj->stepstaken == tm  ) {
+        	//obj->stepstaken = 0;
+        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,1,1)*0);
+        	if(POGEL::hasproperty(POGEL_TIMEBASIS))
+        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,1)*10;
+        	else
+        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,0)/3;
+        	//obj->direction = POGEL::VECTOR(-0.3,1,0).normal()/3;
+        	//obj->direction = POGEL::VECTOR();
         	
         }
         if(keys['l'])
@@ -88,7 +92,7 @@ void oob(SOLID_FNC_DEF) {
         	obj->spin = POGEL::VECTOR();
         	obj->rotation = POGEL::POINT();
         }
-        //obj->stepstaken -= 1;
+        obj->stepstaken -= 1;
         if(dimlock) {
         obj->position.z = 0.0;
         obj->direction.z = 0.0f;
@@ -123,7 +127,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glEnable(GL_LIGHT1);
         glEnable(GL_LIGHTING);
         
-        //POGEL::addproperty(POGEL_TIMEBASIS);
+        POGEL::addproperty(POGEL_TIMEBASIS);
         
         //sim = new POGEL::PHYSICS::SIMULATION();
         sim.deactivation = false;
@@ -154,7 +158,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //else if(i%2==0)
                 //addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
                 
-                obj[i].setproperties(0/*|OBJECT_DRAW_DISPLAYLIST*/);
+                obj[i].setproperties(OBJECT_DEBUG/*|OBJECT_DRAW_DISPLAYLIST*/);
                 obj[i].moveto(POINT(
 						((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
@@ -178,7 +182,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //sphs[i]->rotation=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.010f * VECTOR(1.0f,1.0f,1.0f);
                 //sphs[i]->direction = POGEL::VECTOR(0.05f,0.25f,0.0f);
                 //sphs[i]->spin=POGEL::VECTOR(0.0f,1.0f,0.0f);
-                sphs[i]->visable = true;
+                //sphs[i]->visable = true;
                 
                 /*if(i == 0) {
                         //sphs[i]->setOptions(1|4);
@@ -190,13 +194,9 @@ void InitGL(int Width, int Height)              // We call this right after our 
                         //sphs[i]->bounding.maxdistance=5.0f;
                 }*/
                 
-                sphs[i]->stepstaken = i*1;
+                sphs[i]->stepstaken = i;
                 
-                if(i != numobjs-1)
-                sphs[i]->resizetrail(5);
-                
-                if(i == numobjs-1)
-                sphs[i]->resizetrail(5);
+                sphs[i]->resizetrail(10);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -207,7 +207,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),1000000000.0f*.25) );
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),-10000000000000.0f) );
         //sim.addfan(POGEL::PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 50.0f));
-        sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO/1000;
+        sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f;
         //sim.air_dencity = 10.0f;
         
         POGEL::OBJECT* ring = new POGEL::OBJECT();
@@ -226,7 +226,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        //addSphere(ring,4,4, 20.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        //addSphere(ring,16,16, 30.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
@@ -251,22 +251,24 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
         sim.addSolid(border);
         
-        border->visable = false;
+        border->visable = true;
         
         
         POGEL::OBJECT* sp = new POGEL::OBJECT();
         sp->setname("ball");
-        addSphere(sp,2,32, 2.75f, defaultimg,1,1, 0 | TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(sp,2,10, 2.75f, defaultimg,1,1, 0 | TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         //addCube(sp, 4,4,4, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
         sp->setproperties(0);
-        sp->moveto(POGEL::POINT(-4.0f,-7.0f,0.0f));
-        sp->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
-        //sp->turnto(POGEL::POINT(0,0,0));
+        sp->moveto(POGEL::POINT(-9.0f,-7.0f,0.0f));
+        //sp->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
+        sp->turnto(POGEL::POINT(0,0,0));
         sp->build();
         ball = new POGEL::PHYSICS::SOLID(sp, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 0, 1, 1, 1, 1, false, 0), 1|PHYSICS_SOLID_CONVEX|0);
         ball->behavior.bounce = 0.5f;
         ball->behavior.friction = 1.0f;
         ball->behavior.mass = 1.0f;
+        ball->behavior.magnetic = false;
+        ball->behavior.charge = -150.0f;
         ball->build();
         sim.addSolid(ball);
         
@@ -278,13 +280,15 @@ void InitGL(int Width, int Height)              // We call this right after our 
         addCube(sq, 4,4,4, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
         sq->setproperties(0);
         sq->moveto(POGEL::POINT(4.0f,-7.0f,0.0f));
-        sq->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
-        //sq->turnto(POGEL::POINT(0,0,0));
+        //sq->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
+        sq->turnto(POGEL::POINT(0,0,0));
         sq->build();
         box = new POGEL::PHYSICS::SOLID(sq, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 0, 1, 1, 1, 1, false, 0), 1|PHYSICS_SOLID_CONVEX|0);
         box->behavior.bounce = 0.5f;
         box->behavior.friction = 1.0f;
         box->behavior.mass = 1.0f;
+        box->behavior.magnetic = false;
+        box->behavior.charge = 150.0f;
         box->build();
         sim.addSolid(box);
         
@@ -344,7 +348,7 @@ void DrawGLScene()
         glTranslatef(0.0f+campos.x,0.0f+campos.y,-40.0f+campos.z);
         //glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
         glRotatef( camrot.x + ((float)frames*x)*0.0f,  1.0f, 0.0f, 0.0f );
-        glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );
+        glRotatef( camrot.y + ((float)frames*y)*0.0f,  0.0f, 1.0f, 0.0f );        
         glRotatef( camrot.z + ((float)frames*z)*0.0f,  0.0f, 0.0f, 1.0f );
         //glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
         //message("%ld: ",frames);
@@ -378,7 +382,7 @@ void DrawGLScene()
         
         if(keys['v'])
         	dimlock = !dimlock;
-        if(dimlock) printf("hel\n");
+        //if(dimlock) printf("hel\n");
         
         if(keys['-']) {
         	sphs[numobjs-1]->moveto(POGEL::POINT(0,20,0));
@@ -428,17 +432,17 @@ void DrawGLScene()
         }
         
         if(keys['x'])
-        	sim.gravity = POGEL::VECTOR(1.0f,0.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(1.0f,0.0f,0.0f).normal()*9.8f;
         if(keys['X'])
-        	sim.gravity = POGEL::VECTOR(-1.0f,0.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(-1.0f,0.0f,0.0f).normal()*9.8f;
         if(keys['y'])
-        	sim.gravity = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*9.8f;
         if(keys['Y'])
-        	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f;
         if(keys['z'])
-        	sim.gravity = POGEL::VECTOR(0.0f,0.0f,1.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(0.0f,0.0f,1.0f).normal()*9.8f;
         if(keys['Z'])
-        	sim.gravity = POGEL::VECTOR(0.0f,0.0f,-1.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        	sim.gravity = POGEL::VECTOR(0.0f,0.0f,-1.0f).normal()*9.8f;
         
         if(keys['p']) {
         	keys['p'] = false;
@@ -447,23 +451,23 @@ void DrawGLScene()
         if(p)
         	switch(POGEL::frames/150%4) {
         		case 0:
-        			sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        			sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f;
         		break;
         		case 1:
-        			sim.gravity = POGEL::VECTOR(1.0f,0.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        			sim.gravity = POGEL::VECTOR(1.0f,0.0f,0.0f).normal()*9.8f;
         		break;
         		case 2:
-        			sim.gravity = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        			sim.gravity = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*9.8f;
         		break;
         		case 3:
-        			sim.gravity = POGEL::VECTOR(-1.0f,0.0f,0.0f).normal()*9.8f*PARTICLE_SLOWDOWN_RATIO;
+        			sim.gravity = POGEL::VECTOR(-1.0f,0.0f,0.0f).normal()*9.8f;
         		break;
         	}
         	
         	
         //sim.gravity.print();
-        sphs[0]->position.print();
-        POGEL::message("duration = %f\n", POGEL::duration);
+        //sphs[0]->position.print();
+        //POGEL::message("duration = %f\n", POGEL::duration);
         
         //message("\n");
         

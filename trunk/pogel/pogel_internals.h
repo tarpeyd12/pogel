@@ -58,7 +58,8 @@
 
 // pogel global constants
 #define				PARTICLE_SLOWDOWN_RATIO							1000.0f
-#define				PARTICLE_SLOWDOWN								PARTICLE_SLOWDOWN_RATIO * POGEL::GetSecondsPerFrame()
+#define				PARTICLE_SLOWDOWN								PARTICLE_SLOWDOWN_RATIO * (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1)
+
 //* PARTICLE_SLOWDOWN_FRAMERATECORRECTION
 
 #ifndef _POGEL_H

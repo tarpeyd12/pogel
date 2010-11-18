@@ -61,6 +61,12 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 						vr += objects[b]->position;
 						POGEL::LINE(objects[a]->position,vr.topoint(),2,POGEL::COLOR(1,.75,.75,1)).draw();
 					}
+					else if(objects[a]->hasOption(PHYSICS_SOLID_CONCAVE)) {
+						
+					}
+					else if(objects[b]->hasOption(PHYSICS_SOLID_CONCAVE)) {
+						
+					}
 					else {
 						POGEL::LINE(objects[a]->position,objects[b]->position,2,POGEL::COLOR(1,.75,.75,1)).draw();
 					}

@@ -82,7 +82,7 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	pull += singularities.getpull(obj->position, obj->behavior.mass);
 	pull += gravity*obj->behavior.mass;
 	pull += objectmasses.getpull(obj->position, obj->behavior.mass);
-	return pull/PARTICLE_SLOWDOWN;
+	return pull/PARTICLE_SLOWDOWN*(POGEL::hasproperty(POGEL_TIMEBASIS) ? PARTICLE_SLOWDOWN_RATIO : 1);
 	/*return 	( \
 			gusts.getpull(obj->position, obj->behavior.mass) + \
 			singularities.getpull(obj->position, obj->behavior.mass) + \
