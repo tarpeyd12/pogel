@@ -22,19 +22,54 @@ class LINE {
 		unsigned int stp_width;
 		GLushort patern;
 		
-		LINE()
-			{ ends[0] = POGEL::POINT(); ends[1] = POGEL::POINT(); line_width = 1; color = POGEL::COLOR(1,1,1,1); stippled = false; stp_width = 1; patern = 0xFFFF; }
-		LINE(POGEL::POINT a, POGEL::POINT b)
-			{ ends[0] = a; ends[1] = b; line_width = 1; color = POGEL::COLOR(1,1,1,1); stippled = false; stp_width = 1; patern = 0xFFFF; }
-		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw)
-			{ ends[0] = a; ends[1] = b; line_width = lw; color = POGEL::COLOR(1,1,1,1); stippled = false; stp_width = 1; patern = 0xFFFF; }
-		LINE(POGEL::POINT a, POGEL::POINT b, POGEL::COLOR c)
-			{ ends[0] = a; ends[1] = b; line_width = 1; color = c; stippled = false; stp_width = 1; patern = 0xFFFF; }
-		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c)
-			{ ends[0] = a; ends[1] = b; line_width = lw; color = c; stippled = false; stp_width = 1; patern = 0xFFFF; }
+		LINE() { 
+				ends[0] = POGEL::POINT(); ends[1] = POGEL::POINT();
+				line_width = 1;
+				color = POGEL::COLOR(1,1,1,1);
+				stippled = false; stp_width = 1;
+				patern = 0xFFFF;
+			}
 		
-		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c, unsigned int wdth, GLushort pat)
-			{ ends[0] = a; ends[1] = b; line_width = lw; color = c; stippled = true; stp_width = wdth; patern = pat; }
+		LINE(POGEL::POINT a, POGEL::POINT b) {
+				ends[0] = a; ends[1] = b; 
+				line_width = 1;
+				color = POGEL::COLOR(1,1,1,1);
+				stippled = false; stp_width = 1;
+				patern = 0xFFFF;
+			}
+			
+		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw) {
+				ends[0] = a; ends[1] = b;
+				line_width = lw;
+				color = POGEL::COLOR(1,1,1,1);
+				stippled = false; stp_width = 1;
+				patern = 0xFFFF;
+			}
+			
+		LINE(POGEL::POINT a, POGEL::POINT b, POGEL::COLOR c) {
+				ends[0] = a; ends[1] = b;
+				line_width = 1;
+				color = c;
+				stippled = false; stp_width = 1;
+				patern = 0xFFFF;
+			}
+			
+		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c) {
+				ends[0] = a; ends[1] = b;
+				line_width = lw;
+				color = c;
+				stippled = false; stp_width = 1;
+				patern = 0xFFFF;
+			}
+			
+		
+		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c, unsigned int wdth, GLushort pat) {
+				ends[0] = a; ends[1] = b;
+				line_width = lw;
+				color = c;
+				stippled = true; stp_width = wdth;
+				patern = pat;
+			}
 		
 		POGEL::POINT getStart()
 			{ return ends[0]; }
@@ -53,7 +88,7 @@ class LINE {
 				glLineWidth(line_width);
 				if(stippled) {
 					glEnable(GL_LINE_STIPPLE);
-					glLineStipple(2, 0x1111);
+					glLineStipple(stp_width, patern);
 				}
 				color.set();
 				glBegin(GL_LINES);
@@ -61,7 +96,8 @@ class LINE {
 					glVertex3f(ends[1].x,ends[1].y,ends[1].z);
 				glEnd();
 				glLineWidth(1);
-				glColor3f(1.0f,1.0f,1.0f);
+				//glColor3f(1.0f,1.0f,1.0f);
+				POGEL::COLOR(1,1,1,1).set();
 				if(stippled) {
 					glDisable(GL_LINE_STIPPLE);
 					glLineStipple(1, 0xFFFF);

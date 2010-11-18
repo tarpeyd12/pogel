@@ -55,7 +55,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	obj[0].setname("box");
 	addCube(&obj[0], 1.0f,1.0f,1.0f, img, 1,1,0,POGEL::MATRIX());
 	//addSphere(&obj[0],5,5, 0.5, img,1,1, 0, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
-	obj[0].setproperties(0 | OBJECT_DRAW_DISPLAYLIST);
+	obj[0].setproperties(0 /*| OBJECT_DRAW_DISPLAYLIST*/);
 	obj[0].build();
 	obj[0].moveto(POINT(0.0f,2.0f,0.0f));
 	//obj[0].spin = VECTOR(1.0f,1.0f,1.0f)*50;
@@ -69,7 +69,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//addSphere(&obj[1],3,3, 10, img,1,1, 0, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 	//addCylinder(&obj[1], 10, 1, 1, 1/2.0f, 1/2.0f, img, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
 	addDisk(&obj[1], 10, 1, 1/2.0f, 0.0f, img,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-	obj[1].setproperties(0 | OBJECT_DRAW_DISPLAYLIST);
+	obj[1].setproperties(0 /*| OBJECT_DRAW_DISPLAYLIST*/);
 	obj[1].build();
 	obj[1].moveto(POINT(0.0f,-2.0f,0.0f));
 	//obj[1].spin = VECTOR(1.0f,1.0f,1.0f)*50;
@@ -86,7 +86,7 @@ void DrawGLScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	MOUSE_ROT_FUNC
-	glTranslatef(0.0f,0.0f,-15.0f);
+	glTranslatef(0.0f+campos.x,0.0f+campos.y,-15.0f+campos.z);
 	glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
 	glRotatef( camrot.y,  0.0f, 1.0f, 0.0f );
 	glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
@@ -104,71 +104,31 @@ void DrawGLScene()
 	
 	box1->closest(box2, &tmp_1, &tmp_2, &tmptri, &tmptri);
 	
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	glLineWidth(1);
-	glColor3f(0.0f,0.75f,0.75f);
-	glBegin(GL_LINES);
-		glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
-		glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
-	glEnd();
-	glLineWidth(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
+	POGEL::LINE(tmp_1, tmp_2, POGEL::COLOR(0.0f,0.75f,0.75f,1)).draw();
 		
 	box2->closest(box1, &tmp_1, &tmp_2, &tmptri, &tmptri);
 	
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	glLineWidth(1);
-	glColor3f(0.0f,0.75f,0.75f);
-	glBegin(GL_LINES);
-		glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
-		glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
-	glEnd();
-	glLineWidth(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
+	POGEL::LINE(tmp_1, tmp_2, POGEL::COLOR(0.0f,0.75f,0.75f,1)).draw();
 	
 	
 	/*tmp_1 = box2->position;
 	box1->closest(tmp_1, &tmp_2, &tmptri);
 	
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	glLineWidth(1);
-	glColor3f(0.0f,1.75f,0.75f);
-	glBegin(GL_LINES);
-		glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
-		glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
-	glEnd();
-	glLineWidth(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
-	
+	POGEL::LINE(tmp_1, tmp_2, POGEL::COLOR(0.0f,1.75f,0.75f,1)).draw();
 	
 	tmp_1 = box1->position;
 	box2->closest(tmp_1, &tmp_2, &tmptri);
 	
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	glLineWidth(1);
-	glColor3f(0.0f,1.75f,0.75f);
-	glBegin(GL_LINES);
-		glVertex3f(tmp_1.x,tmp_1.y,tmp_1.z);
-		glVertex3f(tmp_2.x,tmp_2.y,tmp_2.z);
-	glEnd();
-	glLineWidth(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);*/
+	POGEL::LINE(tmp_1, tmp_2, POGEL::COLOR(0.0f,1.75f,0.75f,1)).draw();*/
 	
-	box1->increment();
-	box2->increment();
-	//obj.scroll_all_tex_values(0.0004f,0.0005f);
+	if(keypres || go) {
+		box1->increment();
+		box2->increment();
+		if(keypres)
+			keypres = false;
+	}
+	//obj[0].scroll_all_tex_values(0.004f,0.005f);
+	//obj[1].scroll_all_tex_values(0.004f,0.005f);
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();
 }

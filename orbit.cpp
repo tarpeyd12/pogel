@@ -15,11 +15,11 @@
 
 using namespace POGEL;
 
-#define numobjs 50
+#define numobjs 20
 #define grd 5
 #define sps 1.75f
 #define size 0.5f
-#define gravity 1000000000000.0f
+#define gravity 10000000000000.0f
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;

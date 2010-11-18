@@ -54,11 +54,11 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	view = new VIEW();
 	view->setretscreensize(&screenx, &screeny);
 	view->settexsize(512, 512);
-	view->setbgcolor(POGEL::COLOR(0.0f,0.0f,0.0f,0.0f));
+	view->setbgcolor(POGEL::COLOR(1.0f,1.0f,1.0f,0.5f));
 	view->setfilter(IMAGE_MIPMAP);
 	view->build();
 	
-	obj[0].setname("box");
+	obj[0].setname("ball");
 	//addCube(&obj[0], 1.0f,1.0f,1.0f, img, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
 	addSphere(&obj[0],32,32, 0.5, img,1,1, 0|TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
 	obj[0].setproperties(0);
@@ -118,6 +118,8 @@ void DrawGLScene()
 	POGEL::PrintFps();
 	
 	obj[1].draw();
+	if(go)
+		obj[1].scroll_all_tex_values(0.004f,0.005f);
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();

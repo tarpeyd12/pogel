@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 5
+#define itterations 1
 POGEL::OBJECT* obj;
 
 int itt=1;
@@ -121,13 +121,13 @@ SHAPE_FUNCTION_RESULT func(SHAPE_FUNCTION_ARGS) {
 	ret.y = cosop(x,0,c+1);
 	ret.z = z;*/
 	
-	ret.x = x;
-	ret.y = cosop(x,0,itt) + cosop(z,0,itt);
-	ret.z = z;
-	
 	/*ret.x = x;
-	ret.y = cosop(x,0,c+1);
+	ret.y = cosop(x,0,itt) + cosop(z,0,itt);
 	ret.z = z;*/
+	
+	ret.x = x;
+	ret.y = cosop(x,0,c+1);
+	ret.z = z;
 	
 	/*ret.x = x;
 	ret.y = (sqrop(x,0,itt) + sqrop(z,0,itt))/1;
@@ -192,7 +192,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	for(int i = 0; i<itterations; i++) {
 		obj[i].setname(POGEL::string("graph%d\0",i));
 		itt = i + 1;
-		addFunctionShape(&obj[i], func, "xz", defaultimg, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, PI*2, PI*2, PI*2, pow(2,itt)*2, 0, pow(2,itt)*2);
+		addFunctionShape(&obj[i], func, "xz", defaultimg, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, PI*2, PI*2, PI*2, 512, 0, 10);
 		obj[i].build();
 	}
 	
