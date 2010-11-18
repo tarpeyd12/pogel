@@ -133,7 +133,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         sim.deactivation = false;
         //sim.precision = 0.01f;
         
-        sim.boundingskips = 1;
+        sim.boundingskips = 0;
         
         srand((unsigned)time(NULL));
         

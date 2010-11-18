@@ -44,7 +44,7 @@ void POGEL::BOUNDING::offset(POGEL::POINT offs) {
 	max += offs;
 	min += offs;
 };
-
+// TODO: get the line clsss to be in here
 void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 	if(POGEL::hasproperty(POGEL_BOUNDING)) {
 		glPushMatrix();
@@ -142,6 +142,18 @@ bool POGEL::BOUNDING::isinside(POGEL::POINT thiscenter, POGEL::POINT p) {
 };
 
 bool POGEL::BOUNDING::surrounds(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {
-	return isinside(thiscenter, thatcenter+thatbounding.min) && isinside(thiscenter, thatcenter+thatbounding.max);
+	//if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
+		bool x = false, y = false, z = false;
+			x = ( (thatbounding.min.x+thatcenter.x >= max.x+thiscenter.x) || (thatbounding.max.x+thatcenter.x <= min.x+thiscenter.x) );
+		if(x) {
+			y = ( (thatbounding.min.y+thatcenter.y >= max.y+thiscenter.y) || (thatbounding.max.y+thatcenter.y <= min.y+thiscenter.y) );
+		if(y) {
+			z = ( (thatbounding.min.z+thatcenter.z >= max.z+thiscenter.z) || (thatbounding.max.z+thatcenter.z <= min.z+thiscenter.z) );
+		if(z)
+		if(x&&y&&z)
+			return true;
+		}}
+	//}
+	return false;
 };
 

@@ -35,7 +35,7 @@ GLfloat LightPosition[]= { 0.0f, 0.0f, 0.0f, 1.0f };
 
 
 void fireyness(SOLID_FNC_DEF) {
-	if(obj->stepstaken >= 25-(rand()%25) ) {
+	if(obj->stepstaken >= (unsigned long)(25-(rand()%25)) ) {
 		obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(0.25));
 		obj->direction = POGEL::VECTOR(0.0f,-20.0f,0.0f)/PARTICLE_SLOWDOWN * POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5);
 		obj->stepstaken = 0;
