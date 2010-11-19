@@ -148,9 +148,9 @@ void POGEL::PHYSICS::SOLID::offsettrail(POGEL::VECTOR v) {
 
 void POGEL::PHYSICS::SOLID::getbounding() {
 	setboundingskips();
-	//refbounding.draw(position);
+	refbounding.draw(position);
 	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
-	bool os = !bounding.surrounds(position,position,refbounding) || !bounding.surrounds(position,position+direction.topoint()*r,refbounding);
+	bool os = !bounding.surrounds(POGEL::POINT(),position,refbounding) || !bounding.surrounds(POGEL::POINT(),position+direction.topoint()*r,refbounding) || bounding.isoutside(POGEL::POINT(), position);
 	if((stepstaken % objboundingskips == 0 && POGEL::frames > 0) || stepstaken <= 1 || os) {
 		if(stepstaken > 0 && hasOption(PHYSICS_SOLID_SPHERE)) {
 			float max = refbounding.maxdistance;
@@ -164,6 +164,7 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 			bounding.addpoint(POGEL::POINT(), position*0 + POGEL::POINT( 0, 0,-1)*max);
 			
 			refbounding = bounding;
+			refbounding.color = BOUNDING_DEFAULT_COLOR;
 			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 1, 0, 0)*max);
 			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0, 1, 0)*max);
 			bounding.addpoint(POGEL::POINT(), direction.topoint()*(float)objboundingskips*r + POGEL::POINT( 0, 0, 1)*max);
@@ -204,11 +205,14 @@ void POGEL::PHYSICS::SOLID::getbounding() {
 };
 
 void POGEL::PHYSICS::SOLID::setboundingskips() {
+	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
+	bool os = !bounding.surrounds(POGEL::POINT(),position,refbounding) || !bounding.surrounds(POGEL::POINT(),position+direction.topoint()*r,refbounding) || bounding.isoutside(POGEL::POINT(), position);
 	if( 
 		stepstaken >= (objboundingskips/1+stepsatboundingcheck) || \
 		stepstaken <= 1 || \
-		(bounding.surrounds(position,POGEL::POINT(),refbounding) || bounding.surrounds(position,direction.topoint(),refbounding)) || \
-		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))
+		os
+		/*(bounding.surrounds(position,POGEL::POINT(),refbounding) || bounding.surrounds(position,direction.topoint(),refbounding)) || \
+		(bounding.isinside(position,position) || bounding.isinside(position,position+direction.topoint()))*/
 	) {
 		if(container != NULL && (container->boundingskips) > 0)
 			objboundingskips = container->boundingskips;
@@ -276,7 +280,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 				color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
-			POGEL::LINE(trail[i],trail[i+1],3,POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
+			POGEL::LINE(trail[i], trail[i+1], 3, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
 			
 			#ifdef SOLID_DISPLAY_ROTATION_TRAIL // draw the rotation trail
 				mat[0] = mat[1];

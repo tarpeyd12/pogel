@@ -69,6 +69,7 @@ class BOUNDING {
 				return checkbounding(POGEL::POINT(), POGEL::POINT(), b);
 			}
 		bool isinside(POGEL::POINT,POGEL::POINT);
+		bool isoutside(POGEL::POINT,POGEL::POINT);
 		
 		bool surrounds(POGEL::POINT,POGEL::POINT,POGEL::BOUNDING);
 		

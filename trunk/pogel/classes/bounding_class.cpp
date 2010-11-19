@@ -44,7 +44,7 @@ void POGEL::BOUNDING::offset(POGEL::POINT offs) {
 	max += offs;
 	min += offs;
 };
-// TODO: get the line clsss to be in here
+
 void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 	if(POGEL::hasproperty(POGEL_BOUNDING)) {
 		glPushMatrix();
@@ -53,54 +53,20 @@ void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 			//glColor3f(0.0f,1.0f,1.0f);
 			color.set();
 			glTranslatef(mid.x, mid.y, mid.z);
-			// I don't know if the 'begin' and 'end's slow it down
+			// the POGEL::LINE class cannot work here:
 			glBegin(GL_LINES);
-				glVertex3f(min.x,min.y,min.z);
-				glVertex3f(min.x,min.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,max.y,min.z);
-				glVertex3f(min.x,max.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(max.x,min.y,min.z);
-				glVertex3f(max.x,min.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(max.x,max.y,min.z);
-				glVertex3f(max.x,max.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,min.y,min.z);
-				glVertex3f(max.x,min.y,min.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,max.y,min.z);
-				glVertex3f(max.x,max.y,min.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,min.y,max.z);
-				glVertex3f(max.x,min.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,max.y,max.z);
-				glVertex3f(max.x,max.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,min.y,min.z);
-				glVertex3f(min.x,max.y,min.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(min.x,min.y,max.z);
-				glVertex3f(min.x,max.y,max.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(max.x,min.y,min.z);
-				glVertex3f(max.x,max.y,min.z);
-			glEnd();
-			glBegin(GL_LINES);
-				glVertex3f(max.x,min.y,max.z);
-				glVertex3f(max.x,max.y,max.z);
+				glVertex3f(min.x,min.y,min.z); glVertex3f(min.x,min.y,max.z);
+				glVertex3f(min.x,max.y,min.z); glVertex3f(min.x,max.y,max.z);
+				glVertex3f(max.x,min.y,min.z); glVertex3f(max.x,min.y,max.z);
+				glVertex3f(max.x,max.y,min.z); glVertex3f(max.x,max.y,max.z);
+				glVertex3f(min.x,min.y,min.z); glVertex3f(max.x,min.y,min.z);
+				glVertex3f(min.x,max.y,min.z); glVertex3f(max.x,max.y,min.z);
+				glVertex3f(min.x,min.y,max.z); glVertex3f(max.x,min.y,max.z);
+				glVertex3f(min.x,max.y,max.z); glVertex3f(max.x,max.y,max.z);
+				glVertex3f(min.x,min.y,min.z); glVertex3f(min.x,max.y,min.z);
+				glVertex3f(min.x,min.y,max.z); glVertex3f(min.x,max.y,max.z);
+				glVertex3f(max.x,min.y,min.z); glVertex3f(max.x,max.y,min.z);
+				glVertex3f(max.x,min.y,max.z); glVertex3f(max.x,max.y,max.z);
 			glEnd();
 			glColor3f(1.0f,1.0f,1.0f);
 			glEnable(GL_LIGHTING);
@@ -110,7 +76,7 @@ void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 };
 
 bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {
-	if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
+	//if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
 		bool x = false, y = false, z = false;
 			x = ( (thatbounding.min.x+thatcenter.x <= max.x+thiscenter.x) && (thatbounding.max.x+thatcenter.x >= min.x+thiscenter.x) );
 		if(x) {
@@ -121,39 +87,27 @@ bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatce
 		if(x&&y&&z)
 			return true;
 		}}
-	}
+	//}
 	return false;
 };
 
 bool POGEL::BOUNDING::isinside(POGEL::POINT thiscenter, POGEL::POINT p) {
+	return !isoutside(thiscenter, p);
+};
+
+bool POGEL::BOUNDING::isoutside(POGEL::POINT thiscenter, POGEL::POINT p) {
 	//if(thiscenter.distance(p) <= maxdistance) {
 		bool x = false, y = false, z = false;
-			x = ( (p.x <= max.x+thiscenter.x) || (p.x >= min.x+thiscenter.x) );
-		if(x) {
-			y = ( (p.y <= max.y+thiscenter.y) || (p.y >= min.y+thiscenter.y) );
-		if(y) {
-			z = ( (p.z <= max.z+thiscenter.z) || (p.z >= min.z+thiscenter.z) );
-		if(z)
-		if(x&&y&&z)
+			x = ( (p.x >= max.x+thiscenter.x) || (p.x <= min.x+thiscenter.x) );
+			y = ( (p.y >= max.y+thiscenter.y) || (p.y <= min.y+thiscenter.y) );
+			z = ( (p.z >= max.z+thiscenter.z) || (p.z <= min.z+thiscenter.z) );
+		if(x||y||z)
 			return true;
-		}}
 	//}
 	return false;
 };
 
 bool POGEL::BOUNDING::surrounds(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {
-	//if(thiscenter.distance(thatcenter) <= (maxdistance+thatbounding.maxdistance)) {
-		bool x = false, y = false, z = false;
-			x = ( (thatbounding.min.x+thatcenter.x >= max.x+thiscenter.x) || (thatbounding.max.x+thatcenter.x <= min.x+thiscenter.x) );
-		if(x) {
-			y = ( (thatbounding.min.y+thatcenter.y >= max.y+thiscenter.y) || (thatbounding.max.y+thatcenter.y <= min.y+thiscenter.y) );
-		if(y) {
-			z = ( (thatbounding.min.z+thatcenter.z >= max.z+thiscenter.z) || (thatbounding.max.z+thatcenter.z <= min.z+thiscenter.z) );
-		if(z)
-		if(x&&y&&z)
-			return true;
-		}}
-	//}
-	return false;
+	return ( !isoutside(thiscenter, thatbounding.min+thatcenter) && !isoutside(thiscenter, thatbounding.max+thatcenter) );
 };
 
