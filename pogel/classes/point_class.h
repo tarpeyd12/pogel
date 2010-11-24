@@ -31,6 +31,8 @@ class POINT {
 			{ POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z); }
 			
 		void draw();
+		void draw(unsigned int);
+		void draw(unsigned int, POGEL::COLOR);
 		void drawto(POGEL::POINT);
 		
 		void translate()

@@ -77,11 +77,11 @@ void oob(SOLID_FNC_DEF) {
         //POGEL::message("tm = %d\n", tm );
         if(/*(obj->stepstaken*1) >= numobjs*5 ||*/ keys['o'] || obj->stepstaken == tm  ) {
         	//obj->stepstaken = 0;
-        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,1,1)*0);
+        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,1,1)*0.2);
         	/*if(POGEL::hasproperty(POGEL_TIMEBASIS))
-        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,1)*10;
+        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,0)*10;
         	else
-        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,1)/3;*/
+        	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,0)/3;*/
         	if(POGEL::hasproperty(POGEL_TIMEBASIS))
         	obj->direction = POGEL::VECTOR(x,y,z).normal()*10;
         	else obj->direction = POGEL::VECTOR(x,y,z).normal()/3;
@@ -96,10 +96,10 @@ void oob(SOLID_FNC_DEF) {
         	obj->rotation = POGEL::POINT();
         }
         obj->stepstaken -= 1;
-        /*if(dimlock) {
+        if(dimlock) {
         obj->position.z = 0.0;
         obj->direction.z = 0.0f;
-        }*/
+        }
 };
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
@@ -156,12 +156,12 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
                 //addDisk(&obj[i], 3, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-                addSphere(&obj[i],4,6, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+                addSphere(&obj[i],3,4, size/2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
                 //else if(i%2==0)
                 //addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
                 
-                obj[i].setproperties(OBJECT_DEBUG/*|OBJECT_DRAW_DISPLAYLIST*/);
+                obj[i].setproperties(0/*OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
                 obj[i].moveto(POINT(
 						((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
@@ -189,8 +189,8 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 /*if(i == 0) {
                         //sphs[i]->setOptions(1|4);
-                        sphs[i]->moveto(POGEL::POINT(-10.5f,0.0f,0.0f)*0);
-                        sphs[i]->direction = POGEL::VECTOR(-1,0,0)*-5.0f;
+                        sphs[i]->position=(POGEL::POINT(0.0f,1.0f,0.0f));
+                        sphs[i]->direction = POGEL::VECTOR(1,0,0)*5/60;
                         //sphs[i]->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)/0.10f * VECTOR(1,1,1);
                         //sphs[i]->behavior.mass = 10.1f;
                         //sphs[i]->visable = true;
@@ -279,10 +279,10 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         POGEL::OBJECT* sq = new POGEL::OBJECT();
         sp->setname("box");
-        //addSphere(sq,10,10, 3.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        //addSphere(sq,10,10, 2.75f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         addCube(sq, 4,4,4, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
         sq->setproperties(0);
-        sq->moveto(POGEL::POINT(4.0f,-7.0f,0.0f));
+        sq->moveto(POGEL::POINT(9.0f,-7.0f,0.0f));
         //sq->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
         sq->turnto(POGEL::POINT(0,0,0));
         sq->build();
@@ -293,7 +293,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         box->behavior.magnetic = false;
         box->behavior.charge = 150.0f;
         box->build();
-        sim.addSolid(box);
+        //sim.addSolid(box);
         
         box->visable = true;
         
@@ -311,7 +311,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 //unsigned long frames=0;
 
 bool keypres, go = true;
-POGEL::POINT camrot, campos;
+POGEL::POINT camrot(0,0,0), campos;
 bool p = false;
 /* The main drawing function. */
 void DrawGLScene()
@@ -408,12 +408,12 @@ void DrawGLScene()
                 //POGEL::setproperties(op);
         }
         if(keypres) {
-        				//if(POGEL::GetTimePassed() < 1.0f)
+        				//if(POGEL::GetTimePassed() < 60.0f)
                         sim.increment();
                         keypres = false;
                 }
                 else if(go) {
-                //if(POGEL::GetTimePassed() < 1.0f)
+                //if(POGEL::GetTimePassed() < 60.0f)
                         sim.increment();
                 }
         
@@ -469,7 +469,7 @@ void DrawGLScene()
         	
         	
         //sim.gravity.print();
-        //sphs[0]->position.print();
+        sphs[0]->position.print();
         //POGEL::message("duration = %f\n", POGEL::duration);
         
         //message("\n");

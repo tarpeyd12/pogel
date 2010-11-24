@@ -40,7 +40,6 @@ namespace PHYSICS {
 	bool solid_line_collision(POGEL::PHYSICS::SOLID*, POGEL::POINT, POGEL::POINT, POGEL::TRIANGLE*, POGEL::POINT*, POGEL::POINT*);
 	bool solid_collision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT*,POGEL::VECTOR*,POGEL::VECTOR*,float*);
 	
-	// TODO: implement these two methods:
 	float line_point_distance(POGEL::POINT, POGEL::LINE, POGEL::POINT*);
 	float point_triangle_distance(POGEL::POINT, POGEL::TRIANGLE, POGEL::POINT*);
 	
