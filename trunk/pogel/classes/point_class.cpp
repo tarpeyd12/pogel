@@ -3,32 +3,41 @@
 #include "matrix_class.h"
 
 void POGEL::POINT::draw() {
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
+	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
 	glPointSize(5);
-	glColor3f(0.0f,1.75f,0.75f);
-	glBegin(GL_POINTS);
-		glVertex3f(x,y,z);
-	glEnd();
+	POGEL::COLOR(0,1.75,.75,1).set();
+	glBegin(GL_POINTS); glVertex3f(x,y,z); glEnd();
 	glPointSize(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
+	POGEL::COLOR(1,1,1,1).set();
+	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+};
+
+void POGEL::POINT::draw(unsigned int a) {
+	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
+	glPointSize(a);
+	glBegin(GL_POINTS); glVertex3f(x,y,z); glEnd();
+	glPointSize(1);
+	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+};
+
+void POGEL::POINT::draw(unsigned int a, POGEL::COLOR color) {
+	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
+	glPointSize(a);
+	color.set();
+	glBegin(GL_POINTS); glVertex3f(x,y,z); glEnd();
+	glPointSize(1);
+	POGEL::COLOR(1,1,1,1).set();
+	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
 };
 
 void POGEL::POINT::drawto(POGEL::POINT p) {
-	glDisable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	//glPointSize(5);
-	glColor3f(0.0f,1.75f,0.75f);
+	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
+	POGEL::COLOR(0,1.75,.75,1).set();
 	glBegin(GL_LINES);
-		glVertex3f(x,y,z);
-		glVertex3f(p.x,p.y,p.z);
+		glVertex3f(x,y,z); glVertex3f(p.x,p.y,p.z);
 	glEnd();
-	//glPointSize(1);
-	glColor3f(1.0f,1.0f,1.0f);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_TEXTURE_2D);
+	POGEL::COLOR(1,1,1,1).set();
+	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
 };
 
 POGEL::VECTOR::VECTOR(POGEL::POINT p1, POGEL::POINT p2) {

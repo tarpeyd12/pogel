@@ -277,12 +277,10 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 	POGEL::POINT pointtmp1 = point;
 	POGEL::POINT res2d, res3d;
 	
-	bool col = POGEL::PHYSICS::line_triangle_collision( \
-		point, \
+	bool col = POGEL::PHYSICS::line_triangle_collision(
+		point,
 		point+(triangle.normal.topoint()*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1.0f : 1.0f), \
-		triangle, \
-		&res2d, \
-		&res3d \
+		triangle, &res2d, &res3d 
 	);
 	
 	if(col) {
