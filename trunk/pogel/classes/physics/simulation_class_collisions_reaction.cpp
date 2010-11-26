@@ -107,4 +107,3 @@ bool boundingcheck(POGEL::PHYSICS::SOLID *obj1, POGEL::PHYSICS::SOLID *obj2) {
 	return obj1->bounding.checkbounding(obj2->bounding);
 };
 
-

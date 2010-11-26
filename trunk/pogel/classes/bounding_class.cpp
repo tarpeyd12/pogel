@@ -92,22 +92,26 @@ bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatce
 };
 
 bool POGEL::BOUNDING::isinside(POGEL::POINT thiscenter, POGEL::POINT p) {
-	return !isoutside(thiscenter, p);
+		bool x = false, y = false, z = false;
+			x = ( (p.x <= max.x+thiscenter.x) && (p.x >= min.x+thiscenter.x) );
+			y = ( (p.y <= max.y+thiscenter.y) && (p.y >= min.y+thiscenter.y) );
+			z = ( (p.z <= max.z+thiscenter.z) && (p.z >= min.z+thiscenter.z) );
+		if(x&&y&&z)
+			return true;
+	return false;
 };
 
 bool POGEL::BOUNDING::isoutside(POGEL::POINT thiscenter, POGEL::POINT p) {
-	//if(thiscenter.distance(p) <= maxdistance) {
 		bool x = false, y = false, z = false;
 			x = ( (p.x >= max.x+thiscenter.x) || (p.x <= min.x+thiscenter.x) );
 			y = ( (p.y >= max.y+thiscenter.y) || (p.y <= min.y+thiscenter.y) );
 			z = ( (p.z >= max.z+thiscenter.z) || (p.z <= min.z+thiscenter.z) );
 		if(x||y||z)
 			return true;
-	//}
 	return false;
 };
 
 bool POGEL::BOUNDING::surrounds(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {
-	return ( !isoutside(thiscenter, thatbounding.min+thatcenter) && !isoutside(thiscenter, thatbounding.max+thatcenter) );
+	return ( isinside(thiscenter, thatbounding.min+thatcenter) && isinside(thiscenter, thatbounding.max+thatcenter) );
 };
 

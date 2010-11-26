@@ -57,28 +57,20 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 	}
 	
 	// the number of total collisions must be two, can't be anything else.
-	if(cols == 2) {
-		// go through the recorded collisions
-		for( int a = 0; a < 6; a++ ) {
-			// if one of them collided
-			if(collided[a]) {
-				// go through the rest
-				for( int b = (a+1); b < 6; b++ ) {
+	if(cols == 2)
+		for( int a = 0; a < 6; a++ ) // go through the recorded collisions
+			if(collided[a]) // if one of them collided
+				for( int b = (a+1); b < 6; b++ ) // go through the rest
 					// checking if one of the rest hit
 					if(collided[b]) {
 						// put the collision points into the pointers
-						(*p1) = p3d[a];
-						(*p2) = p3d[b];
+						*p1 = p3d[a];
+						*p2 = p3d[b];
 						#ifdef PHYSICS_COLLISION_LOGSTATS
 							POGEL::logtofile("\tcollision occurence");
 						#endif /* PHYSICS_COLLISION_LOGSTATS */
-						// return true
 						return true;
 					}
-				}
-			}
-		}
-	}
 	#ifdef PHYSICS_COLLISION_LOGSTATS
 		POGEL::logtofile("\tno occurence");
 	#endif /* PHYSICS_COLLISION_LOGSTATS */
@@ -87,7 +79,6 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 
 bool POGEL::PHYSICS::solid_line_collision(int type, POGEL::PHYSICS::SOLID* obj, POGEL::POINT start, POGEL::POINT end, POGEL::TRIANGLE* tri, POGEL::POINT* col2d, POGEL::POINT* col3d) {
 	POGEL::MATRIX mat = POGEL::MATRIX(obj->position, obj->rotation);
-	
 	
 	if(type == PHYSICS_LINESOLID_COLLISION_GREATEST) {
 		float dist = 0.0f;
@@ -131,6 +122,7 @@ bool POGEL::PHYSICS::solid_line_collision(int type, POGEL::PHYSICS::SOLID* obj, 
 	}
 	
 	else {
+		// TODO: put warning here
 		for(unsigned long i = 0; i < obj->getnumfaces(); i++)
 			if(POGEL::PHYSICS::line_triangle_collision(start, end, obj->gettriangle(i).transform(&mat), col2d, col3d)) {
 				*tri = obj->gettriangle(i).transform(&mat);
@@ -152,6 +144,7 @@ bool POGEL::PHYSICS::solid_line_collision(POGEL::PHYSICS::SOLID* obj, POGEL::POI
 	return false;
 };
 
+// TODO: clean this up a bit:
 bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::POINT* contact, POGEL::VECTOR* normal1, POGEL::VECTOR* normal2, float *area) {
 	POGEL::POINT p1, p2;
 	POGEL::TRIANGLE t1, t2;
@@ -235,6 +228,7 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 };
 
 // this is brute force
+// TODO: find a mathematical way to do this quickly and acuratly for huge lines
 float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, POGEL::POINT* pol) {
 	POGEL::POINT start = line.getStart();
 	POGEL::POINT end = line.getEnd();
@@ -244,28 +238,22 @@ float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, 
 	float pdist = 0;
 	float curdist = point.distance(middle);
 	unsigned int i = 0;
-	while( pdist != curdist && i < 10) {
+	while( pdist != curdist && i++ < 10) {
 		if(point.distance(start)+point.distance(middle) < point.distance(end)+point.distance(middle)) {
 			if(point.distance(start) < point.distance(closest)) closest = start;
 			else closest = middle;
-			pdist = curdist;
-			curdist = point.distance(start)+point.distance(closest);
-			end = middle;
-			middle = (start+end)/2;
+			pdist = curdist; curdist = point.distance(start)+point.distance(closest);
+			end = middle; middle = (start+end)/2;
 		}
 		else {
 			if(point.distance(end) < point.distance(closest)) closest = end;
 			else closest = middle;
-			pdist = curdist;
-			curdist = point.distance(end)+point.distance(closest);
-			start = middle;
-			middle = (start+end)/2;
+			pdist = curdist; curdist = point.distance(end)+point.distance(closest);
+			start = middle; middle = (start+end)/2;
 		}
 		//middle.draw();
-		i++;
 	}
-	if(pol != NULL)
-		*pol = closest;
+	if(pol != NULL) *pol = closest;
 	//closest.draw();
 	//POGEL::LINE(point, closest, 1, POGEL::COLOR(0,0,1,1)).draw();
 	return point.distance(closest);
@@ -279,8 +267,8 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 	
 	bool col = POGEL::PHYSICS::line_triangle_collision(
 		point,
-		point+(triangle.normal.topoint()*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1.0f : 1.0f), \
-		triangle, &res2d, &res3d 
+		point+(triangle.normal*point.distance(triangle.middle()))*(triangle.isinfront(point) ? -1 : 1), \
+		triangle, &res2d, &res3d
 	);
 	
 	if(col) {
@@ -302,7 +290,7 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 			POGEL::LINE b = edges[(i+2)%3];
 			POGEL::POINT tmp1, tmp2;
 			float dist1 = POGEL::PHYSICS::line_point_distance(point, a, &tmp1);
-			float dist2 = POGEL::PHYSICS::line_point_distance(point, a, &tmp2);
+			float dist2 = POGEL::PHYSICS::line_point_distance(point, b, &tmp2);
 			
 			if(dist1 <= dist2) {
 				if(pol != NULL) *pol = tmp1;

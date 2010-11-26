@@ -5,13 +5,19 @@
 inline void unocupyobjs(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2, POGEL::VECTOR v, float d) {
 	v.normalize();
 	if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		obj1->force += v * d/2;
+		obj2->force += v *-d/2;
 		obj1->translate(v * d/2);
 		obj2->translate(v *-d/2);
 	}
-	else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-		{obj2->translate(v *-d);}
-	else if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-		{obj1->translate(v * d);}
+	else if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		obj1->force += v * d/2;
+		obj1->translate(v * d);
+	}
+	else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
+		obj2->force += v *-d/2;
+		obj2->translate(v *-d);
+	}
 };
 
 
@@ -319,6 +325,4 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHERE_GENERAL(POGEL::PHYSICS::SO
 	
 	return false;
 };
-
-
 
