@@ -68,7 +68,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	/*sim.deactivation = false;
 	sim.precision = 0.01f;*/
 	
-	sim.boundingskips = 0;
+	sim.boundingskips = 5;
 	
 	srand((unsigned)time(NULL));
 	

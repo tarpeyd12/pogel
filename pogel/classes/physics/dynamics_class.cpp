@@ -58,18 +58,17 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 		
 		// the magnetic charge attraction
 		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic) {
-			
+			//pull += POGEL::VECTOR(obj->position,objects[a]->position).normal()*(-obj->behavior.charge-objects[a]->behavior.charge);
 			
 			if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge > 0.0f) || \
 				(obj->behavior.charge > 0.0f && objects[a]->behavior.charge < 0.0f))
 				pull += (POGEL::VECTOR(obj->position, objects[a]->position).normal()*(fabs(obj->behavior.charge) + \
-					fabs(objects[a]->behavior.charge)))/objects[a]->position.distance(obj->position);
-			
+					fabs(objects[a]->behavior.charge)))/(objects[a]->position.distance(obj->position));
 			
 			else if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge < 0.0f) || \
 				(obj->behavior.charge > 0.0f && objects[a]->behavior.charge > 0.0f))
 				pull += (POGEL::VECTOR(objects[a]->position, obj->position).normal()*(fabs(obj->behavior.charge) + \
-					fabs(objects[a]->behavior.charge)))/objects[a]->position.distance(obj->position);
+					fabs(objects[a]->behavior.charge)))/(objects[a]->position.distance(obj->position));
 			
 			else
 				{}

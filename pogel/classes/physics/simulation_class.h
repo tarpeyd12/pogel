@@ -17,9 +17,11 @@ class SIMULATION;
 class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 	private:
 		unsigned int properties; // the mushed properties
+		unsigned long stepstaken;
 	public:
 		float precision;
 		bool deactivation;
+		unsigned long inactive_index;
 		
 		SIMULATION();
 		
@@ -38,10 +40,10 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 		bool processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*);
 		bool processCONCAVESPHERE_GENERAL(POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*);
 		
-		
 		void reactcollision(POGEL::PHYSICS::SOLID*, POGEL::PHYSICS::SOLID*, POGEL::VECTOR, POGEL::VECTOR, POGEL::POINT);
 };
 
 bool boundingcheck(POGEL::PHYSICS::SOLID *obj1, POGEL::PHYSICS::SOLID *obj2);
 
 #endif /* _SIMULATION_CLASS_H */
+

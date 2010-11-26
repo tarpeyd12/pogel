@@ -17,7 +17,7 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs 8*8*2
+#define numobjs 8*8*5
 #define grd 24
 #define sps 1.05f/1
 #define size 1.0f/1
@@ -72,31 +72,31 @@ void oob(SOLID_FNC_DEF) {
                 //obj->stepstaken = 0;
         }*/
         if(keys['/'])
-        	obj->stepstaken = rand()%numobjs;
-        unsigned int tm = (((unsigned int)(POGEL::duration*5-fmod(POGEL::duration*5, 1)))%(numobjs));
+        	obj->setstepstaken(rand()%numobjs);
+        //unsigned int tm = (((unsigned int)(POGEL::duration*1-fmod(POGEL::duration*1, 1)))%(numobjs));
         //POGEL::message("tm = %d\n", tm );
-        if(/*(obj->stepstaken*1) >= numobjs*5 ||*/ keys['o'] || obj->stepstaken == tm  ) {
-        	//obj->stepstaken = 0;
-        	obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,1,1)*0.2);
+        if((obj->getstepstaken()*1) >= numobjs*30 || keys['o'] /*|| obj->getstepstaken() == tm */ ) {
+        	obj->setstepstaken(0);
+        	//obj->moveto(POGEL::POINT(POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0,POGEL::FloatRand(4.0)-2.0)/5*POGEL::POINT(1,1,1)*0.0);
         	/*if(POGEL::hasproperty(POGEL_TIMEBASIS))
         	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,0)*10;
         	else
         	obj->direction = POGEL::VECTOR(cos((float)POGEL::duration/1),sin((float)POGEL::duration/1),sin((float)POGEL::duration/1)).normal()*POGEL::VECTOR(1,1,0)/3;*/
-        	if(POGEL::hasproperty(POGEL_TIMEBASIS))
+        	/*if(POGEL::hasproperty(POGEL_TIMEBASIS))
         	obj->direction = POGEL::VECTOR(x,y,z).normal()*10;
-        	else obj->direction = POGEL::VECTOR(x,y,z).normal()/3;
+        	else obj->direction = POGEL::VECTOR(x,y,z).normal()/3;*/
         	//obj->direction = POGEL::VECTOR();
         	obj->getbounding();
         	
         }
         if(keys['l'])
-        	obj->spin=POGEL::VECTOR(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.0)/0.010f * VECTOR(0,0,1);
+        	obj->spin=POGEL::VECTOR(1,1,1)/0.010f * VECTOR(0,0,1);
         if(keys['L']) {
         	obj->spin = POGEL::VECTOR();
         	obj->rotation = POGEL::POINT();
         }
-        obj->stepstaken -= 1;
-        if(dimlock) {
+        obj->setstepstaken(obj->getstepstaken()-1);
+       	if(dimlock) {
         obj->position.z = 0.0;
         obj->direction.z = 0.0f;
         }
@@ -132,8 +132,9 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //POGEL::addproperty(POGEL_TIMEBASIS);
         
         //sim = new POGEL::PHYSICS::SIMULATION();
-        sim.deactivation = false;
-        //sim.precision = 0.01f;
+        sim.deactivation = true;
+        sim.precision = 0.01f;
+        sim.inactive_index = 20;
         
         sim.boundingskips = 0;
         
@@ -173,7 +174,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
                 //obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
                 //obj[i].turnto(POINT());
-                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, .5f, 1.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
+                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, .75f, 1.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
                 //sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
                 //sphs[i]->position.print();
                 //sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
@@ -196,10 +197,12 @@ void InitGL(int Width, int Height)              // We call this right after our 
                         //sphs[i]->visable = true;
                         //sphs[i]->bounding.maxdistance=5.0f;
                 }*/
+                //if(i%50==0)
+                	//sphs[i]->zombify();
                 
-                sphs[i]->stepstaken = i;
+                sphs[i]->setstepstaken(i*30);
                 
-                sphs[i]->resizetrail(10);
+                sphs[i]->resizetrail(20);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -249,6 +252,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         border->behavior.magnetic = false;
         border->behavior.charge = -0.01f;
+        border->resizetrail(10);
         border->build();
         //border->visable = false;
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
@@ -263,17 +267,19 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //addCube(sp, 4,4,4, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
         sp->setproperties(0);
         sp->moveto(POGEL::POINT(-9.0f,-7.0f,0.0f));
-        //sp->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
-        sp->turnto(POGEL::POINT(0,0,0));
+        sp->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
+        //sp->turnto(POGEL::POINT(0,0,0));
         sp->build();
         ball = new POGEL::PHYSICS::SOLID(sp, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 0, 1, 1, 1, 1, false, 0), 1|PHYSICS_SOLID_CONVEX|0);
-        ball->behavior.bounce = 0.5f;
+        ball->spin = POGEL::VECTOR(POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1)*2;
+        ball->behavior.bounce = 1.f;
         ball->behavior.friction = 1.0f;
         ball->behavior.mass = 1.0f;
         ball->behavior.magnetic = false;
         ball->behavior.charge = -150.0f;
+        ball->resizetrail(10);
         ball->build();
-        sim.addSolid(ball);
+        //sim.addSolid(ball);
         
         ball->visable = true;
         
@@ -292,6 +298,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         box->behavior.mass = 1.0f;
         box->behavior.magnetic = false;
         box->behavior.charge = 150.0f;
+        box->resizetrail(10);
         box->build();
         //sim.addSolid(box);
         

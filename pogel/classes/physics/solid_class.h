@@ -52,27 +52,29 @@ class POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES {
 class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 	private:
 		unsigned int physproperties;
+		
+		POGEL::PHYSICS::DYNAMICS* container;
+		
+		bool sleeping;
+		bool cantsleep;
+		
+		unsigned long trailsize;
 	protected:
 		float maximumdistance;
 		
-		unsigned long trailsize;
 		POGEL::POINT *trail;
 		POGEL::POINT *rots;
-		
-		POGEL::PHYSICS::DYNAMICS* container;
 		
 		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
 		void (*function)(POGEL::PHYSICS::SOLID*);
 		
-		POGEL::BOUNDING refbounding;
-	public:
-		POGEL::VECTOR force;
-		
 		unsigned long objboundingskips;
 		unsigned long stepstaken;
 		unsigned long stepsatboundingcheck;
-		
+	public:
+		POGEL::VECTOR force;
 		POGEL::BOUNDING bounding;
+		POGEL::BOUNDING refbounding;
 		POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES behavior;
 		
 		SOLID();
@@ -87,21 +89,31 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		void removeOption(unsigned int prop) {physproperties^=prop;}
 		bool hasOption(unsigned int prop) {return (physproperties & prop);}
 		
-		void setCallback(void (*func)(POGEL::PHYSICS::SOLID*,char*) )
-			{ callback = func; }
-		void setStepFunc(void (*func)(POGEL::PHYSICS::SOLID*) )
-			{ function = func; }
+		unsigned long getstepstaken();
+		void setstepstaken(unsigned long);
+		
+		void setCallback(void (*func)(POGEL::PHYSICS::SOLID*,char*) );
+		void setStepFunc(void (*func)(POGEL::PHYSICS::SOLID*) );
+		
+		bool napping();
+		void sleep();
+		void wake();
+		void forcesleep();
+		void forcewake();
+		void zombify();
+		void unzombify();
 		
 		void resizetrail(unsigned long);
 		
-		void steprottrail();
 		void steppostrail();
+		void steprottrail();
 		void steptrail();
-		
 		bool sameposlegacy(float);
 		bool samerotlegacy(float);
 		bool samelegacy(float);
-		
+		bool sameposlegacy(float,unsigned long);
+		bool samerotlegacy(float,unsigned long);
+		bool samelegacy(float,unsigned long);
 		void offsettrail(POGEL::VECTOR);
 		
 		void getbounding();
@@ -110,29 +122,9 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		void build();
 		void draw();
 		
-		void increment() {
-			if(!this->hasOption(PHYSICS_SOLID_STATIONARY)) {
-				rotate(spin*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
-				direction += force;//*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
-				translate(direction*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
-			}
-			else {
-				rotate(spin*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
-				translate(direction*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
-			}
-			//force = POGEL::VECTOR();
-			stepstaken++;
-		}
-		
-		void clearForce() {
-			force = POGEL::VECTOR();
-		}
-		
-		void addForce() {
-			if(!this->hasOption(PHYSICS_SOLID_STATIONARY))
-				direction += force;
-		}
-		
+		void increment();
+		void clearForce();
+		void addForce();
 		void step();
 		
 		void closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri1, POGEL::TRIANGLE* tri2);
