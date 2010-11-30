@@ -30,7 +30,7 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		}
 		else if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			//obj1->direction = vtmp[0];
-			if(obj2->direction.getdistance() == 0.0f)
+			if(obj1->direction.getdistance() == 0.0f)
 				obj2->direction = vtmp[1] + vtmp[0]*-1;
 			else
 				obj2->direction = vtmp[1];
