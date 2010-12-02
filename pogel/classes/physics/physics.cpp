@@ -228,7 +228,7 @@ bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS
 };
 
 // this is brute force
-// TODO: find a mathematical way to do this quickly and acuratly for huge line-segments
+// TODO: find a mathematical way to do this quickly and acuratly for huge lines
 float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, POGEL::POINT* pol) {
 	POGEL::POINT start = line.getStart();
 	POGEL::POINT end = line.getEnd();
@@ -328,7 +328,7 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOL
 	un.normalize();
 	
 	// check to see if the objects can be treated as a 1 dimensional collision
-	/*if(
+	if(
 		s1->direction.normal() == un || \
 		s1->direction.normal()*-1.0f == un || \
 		s2->direction.normal() == un || \
@@ -344,7 +344,7 @@ void POGEL::PHYSICS::calcElasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOL
 		v[1] = s1->direction.normal() * v2prime;
 		
 		return;
-	}*/
+	}
 	
 	POGEL::VECTOR ut1(s1->direction, un), ut2(s2->direction, un);
 	
@@ -378,8 +378,9 @@ inline float POGEL::PHYSICS::getvf(float m1, float m2, float v1, float v2, float
 
 void POGEL::PHYSICS::calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
-	float b1 = s1->behavior.bounce;// *(s1->hasOption(PHYSICS_SOLID_CONCAVE) && s1->hasOption(PHYSICS_SOLID_SPHERE) ? 1 : 1);
-	float b2 = s2->behavior.bounce;// *(s2->hasOption(PHYSICS_SOLID_CONCAVE) && s2->hasOption(PHYSICS_SOLID_SPHERE) ? 1 : 1);
+	// these next two lines of code are to compensate for a weard bug, that when the bounce of a solid object that is PHYSICS_SOLID_CONVEX, is 4, and the other objects bounce is 1, that then it is as if both were set to 1.
+	float b1 = s1->behavior.bounce*(s1->hasOption(PHYSICS_SOLID_CONCAVE) && s1->hasOption(PHYSICS_SOLID_SPHERE) ? 4 : 1);
+	float b2 = s2->behavior.bounce*(s2->hasOption(PHYSICS_SOLID_CONCAVE) && s2->hasOption(PHYSICS_SOLID_SPHERE) ? 4 : 1);
 	
 	float cn = (b1+b2)/2;
 	float cn1 = cn;
@@ -429,10 +430,6 @@ void POGEL::PHYSICS::calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::S
 	v2n = un.dotproduct(s2->direction);
 	v2t = ut2.dotproduct(s2->direction);
 	
-	//(s2->hasOption(PHYSICS_SOLID_STATIONARY) ? s1->behavior.mass : s2->behavior.mass)
-	
-	/*v1prime = POGEL::PHYSICS::getvf((s1->hasOption(PHYSICS_SOLID_STATIONARY) ? s2->behavior.mass : s1->behavior.mass), (s2->hasOption(PHYSICS_SOLID_STATIONARY) ? s1->behavior.mass : s2->behavior.mass), v1n, v2n, cn1);
-	v2prime = POGEL::PHYSICS::getvf((s2->hasOption(PHYSICS_SOLID_STATIONARY) ? s1->behavior.mass : s2->behavior.mass), (s1->hasOption(PHYSICS_SOLID_STATIONARY) ? s2->behavior.mass : s1->behavior.mass), v2n, v1n, cn2);*/
 	v1prime = POGEL::PHYSICS::getvf(s1->behavior.mass, s2->behavior.mass, v1n, v2n, cn1);
 	v2prime = POGEL::PHYSICS::getvf(s2->behavior.mass, s1->behavior.mass, v2n, v1n, cn2);
 	

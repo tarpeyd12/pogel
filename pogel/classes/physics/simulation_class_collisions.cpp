@@ -255,11 +255,11 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		
 		unocupyobjs(obj1,obj2,v,d);
 		
-		if(tmptri.isinfront(v.normal()+tmptri.middle()))
+		if(tmptri.isinfront(v.normal().topoint()+tmptri.middle()))
 			unocupyobjs(obj1, obj2, v, -obj1->bounding.maxdistance);
 		else
 			unocupyobjs(obj1, obj2, v,  obj1->bounding.maxdistance);
-		
+			
 		v = POGEL::VECTOR(obj1->position,obj2->position).normal()/1 + tmptri.normal*100000;
 		v.normalize();
 		reactcollision(obj1, obj2, v, v * -1, tmp_2);
