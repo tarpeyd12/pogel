@@ -26,7 +26,6 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 			) {
 				objects[a]->direction = POGEL::VECTOR();
 				objects[a]->sleep();
-				objects[a]->forcegetbounding();
 			}
 			else {
 				objects[a]->direction += getpull(objects[a]);

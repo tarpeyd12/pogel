@@ -118,7 +118,6 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void getbounding();
 		void setboundingskips();
-		void forcegetbounding();
 		
 		void build();
 		void draw();
