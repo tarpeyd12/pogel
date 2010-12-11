@@ -15,7 +15,7 @@
 using namespace POGEL;
 
 #define numobjs 25
-#define numcosms 10
+#define numcosms 4
 #define grd 1
 #define sps 0.10f
 #define size 0.15f

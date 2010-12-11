@@ -23,7 +23,7 @@ class OBJECT;
 #define			OBJECT_SORT_TRIANGLES		64
 #define			OBJECT_ROTATE_TOCAMERA		128
 
-#define			OBJECT_USE_OPNEGL_MATRIX_RECURSION
+//#define			OBJECT_USE_OPNEGL_MATRIX_RECURSION
 
 #define			OBJECT_TRIAGLE_ALLOCATION_SKIP	1000
 
@@ -80,13 +80,13 @@ class OBJECT {
 		PROPERTIES_METHODS;
 		
 		void setname(const char *n) { 
-			if(name!=NULL)
-				free(name);
+			if(name!=NULL) delete[] name;
 			name = new char[strlen(n)];
 			strcpy(name, n);
 			//name=(char*)n;
 		}
 		char* getname() {return name;}
+		unsigned long getchildslot();
 		
 		void translate(POGEL::VECTOR);
 		void translate(POGEL::VECTOR,float);
@@ -112,6 +112,7 @@ class OBJECT {
 		POGEL::OBJECT* getancestor(const char*);
 		POGEL::OBJECT* getprogenitor();
 		char *getancestory();
+		char *getancestoryhash();
 		
 		POGEL::MATRIX getancestorialmatrix();
 		

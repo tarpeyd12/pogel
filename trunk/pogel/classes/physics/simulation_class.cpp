@@ -12,19 +12,22 @@ POGEL::PHYSICS::SIMULATION::SIMULATION() : POGEL::PHYSICS::DYNAMICS() {
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
+	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
 	
 	for(unsigned long a=0;a<numobjects;a++) {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			
 			if(
 				(deactivation && 
-				((objects[a]->direction+objects[a]->force).getdistance() <= precision || 
-				objects[a]->sameposlegacy(precision, inactive_index)) && 
+				((objects[a]->direction+objects[a]->force).getdistance() <= precision*r || 
+				objects[a]->sameposlegacy(precision*r, inactive_index)) && 
 				objects[a]->stepstaken > objects[a]->trailsize && 
 				stepstaken > 100) ||
 				objects[a]->napping()
 			) {
 				objects[a]->direction = POGEL::VECTOR();
+				if(!objects[a]->napping())
+					objects[a]->forcegetbounding();
 				objects[a]->sleep();
 			}
 			else {
@@ -40,7 +43,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		//objects[a]->increment();
 		objects[a]->clearForce();
 	}
-	
+	//for(int g = 0; g < 2; g++)
 	for(unsigned long a=0;a<numobjects;a++)
 		if(!objects[a]->napping())
 			for(unsigned long b=0;b<numobjects;b++)
@@ -60,7 +63,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 							objects[b]->callback(objects[b], n);
 							delete[] n;
 						}
-						if(objects[a]->napping()) objects[a]->wake();
+						//if(objects[a]->napping()) objects[a]->wake();
 						if(objects[b]->napping()) objects[b]->wake();
 					}
 					

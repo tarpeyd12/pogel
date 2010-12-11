@@ -207,14 +207,15 @@ void POGEL::logtofile(const char* fmt, ...) {
 		memcpy(output, tmpstr, strlen(tmpstr)+1);
 		free(tmpstr);
 		time_t tm = time(NULL);
-		if(strlen(output)==1 && output[0]=='\n')
-			fprintf(file, "\n");
+		if(strlen(output)==1 && output[0]=='\n') {
+			fprintf(file,"\n");
+		}
 		else {
 			char tmp[32];
 			strcpy(tmp,ctime(&tm));
-			for(unsigned int i=0;i<strlen(tmp);i++)
-				if(tmp[i]=='\n')
-					tmp[i]='\0';
+			for(unsigned int i=0;i<strlen(tmp);i++) if(tmp[i]=='\n') tmp[i]='\0';
+			for(unsigned int i=0;i<strlen(output);i++)
+				if(output[i]=='\r') output[i]=' ';
 			fprintf(file,"\n%s:\t%s", tmp, output);
 		}
 		//free(tmp);
@@ -300,7 +301,7 @@ void POGEL::PrintFps() {
 	for (int i = 0; i < Nb; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
 	glEnable(GL_LIGHTING);*/
-	POGEL::message("\nFrame: %u, Fps: %4.1f, Spf: %4.3f, Duration = %0.2fs (%d:%05.2f)\n",
+	POGEL::message("\rFrame: %u, Fps: %4.1f, Spf: %4.3f, Duration = %0.2fs (%d:%05.2f)\r",
 		POGEL::frames,
 		POGEL::GetFps(),
 		POGEL::GetSecondsPerFrame(),

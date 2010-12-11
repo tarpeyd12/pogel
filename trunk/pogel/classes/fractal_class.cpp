@@ -58,10 +58,11 @@ POGEL::FRACTAL::~FRACTAL() {
 	
 	//deconstruct();
 	
-	/*if(data)
-		delete data;*/
+	//if(data != NULL) delete data;
 	creation = NULL;
 	destruction = NULL;
+	
+	//killchildren();
 };
 
 void POGEL::FRACTAL::step() {
@@ -94,6 +95,10 @@ POGEL::FRACTAL* POGEL::FRACTAL::spawn() {
 	if(itterationLevel < itterationMax) { // this if statement must match the one in POGEL::FRACTAL::create()
 		POGEL::FRACTAL* spawnling = new POGEL::FRACTAL(data, creation, destruction, itterationMax, itterationLevel+1);
 		addobject(spawnling);
+		char* n = spawnling->getancestoryhash();
+		POGEL::message("spawning child# %s\n", n);
+		if(n != getname())
+			free(n);
 		return spawnling;
 	}
 	return NULL;

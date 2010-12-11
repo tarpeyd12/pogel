@@ -11,7 +11,9 @@ void addSphere(POGEL::OBJECT *obj, float spacev, float spaceh, float R, POGEL::I
 };
 
 void addSphere(POGEL::OBJECT *obj, float spacev, float spaceh, float R, POGEL::IMAGE *img, float imgscalev, float imgscaleh, unsigned int triprop, POGEL::MATRIX mat) {
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Sphere to \"%s\" ...\n", obj->getname());
+	#endif
 	float a;
 	float b;
 	POGEL::POINT center(0.0f,0.0f,0.0f);
@@ -64,10 +66,14 @@ void addSphere(POGEL::OBJECT *obj, float spacev, float spaceh, float R, POGEL::I
 			//mat.transformVector(&tri.normal);
 			obj->addtriangle(tri);
 			cur_vert+=1;
+			#ifdef DIPLAY_SHAPE_PROGRESS
 			if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld faces complete in sphere.\r", cur_vert, vertcount);
+			#endif
 		}
 	}
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+	#endif
 };
 
 void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radius, float inner_radius, POGEL::IMAGE *img, float imgscalev, float imgscaleh, unsigned int triprop) {
@@ -75,7 +81,9 @@ void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radiu
 };
 
 void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radius, float inner_radius, POGEL::IMAGE *img, float imgscalev, float imgscaleh, unsigned int triprop, bool radial_tex, POGEL::MATRIX mat) {
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Disk to \"%s\" ...\n", obj->getname());
+	#endif
 	float a;
 	float b;
 	POGEL::POINT center(0.0f,0.0f,0.0f);
@@ -150,17 +158,23 @@ void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radiu
 			//mat.transformVector(&tri.normal);
 			obj->addtriangle(tri);
 			cur_vert+=1;
+			#ifdef DIPLAY_SHAPE_PROGRESS
 			if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld faces complete in disk.\r", cur_vert, vertcount);
+			#endif
 		}
 	}
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+	#endif
 }
 
 
 
 
 void addCylinder(POGEL::OBJECT *obj, float divisions, float rings_in, float height, float lower_radius, float upper_radius, POGEL::IMAGE *img, float imgscalev, float imgscaleh, unsigned int triprop, POGEL::MATRIX mat) {
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Cylinder to \"%s\" ...\n", obj->getname());
+	#endif
 	float a;
 	float b;
 	float c;
@@ -238,10 +252,14 @@ void addCylinder(POGEL::OBJECT *obj, float divisions, float rings_in, float heig
 			//mat.transformVector(&tri.normal);
 			obj->addtriangle(tri);
 			cur_vert+=1;
+			#ifdef DIPLAY_SHAPE_PROGRESS
 			if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld faces complete in cylinder.\r", cur_vert, vertcount);
+			#endif
 		}
 	}
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+	#endif
 }
 
 void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHAPE_FUNCTION_ARGS), const char* axesToLoop, POGEL::IMAGE* img, unsigned int triprop, float xSize, float ySize, float zSize, unsigned long xRes, unsigned long yRes, unsigned long zRes) {
@@ -261,9 +279,9 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 	
 	if( !loopX && !loopY && !loopZ)
 		return;
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Function Graph to \"%s\" ...\n", obj->getname());
-	
+	#endif
 	float xMax = xSize/2.0f, yMax = ySize/2.0f, zMax = zSize/2.0f;
 	float xMin = xMax*-1.0f, yMin = yMax*-1.0f, zMin = zMax*-1.0f;
 	
@@ -344,16 +362,21 @@ void addFunctionShape( POGEL::OBJECT* obj, SHAPE_FUNCTION_RESULT (*function)(SHA
 				}
 				
 				face_count++;
-				
+				#ifdef DIPLAY_SHAPE_PROGRESS
 				if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("%ld of %ld in graph of function.\r", face_count, xRes*yRes*zRes);
+				#endif
 			}
 		}
 	}
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+	#endif
 };
 
 void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::IMAGE* img, float imgscale_h, float imgscale_w, unsigned int triprop, POGEL::MATRIX mat) {
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("Adding Cube to \"%s\" ...\n", obj->getname());
+	#endif
 	POGEL::VERTEX verts[4];
 	
 	//obj->addtrianglespace(12);
@@ -370,9 +393,9 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("1 of 6 faces complete in cube.\r");
-	
+	#endif
 	//back
 	verts[0].set_values(-width/2.0f,-height/2.0f,-depth/2.0f, imgscale_w,      0.0f); // lowerleft
 	verts[1].set_values(-width/2.0f, height/2.0f,-depth/2.0f, imgscale_w,imgscale_h); // lowerright
@@ -385,9 +408,9 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("2 of 6 faces complete in cube.\r");
-	
+	#endif
 	//top
 	verts[0].set_values(-width/2.0f, height/2.0f,-depth/2.0f,       0.0f,imgscale_h); // lowerleft
 	verts[1].set_values(-width/2.0f, height/2.0f, depth/2.0f,       0.0f,      0.0f); // lowerright
@@ -400,9 +423,9 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("3 of 6 faces complete in cube.\r");
-	
+	#endif
 	//bottom
 	verts[0].set_values(-width/2.0f,-height/2.0f,-depth/2.0f, imgscale_w,imgscale_h); // lowerleft
 	verts[1].set_values( width/2.0f,-height/2.0f,-depth/2.0f,       0.0f,imgscale_h); // lowerright
@@ -415,9 +438,9 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("4 of 6 faces complete in cube.\r");
-	
+	#endif
 	//left
 	verts[0].set_values(-width/2.0f,-height/2.0f,-depth/2.0f,       0.0f,      0.0f); // lowerleft
 	verts[1].set_values(-width/2.0f,-height/2.0f, depth/2.0f, imgscale_w,      0.0f); // lowerright
@@ -430,9 +453,9 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("5 of 6 faces complete in cube.\r");
-	
+	#endif
 	//right
 	verts[0].set_values( width/2.0f,-height/2.0f,-depth/2.0f, imgscale_w,      0.0f); // lowerleft
 	verts[1].set_values( width/2.0f, height/2.0f,-depth/2.0f, imgscale_w,imgscale_h); // lowerright
@@ -445,9 +468,10 @@ void addCube(POGEL::OBJECT *obj, float height, float width, float depth, POGEL::
 	}
 	obj->addtriangle(POGEL::TRIANGLE(verts[0],verts[1],verts[2],img,triprop));
 	obj->addtriangle(POGEL::TRIANGLE(verts[3],verts[0],verts[2],img,triprop));
-	
+	#ifdef DIPLAY_SHAPE_PROGRESS
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("6 of 6 faces complete in cube.\r");
 	
 	if(POGEL::hasproperty(POGEL_DEBUG)) POGEL::message("\n");
+	#endif
 };
 

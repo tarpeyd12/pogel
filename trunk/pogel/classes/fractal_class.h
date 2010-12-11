@@ -29,6 +29,7 @@ class POGEL::FRACTAL : public POGEL::OBJECT {
 		FRACTAL();
 		FRACTAL( void* dat, void (*cons)(POGEL::FRACTAL*,unsigned long), void (*dest)(POGEL::FRACTAL*,unsigned long), unsigned long totalItterations, unsigned long currentItteration);
 		FRACTAL(void* dat, void (*cons)(POGEL::FRACTAL*,unsigned long), void (*dest)(POGEL::FRACTAL*,unsigned long), unsigned long totalItterations);
+		
 		~FRACTAL();
 		
 		PROPERTIES_METHODS;
