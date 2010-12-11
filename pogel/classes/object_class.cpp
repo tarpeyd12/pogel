@@ -143,18 +143,27 @@ POGEL::OBJECT::~OBJECT() {
 	
 	destroy();
 	
-	//char *n = getancestory();
-	POGEL::message("deconstructing %s\n", getname());
-	/*if(n!=getname())
-		free(n);*/
+	char *n = getancestoryhash();
+	POGEL::message("deconstructing %s\n", n);
+	if(n!=getname())
+		free(n);
 	
 	if(face!=NULL) {
 		delete[] face;
 		face=NULL;
 	}
 	
-	if(children != NULL)
-		killchildren();
+	if(children != NULL) {
+		//killchildren();
+		if(numchildren > 0 && children != NULL)
+			for(unsigned long i=0;i<numchildren;i++) {
+				//children[i]->killchildren();
+				delete children[i];
+				children[i]=NULL;
+			}
+		delete[] children;
+		children=NULL;
+	}
 	
 	parent=NULL;
 	
@@ -165,21 +174,18 @@ POGEL::OBJECT::~OBJECT() {
 };
 
 void POGEL::OBJECT::killchildren() {
-	if(numchildren > 0)
+	if(numchildren > 0 && children != NULL)
 		for(unsigned long i=0;i<numchildren;i++) {
 			children[i]->killchildren();
 			delete children[i];
 			children[i]=NULL;
 		}
 	delete[] children;
-	//delete children;
-	//free(children);
 	children=NULL;
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v) {
-	if(!v.isbad())
-	position += v.topoint();
+	if(!v.isbad()) position += v.topoint();
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v, float s) {
@@ -329,6 +335,32 @@ char* POGEL::OBJECT::getancestory() {
 	POGEL::error("object: \"%s\" has corrupted pointer to parent object.",getname());
 	POGEL::warning("nonfatal, continuing");
 	return (char*)"ERROR"; // otherwise complain
+};
+
+char* POGEL::OBJECT::getancestoryhash() {
+	if(parent==NULL) // if this object has no parent
+		return getname(); // it is the first one, return its name
+	else if(parent!=NULL) { // if it has a parent
+		char *n=parent->getancestoryhash(); // get the parents ancestory
+		char *ret=POGEL::string("%s:%x", n, getchildslot()); // concatinate it with the current objects name
+		if(n!=parent->getname()) // if the address of n does not equal the adress of the parents name string
+			free(n); // free n (prevents many memmory leaks)
+		return ret; // and return
+	}
+	POGEL::error("object: \"%s\" has corrupted pointer to parent object.",getname());
+	POGEL::warning("nonfatal, continuing");
+	return (char*)"ERROR"; // otherwise complain
+};
+
+unsigned long POGEL::OBJECT::getchildslot() {
+	if(parent!=NULL)
+		// loop through all the children
+		for(unsigned long i=0;i<parent->numchildren;i++) {
+			// if the childs name matches the desired one
+			if(parent->children[i] == this)
+				return i;
+		}
+	return 0;
 };
 
 POGEL::MATRIX POGEL::OBJECT::getancestorialmatrix() {
