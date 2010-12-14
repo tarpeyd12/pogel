@@ -214,7 +214,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOL
 		else
 			unocupyobjs(obj1, obj2, v, -obj1->bounding.maxdistance);
 			
-		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*1 + tmptri.normal*100000;
+		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*1;
 		v.normalize();
 		reactcollision(obj1, obj2, v, v * -1, tmp_2);
 		return true;
@@ -243,6 +243,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		v = obj2->position - obj1->position;
 		d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + tmp_2.distance(obj2->position));
 		// TODO: find out why:
+		if(obj1->position.distance(obj2->position) == obj2->position.distance(tmp_2))
 		unocupyobjs(obj1,obj2,v,d); // this sometimes causes a wierd error, cant figure out why
 		inside = true;
 	}
@@ -261,7 +262,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		else
 			unocupyobjs(obj1, obj2, v,  obj1->bounding.maxdistance);
 			
-		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*100000;
+		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*1;
 		v.normalize();
 		reactcollision(obj1, obj2, v, v * -1, tmp_2);
 		return true;
