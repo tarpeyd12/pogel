@@ -43,7 +43,7 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 		//objects[a]->increment();
 		objects[a]->clearForce();
 	}
-	//for(int g = 0; g < 2; g++)
+	//for(int g = 0; g < 3; g++)
 	for(unsigned long a=0;a<numobjects;a++)
 		if(!objects[a]->napping())
 			for(unsigned long b=0;b<numobjects;b++)

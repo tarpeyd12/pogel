@@ -17,10 +17,10 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs 8*8
+#define numobjs 8*8*3
 #define grd 24
 #define sps 1.05f/1
-#define size 1.0f/1
+#define size 1.0f/10
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -133,8 +133,8 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         //sim = new POGEL::PHYSICS::SIMULATION();
         sim.deactivation = !true;
-        sim.precision = 0.01f;
-        sim.inactive_index = 20;
+        sim.precision = 0.0075f;
+        //sim.inactive_index = 20;
         
         sim.boundingskips = 0;
         
@@ -174,7 +174,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
                 //obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
                 //obj[i].turnto(POINT());
-                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
+                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.5f, 1.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
                 //sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
                 //sphs[i]->position.print();
                 //sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
@@ -206,7 +206,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i]->setStepFunc(oob);
                 
-                sphs[i]->visable = true;
+                sphs[i]->visable = !true;
                 
                 sim.addSolid(sphs[i]);
         }
@@ -246,7 +246,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //border->spin = POGEL::VECTOR(POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f))*1.0f;
         //border->spin = POGEL::VECTOR(0.0f,0.0f,1.0f);
         //border->direction = POGEL::VECTOR(0,1,0)/10;
-        border->behavior.bounce = 1.0f;
+        border->behavior.bounce = 0.5f;
         border->behavior.friction = 1.0f;
         border->behavior.mass = 1.0f;
         
@@ -476,7 +476,7 @@ void DrawGLScene()
         	
         	
         //sim.gravity.print();
-        sphs[0]->position.print();
+        //sphs[0]->position.print();
         //POGEL::message("duration = %f\n", POGEL::duration);
         
         //message("\n");
