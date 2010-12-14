@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-//#define docyln
+#define docyln
 
 #define itterations 10
 #define startsize	1.0f
@@ -161,7 +161,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	//addCylinder(obj, 4, 1, (float)10, (float)10, (float)10, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,(float)10,0.0f)*0.5f, VERTEX(0.0f,0.0f,0.0f)));
 	
-	//obj->create();
+	obj->create();
 	//obj->build();
 	
 	POGEL::InitFps();
@@ -171,7 +171,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 //unsigned long frames=0;
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 
-bool keypres, go = false;
+bool keypres, go = !false;
 POGEL::POINT camrot, campos;
 unsigned long fr = 0;
 /* The main drawing function. */
@@ -195,15 +195,15 @@ void DrawGLScene()
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);*/
 	
 	obj->draw();
-	if(/*frames%250 < itterations*10 && frames%10 == 0 && (go || keypres) ||*/ keys['g']) {
+	if(frames%250 < itterations*10 && frames%10 == 0 && (go || keypres) || keys['g']) {
 		//if(keypres) keypres = false;
 		keys['g'] = false;
 		obj->grow();
 	}
 	
-	if(/*frames%250 == 0 && frames >= 1 && (go || keypres) || */keys['r']) {
+	if(frames%250 == 0 && frames >= 1 && (go || keypres) || keys['r']) {
 		keys['r'] = false;
-		//if(keypres) keypres = false;
+		if(keypres) keypres = false;
 		//obj->killchildren();
 		delete obj;
 		obj = new FRACTAL(NULL, &construct, &destruct, itterations);

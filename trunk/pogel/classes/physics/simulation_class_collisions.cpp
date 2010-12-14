@@ -76,7 +76,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 	return processGENERAL_GENERAL(obj1, obj2);
 };
 
-
+// TODO: amek this work:
 /* *************************** Does not work ******************************** */
 bool POGEL::PHYSICS::SIMULATION::processCONVEX_CONVEX(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
 	POGEL::POINT p1, p2, tmp, tmp1, tmp2, obj1_ep, obj2_ep;
@@ -93,7 +93,7 @@ bool POGEL::PHYSICS::SIMULATION::processCONVEX_CONVEX(POGEL::PHYSICS::SOLID* obj
 	//p1.draw();
 	//p2.draw();
 	//p1.drawto(p2);
-	tmp1.drawto(tmp2);
+	//tmp1.drawto(tmp2);
 	
 	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj1, obj1->position, p1, &tri, &tmp, &obj1_ep);
 	//obj1_ep.draw();
@@ -110,7 +110,7 @@ bool POGEL::PHYSICS::SIMULATION::processCONVEX_CONVEX(POGEL::PHYSICS::SOLID* obj
 		POGEL::VECTOR v(p1,p2);
 		//if(p1 != obj1->position && p2 != obj2->position && p1 != obj2->position && p2 != obj1->position) {
 		//if(p1 != p2) {
-		unocupyobjs(obj1,obj2,v,p1.distance(p2));
+		unocupyobjs(obj1,obj2,v,-p1.distance(p2));
 			//obj1->translate(v.normal() * p1.distance(p2)*-.5);
 			//obj2->translate(v.normal() * p1.distance(p2)*.5);
 		//}
@@ -261,7 +261,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		else
 			unocupyobjs(obj1, obj2, v,  obj1->bounding.maxdistance);
 			
-		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*1 + tmptri.normal*100000;
+		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*100000;
 		v.normalize();
 		reactcollision(obj1, obj2, v, v * -1, tmp_2);
 		return true;
