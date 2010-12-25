@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 10
+#define itterations 15
 #define startsize	2.0f
 #define size    	0.6f
 POGEL::FRACTAL* obj;
@@ -150,7 +150,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 float y = 0.0f;
 
 bool keypres, go = false;
-POGEL::POINT camrot = POGEL::POINT(45,45,0)*0, campos = POGEL::POINT(0,0,-5);
+POGEL::POINT camrot = POGEL::POINT(0,90,0), campos = POGEL::POINT(0,0,-5);
 
 /* The main drawing function. */
 void DrawGLScene()

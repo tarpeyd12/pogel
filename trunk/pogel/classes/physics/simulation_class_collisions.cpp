@@ -244,7 +244,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 		d = obj1->position.distance(obj2->position) - (obj1->bounding.maxdistance + tmp_2.distance(obj2->position));
 		// TODO: find out why:
 		if(obj1->position.distance(obj2->position) == obj2->position.distance(tmp_2))
-		unocupyobjs(obj1,obj2,v,d); // this sometimes causes a wierd error, cant figure out why
+			unocupyobjs(obj1,obj2,v,d); // this sometimes causes a wierd error, cant figure out why
 		inside = true;
 	}
 	obj2->closest(obj1->position, &tmp_2, &tmptri);
