@@ -329,10 +329,10 @@ void POGEL::PHYSICS::SOLID::draw() {
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
 			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
 		if(behavior.magnetic && behavior.charge != 0.0f) {
-			if(behavior.charge < 0.0f)	position.draw(4, POGEL::COLOR( 1,.5,.2,1));
-			else						position.draw(4, POGEL::COLOR(.5, 1,.2,1));
-		}	else if(sleeping)			position.draw(4, POGEL::COLOR(1,0, .5,1));
-			else						position.draw(4, POGEL::COLOR(.2,.5, 1,1));
+			if(behavior.charge < 0.0f)	position.draw(2, POGEL::COLOR( 1,.5,.2,1));
+			else						position.draw(2, POGEL::COLOR(.5, 1,.2,1));
+		}	else if(sleeping)			position.draw(2, POGEL::COLOR(1,0, .5,1));
+			else						position.draw(2, POGEL::COLOR(.2,.5, 1,1));
 	}
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
