@@ -17,8 +17,8 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs (8*8*8)
-#define grd 8
+#define numobjs (6*6*6)
+#define grd 6
 #define sps 1.05f/2
 #define size 1.0f/20
 OBJECT obj[numobjs];
@@ -157,7 +157,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
                 //addDisk(&obj[i], 3, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-                addSphere(&obj[i],2,3, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+                addSphere(&obj[i],3,6, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
                 //else if(i%2==0)
                 //addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
@@ -206,15 +206,15 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i]->setStepFunc(oob);
                 
-                sphs[i]->visable = !true;
+                sphs[i]->visable = true;
                 
                 sim.addSolid(sphs[i]);
         }
-        //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),100000.0f) );
+        //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),25000.0f) );
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),-10000000000000.0f) );
         //sim.addfan(POGEL::PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 50.0f));
         //sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*9.8f;
-        //sim.air_dencity = 10.0f;
+        //sim.air_dencity = 5.0f;
         
         POGEL::OBJECT* ring = new POGEL::OBJECT();
         ring->setname("border");
