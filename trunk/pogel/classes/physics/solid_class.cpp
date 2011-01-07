@@ -352,7 +352,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 				color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
-			POGEL::LINE(trail[i], trail[i+1], 3, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
+			if(trail[i].distance(trail[i+1]) > 1) continue;
+			
+			POGEL::LINE(trail[i], trail[i+1], 1, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
 			
 			#ifdef SOLID_DISPLAY_ROTATION_TRAIL // draw the rotation trail
 				mat[0] = mat[1];

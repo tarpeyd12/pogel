@@ -290,7 +290,7 @@ bool POGEL::PHYSICS::SIMULATION::processCONCAVESPHERE_SPHERE(POGEL::PHYSICS::SOL
 		//else if((obj2->position - obj2->direction.normal().topoint()).distance(obj1->position) < obj1->position.distance(obj2->position))
 		unocupyobjs(obj1,obj2,v,d);
 		
-		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, p).normal()*0, POGEL::VECTOR(obj2->position, p).normal()*0, p);
+		reactcollision(obj1, obj2, POGEL::VECTOR(obj1->position, p).normal()*1, POGEL::VECTOR(obj2->position, p).normal()*1, p);
 		return true;
 	}
 	
