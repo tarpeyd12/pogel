@@ -50,7 +50,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	img=new IMAGE("Data/default_2.bmp");
 	obj.setname("sprite_disk");
-	addDisk(&obj, 10, 1, 1/2.0f, 0.0f, img,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
+	addDisk(&obj, 10, 1, 1/2.0f, 0.0f, img,1, 1, 0, true, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+	//addCube(&obj, 1, 2, 3, img, 1, 1, 1, POGEL::MATRIX());
 	obj.setproperties(1 | OBJECT_DRAW_DISPLAYLIST);
 	obj.build();
 	

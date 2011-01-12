@@ -391,27 +391,7 @@ void POGEL::OBJECT::build() {
 void POGEL::OBJECT::draw() {
 	if(visable) {
 		if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
-			/*matrix.get();
-			POGEL::POINT rot = matrix.getrotation();
-			rotation = (POGEL::MATRIX(rot.y*-1, MATRIX_CONSTRUCT_Y_ROTATION) * MATRIX(rot.x, MATRIX_CONSTRUCT_X_ROTATION)).getrotation();
-			rotation.x +=90;
-			rotation.y +=180;*/
-			
-			/*matrix.get();
-			POGEL::POINT cam_pos = matrix.getposition() - position;
-			POGEL::MATRIX(matrix.getrotation()*1, MATRIX_CONSTRUCT_ROTATION).transformPoint(&cam_pos);
-			cam_pos*1;
-			cam_pos.print();
-			float radius = cam_pos.distance(position);
-			POGEL::message("radius = %f\n",radius);
-			
-			rotation.x = POGEL::RadiansToDegrees(acos(cam_pos.y/radius))+90;
-			rotation.y = -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180;
-			rotation.z = 0;
-			turnto(rotation);*/
-			
-			matrix.get();
-			turnto(matrix.getrotation()*POGEL::POINT(1,1,0));
+			//rotation = POGEL::POINT();
 		}
 		unsigned long i;
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
@@ -424,11 +404,11 @@ void POGEL::OBJECT::draw() {
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
 			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
 		}
-		/*else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
+		else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
 			glRotatef(rotation.x, 1.0f, 0.0f, 0.0f);
 			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
-		}*/
+		}
 		else {
 			glRotatef(rotation.z, 0.0f, 0.0f, 1.0f);
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
@@ -488,11 +468,11 @@ void POGEL::OBJECT::draw() {
 			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);
 			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
 		}
-		/*else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
+		else if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
 			glRotatef(rotation.z, 0.0f, 0.0f, -1.0f);
 			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
 			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);
-		}*/
+		}
 		else {
 			glRotatef(rotation.x, -1.0f, 0.0f, 0.0f);
 			glRotatef(rotation.y, 0.0f, -1.0f, 0.0f);

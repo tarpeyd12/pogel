@@ -17,8 +17,8 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs (8*8*8)
-#define grd 8
+#define numobjs (6*6*6)
+#define grd 6
 #define sps 1.0f/2
 #define size 1.0f/20
 OBJECT obj[numobjs];
