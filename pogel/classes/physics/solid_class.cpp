@@ -329,10 +329,10 @@ void POGEL::PHYSICS::SOLID::draw() {
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
 			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
 		if(behavior.magnetic && behavior.charge != 0.0f) {
-			if(behavior.charge < 0.0f)	position.draw(2, POGEL::COLOR( 1,.5,.2,1));
-			else						position.draw(2, POGEL::COLOR(.5, 1,.2,1));
-		}	else if(sleeping)			position.draw(2, POGEL::COLOR(1,0, .5,1));
-			else						position.draw(2, POGEL::COLOR(.2,.5, 1,1));
+			if(behavior.charge < 0.0f)	position.draw(3, POGEL::COLOR( 1,.5,.2,1));
+			else						position.draw(3, POGEL::COLOR(.5, 1,.2,1));
+		}	else if(sleeping)			position.draw(3, POGEL::COLOR(1,0, .5,1));
+			else						position.draw(3, POGEL::COLOR(.2,.5, 1,1));
 	}
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
@@ -352,6 +352,8 @@ void POGEL::PHYSICS::SOLID::draw() {
 				color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
+			if((stepstaken-i)%20==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
+			
 			if(trail[i].distance(trail[i+1]) > 1) continue;
 			
 			POGEL::LINE(trail[i], trail[i+1], 1, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
@@ -368,7 +370,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 					z[a+1] = mat[a+0].transformPoint(POGEL::POINT(0,0,len));
 				}
 				
-				for(int a = 0; a < 2; a++) {
+				for(int a = ((stepstaken-i)%20==0 ? 0 : 1); a < 2; a++) {
 					POGEL::LINE(trail[i]+x[a], trail[i+a]+x[a+1], POGEL::COLOR(1,0,0,color)).draw(); // x axis positive
 					POGEL::LINE(trail[i]+y[a], trail[i+a]+y[a+1], POGEL::COLOR(0,1,0,color)).draw(); // y axis positive
 					POGEL::LINE(trail[i]+z[a], trail[i+a]+z[a+1], POGEL::COLOR(0,0,1,color)).draw(); // z axis positive
@@ -386,6 +388,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 							glDisable(GL_LINE_STIPPLE);
 						#endif /* SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL */
 					#endif /* SOLID_DISPLAY_NEGATIVE_ROTATION_TRAIL */
+					
 				}
 			#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		}
@@ -407,8 +410,8 @@ void POGEL::PHYSICS::SOLID::increment() {
 		translate(direction*r);
 	}
 	else {
-		rotate(spin*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
-		translate(direction*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1));
+		rotate(spin*r);
+		translate(direction*r);
 	}
 	//force = POGEL::VECTOR();
 	stepstaken++;
@@ -416,8 +419,7 @@ void POGEL::PHYSICS::SOLID::increment() {
 
 void POGEL::PHYSICS::SOLID::clearForce() { force = POGEL::VECTOR(); };
 void POGEL::PHYSICS::SOLID::addForce() {
-	if(!this->hasOption(PHYSICS_SOLID_STATIONARY))
-		direction += force;
+	if(!this->hasOption(PHYSICS_SOLID_STATIONARY)) direction += force;
 };
 
 void POGEL::PHYSICS::SOLID::step() {

@@ -31,11 +31,11 @@ class TRIANGLE {
 			{texture=NULL;}
 		TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c)
 			{load(POGEL::VERTEX(a),POGEL::VERTEX(b),POGEL::VERTEX(c),NULL,0);}
-		TRIANGLE(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop) 
+		TRIANGLE(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop)
 			{load(a,b,c,tex,prop);}
 		TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c,POGEL::IMAGE *tex,unsigned int prop)
 			{load(POGEL::VERTEX(a),POGEL::VERTEX(b),POGEL::VERTEX(c),tex,prop);}
-		TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop) 
+		TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop)
 			{load(verts,tex,prop);}
 		
 		void load(POGEL::VERTEX,POGEL::VERTEX,POGEL::VERTEX,POGEL::IMAGE*,unsigned int);

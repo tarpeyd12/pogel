@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define frameskip 25
+#define frameskip 100
 
 #define numobjs 10
 #define sps 5.0
@@ -49,11 +49,12 @@ void oob(SOLID_FNC_DEF) {
 int cnt = 0;
 
 void callb(SOLID_CALLBACK_FNC_DEF) {
+	
 	cnt++;
 	obj->moveto(POGEL::POINT(0,0,0));
 	
-	float spacev=180.0f/8;
-	float spaceh=360.0f/16;
+	float spacev=180.0f/128;
+	float spaceh=360.0f/256;
 	float a=0, b=0;
 	unsigned long cur_vert = 0;
 	bool bgr = false;
@@ -68,9 +69,9 @@ void callb(SOLID_CALLBACK_FNC_DEF) {
 	/*camrot.x = b;
 	camrot.y = a;*/
 	if(!bgr) {
-		cnt=0; /*obj->setstepstaken(0);
-		obj->direction = POGEL::VECTOR(0,1,0).normal()*.075;*/
-		go = false;
+		cnt=0; //obj->setstepstaken(0);
+		obj->direction = POGEL::VECTOR(0,1,0).normal()*.075;
+		//go = false;
 		POGEL::addproperty(POGEL_TRAILS);
 	}
 	
@@ -82,7 +83,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 {
         glEnable(GL_TEXTURE_2D);                                // Enable Texture Mapping
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);   // Clear The Background Color To Black 
-        glClearDepth(500.0);                                    // Enables Clearing Of The Depth Buffer
+        glClearDepth(100.0);                                    // Enables Clearing Of The Depth Buffer
         glDepthFunc(GL_LESS);                                   // The Type Of Depth Test To Do
         glEnable(GL_DEPTH_TEST);                                // Enables Depth Testing
         glShadeModel(GL_SMOOTH);                                // Enables Smooth Color Shading
@@ -94,7 +95,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();                               // Reset The Projection Matrix
         
-        gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,500.0f);       // Calculate The Aspect Ratio Of The Window
+        gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);       // Calculate The Aspect Ratio Of The Window
     
         glMatrixMode(GL_MODELVIEW);
         glEnable(GL_LIGHT1);
@@ -107,7 +108,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         sim.boundingskips = 0;
         
-        //srand((unsigned)time(NULL));
+        srand((unsigned)time(NULL));
         //srand(1234567890);
         x = POGEL::FloatRand(2)-1; y = POGEL::FloatRand(2)-1; z = POGEL::FloatRand(2)-1;
         
@@ -121,7 +122,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         for(int i=0;i<numobjs;i++) {
                 obj[i].setname(POGEL::string("sphere%d",i));
                 float sz = POGEL::FloatRand(.9)+.1;
-                addSphere(&obj[i],8,16, sz, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+                addSphere(&obj[i],16,16, sz, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 
                 obj[i].setproperties(0/*OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
                 obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,1.0f));
@@ -170,8 +171,8 @@ void InitGL(int Width, int Height)              // We call this right after our 
         ball = new POGEL::PHYSICS::SOLID(sp, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 1, 1, 1, 1, 1, false, 0), 2|PHYSICS_SOLID_CONVEX|16);
         ball->behavior.bounce = 1.0f;
         ball->behavior.friction = 1.0f;
-        ball->behavior.mass = 2000.0;
-        ball->resizetrail(50000);
+        ball->behavior.mass = 5000.0;
+        ball->resizetrail(2500);
         
         ball->moveto(POGEL::POINT(0,0,0));
 		ball->direction = POGEL::VECTOR(0,1,0).normal()*.075;

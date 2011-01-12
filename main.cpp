@@ -21,7 +21,7 @@
 int main(int argc, char **argv) 
 {  
     /* Initialize GLUT state - glut will take any command line arguments that pertain to it or 
-       X Windows - look at its documentation at http://reality.sgi.com/mjk/spec3/spec3.html */  
+       X Windows - look at its documentation at http://reality.sgi.com/mjk/spec3/spec3.html */
     glutInit(&argc, argv);
     POGEL::getcmd(argc,argv);
 
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
      RGBA color
      Alpha components supported 
      Depth buffer */  
-    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH | GLUT_MULTISAMPLE);  
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);  
 
     /* get a 640 x 480 window */
     glutInitWindowSize(800, 600);

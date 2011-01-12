@@ -323,6 +323,7 @@ POGEL::QUAT POGEL::MATRIX::toquat() {
 	}
 };
 
+//TODO: make this work
 void POGEL::MATRIX::fromaxis(POGEL::VECTOR axis, float angle) {
 	float u = axis.x, v = axis.y, w = axis.z;
 	
