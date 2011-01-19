@@ -66,6 +66,8 @@ class POGEL::PHYSICS::DYNAMICS {
 		
 		virtual void draw();
 		
+		void drawGravityGrid(float, float, POGEL::POINT, unsigned int);
+		
 		//void build();
 		
 		friend class POGEL::PHYSICS::SIMULATION;

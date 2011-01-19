@@ -145,8 +145,7 @@ POGEL::OBJECT::~OBJECT() {
 	
 	char *n = getancestoryhash();
 	POGEL::message("deconstructing %s\n", n);
-	if(n!=getname())
-		free(n);
+	if(n!=getname()) free(n);
 	
 	if(face!=NULL) {
 		delete[] face;
@@ -154,14 +153,14 @@ POGEL::OBJECT::~OBJECT() {
 	}
 	
 	if(children != NULL) {
-		//killchildren();
-		if(numchildren > 0 && children != NULL)
+		killchildren();
+		/*if(numchildren > 0 && children != NULL)
 			for(unsigned long i=0;i<numchildren;i++) {
-				//children[i]->killchildren();
+				children[i]->killchildren();
 				delete children[i];
 				children[i]=NULL;
 			}
-		delete[] children;
+		delete[] children;*/
 		children=NULL;
 	}
 	
@@ -218,10 +217,7 @@ unsigned long POGEL::OBJECT::addtriangle(POGEL::TRIANGLE tri) {
 		return (unsigned long)NULL;
 	if( numfaces >= triangle_allocation_total )
 		addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
-	//else if(numfaces%OBJECT_TRIAGLE_ALLOCATION_SKIP == 0)
-		//addtrianglespace(OBJECT_TRIAGLE_ALLOCATION_SKIP);
-	//else
-		face[numfaces]=tri;
+	face[numfaces]=tri;
 	numfaces++;
 	return numfaces-1;	
 };
@@ -230,17 +226,14 @@ void POGEL::OBJECT::addtriangles(POGEL::TRIANGLE *tri, unsigned long num) {
 	if(tri == (POGEL::TRIANGLE*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_ARRAY_POINTER_RETNUM,"%s to Triangle(s).",POGEL_FATALITY_NULL_ARRAY_POINTER_STRING);
 	addtrianglespace(num);
-	for(unsigned long i=0;i<num;i++) {
+	for(unsigned long i=0;i<num;i++)
 		addtriangle(tri[i]);
-	}
 };
 
 void POGEL::OBJECT::addtrianglespace(unsigned long num) {
 	POGEL::TRIANGLE *tmp = new POGEL::TRIANGLE[numfaces+num];
-	for(unsigned long i = 0; i < numfaces; i++)
-		tmp[i] = face[i];
-	if(face)
-		delete[] face;
+	for(unsigned long i = 0; i < numfaces; i++) tmp[i] = face[i];
+	if(face) delete[] face;
 	face = NULL;
 	face = tmp;
 	triangle_allocation_total += num;
@@ -249,17 +242,13 @@ void POGEL::OBJECT::addtrianglespace(unsigned long num) {
 unsigned long POGEL::OBJECT::addobject(POGEL::OBJECT *obj) {
 	if(obj == (POGEL::OBJECT*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM,"%s to object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING);
-	//POGEL::OBJECT **tmp=(POGEL::OBJECT**)malloc(sizeof(POGEL::OBJECT*)*(numchildren+1));
 	POGEL::OBJECT **tmp = new POGEL::OBJECT*[numchildren+1];
 	for(unsigned long i=0;i<numchildren;i++) {
-		//tmp[i]=(POGEL::OBJECT*)malloc(sizeof(POGEL::OBJECT)*1);
 		tmp[i]=children[i];
+		children[i] = NULL;
 	}
 	tmp[numchildren]=obj;
 	tmp[numchildren]->parent=this;
-	/*for(int i=0;i<numchildren;i++) {
-		free(children[i]);
-	}*/
 	
 	delete[] children;
 	children=tmp;
@@ -391,7 +380,15 @@ void POGEL::OBJECT::build() {
 void POGEL::OBJECT::draw() {
 	if(visable) {
 		if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
-			//rotation = POGEL::POINT();
+			matrix.get();
+			POGEL::POINT cam_pos = matrix.getposition()*-1;
+			matrix.invert();
+			matrix.transformPoint(&cam_pos);
+			float radius = cam_pos.distance(POGEL::POINT());
+			
+			rotation.x = POGEL::RadiansToDegrees(acos(cam_pos.y/radius))+90;
+			rotation.y = -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180;
+			rotation.z = 0;
 		}
 		unsigned long i;
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
