@@ -9,7 +9,8 @@ POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 };
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
-	POGEL::PHYSICS::SOLID **tmp=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*(numobjects+1));
+	//POGEL::PHYSICS::SOLID **tmp=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*(numobjects+1));
+	POGEL::PHYSICS::SOLID **tmp = new POGEL::PHYSICS::SOLID*[numobjects+1];
 	for(unsigned long i=0;i<numobjects;i++)
 		tmp[i]=objects[i];
 	
@@ -53,9 +54,7 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	
 	if(hasproperty(DYNAMICS_HAS_MAGNETIC_OBJECT))
 	for(unsigned long a=0;a<numobjects;a++) {
-		
 		//pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
-		
 		// the magnetic charge attraction
 		if(obj != objects[a] && obj->behavior.magnetic && objects[a]->behavior.magnetic) {
 			//pull += POGEL::VECTOR(obj->position,objects[a]->position).normal()*(-obj->behavior.charge-objects[a]->behavior.charge);
@@ -72,8 +71,6 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 			
 			else
 				{}
-			
-			
 		}
 	}
 	
@@ -82,11 +79,6 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	pull += gravity*obj->behavior.mass;
 	pull += objectmasses.getpull(obj->position, obj->behavior.mass);
 	return pull/PARTICLE_SLOWDOWN*(POGEL::hasproperty(POGEL_TIMEBASIS) ? PARTICLE_SLOWDOWN_RATIO : 1);
-	/*return 	( \
-			gusts.getpull(obj->position, obj->behavior.mass) + \
-			singularities.getpull(obj->position, obj->behavior.mass) + \
-			gravity*obj->behavior.mass \
-			)/PARTICLE_SLOWDOWN;*/
 };
 
 void POGEL::PHYSICS::DYNAMICS::increment() {
@@ -106,5 +98,22 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 void POGEL::PHYSICS::DYNAMICS::draw() {
 	for(unsigned long i=0;i<numobjects;i++)
 		objects[i]->draw();
+};
+
+void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POINT center, unsigned int grd) {
+	unsigned long numpoints = grd*grd;
+	for(unsigned long i = 0; i < numpoints; i++) {
+		POGEL::POINT p(
+			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
+			((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
+			((float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f)*0
+		);
+		p*=POGEL::POINT(0,1,1);
+		p+=center;
+		POGEL::VECTOR v = objectmasses.getpull(p, mass);
+		POGEL::COLOR c(1,1,1,v.getdistance()*.75+.25);
+		(p+(v.getdistance()>1 ? v.normal() : v)).draw(3, c);
+		//POGEL::LINE(p, p+(v.getdistance()>1 ? v.normal() : v), c).draw();
+	}
 };
 

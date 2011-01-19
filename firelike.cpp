@@ -114,7 +114,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			
 			//addCube(tmp, size,size,size, defaultimg, 1,1,0,POGEL::MATRIX());
 			addSphere(tmp,2,4, size/2.0f, defaultimg,1,1, 0 /*| TRIANGLE_VERTEX_NORMALS*/, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
-			//tmp->setproperties(8);
+			tmp->setproperties(8|OBJECT_ROTATE_TOCAMERA);
 			//tmp->addobject(&obj);
 			
 			tmp->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 1.0f, 2.0f, 0.0f, 0.0f, 0.0f, false, (cosm%2==0?-1.0f:1.0f));

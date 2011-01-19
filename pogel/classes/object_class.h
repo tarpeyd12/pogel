@@ -142,6 +142,8 @@ class OBJECT {
 		virtual void create() {}
 		virtual void destroy() {}
 		
+		//virtual void grow() {}
+		
 		friend bool POGEL::PHYSICS::solid_collision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*,POGEL::POINT*,POGEL::VECTOR*,POGEL::VECTOR*,float*);
 };
 }

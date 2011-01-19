@@ -195,11 +195,6 @@ void DrawGLScene()
 	glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);*/
 	
 	obj->draw();
-	if(frames%250 < itterations*10 && frames%10 == 0 && (go || keypres) || keys['g']) {
-		//if(keypres) keypres = false;
-		keys['g'] = false;
-		obj->grow();
-	}
 	
 	if(frames%250 == 0 && frames >= 1 && (go || keypres) || keys['r']) {
 		keys['r'] = false;
@@ -210,6 +205,12 @@ void DrawGLScene()
 		obj->setname("Tree");
 		//obj->create();
 		//obj->build();
+	}
+	
+	if(frames%250 < itterations*10 && frames%10 == 0 && (go || keypres) || keys['g']) {
+		//if(keypres) keypres = false;
+		keys['g'] = false;
+		obj->grow();
 	}
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
