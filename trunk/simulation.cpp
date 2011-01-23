@@ -17,8 +17,8 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs (8*8*8)
-#define grd 8
+#define numobjs (6*6*6)
+#define grd 6
 #define sps 1.0f/2
 #define size 1.0f/20
 OBJECT obj[numobjs];
@@ -40,7 +40,7 @@ GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[]= { 2.0f, 2.0f, 2.0f, 1.0f };
 GLfloat LightPosition[]= { 100.0f, 100.0f, 100.0f, 1.0f };
 
-bool dimlock = true;
+bool dimlock = !true;
 
 void oob(SOLID_FNC_DEF) {
         /*if(obj->position.distance(POGEL::POINT()) > border->bounding.maxdistance + 1) {
@@ -97,8 +97,8 @@ void oob(SOLID_FNC_DEF) {
         }
         //obj->setstepstaken(obj->getstepstaken()-1);
        	if(dimlock) {
-        //obj->position.z = 0.0;
-        //obj->direction.z = 0.0f;
+        obj->position.z = 0.0;
+        obj->direction.z = 0.0f;
         }
 };
 
@@ -115,6 +115,18 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
         glHint(GL_POLYGON_SMOOTH,GL_NICEST);
         glEnable(GL_POLYGON_SMOOTH);
+        
+        glColor4f(1.0f,1.0f,1.0f,0.5f);			// Full Brightness, 50% Alpha ( NEW )
+	glBlendFunc(GL_SRC_ALPHA,GL_ONE);
+	glEnable(GL_BLEND);
+	glDisable(GL_DEPTH_TEST);
+	
+	//glShadeModel(GL_SMOOTH);
+	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);					// Set Line Antialiasing
+	glEnable(GL_BLEND);							// Enable Blending
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_LINE_SMOOTH);
+	glDisable(GL_DEPTH_TEST);
         
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();                               // Reset The Projection Matrix
@@ -168,9 +180,15 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 obj[i].moveto(POINT(
 						((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
-						(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f+.1 /* - (10.0f-(sps/2.0f)), \*/
+						(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f /* - (10.0f-(sps/2.0f)), \*/
                 ));
                 //obj[i].moveto(POINT(POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0,POGEL::FloatRand(sps)-sps/2.0)/0.5f * POINT(1.0f,1.0f,0.0f));
+                
+                if(dimlock) {
+		        obj[i].position.z = 0.0;
+		        obj[i].direction.z = 0.0f;
+		        }
+                
                 //obj[i].translate(POGEL::VECTOR(1.0f,0.0f,0.0f)*(POGEL::FloatRand(2.0f)-1.0f));
                 //obj[i].moveto(m.transformPoint(POINT(0.0f, ((float)i+1)*sps + (sqrt(10000000000000.0)/1000000.0), 0.0f)));
                 //obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
@@ -236,7 +254,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        addSphere(ring,16,16, 10.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(ring,16,16, 5.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
@@ -262,7 +280,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
         sim.addSolid(border);
         
-        border->visable = true;
+        border->visable = !true;
         
         
         POGEL::OBJECT* sp = new POGEL::OBJECT();
@@ -322,7 +340,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 //unsigned long frames=0;
 
 bool keypres, go = true;
-POGEL::POINT camrot(0,0,0), campos;
+POGEL::POINT camrot(0,90,0), campos;
 bool p = false;
 /* The main drawing function. */
 void DrawGLScene()
@@ -416,6 +434,8 @@ void DrawGLScene()
                 
         if(frames%frameskip == 0) {
                 sim.draw();
+                if(!keys['m'])
+	                sim.drawGravityGrid(10000, .75, POGEL::POINT(0,0,0), 10);
                 //unsigned int op = POGEL::getproperties();
                 //POGEL::addproperty(POGEL_BOUNDING);
                 //border->bounding.draw(POGEL::POINT());

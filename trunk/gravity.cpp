@@ -17,8 +17,8 @@ using namespace POGEL;
 
 #define frameskip 1
 
-#define numobjs (10*10)
-#define grd 10
+#define numobjs (6*6*6)
+#define grd 6
 #define sps 1.0f/2
 #define size 1.0f/20
 OBJECT obj[numobjs];
@@ -40,7 +40,7 @@ GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[]= { 2.0f, 2.0f, 2.0f, 1.0f };
 GLfloat LightPosition[]= { 100.0f, 100.0f, 100.0f, 1.0f };
 
-bool dimlock = true;
+bool dimlock = !true;
 
 void oob(SOLID_FNC_DEF) {
         /*if(obj->position.distance(POGEL::POINT()) > border->bounding.maxdistance + 1) {
@@ -421,8 +421,8 @@ void DrawGLScene()
                 
         if(frames%frameskip == 0) {
                 sim.draw();
-                if(!keys['m'])
-	                sim.drawGravityGrid(100000, .2, POGEL::POINT(0,0,-1), 50);
+                //if(!keys['m'])
+	                //sim.drawGravityGrid(100000, .4, POGEL::POINT(0,0,-1), 25);
                 //unsigned int op = POGEL::getproperties();
                 //POGEL::addproperty(POGEL_BOUNDING);
                 //border->bounding.draw(POGEL::POINT());
