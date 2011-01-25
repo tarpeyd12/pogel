@@ -115,7 +115,7 @@ void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POI
 		if(v.getdistance() > sps*2) v = v.normal()*sps*2;
 		POGEL::COLOR c(0,.5,1,v.getdistance());
 		POGEL::POINT pv = p+v;
-		pv.draw(5, c);
+		//pv.draw(5, c);
 		if( imgrd != 0 && i/(grd*grd) != 0 && (i/grd)%grd != 0 ) {
 			POGEL::LINE(prev_pv, pv, 2, c).draw();
 			POGEL::LINE(prev_pv_a[imgrd], pv, 2, c).draw();

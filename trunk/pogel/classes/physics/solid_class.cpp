@@ -325,9 +325,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 	refbounding.draw(position);
 	
 	if(POGEL::hasproperty(POGEL_LABEL)) {
-		POGEL::LINE( position, 
+		/*POGEL::LINE( position, 
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
-			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
+			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();*/
 		if(behavior.magnetic && behavior.charge != 0.0f) {
 			if(behavior.charge < 0.0f)	position.draw(3, POGEL::COLOR( 1,.5,.2,1));
 			else						position.draw(3, POGEL::COLOR(.5, 1,.2,1));
