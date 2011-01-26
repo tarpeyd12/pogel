@@ -36,6 +36,8 @@ POGEL::PHYSICS::SIMULATION sim;
 IMAGE *earth;
 IMAGE *defaultimg;
 
+POGEL::VIEW v;
+
 #define rndrnge 2.0f
 
 float x = POGEL::FloatRand(2)-1, y = POGEL::FloatRand(2)-1, z = POGEL::FloatRand(2)-1;
@@ -50,11 +52,14 @@ bool keypres, go = true;
 
 unsigned long int updts = 0;
 
+bool sc = false;
+
 void* sim_runner(void* arg) {
 	for(;;) {
 		if(go || keypres) {
 			keypres = false;
 			sim.increment();
+			sc = true;
 			printf("updates = %d\n", updts++);
 		}
 	}
@@ -111,7 +116,10 @@ void oob(SOLID_FNC_DEF) {
         }
         if(keys['l'])
         	obj->spin=POGEL::VECTOR(1,1,1)/0.010f * VECTOR(0,0,1);
-        if(keys['L']) {
+        if(keys['L']) {POGEL::VIEW v;
+        v.setretscreensize(&screenx, &screeny);
+        v.settexsize(800, 600);
+		v.save(1, POGEL::string("screens/sc_%04u.bmp", frames));
         	obj->spin = POGEL::VECTOR();
         	obj->rotation = POGEL::POINT();
         }
@@ -129,7 +137,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);   // Clear The Background Color To Black 
         glClearDepth(500.0);                                    // Enables Clearing Of The Depth Buffer
         glDepthFunc(GL_LESS);                                   // The Type Of Depth Test To Do
-        glEnable(GL_DEPTH_TEST);                                // Enables Depth Testing
+        glEnable(GL_DEPTH_TEST);                                // Enable Depth Testing
         glShadeModel(GL_SMOOTH);                                // Enables Smooth Color Shading
         //glShadeModel(GL_FLAT);                                // Enables flat Color Shading
         glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
@@ -190,7 +198,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
-                addDisk(&obj[i], 16, 1, size/2.0f, 0.0f, defaultimg,32, 32, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+                addDisk(&obj[i], 168, 1, size/2.0f, 0.0f, defaultimg,32+12, 32+12, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
                 //addSphere(&obj[i],4,8, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
                 //else if(i%2==0)
@@ -365,6 +373,9 @@ void InitGL(int Width, int Height)              // We call this right after our 
        	sim.increment();
        	keys['/']=false;*/
        	
+       	v.setretscreensize(&screenx, &screeny);
+   	    v.settexsize(800, 600);
+       	
        	simulator_runner = new THREAD(sim_runner);
        	simulator_runner->startThread();
 }
@@ -479,7 +490,7 @@ void DrawGLScene()
                 }
                 else if(go) {
                 //if(POGEL::GetTimePassed() < 60.0f)
-                        //sim.increment();
+                       // sim.increment();
                 }
         
         if(keys['t']) {
@@ -536,6 +547,11 @@ void DrawGLScene()
         //sim.gravity.print();
         //sphs[0]->position.print();
         //POGEL::message("duration = %f\n", POGEL::duration);
+        
+        if(sc) {
+        	sc = false;
+			v.save(1, POGEL::string("screens/sc_%04u.bmp", updts));
+		}
         
         //message("\n");
         border->bounding.draw(POGEL::POINT());
