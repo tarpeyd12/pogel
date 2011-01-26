@@ -3,6 +3,8 @@
 
 /* the POGEL::VIEW class is an adaptation of the render to texture functions here:
  *  http://nehe.gamedev.net/data/lessons/lesson.asp?lesson=36
+ * also contains code from the Simple OpenGL Image Library:
+ *  http://www.lonesock.net/soil.html
  */
 
 namespace POGEL {
@@ -13,7 +15,8 @@ class VIEW;
 #include "misc_class.h"
 #include "image_class.h"
 
-//#define 
+#define			VIEW_SAVE_BMP		1
+#define			VIEW_SAVE_TGA		2
 
 namespace POGEL {
 class VIEW : public IMAGE {
@@ -70,6 +73,8 @@ class VIEW : public IMAGE {
 		
 		void startrender();
 		GLuint endrender();
+		
+		void save(unsigned int, const char*);
 		
 		PROPERTIES_METHODS;
 		
