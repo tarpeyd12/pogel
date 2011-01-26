@@ -133,17 +133,17 @@ void addDisk(POGEL::OBJECT *obj, float divisions, float rings, float outer_radiu
 										imgscaleh*((a-inner_radius)+rings)/(outer_radius-inner_radius));
 			}
 			else {
-				verts[0].set_tex_values(imgscaleh*(0.5f+((a)*sin((b)/180.0f*PI))/2.0f), \
-										imgscalev*(0.5f+((a)*cos((b)/180.0f*PI))/2.0f));
+				verts[0].set_tex_values(0.5f+imgscaleh*(0.5f+((a)*sin((b)/180.0f*PI))/2.0f), \
+										0.5f+imgscalev*(0.5f+((a)*cos((b)/180.0f*PI))/2.0f));
 				
-				verts[1].set_tex_values(imgscaleh*(0.5f+((a)*sin((b+divisions)/180.0f*PI))/2.0f), \
-										imgscalev*(0.5f+((a)*cos((b+divisions)/180.0f*PI))/2.0f));
+				verts[1].set_tex_values(0.5f+imgscaleh*(0.5f+((a)*sin((b+divisions)/180.0f*PI))/2.0f), \
+										0.5f+imgscalev*(0.5f+((a)*cos((b+divisions)/180.0f*PI))/2.0f));
 				
-				verts[2].set_tex_values(imgscaleh*(0.5f+((a+rings)*sin((b)/180.0f*PI))/2.0f), \
-										imgscalev*(0.5f+((a+rings)*cos((b)/180.0f*PI))/2.0f));
+				verts[2].set_tex_values(0.5f+imgscaleh*(0.5f+((a+rings)*sin((b)/180.0f*PI))/2.0f), \
+										0.5f+imgscalev*(0.5f+((a+rings)*cos((b)/180.0f*PI))/2.0f));
 				
-				verts[3].set_tex_values(imgscaleh*(0.5f+((a+rings)*sin((b+divisions)/180.0f*PI))/2.0f), \
-										imgscalev*(0.5f+((a+rings)*cos((b+divisions)/180.0f*PI))/2.0f));
+				verts[3].set_tex_values(0.5f+imgscaleh*(0.5f+((a+rings)*sin((b+divisions)/180.0f*PI))/2.0f), \
+										0.5f+imgscalev*(0.5f+((a+rings)*cos((b+divisions)/180.0f*PI))/2.0f));
 			}
 			for(int i=0;i<4;i++) {
 				mat.transformVertex(&verts[i]);
