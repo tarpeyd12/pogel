@@ -23,7 +23,7 @@ class OBJECT;
 #define			OBJECT_SORT_TRIANGLES		64
 #define			OBJECT_ROTATE_TOCAMERA		128
 
-//#define			OBJECT_USE_OPNEGL_MATRIX_RECURSION
+#define			OBJECT_USE_OPNEGL_MATRIX_RECURSION
 
 #define			OBJECT_TRIAGLE_ALLOCATION_SKIP	1000
 
@@ -122,6 +122,10 @@ class OBJECT {
 		
 		POGEL::TRIANGLE gettriangle(unsigned long i) {
 			return face[i];
+		}
+		
+		void settriangle(unsigned long i, POGEL::TRIANGLE t) {
+			face[i] = t;
 		}
 		
 		void increment() {
