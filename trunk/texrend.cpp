@@ -118,11 +118,10 @@ void DrawGLScene()
 	POGEL::PrintFps();
 	
 	obj[1].draw();
+	if(frames <= 1) view->save(1, "test.bmp");
 	if(go)
 		obj[1].scroll_all_tex_values(0.004f,0.005f);
 	
-	if(frames <= 1)
-		view->save(1, "test.bmp");
 	
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();

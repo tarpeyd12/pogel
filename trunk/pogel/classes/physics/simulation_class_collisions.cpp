@@ -76,7 +76,7 @@ bool POGEL::PHYSICS::SIMULATION::processcollision(POGEL::PHYSICS::SOLID* obj1, P
 	return processGENERAL_GENERAL(obj1, obj2);
 };
 
-// TODO: amek this work:
+// TODO: maek this work:
 /* *************************** Does not work ******************************** */
 bool POGEL::PHYSICS::SIMULATION::processCONVEX_CONVEX(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
 	POGEL::POINT p1, p2, tmp, tmp1, tmp2, obj1_ep, obj2_ep;

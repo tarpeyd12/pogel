@@ -82,10 +82,9 @@ void keyPressed(unsigned char key, int x, int y)
 	
 	if(key == ' ')
 		keypres = true;
-	else keypres = false;
+	//else keypres = false;
 	
-	if(key == '\r')
-		go = !go;
+	if(key == '\r') go = !go;
 	
 	
 	if(key == '0') {

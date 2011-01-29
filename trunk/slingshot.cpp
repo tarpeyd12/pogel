@@ -46,7 +46,7 @@ void oob(SOLID_FNC_DEF) {
     //obj->direction.z = 0.0f;
 };
 
-int cnt = 0;
+unsigned int cnt = 0;
 
 void callb(SOLID_CALLBACK_FNC_DEF) {
 	

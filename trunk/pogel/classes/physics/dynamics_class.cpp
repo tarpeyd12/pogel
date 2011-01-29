@@ -91,8 +91,9 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 			objects[a]->spin /= airslowdown;
 			objects[a]->direction /= airslowdown;
 		}
-		objects[a]->step();
+		//objects[a]->step();
 	}
+	for(unsigned long a=0;a<numobjects;a++) objects[a]->step();
 };
 
 void POGEL::PHYSICS::DYNAMICS::draw() {

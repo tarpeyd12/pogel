@@ -124,6 +124,14 @@ class OBJECT {
 			return face[i];
 		}
 		
+		POGEL::TRIANGLE* gettrianglelist() {
+			return face;
+		}
+		
+		void copytriangles(POGEL::OBJECT* o) {
+			this->addtriangles(o->gettrianglelist(), o->getnumfaces());
+		}
+		
 		void settriangle(unsigned long i, POGEL::TRIANGLE t) {
 			face[i] = t;
 		}
