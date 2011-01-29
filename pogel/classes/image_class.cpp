@@ -9,7 +9,7 @@ POGEL::IMAGE::IMAGE() {
 	base=(GLuint)NULL;
 	sizeX=0;
 	sizeY=0;
-	setfilter(IMAGE_NEAREST);
+	setfilter(IMAGE_LINEAR);
 };
 
 POGEL::IMAGE::IMAGE(const char *filename) {

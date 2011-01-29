@@ -14,10 +14,18 @@ class SIMULATION;
 
 #define				BUPMAX						10
 
+/*class coll {
+	POGEL::POINT p;
+	POGEL::VECTOR v[2];
+	unsigned long obj[2];
+};*/
+
 class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 	private:
 		unsigned int properties; // the mushed properties
 		unsigned long stepstaken;
+		
+		//coll collisionindex[numobjects][numobjects];
 	public:
 		float precision;
 		bool deactivation;

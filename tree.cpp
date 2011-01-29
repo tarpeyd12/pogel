@@ -196,7 +196,7 @@ void DrawGLScene()
 	
 	obj->draw();
 	
-	if(frames%250 == 0 && frames >= 1 && (go || keypres) || keys['r']) {
+	if((frames%250 == 0 && frames >= 1 && (go || keypres)) || keys['r']) {
 		keys['r'] = false;
 		if(keypres) keypres = false;
 		//obj->killchildren();
@@ -207,7 +207,7 @@ void DrawGLScene()
 		//obj->build();
 	}
 	
-	if(frames%250 < itterations*10 && frames%10 == 0 && (go || keypres) || keys['g']) {
+	if((frames%250 < itterations*10 && frames%10 == 0 && (go || keypres)) || keys['g']) {
 		//if(keypres) keypres = false;
 		keys['g'] = false;
 		obj->grow();

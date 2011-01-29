@@ -9,13 +9,6 @@
 
 #include "view_class.h"
 
-typedef unsigned char uint8;
-typedef unsigned short uint16;
-typedef   signed short  int16;
-typedef unsigned int   uint32;
-typedef   signed int    int32;
-typedef unsigned int   uint;
-
 int* POGEL::VIEW::screensizeX;
 int* POGEL::VIEW::screensizeY;
 
@@ -105,7 +98,14 @@ GLuint POGEL::VIEW::endrender() {
 	return base;
 };
 
-// the folowing code is from the Simple Opengl Image Library (SOIL):
+// the folowing code is from the Simple OpenGL Image Library (SOIL):
+
+typedef unsigned char  uint8;
+typedef unsigned short uint16;
+typedef   signed short  int16;
+typedef unsigned int   uint32;
+typedef   signed int    int32;
+typedef unsigned int   uint;
 
 static void write8(FILE *f, int x) { uint8 z = (uint8) x; fwrite(&z,1,1,f); }
 
