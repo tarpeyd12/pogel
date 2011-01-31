@@ -14,7 +14,7 @@
 
 using namespace POGEL;
 
-#define numobjs 11
+#define numobjs 50
 #define numcosms 10
 #define grd 1
 #define sps 0.10f
@@ -81,7 +81,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	srand((unsigned)time(NULL));
 	
 	//earth=new IMAGE("Data/earth.bmp");
-	defaultimg=new IMAGE("Data/lava8.bmp");
+	defaultimg=new IMAGE("Data/particle.bmp");
 	
 	obj.setname("base_object");
 	
@@ -113,7 +113,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			tmp->setname(POGEL::string("object%ld_of_microcosm_%ld", objs, cosm));
 			
 			//addCube(tmp, size,size,size, defaultimg, 1,1,0,POGEL::MATRIX());
-			addSphere(tmp,2,4, size/2.0f, defaultimg,1,1, 0 /*| TRIANGLE_VERTEX_NORMALS*/, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+			//addSphere(tmp,2,4, size/2.0f, defaultimg,1,1, 0 /*| TRIANGLE_VERTEX_NORMALS*/, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+			addDisk(tmp, 6, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
 			tmp->setproperties(8|OBJECT_ROTATE_TOCAMERA);
 			//tmp->addobject(&obj);
 			
@@ -129,12 +130,20 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			
 			tmp->resizetrail(10);
 			
+			for(unsigned int a = 0; a < tmp->getnumfaces(); a++) {
+               	POGEL::TRIANGLE t = tmp->gettriangle(a);
+               	for(int b = 0; b < 3; b++) {
+               		t.vertex[b].color = POGEL::COLOR(1,.5,.2,1);
+               	}
+              	tmp->settriangle(a, t);
+            }
+			
 			tmp->build();
 			
 			sphs[cosm].addSolid(tmp);
 		}
 		//sphs[cosm].addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),sps*20000000000000.0f) );
-		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 9.8f;
+		sphs[cosm].gravity = POGEL::VECTOR(0.0f, 1.0f, 0.0f) * 5.8f;
 		
 		sphs[cosm].setname(POGEL::string("microcosm_%ld", cosm));
 		

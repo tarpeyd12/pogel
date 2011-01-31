@@ -421,7 +421,6 @@ void POGEL::OBJECT::draw() {
 			for(i=0;i<numchildren;i++) {
 				if(POGEL::hasproperty(POGEL_ANCESTORY))
 					POGEL::LINE(POGEL::POINT(), children[i]->position, 1, POGEL::COLOR(0,.5,1,1)).draw();
-				
 				children[i]->draw();
 			}
 		

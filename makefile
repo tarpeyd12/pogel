@@ -6,7 +6,7 @@ CC = g++
 CFLAGS = $(COMPILERFLAGS) $(INCLUDE)
 #LIBRARIES = -lX11 -lXi -lXmu -lglut -lGL -lGLU -lm
 #LIBRARIES = -lX11 -lglut -lGL -lGLU -lm
-LIBRARIES = -lX11 -lglut -lGLU -lGL
+LIBRARIES = -lX11 -lglut -lGLU -lGL -lpthread
 
 EXTENTION = cpp
 OUTPUT = bin/ogl

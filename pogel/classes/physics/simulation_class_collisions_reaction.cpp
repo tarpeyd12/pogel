@@ -12,7 +12,21 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 	
 	//if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 		POGEL::VECTOR vtmp[2];
+		
+		float masses[2];
+		masses[0] = obj1->behavior.mass;
+		masses[1] = obj2->behavior.mass;
+		
+		if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY))
+			obj1->behavior.mass = masses[1];
+		else if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY))
+			obj2->behavior.mass = masses[0];
+		
 		POGEL::PHYSICS::calcInelasticDirections(obj1vect, obj1, obj2, vtmp);
+		
+		obj1->behavior.mass = masses[0];
+		obj2->behavior.mass = masses[1];
+		
 		if(!obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			obj1->direction = vtmp[0];
 			obj2->direction = vtmp[1];

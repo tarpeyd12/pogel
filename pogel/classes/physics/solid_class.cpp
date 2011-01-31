@@ -356,7 +356,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 			
 			if(trail[i].distance(trail[i+1]) > 1) continue;
 			
-			POGEL::LINE(trail[i], trail[i+1], 2, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
+			POGEL::LINE(trail[i], trail[i+1], 1, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
 			
 			#ifdef SOLID_DISPLAY_ROTATION_TRAIL // draw the rotation trail
 				mat[0] = mat[1];
