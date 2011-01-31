@@ -21,8 +21,8 @@ THREAD* simulator_runner;
 
 #define frameskip 1
 
-#define numobjs (10*10*10)
-#define grd 10
+#define numobjs (6*6*6)
+#define grd 6
 #define sps 1.0f/20
 #define size 1.0f/20
 OBJECT obj[numobjs];
@@ -190,7 +190,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //POGEL::removeproperty(POGEL_WIREFRAME);
         
         //POGEL::MATRIX m(POGEL::POINT(), POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0)));
-        
+   		
         //printf("obj = %p\n",&obj);
         for(int i=0;i<numobjs;i++) {
                 
@@ -200,15 +200,14 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
                 if(i == 0)
-                addDisk(&obj[i], 6, 1, size/2.0f, 0.0f, defaultimg,32+12, 32+12, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
-                else //obj[i].addtriangles(obj[0].gettrianglelist(), obj[0].getnumfaces());
-                	obj[i].copytriangles(&obj[0]);
+                addDisk(&obj[i], 16, 1, size/2.0f, 0.0f, defaultimg,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+                else obj[i].copytriangles(&obj[0]);
                 //addSphere(&obj[i],4,8, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
                 //else if(i%2==0)
                 //addCube(&obj[i], size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
                 
-                obj[i].setproperties(OBJECT_ROTATE_TOCAMERA/*OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
+                obj[i].setproperties(OBJECT_ROTATE_TOCAMERA|OBJECT_DRAW_CHILDREN/*OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
                 obj[i].moveto(POINT(
 						((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
@@ -296,7 +295,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        addSphere(ring,16,16, 2.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(ring,16,16, 10.0f, NULL,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
@@ -312,7 +311,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //border->direction = POGEL::VECTOR(0,1,0)/10;
         border->behavior.bounce = 1.0f;
         border->behavior.friction = 0.0f;
-        border->behavior.mass = 25000.0f/5;
+        border->behavior.mass = 0.0f;
         
         border->behavior.magnetic = false;
         border->behavior.charge = -0.01f;
@@ -320,9 +319,9 @@ void InitGL(int Width, int Height)              // We call this right after our 
         border->build();
         //border->visable = false;
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
-        //sim.addSolid(border);
+        sim.addSolid(border);
         
-        border->visable = !true;
+        border->visable = true;
         
         
         POGEL::OBJECT* sp = new POGEL::OBJECT();

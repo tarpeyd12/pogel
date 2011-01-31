@@ -214,7 +214,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOL
 		else
 			unocupyobjs(obj1, obj2, v, -obj1->bounding.maxdistance);
 			
-		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*1;
+		v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0.001 + tmptri.normal*1;
 		v.normalize();
 		reactcollision(obj1, obj2, v, v * -1, tmp_2);
 		return true;
