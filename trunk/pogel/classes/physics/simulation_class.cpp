@@ -26,13 +26,15 @@ void POGEL::PHYSICS::SIMULATION::increment() {
 				objects[a]->napping()
 			) {
 				objects[a]->direction = POGEL::VECTOR();
-				if(!objects[a]->napping())
+				if(!objects[a]->napping()) {
 					objects[a]->forcegetbounding();
-				objects[a]->sleep();
+					objects[a]->sleep();
+				}
 			}
+			//else if(objects[a]->napping()) { }
 			else {
 				objects[a]->direction += getpull(objects[a]);
-				objects[a]->wake();
+				if(objects[a]->napping()) objects[a]->wake();
 			}
 			
 			// TODO: get the air friction to work with timing
