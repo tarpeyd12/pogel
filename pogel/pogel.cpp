@@ -301,7 +301,7 @@ void POGEL::PrintFps() {
 	for (int i = 0; i < Nb; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
 	glEnable(GL_LIGHTING);*/
-	POGEL::message("\nFrame: %u, Fps: %4.1f, Spf: %4.3f, Duration = %0.2fs (%d:%05.2f)\n",
+	POGEL::message("\rFrame: %u, Fps: %4.1f, Spf: %4.3f, Duration = %0.2fs (%d:%05.2f)",
 		POGEL::frames,
 		POGEL::GetFps(),
 		POGEL::GetSecondsPerFrame(),

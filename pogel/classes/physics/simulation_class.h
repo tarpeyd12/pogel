@@ -33,6 +33,10 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 		
 		SIMULATION();
 		
+		void addpulls();
+		void checkcollisions();
+		void stepobjs();
+		
 		void increment();
 		
 		bool processcollision(POGEL::PHYSICS::SOLID*,POGEL::PHYSICS::SOLID*);

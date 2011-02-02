@@ -17,13 +17,13 @@
 
 using namespace POGEL;
 
-THREAD* simulator_runner;
+THREAD *simulator_runner;
 
 #define frameskip 1
 
-#define numobjs (6*6*6)
-#define grd 6
-#define sps 1.0f/2
+#define grd 5
+#define numobjs (grd*grd*grd)
+#define sps 1.0f/20
 #define size 1.0f/20
 OBJECT obj[numobjs];
 POGEL::PHYSICS::SOLID **sphs;
@@ -55,6 +55,8 @@ unsigned long int updts = 0;
 bool sc = false;
 
 void* sim_runner(void* arg) {
+	int i = (int)arg;
+	printf("\nstarting thread %d\n", i);
 	for(;;) {
 		if(keypres) {
 			keypres = false;
@@ -65,7 +67,8 @@ void* sim_runner(void* arg) {
 			sim.increment();
 			updts++;
 		}
-		printf("updates = %ld\n", updts-1);
+		//POGEL::PrintFps();
+		printf("thread %d: updates = %ld\n", i, updts-1);
 	}
 	pthread_exit(NULL);
 };
@@ -201,7 +204,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
                 if(i == 0)
-                addDisk(&obj[i], 6, 1, size/2.0f, 0.0f, particle,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+                addDisk(&obj[i], 8, 1, size/2.0f, 0.0f, particle,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
                 else obj[i].copytriangles(&obj[0]);
                 //addSphere(&obj[i],4,8, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
@@ -236,7 +239,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
                 //obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
                 //obj[i].turnto(POINT());
-                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 5000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
+                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 500.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
                 //sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
                 //sphs[i]->position.print();
                 //sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
@@ -322,7 +325,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
         sim.addSolid(border);
         
-        border->visable = true;
+        border->visable = !true;
         
         
         POGEL::OBJECT* sp = new POGEL::OBJECT();
@@ -350,17 +353,17 @@ void InitGL(int Width, int Height)              // We call this right after our 
         POGEL::OBJECT* sq = new POGEL::OBJECT();
         sq->setname("box");
         //addSphere(sq,10,10, 2.75f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
-        addCube(sq, 1,1,1, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
+        addCube(sq, size,size,size, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
         sq->setproperties(0);
-        sq->moveto(POGEL::POINT(5.0f,-5.0f,0.0f)*0);
+        sq->moveto(POGEL::POINT(5.0f,-5.0f,0.0f));
         sq->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0))*0);
         //sq->turnto(POGEL::POINT(0,0,0));
         sq->build();
         box = new POGEL::PHYSICS::SOLID(sq, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 0, 1, 1, 1, 1, false, 0), 2|PHYSICS_SOLID_CONVEX|0);
-        box->spin = POGEL::VECTOR(POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1)*2;
+        //box->spin = POGEL::VECTOR(POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1,POGEL::FloatRand(2)-1)*2;
         box->behavior.bounce = 1.0f;
         box->behavior.friction = 1.0f;
-        box->behavior.mass = 1.0f;
+        box->behavior.mass = 5000.0f;
         box->behavior.magnetic = false;
         box->behavior.charge = 150.0f;
         box->resizetrail(1000);
