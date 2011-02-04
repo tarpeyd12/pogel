@@ -2,6 +2,12 @@
 #define _POGEL_INTERNALS_H
 
 #include <time.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <iostream>
+#include <string>
 
 #define		PROPERTIES_METHODS		unsigned int getproperties() {return properties;} \
 									void setproperties(unsigned int prop) {properties=prop;} \

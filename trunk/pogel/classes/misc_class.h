@@ -22,6 +22,14 @@ class COLOR {
 		
 		/*POGEL::COLOR& operator=(const POGEL::COLOR& c)
 			{ r = c.r; g = c.g; b = c.b; return *this; }*/
+		
+		std::string toString()
+		{
+			char *sr=POGEL::string("%0.27f",r), *sg=POGEL::string("%0.27f",g), *sb=POGEL::string("%0.27f",b), *sa=POGEL::string("%0.72f",a);
+			std::string s = "{["+std::string(sr)+"],["+std::string(sg)+"],["+std::string(sb)+"],["+std::string(sa)+"]}";
+			free(sr); free(sg); free(sb); free(sa);
+			return s;
+		}
 };
 }
 

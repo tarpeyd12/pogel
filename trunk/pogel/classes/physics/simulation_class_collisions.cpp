@@ -199,7 +199,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOL
 	if(obj2->position.distance(tmp_2) > obj2->position.distance(obj1->position))//-obj1->bounding.maxdistance)
 	if(tmp_2 == obj2->position || tmptri.isinfront(obj2->position) == tmptri.isinfront(obj1->position)) {
 		POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
-		v = obj1->direction.normal() - obj2->direction.normal(); // possibly a - opperation instead of a +
+		v = obj1->direction.normal() - obj2->direction.normal();
 		if(v.getdistance() == 0.0f) v = POGEL::VECTOR(obj2->position, tmp_2);//obj1->position-obj2->position;
 		d = (obj1->bounding.maxdistance + tmp_2.distance(obj2->position)) - obj1->position.distance(obj2->position);
 		unocupyobjs(obj1,obj2,v,d);

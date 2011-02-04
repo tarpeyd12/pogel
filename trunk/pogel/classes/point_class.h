@@ -29,6 +29,13 @@ class POINT {
 		
 		void print()
 			{ POGEL::message(" %7.3f, %7.3f, %7.3f", x, y, z); }
+		
+		std::string toString() {
+			char *sx=POGEL::string("%0.27f",x), *sy=POGEL::string("%0.27f",y), *sz=POGEL::string("%0.27f",z);
+			std::string s = "{["+std::string(sx)+"],["+std::string(sy)+"],["+std::string(sz)+"]}";
+			free(sx); free(sy); free(sz);
+			return s;
+		}
 			
 		void draw();
 		void draw(unsigned int);
@@ -206,6 +213,15 @@ class VERTEX: public POGEL::POINT {
 			{x=a; y=b; z=c; u=0.0f; v=0.0f; usable=true;}
 		VERTEX(POGEL::POINT p)
 			{x=p.x; y=p.y; z=p.z; u=0.0f; v=0.0f; usable=true;}
+		
+		std::string toString()
+		{
+			char *sx=POGEL::string("%0.27f",x), *sy=POGEL::string("%0.27f",y), *sz=POGEL::string("%0.27f",z);
+			char *su=POGEL::string("%0.27f",u), *sv=POGEL::string("%0.27f",v);
+			std::string s = "{["+std::string(sx)+"],["+std::string(sy)+"],["+std::string(sz)+"],["+std::string(su)+"],["+std::string(sv)+"],"+normal.toString()+","+color.toString()+"}";
+			free(sx); free(sy); free(sz);
+			return s;
+		}
 		
 		void get_values(float *a, float *b, float *c, float *s, float *t)
 			{*a=x; *b=y; *c=z; *s=u; *t=v;}

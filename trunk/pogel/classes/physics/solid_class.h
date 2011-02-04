@@ -8,6 +8,9 @@ class SOLID;
 }
 }
 
+#include <iostream>
+#include <string>
+
 #include "physics.h"
 #include "../point_class.h"
 #include "../object_class.h"
@@ -46,6 +49,15 @@ class POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES {
 		}
 		SOLIDPHYSICALPROPERTIES(float f, float b, float m, float a, float d, float v, bool mg, float c) {
 			friction=f; bounce=b; mass=m; air_friction=a; dencity=d; volume=v; magnetic=mg; charge=c;
+		}
+		
+		std::string toString() {
+			char *sfr=POGEL::string("%f",friction), *sb=POGEL::string("%f",bounce), *sm=POGEL::string("%f",mass);
+			char *saf=POGEL::string("%f",air_friction), *sd=POGEL::string("%f",dencity), *sv=POGEL::string("%f",volume);
+			char *smg=POGEL::string("%d",(int)magnetic), *sch=POGEL::string("%f",charge);
+			std::string s = "{[" + std::string(sfr) + "],[" + std::string(sb) + "],[" + std::string(sm) + "],[" + std::string(saf) + "],[" + std::string(sd) + "],[" + std::string(sv) + "],[" + std::string(smg) + "],[" + std::string(sch) + "]}";
+			free(sfr); free(sb); free(sm); free(saf); free(sd); free(sv); free(smg); free(sch);
+			return s;
 		}
 };
 
@@ -130,6 +142,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri1, POGEL::TRIANGLE* tri2);
 		void closest(POGEL::POINT point, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri);
+		
+		std::string toString();
 		
 		friend class POGEL::PHYSICS::DYNAMICS;
 		friend class POGEL::PHYSICS::SIMULATION;

@@ -7,22 +7,32 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include <iostream>
+#include <fstream>
+
 #include "scene.h"
 #include "window.h"
 
 #include "pogel/pogel.h"
 #include "pogel/classes/physics/physics.h"
 
-#include "threads.h"
-
 using namespace POGEL;
 
+//#define th
+
+#ifdef th
+#include "threads.h"
+
 THREAD *simulator_runner;
+#endif
 
 #define frameskip 1
 
-#define grd 5
+#define grd 10
 #define numobjs (grd*grd*grd)
+
+#define svfrq 1000/numobjs
+
 #define sps 1.0f/20
 #define size 1.0f/20
 OBJECT obj[numobjs];
@@ -53,7 +63,7 @@ bool keypres, go = true;
 unsigned long int updts = 0;
 
 bool sc = false;
-
+#ifdef th
 void* sim_runner(void* arg) {
 	int i = (int)arg;
 	printf("\nstarting thread %d\n", i);
@@ -69,10 +79,21 @@ void* sim_runner(void* arg) {
 		}
 		//POGEL::PrintFps();
 		printf("thread %d: updates = %ld\n", i, updts-1);
+		if(keys[';'] || updts%svfrq == 0)
+		{
+			char *flnm = POGEL::string("log%d.txt",numobjs);
+			std::ofstream outfile (flnm, std::ios_base::trunc);
+			free(flnm);
+			for(unsigned long a=0;a<numobjs;a++) {
+				//printf("%s\n",sphs[a]->toString().c_str());
+				outfile << sphs[a]->toString() << "\n";
+			}
+			outfile.close();
+		}
 	}
 	pthread_exit(NULL);
 };
-
+#endif
 
 void oob(SOLID_FNC_DEF) {
         /*if(obj->position.distance(POGEL::POINT()) > border->bounding.maxdistance + 1) {
@@ -267,7 +288,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i]->setstepstaken(0);
                 
-                sphs[i]->resizetrail(10);
+                //sphs[i]->resizetrail(100);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -280,7 +301,30 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //sim.addfan(POGEL::PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 50000.0f));
         //sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*1.8f/120000;
         //sim.air_dencity = 1000;
+        char *flnm = POGEL::string("log%d.txt",numobjs);
+        std::ifstream ifs ( flnm , std::ifstream::in );
+		free(flnm);
+		if(ifs.good()) {
+			
+			std::string line;
+			POGEL::POINT p;
+			std::string pos_str, dir_str;
+			for(int i=0;i<numobjs;i++) {
+				if(!ifs.good())break;
+				line.clear();
+				std::getline(ifs,line,'\n');
+		    	unsigned int fo, lo;
+		    	fo = line.find('{',2); lo = line.find('}',fo);
+		    	pos_str = line.substr(fo,lo-fo+1);
+		    	fo = line.find('{',line.find('{',lo+fo)); lo = line.find('}',fo);
+		    	dir_str = line.substr(fo,lo-fo+1);
+		    	sscanf(pos_str.c_str(), "{[%f],[%f],[%f]}", &p.x, &p.y, &p.z); sphs[i]->position = p;
+		    	sscanf(dir_str.c_str(), "{[%f],[%f],[%f]}", &p.x, &p.y, &p.z); sphs[i]->direction = p;
+		    	//std::cout << "pos:  " + sphs[i]->position.toString() + ", dir:  " + sphs[i]->direction.toString() + "\n";
+	    	}
+  		}
         
+        ifs.close();
         //POGEL::addproperty(POGEL_WIREFRAME);
         
         POGEL::OBJECT* ring = new POGEL::OBJECT();
@@ -299,7 +343,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        addSphere(ring,16,16, 10.0f, NULL,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(ring,16,16, 50.0f, NULL,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
@@ -384,9 +428,10 @@ void InitGL(int Width, int Height)              // We call this right after our 
        	
        	v.setretscreensize(&screenx, &screeny);
    	    v.settexsize(800, 600);
-       	
+       	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
        	simulator_runner->startThread();
+       	#endif
 }
 
 //unsigned long frames=0;
@@ -494,17 +539,29 @@ void DrawGLScene()
                 //border->bounding.draw(POGEL::POINT());
                 //POGEL::setproperties(op);
         }
+        #ifndef th
         if(keypres) {
         				//if(POGEL::GetTimePassed() < 60.0f)
-                        //sim.increment();
-                        //keypres = false;
+                        sim.increment();
+                        keypres = false;
                 }//sc = true;
 			//printf("updates = %ld\n", updts++);
                 else if(go) {
                 //if(POGEL::GetTimePassed() < 60.0f)
-                       //sim.increment();
+                       sim.increment();
                 }
-        
+        if(keys[';'] || frames%svfrq == 0)
+		{
+			char *flnm = POGEL::string("log%d.txt",numobjs);
+			std::ofstream outfile (flnm, std::ios_base::trunc);
+			free(flnm);
+			for(unsigned long a=0;a<numobjs;a++) {
+				//printf("%s\n",sphs[a]->toString().c_str());
+				outfile << sphs[a]->toString() << "\n";
+			}
+			outfile.close();
+		}
+        #endif
         if(keys['t']) {
         	keys['t'] = false;
         	sim.gravity *= -1.0f;

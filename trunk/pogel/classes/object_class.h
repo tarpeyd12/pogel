@@ -86,6 +86,7 @@ class OBJECT {
 			//name=(char*)n;
 		}
 		char* getname() {return name;}
+		std::string getsname() {return std::string(name);}
 		unsigned long getchildslot();
 		
 		void translate(POGEL::VECTOR);
