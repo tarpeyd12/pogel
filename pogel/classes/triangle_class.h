@@ -46,6 +46,14 @@ class TRIANGLE {
 		
 		PROPERTIES_METHODS;
 		
+		std::string toString()
+		{
+			char *p = POGEL::string("%u",properties);
+			std::string s = "{["+std::string(p)+"],"+vertex[0].toString()+","+vertex[1].toString()+","+vertex[2].toString()+","+normal.toString()+"}";
+			free(p);
+			return s;
+		}
+		
 		void scroll_tex_values(float,float);
 		
 		void print() {

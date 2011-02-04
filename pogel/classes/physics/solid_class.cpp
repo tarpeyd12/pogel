@@ -260,7 +260,7 @@ void POGEL::PHYSICS::SOLID::setboundingskips() {
 };
 
 void POGEL::PHYSICS::SOLID::forcegetbounding() {
-	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
+	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1)*refbounding.maxdistance;
 	
 	if(stepstaken > 0 && hasOption(PHYSICS_SOLID_SPHERE)) {
 		float max = refbounding.maxdistance;
@@ -325,9 +325,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 	refbounding.draw(position);
 	
 	if(POGEL::hasproperty(POGEL_LABEL)) {
-		/*POGEL::LINE( position, 
+		POGEL::LINE( position, 
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
-			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();*/
+			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
 		if(behavior.magnetic && behavior.charge != 0.0f) {
 			if(behavior.charge < 0.0f)	position.draw(3, POGEL::COLOR( 1,.5,.2,1));
 			else						position.draw(3, POGEL::COLOR(.5, 1,.2,1));
@@ -468,5 +468,16 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 		this->closest(*obj2pt, obj1pt, tri1);
 	}
 	//POGEL::LINE(*obj1pt, *obj2pt, POGEL::COLOR(0,1,0,1)).draw();
+};
+
+std::string POGEL::PHYSICS::SOLID::toString() {
+	/*std::string triangles;
+	for(unsigned long a = 0; a < getnumfaces(); a++) {
+		triangles += gettriangle(a).toString()+(a<getnumfaces()-1 ? ",":"");
+	}*/
+	char *pprp = POGEL::string("%u",physproperties), *prp = POGEL::string("%u",getproperties());
+	std::string s = "{["+getsname()+"],["+std::string(pprp)+"],["+std::string(prp)+"],["+position.toString()+"],["+rotation.toString()+"],["+direction.toString()+"],["+spin.toString()+"],["+behavior.toString()+"]}";//,<"+triangles+">}";
+	free(pprp); free(prp);
+	return s;
 };
 
