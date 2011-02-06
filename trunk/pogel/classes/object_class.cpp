@@ -161,7 +161,7 @@ POGEL::OBJECT::~OBJECT() {
 				children[i]=NULL;
 			}
 		delete[] children;*/
-		children=NULL;
+		if(children) children=NULL;
 	}
 	
 	parent=NULL;
@@ -177,10 +177,10 @@ void POGEL::OBJECT::killchildren() {
 		for(unsigned long i=0;i<numchildren;i++) {
 			children[i]->killchildren();
 			delete children[i];
-			children[i]=NULL;
+			if(children[i]) children[i]=NULL;
 		}
 	delete[] children;
-	children=NULL;
+	if(children) children=NULL;
 };
 
 void POGEL::OBJECT::translate(POGEL::VECTOR v) {
@@ -234,8 +234,7 @@ void POGEL::OBJECT::addtrianglespace(unsigned long num) {
 	POGEL::TRIANGLE *tmp = new POGEL::TRIANGLE[numfaces+num];
 	for(unsigned long i = 0; i < numfaces; i++) tmp[i] = face[i];
 	if(face) delete[] face;
-	face = NULL;
-	face = tmp;
+	face = NULL; face = tmp;
 	triangle_allocation_total += num;
 };
 
@@ -344,11 +343,9 @@ char* POGEL::OBJECT::getancestoryhash() {
 unsigned long POGEL::OBJECT::getchildslot() {
 	if(parent!=NULL)
 		// loop through all the children
-		for(unsigned long i=0;i<parent->numchildren;i++) {
+		for(unsigned long i=0;i<parent->numchildren;i++)
 			// if the childs name matches the desired one
-			if(parent->children[i] == this)
-				return i;
-		}
+			if(parent->children[i] == this) return i;
 	return 0;
 };
 
@@ -428,8 +425,7 @@ void POGEL::OBJECT::draw() {
 			char *n = getancestory();
 			matrix.get();
 			POGEL::message("\nfor object: \"%s\":\n", n);
-			if(n!=NULL && parent!=NULL)
-				free(n);
+			if(n!=NULL && parent!=NULL) free(n);
 			POGEL::message("object position:  ");
 			position.print();
 			POGEL::message("\nobject rotation:  ");
@@ -477,18 +473,6 @@ void POGEL::OBJECT::draw() {
 		glTranslatef(-position.x, -position.y, -position.z);
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
 	}
-	if(POGEL::hasproperty(POGEL_LABEL)) {
-		glDisable(GL_TEXTURE_2D);
-		glDisable(GL_LIGHTING);
-		glColor3f(0.2f,0.5f,1.0f);
-		glPointSize(4);
-		glBegin(GL_POINTS);
-			glVertex3f(position.x, position.y, position.z);
-		glEnd();
-		glPointSize(1);
-		glColor3f(1.0f,1.0f,1.0f);
-		glEnable(GL_TEXTURE_2D);
-		glEnable(GL_LIGHTING);
-	}
+	if(POGEL::hasproperty(POGEL_LABEL)) position.draw(4, POGEL::COLOR(.2,.5,1,1));
 };
 

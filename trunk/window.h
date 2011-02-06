@@ -30,4 +30,6 @@ void keyUnpressed(unsigned char key, int x, int y);
 void mouseClicked(int button, int state, int x, int y);
 void mouseMoved(int x, int y);
 
+extern void (*exfnc)(void);
+
 #endif /* _WINDOW_H */

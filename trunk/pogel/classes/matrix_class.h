@@ -54,8 +54,7 @@ class MATRIX {
 		//unsigned int getproperties() {return properties;}
 		//void setproperties(unsigned int prop) {properties=prop;}
 		
-		void get()
-			{glGetFloatv(GL_MODELVIEW_MATRIX,matrix);}
+		void get() {glGetFloatv(GL_MODELVIEW_MATRIX,matrix);}
 		
 		void set(float*);
 		void set(POGEL::MATRIX);
@@ -69,10 +68,8 @@ class MATRIX {
 		float *getcolumn(int);
 		float *getrow(int);
 		
-		float getvalue(int c, int r)
-			{return matrix[c*4+r];}
-		void setvalue(int c, int r, float v)
-			{matrix[c*4+r]=v;}
+		float getvalue(int c, int r) {return matrix[c*4+r];}
+		void  setvalue(int c, int r, float v) {matrix[c*4+r]=v;}
 		
 		void multiplyby(float);
 		void raistopower(int);
@@ -81,7 +78,6 @@ class MATRIX {
 		bool invert();
 		
 		void print();
-		
 		
 		void transformPoint(POGEL::POINT*);
 		POGEL::POINT transformPoint(POGEL::POINT);
@@ -95,7 +91,6 @@ class MATRIX {
 		void transformTriangle(POGEL::TRIANGLE*);
 		POGEL::TRIANGLE transformTriangle(POGEL::TRIANGLE);
 		
-		
 		QUAT toquat();
 		
 		void fromaxis(POGEL::VECTOR,float);
@@ -103,13 +98,8 @@ class MATRIX {
 		POGEL::MATRIX operator+(POGEL::MATRIX);
 		POGEL::MATRIX operator-(POGEL::MATRIX);
 		POGEL::MATRIX operator*(POGEL::MATRIX);
-		POGEL::MATRIX operator*(float a)
-			{
-				POGEL::MATRIX ret;
-				for(int i=0;i<16;i++)
-					ret.matrix[i] = matrix[i] * a;
-				return ret;
-			}
+		POGEL::MATRIX operator*(float a) { POGEL::MATRIX ret; for(int i=0;i<16;i++) ret.matrix[i] = matrix[i] * a; return ret; }
+		POGEL::MATRIX operator/(float a) { return (*this)*(1.0f/a); }
 		POGEL::MATRIX& operator=(const POGEL::MATRIX&);
 		
 		//friend class QUAT;

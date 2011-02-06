@@ -19,9 +19,7 @@ unsigned long POGEL::PHYSICS::FLOW::addfan(POGEL::PHYSICS::FAN fan) {
 void POGEL::PHYSICS::FLOW::addfans(POGEL::PHYSICS::FAN *fan, unsigned long num) {
 	if(fan == (POGEL::PHYSICS::FAN*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_ARRAY_POINTER_RETNUM,"%s to Fan(s).",POGEL_FATALITY_NULL_ARRAY_POINTER_STRING);
-	for(unsigned long i=0;i<num;i++) {
-		addfan(fan[i]);
-	}
+	for(unsigned long i=0;i<num;i++) addfan(fan[i]);
 };
 
 void POGEL::PHYSICS::FLOW::generatecurve(POGEL::POINT* waypoints, unsigned long num, bool forwards) {
@@ -37,8 +35,7 @@ void POGEL::PHYSICS::FLOW::generatecurve(POGEL::POINT* waypoints, unsigned long 
 
 unsigned long POGEL::PHYSICS::GRAVITYCLUSTER::addsingularity(POGEL::PHYSICS::SINGULARITY sig) {
 	POGEL::PHYSICS::SINGULARITY *tmp = new POGEL::PHYSICS::SINGULARITY[numsingularities+1];
-	if(numsingularities > 0)
-		memcpy(tmp, singularities, sizeof(POGEL::PHYSICS::SINGULARITY)*numsingularities);
+	if(numsingularities > 0) memcpy(tmp, singularities, sizeof(POGEL::PHYSICS::SINGULARITY)*numsingularities);
 	tmp[numsingularities]=sig;
 	//printf("reallocating singularities from %p to: %p\n",singularities,tmp);
 	if(singularities)
@@ -52,8 +49,6 @@ unsigned long POGEL::PHYSICS::GRAVITYCLUSTER::addsingularity(POGEL::PHYSICS::SIN
 void POGEL::PHYSICS::GRAVITYCLUSTER::addsingularities(POGEL::PHYSICS::SINGULARITY* sig, unsigned long num) {
 	if(sig == (POGEL::PHYSICS::SINGULARITY*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_ARRAY_POINTER_RETNUM,"%s to Singularity(s).",POGEL_FATALITY_NULL_ARRAY_POINTER_STRING);
-	for(unsigned long i=0;i<num;i++) {
-		addsingularity(sig[i]);
-	}
+	for(unsigned long i=0;i<num;i++) addsingularity(sig[i]);
 };
 

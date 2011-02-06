@@ -14,6 +14,12 @@
 									void addproperty(unsigned int prop) {properties|=prop;} \
 									void removeproperty(unsigned int prop) {properties^=prop;} \
 									bool hasproperty(unsigned int prop) {return (properties & prop);}
+									
+#define		CUSTOM_PROPERTIES_METHODS(p)		unsigned int getproperties() {return p;} \
+												void setproperties(unsigned int prop) {p=prop;} \
+												void addproperty(unsigned int prop) {p|=prop;} \
+												void removeproperty(unsigned int prop) {p^=prop;} \
+												bool hasproperty(unsigned int prop) {return (p & prop);}
 
 // the error return types
 #define				POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM		1
@@ -80,6 +86,7 @@ namespace POGEL {
 	
 	extern float framerate_throtling_correction;
 	
+	// pogel global functions
 	extern unsigned int getproperties();
 	extern void setproperties(unsigned int prop);
 	extern void addproperty(unsigned int prop);
@@ -102,6 +109,11 @@ namespace POGEL {
 	extern float GetFps();
 	extern float GetSecondsPerFrame();
 	extern void PrintFps();
+	
+	extern unsigned int getOccurrencesInString(char, std::string);
+	extern std::string getStringSection(char, unsigned int, bool, char, unsigned int, bool, std::string);
+	extern std::string getStringComponentLevel(char, bool, char, bool, std::string, std::string);
+	extern std::string getStringComponentLevel(char, char, std::string, std::string);
 }
 #endif
 

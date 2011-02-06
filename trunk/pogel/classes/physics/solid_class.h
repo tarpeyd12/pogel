@@ -44,18 +44,32 @@ class POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES {
 		bool magnetic;
 		float charge;
 		
-		SOLIDPHYSICALPROPERTIES() {
-			friction=1.0f; bounce=1.0f; mass=1.0f; air_friction=1.0f; dencity=1.0f; volume=1.0f; magnetic=false; charge=0.0f;
-		}
-		SOLIDPHYSICALPROPERTIES(float f, float b, float m, float a, float d, float v, bool mg, float c) {
-			friction=f; bounce=b; mass=m; air_friction=a; dencity=d; volume=v; magnetic=mg; charge=c;
+		SOLIDPHYSICALPROPERTIES()
+			{ friction=1.0f; bounce=1.0f; mass=1.0f; air_friction=1.0f; dencity=1.0f; volume=1.0f; magnetic=false; charge=0.0f; }
+		SOLIDPHYSICALPROPERTIES(float f, float b, float m, float a, float d, float v, bool mg, float c)
+			{ friction=f; bounce=b; mass=m; air_friction=a; dencity=d; volume=v; magnetic=mg; charge=c; }
+		SOLIDPHYSICALPROPERTIES(std::string s) {
+			int mgnec;
+			sscanf(s.c_str(), "{[%f],[%f],[%f],[%f],[%f],[%f],[%d],[%f]}", 
+			&friction, &bounce, &mass, &air_friction, &dencity, &volume, &mgnec, &charge);
+			magnetic = (bool)mgnec;
 		}
 		
 		std::string toString() {
-			char *sfr=POGEL::string("%f",friction), *sb=POGEL::string("%f",bounce), *sm=POGEL::string("%f",mass);
-			char *saf=POGEL::string("%f",air_friction), *sd=POGEL::string("%f",dencity), *sv=POGEL::string("%f",volume);
-			char *smg=POGEL::string("%d",(int)magnetic), *sch=POGEL::string("%f",charge);
-			std::string s = "{[" + std::string(sfr) + "],[" + std::string(sb) + "],[" + std::string(sm) + "],[" + std::string(saf) + "],[" + std::string(sd) + "],[" + std::string(sv) + "],[" + std::string(smg) + "],[" + std::string(sch) + "]}";
+			char *sfr = POGEL::string("%f",friction),      *sb  = POGEL::string("%f",bounce),  *sm = POGEL::string("%f",mass);
+			char *saf = POGEL::string("%f",air_friction),  *sd  = POGEL::string("%f",dencity), *sv = POGEL::string("%f",volume);
+			char *smg = POGEL::string("%d",(int)magnetic), *sch = POGEL::string("%f",charge);
+			std::string s = 
+				"{"
+					"[" + std::string(sfr) + "],"
+					"[" + std::string(sb)  + "],"
+					"[" + std::string(sm)  + "],"
+					"[" + std::string(saf) + "],"
+					"[" + std::string(sd)  + "],"
+					"[" + std::string(sv)  + "],"
+					"[" + std::string(smg) + "],"
+					"[" + std::string(sch) + "]"
+				"}";
 			free(sfr); free(sb); free(sm); free(saf); free(sd); free(sv); free(smg); free(sch);
 			return s;
 		}
@@ -83,6 +97,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		unsigned long objboundingskips;
 		unsigned long stepstaken;
 		unsigned long stepsatboundingcheck;
+		
+		std::string trianglestring;
 	public:
 		POGEL::VECTOR force;
 		POGEL::BOUNDING bounding;
@@ -91,6 +107,9 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		SOLID();
 		SOLID(POGEL::OBJECT*, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES, unsigned int);
+		
+		SOLID(std::string);
+		
 		~SOLID();
 		
 		//PROPERTIES_METHODS;

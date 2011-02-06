@@ -41,9 +41,8 @@ class IMAGE {
 		void set() {glBindTexture(GL_TEXTURE_2D, getbase());}
 		unsigned long getheight() {return sizeY;}
 		unsigned long getwidth() {return sizeX;}
-		void setfilter(int);
-		int getfilter()
-			{ return filtertype; }
+		void setfilter(int t) { filtertype = t; }
+		int getfilter() { return filtertype; }
 		
 };
 }

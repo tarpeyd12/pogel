@@ -31,6 +31,8 @@ void ReSizeGLScene(int Width, int Height)
 	screeny = Height;
 }
 
+void (*exfnc)(void);
+
 extern POGEL::POINT camrot, campos;
 extern bool keypres, go;
 /* The function called whenever a key is pressed. */
@@ -41,7 +43,9 @@ void keyPressed(unsigned char key, int x, int y)
 	
 	/* If escape is pressed, kill everything. */
 	if (key == ESCAPE)
-	{ 
+	{	
+		if(exfnc != NULL) exfnc();
+		
 		/* shut down our window */
 		glutDestroyWindow(window); 
 		

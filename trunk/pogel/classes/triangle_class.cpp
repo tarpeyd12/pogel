@@ -3,6 +3,27 @@
 #include <stdlib.h>
 #include "triangle_class.h"
 
+POGEL::TRIANGLE::TRIANGLE(std::string s, POGEL::IMAGE* im) {
+	texture = im;
+	sscanf(s.c_str(), "{[%u],", &properties);
+	for(int i = 0; i < 3; i++) {
+		char* vt = POGEL::string("0 %d",i);
+		vertex[i] = POGEL::VERTEX(POGEL::getStringComponentLevel('{','}', s, vt));
+		free(vt);
+	}
+	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
+};
+
+POGEL::TRIANGLE::TRIANGLE(std::string s) {
+	texture = NULL;
+	sscanf(s.c_str(), "{[%u],", &properties);
+	for(int i = 0; i < 3; i++) {
+		char* vt = POGEL::string("0 %d",i);
+		vertex[i] = POGEL::VERTEX(POGEL::getStringComponentLevel('{','}', s, vt));
+		free(vt);
+	}
+	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
+};
 
 void POGEL::TRIANGLE::load(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop) {
 	POGEL::VECTOR vct[2];
@@ -32,18 +53,13 @@ void POGEL::TRIANGLE::load(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int p
 };
 
 void POGEL::TRIANGLE::scroll_tex_values(float s, float t) {
-	for(int i=0;i<3;i++)
-		vertex[i].scroll_tex_values(s,t);
+	for(int i=0;i<3;i++) vertex[i].scroll_tex_values(s,t);
 };
 
 POGEL::TRIANGLE POGEL::TRIANGLE::transform(POGEL::MATRIX* m) {
-	//printf("\nhello\n");
 	POGEL::TRIANGLE t(vertex, texture, properties);
 	m->transformTriangle(&t);
 	t.getbounding();
-	//for(int i=0;i<3;i++)
-		//m.transformVertex(&t.vertex[i]);
-	//m.transformVector(&t.normal);
 	return t;
 };
 

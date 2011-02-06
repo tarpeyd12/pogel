@@ -9,43 +9,26 @@ POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 };
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
-	//POGEL::PHYSICS::SOLID **tmp=(POGEL::PHYSICS::SOLID**)malloc(sizeof(POGEL::PHYSICS::SOLID*)*(numobjects+1));
 	POGEL::PHYSICS::SOLID **tmp = new POGEL::PHYSICS::SOLID*[numobjects+1];
-	for(unsigned long i=0;i<numobjects;i++)
-		tmp[i]=objects[i];
-	
+	for(unsigned long i=0;i<numobjects;i++) tmp[i]=objects[i];
 	obj->container = this;
 	obj->getbounding();
-	
 	tmp[numobjects]=obj;
-	//for(int i=0;i<numobjects;i++) {
-		//free(objects[i]);
-	//}
-	
-	//printf("reallocating solid pointers from %p to: %p\n",objects,tmp);
-	
 	objectmasses.addsingularity(POGEL::PHYSICS::SINGULARITY(&obj->position, &obj->behavior.mass));
-	
-	if(obj->behavior.magnetic)
-		addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
-	
-	if(objects)
-		delete[] objects;
+	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
+	if(objects) delete[] objects;
 	objects = NULL;
-	
 	objects=tmp;
-	numobjects++;
-	return numobjects-1;
+	return numobjects++;
 };
 
 void POGEL::PHYSICS::DYNAMICS::addSolids(POGEL::PHYSICS::SOLID **obj, unsigned long num) {
 	if(obj == (POGEL::PHYSICS::SOLID**)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_ARRAY_POINTER_RETNUM,"%s to Solid Object(s).",POGEL_FATALITY_NULL_ARRAY_POINTER_STRING);
-	for(unsigned long i=0;i<num;i++) {
+	for(unsigned long i=0;i<num;i++)
 		if(obj[i] == (POGEL::PHYSICS::SOLID*)NULL)
 			POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM|POGEL_FATALITY_NULL_LIST_POINTER_RETNUM,"%s & %s to Solid Object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING, POGEL_FATALITY_NULL_LIST_POINTER_STRING);
-		addSolid(obj[i]);
-	}
+		else addSolid(obj[i]);
 };
 
 POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
@@ -97,8 +80,7 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 };
 
 void POGEL::PHYSICS::DYNAMICS::draw() {
-	for(unsigned long i=0;i<numobjects;i++)
-		objects[i]->draw();
+	for(unsigned long i=0;i<numobjects;i++) objects[i]->draw();
 };
 
 void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POINT center, unsigned int grd) {

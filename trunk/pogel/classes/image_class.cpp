@@ -13,18 +13,15 @@ POGEL::IMAGE::IMAGE() {
 };
 
 POGEL::IMAGE::IMAGE(const char *filename) {
-	//load(filename);
 	loadandbuild(filename);
 };
 
 POGEL::IMAGE::IMAGE(const char *filename, int filter) {
 	setfilter(filter);
-	//load(filename);
 	loadandbuild(filename);
 };
 
 POGEL::IMAGE::~IMAGE() {
-	//free(data);
 	delete[] data;
 	base=(GLuint)NULL;
 };
@@ -139,12 +136,6 @@ GLuint POGEL::IMAGE::build() {
 };
 
 GLuint POGEL::IMAGE::loadandbuild(const char *filename) {
-	load(filename);
-	return build();
-	//return getbase();
-};
-
-void POGEL::IMAGE::setfilter(int type) {
-	filtertype = type;
+	load(filename); return build();
 };
 

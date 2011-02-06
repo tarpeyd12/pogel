@@ -4,6 +4,10 @@
 #include <GL/gl.h>
 #include <time.h>
 
+#include <iostream>
+#include <sstream>
+#include <string>
+
 // the version number
 #define POGEL_VERSION "version 0.0.0-01"
 
@@ -53,6 +57,11 @@ namespace POGEL {
 	
 	void ThrotleFps(int);
 	void UnthrotleFps();
+	
+	unsigned int getOccurrencesInString(char, std::string);
+	std::string getStringSection(char, unsigned int, bool, char, unsigned int, bool, std::string);
+	std::string getStringComponentLevel(char, bool, char, bool, std::string, std::string);
+	std::string getStringComponentLevel(char, char, std::string, std::string);
 	
 	// pogel classes
 	class POINT;

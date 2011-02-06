@@ -38,6 +38,9 @@ class TRIANGLE {
 		TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop)
 			{load(verts,tex,prop);}
 		
+		TRIANGLE(std::string, POGEL::IMAGE*);
+		TRIANGLE(std::string);
+		
 		void load(POGEL::VERTEX,POGEL::VERTEX,POGEL::VERTEX,POGEL::IMAGE*,unsigned int);
 		void load(POGEL::VERTEX*,POGEL::IMAGE*,unsigned int);
 		

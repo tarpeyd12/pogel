@@ -22,7 +22,7 @@ POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
 OTHER = main.o window.o 
 
-TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o
+TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o loader.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
 OBJ =  $(OTHER) simulation.o

@@ -40,13 +40,10 @@ class POGEL::PHYSICS::SINGULARITY {
 		
 		virtual POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(active) {
-				if(p==getCenter())
-					return POGEL::VECTOR();
+				if(p==getCenter()) return POGEL::VECTOR();
 				float dist = p.distance(getCenter());
-				
 				if(dist*dist > 0.00001) {
-					POGEL::VECTOR v;
-					v.frompoints(p, getCenter());
+					POGEL::VECTOR v (p, getCenter());
 					v.normalize();
 					v *= getIntencity()*mass * GRAVITYCONSTANT;
 					v /= (dist*dist);
@@ -72,8 +69,7 @@ class POGEL::PHYSICS::FAN : public POGEL::PHYSICS::SINGULARITY {
 		POGEL::VECTOR getDirection() { if(notpointing) return direction; return *pdirection; }
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
-			if(active)
-				return ((getDirection()*getIntencity())/p.distance(getCenter()))/(mass+1.0f);
+			if(active) return ((getDirection()*getIntencity())/p.distance(getCenter()))/(mass+1.0f);
 			return POGEL::VECTOR();
 		}
 };
@@ -92,19 +88,10 @@ class POGEL::PHYSICS::GRAVITYCLUSTER {
 		void addsingularities(POGEL::PHYSICS::SINGULARITY*,unsigned long);
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
-			if(numsingularities==0)
-				return POGEL::VECTOR();
+			if(numsingularities==0) return POGEL::VECTOR();
 			POGEL::VECTOR v;
-			//unsigned int diff=0;
-			for(unsigned int i=0;i<numsingularities;i++)
-				//if(singularities[i].active)
-					v+=singularities[i].getpull(p, mass);
-				//else
-					//diff++;
-			//if(diff<numsingularities)
-				return v;//((float)numsingularities - (float)diff);
-			//else
-				//return POGEL::VECTOR();
+			for(unsigned int i=0;i<numsingularities;i++) v+=singularities[i].getpull(p, mass);
+			return v;
 		}
 };
 
@@ -123,19 +110,14 @@ class POGEL::PHYSICS::FLOW {
 		void generatecurve(POGEL::POINT*,unsigned long,bool);
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
-			if(numgusts==0)
-				return POGEL::VECTOR();
+			if(numgusts==0) return POGEL::VECTOR();
 			POGEL::VECTOR v;
 			unsigned int diff=0;
 			for(unsigned int i=0;i<numgusts;i++)
-				if(gusts[i].active)
-					v=v+gusts[i].getpull(p, mass);
-				else
-					diff++;
-			if(diff<numgusts)
-				return v/((float)numgusts - (float)diff);
-			else
-				return POGEL::VECTOR();
+				if(gusts[i].active) v=v+gusts[i].getpull(p, mass);
+				else diff++;
+			if(diff<numgusts) return v/((float)numgusts - (float)diff);
+			else return POGEL::VECTOR();
 		}
 };
 
