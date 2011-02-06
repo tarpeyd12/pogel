@@ -18,7 +18,7 @@
 
 using namespace POGEL;
 
-//#define th
+#define th
 
 #ifdef th
 #include "threads.h"
@@ -28,7 +28,7 @@ THREAD *simulator_runner;
 
 #define frameskip 1
 
-#define grd 10
+#define grd 6
 #define numobjs (grd*grd*grd)
 
 #define svfrq 1000/numobjs
@@ -64,6 +64,7 @@ unsigned long int updts = 0;
 
 bool sc = false;
 #ifdef th
+bool ef = false;
 void* sim_runner(void* arg) {
 	int i = (int)arg;
 	printf("\nstarting thread %d\n", i);
@@ -90,9 +91,24 @@ void* sim_runner(void* arg) {
 			}
 			outfile.close();
 		}
+		if(ef) break;
 	}
 	pthread_exit(NULL);
 };
+
+void exitingfunction() {
+	ef = true;
+	simulator_runner->joinThread();
+	char *flnm = POGEL::string("log%d.txt",numobjs);
+	std::ofstream outfile (flnm, std::ios_base::trunc);
+	free(flnm);
+	for(unsigned long a=0;a<numobjs;a++) {
+		//printf("%s\n",sphs[a]->toString().c_str());
+		outfile << sphs[a]->toString() << "\n";
+	}
+	outfile.close();
+};
+
 #endif
 
 void oob(SOLID_FNC_DEF) {
@@ -224,8 +240,10 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 obj[i].setname(POGEL::string("sphere%d",i));
                 //if(i%2!=0)
-                if(i == 0)
+                if(i == 0) {
                 addDisk(&obj[i], 8, 1, size/2.0f, 0.0f, particle,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
+                //addSphere(&obj[i],32,32, size/0.2f, defaultimg,2,4, 0 |TRIANGLE_COLORED|TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+                }
                 else obj[i].copytriangles(&obj[0]);
                 //addSphere(&obj[i],4,8, size/2.0f, defaultimg,2,4, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
                 //addCylinder(&obj[i], 10, 1, size, size/2.0f, size/2.0f, defaultimg, 1.0f, 1.0f, 0, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
@@ -307,19 +325,13 @@ void InitGL(int Width, int Height)              // We call this right after our 
 		if(ifs.good()) {
 			
 			std::string line;
-			POGEL::POINT p;
 			std::string pos_str, dir_str;
 			for(int i=0;i<numobjs;i++) {
 				if(!ifs.good())break;
 				line.clear();
 				std::getline(ifs,line,'\n');
-		    	unsigned int fo, lo;
-		    	fo = line.find('{',2); lo = line.find('}',fo);
-		    	pos_str = line.substr(fo,lo-fo+1);
-		    	fo = line.find('{',line.find('{',lo+fo)); lo = line.find('}',fo);
-		    	dir_str = line.substr(fo,lo-fo+1);
-		    	sscanf(pos_str.c_str(), "{[%f],[%f],[%f]}", &p.x, &p.y, &p.z); sphs[i]->position = p;
-		    	sscanf(dir_str.c_str(), "{[%f],[%f],[%f]}", &p.x, &p.y, &p.z); sphs[i]->direction = p;
+		    	sphs[i]->position = POGEL::POINT(POGEL::getStringComponentLevel('{','}',line,"0 0"));
+		    	sphs[i]->direction = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}',line,"0 2"));
 		    	//std::cout << "pos:  " + sphs[i]->position.toString() + ", dir:  " + sphs[i]->direction.toString() + "\n";
 	    	}
   		}
@@ -431,6 +443,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
        	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
        	simulator_runner->startThread();
+       	exfnc = exitingfunction;
        	#endif
 }
 

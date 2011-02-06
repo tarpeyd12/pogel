@@ -71,13 +71,10 @@ class LINE {
 				patern = pat;
 			}
 		
-		POGEL::POINT getStart()
-			{ return ends[0]; }
-		POGEL::POINT getEnd()
-			{ return ends[1]; }
+		POGEL::POINT getStart() { return ends[0]; }
+		POGEL::POINT getEnd() { return ends[1]; }
 			
-		POGEL::POINT getMiddle()
-			{ return (getStart()+getEnd())/2; }
+		POGEL::POINT getMiddle() { return (getStart()+getEnd())/2; }
 		
 		//PROPERTIES_METHODS;
 		

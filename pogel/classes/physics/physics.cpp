@@ -40,37 +40,26 @@ bool POGEL::PHYSICS::line_triangle_collision(POGEL::POINT start, POGEL::POINT en
 
 bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE trib, POGEL::POINT* p1, POGEL::POINT* p2) {
 	POGEL::POINT p3d[6], p2d[6];
-	bool collided[6];
-	int cols = 0;
+	bool collided;
+	int cols = 0, colpos[2];
 	for(int a = 0 ; a < 6 && cols < 2 ; a++ ) {
-		if(a<3)
-			// check the rays of the first triangle, agenst the plane of the second triangle
-			collided[a]=POGEL::PHYSICS::line_triangle_collision(tria.vertex[(a+0)%3].topoint(),tria.vertex[(a+1)%3].topoint(),trib,&p2d[a],&p3d[a]);
-		else
-			// check the rays of the second triangle, agenst the plane of the first triangle
-			collided[a]=POGEL::PHYSICS::line_triangle_collision(trib.vertex[(a+0)%3].topoint(),trib.vertex[(a+1)%3].topoint(),tria,&p2d[a],&p3d[a]);
-		
-		if(collided[a])
-			cols++;
-		if(cols == 2)
-			break;
+		// check the rays of the first triangle, agenst the plane of the second triangle
+		if(a<3) collided=POGEL::PHYSICS::line_triangle_collision(tria.vertex[(a+0)%3].topoint(),tria.vertex[(a+1)%3].topoint(),trib,&p2d[a],&p3d[a]);
+		// check the rays of the second triangle, agenst the plane of the first triangle
+		else    collided=POGEL::PHYSICS::line_triangle_collision(trib.vertex[(a+0)%3].topoint(),trib.vertex[(a+1)%3].topoint(),tria,&p2d[a],&p3d[a]);
+		if(collided && ++cols == 2) { colpos[cols-1] = a; break; }
 	}
 	
 	// the number of total collisions must be two, can't be anything else.
-	if(cols == 2)
-		for( int a = 0; a < 6; a++ ) // go through the recorded collisions
-			if(collided[a]) // if one of them collided
-				for( int b = (a+1); b < 6; b++ ) // go through the rest
-					// checking if one of the rest hit
-					if(collided[b]) {
-						// put the collision points into the pointers
-						*p1 = p3d[a];
-						*p2 = p3d[b];
-						#ifdef PHYSICS_COLLISION_LOGSTATS
-							POGEL::logtofile("\tcollision occurence");
-						#endif /* PHYSICS_COLLISION_LOGSTATS */
-						return true;
-					}
+	if(cols == 2) {
+		// put the collision points into the pointers
+		*p1 = p3d[colpos[0]];
+		*p2 = p3d[colpos[1]];
+		#ifdef PHYSICS_COLLISION_LOGSTATS
+			POGEL::logtofile("\tcollision occurence");
+		#endif /* PHYSICS_COLLISION_LOGSTATS */
+		return true;
+	}
 	#ifdef PHYSICS_COLLISION_LOGSTATS
 		POGEL::logtofile("\tno occurence");
 	#endif /* PHYSICS_COLLISION_LOGSTATS */
@@ -81,32 +70,20 @@ bool POGEL::PHYSICS::solid_line_collision(int type, POGEL::PHYSICS::SOLID* obj, 
 	POGEL::MATRIX mat = POGEL::MATRIX(obj->position, obj->rotation);
 	
 	if(type == PHYSICS_LINESOLID_COLLISION_GREATEST) {
-		float dist = 0.0f;
-		int index = 0;
-		bool ret = false;
+		float dist = 0.0f; int index = 0; bool ret = false;
 		for(unsigned long i = 0; i < obj->getnumfaces(); i++)
 			if(POGEL::PHYSICS::line_triangle_collision(start, end, obj->gettriangle(i).transform(&mat), col2d, col3d)) {
-				if(col2d->z > dist) {
-					*tri = obj->gettriangle(i).transform(&mat);
-					dist = col2d->z;
-					index = i;
-				}
+				if(col2d->z > dist) { *tri = obj->gettriangle(i).transform(&mat); dist = col2d->z; index = i; }
 				ret = true;
 			}
 		return ret;
 	}
 	
 	else if(type == PHYSICS_LINESOLID_COLLISION_LEAST) {
-		float dist = obj->bounding.maxdistance;
-		int index = 0;
-		bool ret = false;
+		float dist = obj->bounding.maxdistance; int index = 0; bool ret = false;
 		for(unsigned long i = 0; i < obj->getnumfaces(); i++)
 			if(POGEL::PHYSICS::line_triangle_collision(start, end, obj->gettriangle(i).transform(&mat), col2d, col3d)) {
-				if(col2d->z < dist) {
-					*tri = obj->gettriangle(i).transform(&mat);
-					dist = col2d->z;
-					index = i;
-				}
+				if(col2d->z < dist) { *tri = obj->gettriangle(i).transform(&mat); dist = col2d->z; index = i; }
 				ret = true;
 			}
 		return ret;
@@ -235,10 +212,9 @@ float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, 
 	POGEL::POINT middle = line.getMiddle();
 	POGEL::POINT closest = middle;
 	
-	float pdist = 0;
-	float curdist = point.distance(middle);
+	float pdist = 0, curdist = point.distance(middle);
 	unsigned int i = 0;
-	while( pdist != curdist && i++ < 10) {
+	while( pdist != curdist && i++ < 10)
 		if(point.distance(start)+point.distance(middle) < point.distance(end)+point.distance(middle)) {
 			if(point.distance(start) < point.distance(closest)) closest = start;
 			else closest = middle;
@@ -251,11 +227,7 @@ float POGEL::PHYSICS::line_point_distance(POGEL::POINT point, POGEL::LINE line, 
 			pdist = curdist; curdist = point.distance(end)+point.distance(closest);
 			start = middle; middle = (start+end)/2;
 		}
-		//middle.draw();
-	}
 	if(pol != NULL) *pol = closest;
-	//closest.draw();
-	//POGEL::LINE(point, closest, 1, POGEL::COLOR(0,0,1,1)).draw();
 	return point.distance(closest);
 };
 
@@ -279,15 +251,11 @@ float POGEL::PHYSICS::point_triangle_distance(POGEL::POINT point, POGEL::TRIANGL
 	
 	POGEL::LINE edges[3];
 	POGEL::POINT verts[3];
-	for(unsigned int i = 0; i< 3; i++) {
-		edges[i] = triangle.getEdge(i);
-		verts[i] = triangle.vertex[i].topoint();
-	}
+	for(unsigned int i = 0; i< 3; i++) { edges[i] = triangle.getEdge(i); verts[i] = triangle.vertex[i].topoint(); }
 	
 	for(unsigned int i = 0; i< 3; i++)
 		if(point.distance(verts[(i+0)%3]) < point.distance(verts[(i+1)%3]) && point.distance(verts[(i+0)%3]) < point.distance(verts[(i+2)%3])) {
-			POGEL::LINE a = edges[(i+0)%3];
-			POGEL::LINE b = edges[(i+2)%3];
+			POGEL::LINE a = edges[(i+0)%3], b = edges[(i+2)%3];
 			POGEL::POINT tmp1, tmp2;
 			float dist1 = POGEL::PHYSICS::line_point_distance(point, a, &tmp1);
 			float dist2 = POGEL::PHYSICS::line_point_distance(point, b, &tmp2);

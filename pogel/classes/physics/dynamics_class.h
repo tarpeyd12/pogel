@@ -37,17 +37,7 @@ class POGEL::PHYSICS::DYNAMICS {
 		float air_dencity;
 		
 		DYNAMICS();
-		~DYNAMICS() {
-			if(objects) {
-				//for(unsigned long i=0;i<numobjects;i++)
-					//delete objects[i];
-				delete[] objects;
-			}
-			//for(unsigned long i=0;i<numcurrents;i++)
-				//delete currents[i];
-			//delete[] currents;
-			//delete bounds;
-		}
+		~DYNAMICS() { if(objects) delete[] objects; }
 		
 		PROPERTIES_METHODS;
 		

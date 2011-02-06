@@ -90,9 +90,7 @@ POGEL::MATRIX::MATRIX(POGEL::POINT position, POGEL::POINT rotation) {
 
 void POGEL::MATRIX::set(float* m) {
 	// sets the current matrix to the values in the array 'm'
-	if(m!=NULL)
-		for(int i=0;i<16;i++)
-			matrix[i]=m[i];
+	if(m != NULL) for(int i=0;i<16;i++) matrix[i]=m[i];
 	else printf("matrix loading failed, null pointer to matrix array.\n");
 };
 
@@ -161,8 +159,7 @@ float *POGEL::MATRIX::getrow(int c) {
 
 void POGEL::MATRIX::multiplyby(float m) {
 	// multiplies the matrix by the value 'm'
-	for(int i=0;i<16;i++)
-		matrix[i]*=m;
+	for(int i=0;i<16;i++) matrix[i]*=m;
 };
 
 void POGEL::MATRIX::raistopower(int p) {
@@ -213,13 +210,11 @@ bool POGEL::MATRIX::invert() {
 	inv[15] =  matrix[ 0]*matrix[ 5]*matrix[10] - matrix[ 0]*matrix[ 6]*matrix[ 9] - matrix[ 4]*matrix[ 1]*matrix[10] + matrix[ 4]*matrix[ 2]*matrix[ 9] + matrix[ 8]*matrix[ 1]*matrix[ 6] - matrix[ 8]*matrix[ 2]*matrix[ 5];
 	
 	det = matrix[0]*inv[0] + matrix[1]*inv[4] + matrix[2]*inv[8] + matrix[3]*inv[12];
-	if (det == 0.0f)
-        return false;
+	if (det == 0.0f) return false;
 	
 	det = 1.0 / det;
 	
-	for (i = 0; i < 16; i++)
-        matrix[i] = inv[i] * det;
+	for (i = 0; i < 16; i++) matrix[i] = inv[i] * det;
 	
 	return true;
 };
@@ -227,9 +222,8 @@ bool POGEL::MATRIX::invert() {
 void POGEL::MATRIX::print() {
 	// prints the matrix out to the terminal
 	printf("\n");
-	for(int i=0;i<4;i+=1) { // rows
+	for(int i=0;i<4;i+=1) // rows
 		POGEL::message("%7.3f,%7.3f,%7.3f,%7.3f\n", matrix[i+0], matrix[i+4], matrix[i+8], matrix[i+12]);
-	}	
 };
 
 void POGEL::MATRIX::transformPoint(POGEL::POINT* p) {
@@ -240,8 +234,7 @@ void POGEL::MATRIX::transformPoint(POGEL::POINT* p) {
 };
 
 POGEL::POINT POGEL::MATRIX::transformPoint(POGEL::POINT p) {
-	transformPoint(&p);
-	return (p);
+	transformPoint(&p); return (p);
 };
 
 void POGEL::MATRIX::transformVector(POGEL::VECTOR* v) {
@@ -254,8 +247,7 @@ void POGEL::MATRIX::transformVector(POGEL::VECTOR* v) {
 
 POGEL::VECTOR POGEL::MATRIX::transformVector(POGEL::VECTOR v) {
 	// transforms the VECTOR 'v' by the rotation of the matrix
-	transformVector(&v);
-	return (v);
+	transformVector(&v); return (v);
 };
 
 void POGEL::MATRIX::transformVertex(POGEL::VERTEX* v) {
@@ -270,19 +262,16 @@ void POGEL::MATRIX::transformVertex(POGEL::VERTEX* v) {
 };
 
 POGEL::VERTEX POGEL::MATRIX::transformVertex(POGEL::VERTEX v) {
-	transformVertex(&v);
-	return (v);
+	transformVertex(&v); return (v);
 };
 
 void POGEL::MATRIX::transformTriangle(POGEL::TRIANGLE* tri) {
-	for(int i=0;i<3;i++)
-		transformVertex(&tri->vertex[i]);
+	for(int i=0;i<3;i++) transformVertex(&tri->vertex[i]);
 	transformVector(&tri->normal);
 };
 
 POGEL::TRIANGLE POGEL::MATRIX::transformTriangle(POGEL::TRIANGLE tri) {
-	transformTriangle(&tri);
-	return tri;
+	transformTriangle(&tri); return tri;
 };
 
 POGEL::QUAT POGEL::MATRIX::toquat() {
@@ -347,16 +336,14 @@ void POGEL::MATRIX::fromaxis(POGEL::VECTOR axis, float angle) {
 POGEL::MATRIX POGEL::MATRIX::operator+(POGEL::MATRIX m) {
 	// simply adds the two matricies together
 	POGEL::MATRIX ret;
-	for(int i=0;i<16;i++)
-		ret.matrix[i]=m.matrix[i]+matrix[i];
+	for(int i=0;i<16;i++) ret.matrix[i]=m.matrix[i]+matrix[i];
 	return ret;
 };
 
 POGEL::MATRIX POGEL::MATRIX::operator-(POGEL::MATRIX m) {
 	// simply subtracts the two matricies from each other
 	POGEL::MATRIX ret;
-	for(int i=0;i<16;i++)
-		ret.matrix[i] = matrix[i] - m.matrix[i];
+	for(int i=0;i<16;i++) ret.matrix[i] = matrix[i] - m.matrix[i];
 	return ret;
 };
 
@@ -380,25 +367,6 @@ POGEL::MATRIX POGEL::MATRIX::operator*(POGEL::MATRIX a) {
 POGEL::MATRIX& POGEL::MATRIX::operator=(const POGEL::MATRIX& m) {
 	// assignes one matrix the value of another
 	for(int i=0;i<16;i++) matrix[i]=m.matrix[i];
-	
-	/*matrix[ 0]=m.matrix[ 0];
-	matrix[ 1]=m.matrix[ 1];
-	matrix[ 2]=m.matrix[ 2];
-	matrix[ 3]=m.matrix[ 3];
-	matrix[ 4]=m.matrix[ 4];
-	matrix[ 5]=m.matrix[ 5];
-	matrix[ 6]=m.matrix[ 6];
-	matrix[ 7]=m.matrix[ 7];
-	matrix[ 8]=m.matrix[ 8];
-	matrix[ 9]=m.matrix[ 9];
-	matrix[10]=m.matrix[10];
-	matrix[11]=m.matrix[11];
-	matrix[12]=m.matrix[12];
-	matrix[13]=m.matrix[13];
-	matrix[14]=m.matrix[14];
-	matrix[15]=m.matrix[15];*/
-	
 	return *this;
-	//return m;
 };
 

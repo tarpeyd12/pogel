@@ -10,14 +10,15 @@ POGEL::FRACTAL::FRACTAL() : POGEL::OBJECT() {
 	POGEL::OBJECT::setproperties(FRACTAL_DEFAULT_BASE_PROPERTIES);
 };
 
-POGEL::FRACTAL::FRACTAL(
-						void* dat, 
-						void (*cons)(POGEL::FRACTAL*,unsigned long), 
-						void (*dest)(POGEL::FRACTAL*,unsigned long), 
-						unsigned long totalItterations, 
-						unsigned long currentItteration
-						) : POGEL::OBJECT()
-	{
+POGEL::FRACTAL::FRACTAL
+	(
+		void* dat, 
+		void (*cons)(POGEL::FRACTAL*,unsigned long), 
+		void (*dest)(POGEL::FRACTAL*,unsigned long), 
+		unsigned long totalItterations, 
+		unsigned long currentItteration
+	) : POGEL::OBJECT()
+{
 	
 	itterationLevel = currentItteration;
 	itterationMax = totalItterations;
@@ -32,13 +33,14 @@ POGEL::FRACTAL::FRACTAL(
 	//create();
 };
 
-POGEL::FRACTAL::FRACTAL(
-						void* dat, 
-						void (*cons)(POGEL::FRACTAL*,unsigned long), 
-						void (*dest)(POGEL::FRACTAL*,unsigned long), 
-						unsigned long totalItterations
-						) : POGEL::OBJECT()
-	{
+POGEL::FRACTAL::FRACTAL
+	(
+		void* dat, 
+		void (*cons)(POGEL::FRACTAL*,unsigned long), 
+		void (*dest)(POGEL::FRACTAL*,unsigned long), 
+		unsigned long totalItterations
+	) : POGEL::OBJECT()
+{
 	
 	itterationLevel = 0;
 	itterationMax = totalItterations;
@@ -68,15 +70,13 @@ POGEL::FRACTAL::~FRACTAL() {
 void POGEL::FRACTAL::step() {
 	rotate(spin);
 	translate(direction);
-	for(unsigned long i = 0; i < numchildren ; i++)
-		children[i]->step();
+	for(unsigned long i = 0; i < numchildren ; i++) children[i]->step();
 };
 
 void POGEL::FRACTAL::create() {
 	if(itterationLevel < itterationMax) { // this if statement must match the one in POGEL::FRACTAL::spawn()
 		creation(this, itterationLevel);
-		for(unsigned long i = 0; i < numchildren; i++)
-			children[i]->create();
+		for(unsigned long i = 0; i < numchildren; i++) children[i]->create();
 	}
 };
 

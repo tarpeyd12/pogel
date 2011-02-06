@@ -25,10 +25,7 @@ void POGEL::PHYSICS::SIMULATION::addpulls() {
 				objects[a]->napping()
 			) {
 				objects[a]->direction = POGEL::VECTOR();
-				if(!objects[a]->napping()) {
-					objects[a]->forcegetbounding();
-					objects[a]->sleep();
-				}
+				if(!objects[a]->napping()) { objects[a]->forcegetbounding(); objects[a]->sleep(); }
 			}
 			//else if(objects[a]->napping()) { }
 			else {
@@ -102,20 +99,13 @@ void POGEL::PHYSICS::SIMULATION::checkcollisions() {
 };
 
 void POGEL::PHYSICS::SIMULATION::stepobjs() {
-	for(unsigned long a=0;a<numobjects;a++) {
-		if(!objects[a]->napping())
-			objects[a]->step();
-	}
+	for(unsigned long a=0;a<numobjects;a++) if(!objects[a]->napping()) objects[a]->step();
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
 	addpulls();
-	
-	for(int g = 0; g < 1; g++)
-		checkcollisions();
-	
+	for(int g = 0; g < 1; g++) checkcollisions();
 	stepobjs();
-	
 	stepstaken++;
 };
 
