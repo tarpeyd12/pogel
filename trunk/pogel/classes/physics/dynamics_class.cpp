@@ -80,7 +80,7 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 };
 
 void POGEL::PHYSICS::DYNAMICS::draw() {
-	for(unsigned long i=0;i<numobjects;i++) objects[i]->draw();
+	for(unsigned long i = 0; i < numobjects; i++) objects[i]->draw();
 };
 
 void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POINT center, unsigned int grd) {

@@ -3,6 +3,7 @@
 #include "matrix_class.h"
 
 void POGEL::POINT::draw() {
+	#ifdef OPENGL
 	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
 	glPointSize(5);
 	POGEL::COLOR(0,1.75,.75,1).set();
@@ -10,17 +11,21 @@ void POGEL::POINT::draw() {
 	glPointSize(1);
 	POGEL::COLOR(1,1,1,1).set();
 	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+	#endif
 };
 
 void POGEL::POINT::draw(unsigned int a) {
+	#ifdef OPENGL
 	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
 	glPointSize(a);
 	glBegin(GL_POINTS); glVertex3f(x,y,z); glEnd();
 	glPointSize(1);
 	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+	#endif
 };
 
 void POGEL::POINT::draw(unsigned int a, POGEL::COLOR color) {
+	#ifdef OPENGL
 	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
 	glPointSize(a);
 	color.set();
@@ -28,9 +33,11 @@ void POGEL::POINT::draw(unsigned int a, POGEL::COLOR color) {
 	glPointSize(1);
 	POGEL::COLOR(1,1,1,1).set();
 	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+	#endif
 };
 
 void POGEL::POINT::drawto(POGEL::POINT p) {
+	#ifdef OPENGL
 	glDisable(GL_TEXTURE_2D); glDisable(GL_LIGHTING);
 	POGEL::COLOR(0,1.75,.75,1).set();
 	glBegin(GL_LINES);
@@ -38,6 +45,7 @@ void POGEL::POINT::drawto(POGEL::POINT p) {
 	glEnd();
 	POGEL::COLOR(1,1,1,1).set();
 	glEnable(GL_LIGHTING); glEnable(GL_TEXTURE_2D);
+	#endif
 };
 
 POGEL::VECTOR::VECTOR(POGEL::POINT p1, POGEL::POINT p2) {

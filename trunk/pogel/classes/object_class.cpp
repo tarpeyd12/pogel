@@ -358,13 +358,16 @@ POGEL::MATRIX POGEL::OBJECT::getancestorialmatrix() {
 };
 
 void POGEL::OBJECT::build() {
-	unsigned long i;
+	
 	if(hasproperty(OBJECT_DRAW_DISPLAYLIST)) {
+		#ifdef OPENGL
+		unsigned long i;
 		base=glGenLists(1);
 		glNewList(base,GL_COMPILE);
 			for(i=0;i<numfaces;i++)
 				face[i].draw();
 		glEndList();
+		#endif
 	}
 	matrix.get();
 	
@@ -375,6 +378,7 @@ void POGEL::OBJECT::build() {
 };
 
 void POGEL::OBJECT::draw() {
+	#ifdef OPENGL
 	if(visable) {
 		if(hasproperty(OBJECT_ROTATE_TOCAMERA)) {
 			matrix.get();
@@ -387,7 +391,6 @@ void POGEL::OBJECT::draw() {
 			rotation.y = -1*(90+POGEL::RadiansToDegrees(atan2(cam_pos.z, cam_pos.x)))+180;
 			rotation.z = 0;
 		}
-		unsigned long i;
 		#ifdef OBJECT_USE_OPNEGL_MATRIX_RECURSION
 			glPushMatrix();
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
@@ -408,12 +411,12 @@ void POGEL::OBJECT::draw() {
 			glRotatef(rotation.y, 0.0f, 1.0f, 0.0f);
 			glRotatef(rotation.x, 1.0f, 0.0f, 0.0f);
 		}
-		
+		unsigned long i;
 		if(hasproperty(OBJECT_DRAW_DISPLAYLIST))
 			glCallList(base);
-		else
+		else {
 			for(i=0;i<numfaces;i++)
-				face[i].draw();
+				face[i].draw();}
 		if(hasproperty(OBJECT_DRAW_CHILDREN))
 			for(i=0;i<numchildren;i++) {
 				if(POGEL::hasproperty(POGEL_ANCESTORY))
@@ -474,5 +477,6 @@ void POGEL::OBJECT::draw() {
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
 	}
 	if(POGEL::hasproperty(POGEL_LABEL)) position.draw(4, POGEL::COLOR(.2,.5,1,1));
+	#endif
 };
 

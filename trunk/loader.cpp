@@ -52,13 +52,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	glEnable(GL_LIGHT1);
 	glEnable(GL_LIGHTING);
 	
-	img = new IMAGE("Data/default_2.bmp");
+	img = new IMAGE("Data/default_2.bmp", IMAGE_LINEAR);
 	
 	//char *flnm = POGEL::string("log0.txt",numobjs);
     std::ifstream ifs ( "Data/object_file.txt" , std::ifstream::in );
 	//free(flnm);
 	if(ifs.good()) {
-		
 		std::string line;
 		std::getline(ifs,line,'\n');
 		obj = new POGEL::PHYSICS::SOLID(line);

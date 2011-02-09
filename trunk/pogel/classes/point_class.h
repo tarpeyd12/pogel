@@ -126,9 +126,13 @@ class VERTEX: public POGEL::POINT {
 		VERTEX(POGEL::POINT p) {x=p.x; y=p.y; z=p.z; u=0.0f; v=0.0f; usable=true;}
 		
 		VERTEX(std::string s) {
-			sscanf(s.c_str(), "{[%f],[%f],[%f],[%f],[%f],", &x, &y, &z, &u, &v);
-			normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 0"));
-			color = POGEL::COLOR(POGEL::getStringComponentLevel('{','}', s, "0 1"));
+			std::string n = POGEL::getStringComponentLevel('{','}', s, "0 0");
+			std::string c = POGEL::getStringComponentLevel('{','}', s, "0 1");
+			std::string fmt = "{[%f],[%f],[%f],[%f],[%f],"+n+","+c+"}";
+			sscanf(s.c_str(), fmt.c_str(), &x, &y, &z, &u, &v);
+			normal = POGEL::VECTOR(n);
+			color = POGEL::COLOR(c);
+			usable=true;
 		}
 		
 		std::string toString()

@@ -154,12 +154,12 @@ void keyPressed(unsigned char key, int x, int y)
 			POGEL::addproperty(256);
 	}
 	
-	if(key == '9') {
+	/*if(key == '9') {
 		if(POGEL::hasproperty(POGEL_TIMEBASIS))
 			POGEL::removeproperty(POGEL_TIMEBASIS);
 		else
 			POGEL::addproperty(POGEL_TIMEBASIS);
-	}
+	}*/
 }
 
 void keyUnpressed(unsigned char key, int x, int y) 

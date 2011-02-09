@@ -1,12 +1,14 @@
-#include <GL/gl.h>
-#include <GL/glu.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "image_class.h"
+#ifdef OPENGL
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif
 
 POGEL::IMAGE::IMAGE() {
 	data=(char*)NULL;
-	base=(GLuint)NULL;
+	base=(unsigned int)NULL;
 	sizeX=0;
 	sizeY=0;
 	setfilter(IMAGE_LINEAR);
@@ -23,7 +25,7 @@ POGEL::IMAGE::IMAGE(const char *filename, int filter) {
 
 POGEL::IMAGE::~IMAGE() {
 	delete[] data;
-	base=(GLuint)NULL;
+	base=(unsigned int)NULL;
 };
 
 int POGEL::IMAGE::load(const char *filename) {
@@ -102,7 +104,8 @@ int POGEL::IMAGE::load(const char *filename) {
 	
 };
 
-GLuint POGEL::IMAGE::build() {
+unsigned int POGEL::IMAGE::build() {
+	#ifdef OPENGL
 	// Create Texture	
 	glGenTextures(1, &base);
 	glBindTexture(GL_TEXTURE_2D, base);   // 2d texture (x and y size)
@@ -131,11 +134,11 @@ GLuint POGEL::IMAGE::build() {
 		// border 0 (normal), rgb color data, unsigned byte data, and finally the data itself.
 		glTexImage2D(GL_TEXTURE_2D, 0, 3, sizeX, sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 	}
-	
+	#endif
 	return base;
 };
 
-GLuint POGEL::IMAGE::loadandbuild(const char *filename) {
+unsigned int POGEL::IMAGE::loadandbuild(const char *filename) {
 	load(filename); return build();
 };
 

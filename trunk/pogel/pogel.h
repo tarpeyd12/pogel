@@ -1,7 +1,6 @@
 #ifndef _POGEL_H
 #define _POGEL_H
 
-#include <GL/gl.h>
 #include <time.h>
 
 #include <iostream>

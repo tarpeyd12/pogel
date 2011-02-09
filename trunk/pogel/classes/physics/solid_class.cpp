@@ -285,6 +285,7 @@ void POGEL::PHYSICS::SOLID::build()  {
 };
 
 void POGEL::PHYSICS::SOLID::draw() {
+	#ifdef OPENGL
 	unsigned int prp = POGEL::getproperties();
 	if(POGEL::hasproperty(POGEL_LABEL)) POGEL::removeproperty(POGEL_LABEL);
 	POGEL::OBJECT::draw();
@@ -370,6 +371,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 			glLineStipple(1, 0xFFFF);
 		#endif /* SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL */
 	}
+	#endif
 };
 
 void POGEL::PHYSICS::SOLID::increment() {

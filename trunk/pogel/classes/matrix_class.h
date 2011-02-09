@@ -1,7 +1,9 @@
 #ifndef _MATRIX_CLASS_H
 #define _MATRIX_CLASS_H
 
+#ifdef OPENGL
 #include <GL/gl.h>
+#endif
 #include <math.h>
 
 namespace POGEL {
@@ -54,7 +56,11 @@ class MATRIX {
 		//unsigned int getproperties() {return properties;}
 		//void setproperties(unsigned int prop) {properties=prop;}
 		
-		void get() {glGetFloatv(GL_MODELVIEW_MATRIX,matrix);}
+		void get() {
+			#ifdef OPENGL
+			glGetFloatv(GL_MODELVIEW_MATRIX,matrix);
+			#endif
+		}
 		
 		void set(float*);
 		void set(POGEL::MATRIX);
