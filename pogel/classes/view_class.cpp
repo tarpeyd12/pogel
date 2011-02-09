@@ -26,6 +26,7 @@ POGEL::VIEW::~VIEW() {
 };
 
 GLuint POGEL::VIEW::build() {
+	#ifdef OPENGL
 	data = (char*)new GLuint[((sizeX * sizeY)* 4 * sizeof(char))];
 	memset(data,'\0',((sizeX * sizeY)* 4 * sizeof(char)));
 	
@@ -57,11 +58,12 @@ GLuint POGEL::VIEW::build() {
 	//glTexImage2D(GL_TEXTURE_2D, 0, 3, sizeX, sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 	
 	delete data;
-	
+	#endif
 	return base;
 };
 
 void POGEL::VIEW::startrender() {
+	#ifdef OPENGL
 	//glClearColor(0.5f, 0.0f, 0.5f, 0.5f); // background color of the to be rendered texture
 	imgbgcolor.setasbgcolor(); // background color of the to be rendered texture
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	
@@ -75,10 +77,12 @@ void POGEL::VIEW::startrender() {
 
 	gluPerspective(45.0f,(float)sizeX/(float)sizeY,0.1f,100.0f);
 	glMatrixMode(GL_MODELVIEW);
+	#endif
 };
 
 
-GLuint POGEL::VIEW::endrender() {
+unsigned int POGEL::VIEW::endrender() {
+	#ifdef OPENGL
 	glBindTexture(GL_TEXTURE_2D,base);			// Bind To The Texture
 	
 	// Copy Our ViewPort To The Texture (From 0,0 To sizeX,sizeY... No Border)
@@ -94,7 +98,7 @@ GLuint POGEL::VIEW::endrender() {
 
 	gluPerspective(45.0f,(float)*screensizeX/(float)*screensizeY,0.1f,100.0f);
 	glMatrixMode(GL_MODELVIEW);
-	
+	#endif
 	return base;
 };
 
@@ -198,7 +202,7 @@ int stbi_write_tga(char const *filename, int x, int y, int comp, void *data)
 void POGEL::VIEW::save(unsigned int fileformat, const char* filename) {
 	/*int width = sizeX;
 	int height = sizeY;*/
-	
+	#ifdef OPENGL
 	int width = *screensizeX;
 	int height = *screensizeY;
 	
@@ -210,5 +214,6 @@ void POGEL::VIEW::save(unsigned int fileformat, const char* filename) {
 		case VIEW_SAVE_BMP: stbi_write_bmp(filename, width, height, 3, (void*)img_rgb); break;
 		case VIEW_SAVE_TGA: stbi_write_tga(filename, width, height, 3, (void*)img_rgb); break;
 	}
+	#endif
 };
 

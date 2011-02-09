@@ -8,7 +8,8 @@ POGEL::TRIANGLE::TRIANGLE(std::string s, POGEL::IMAGE* im) {
 	sscanf(s.c_str(), "{[%u],", &properties);
 	for(int i = 0; i < 3; i++) {
 		char* vt = POGEL::string("0 %d",i);
-		vertex[i] = POGEL::VERTEX(POGEL::getStringComponentLevel('{','}', s, vt));
+		std::string v = POGEL::getStringComponentLevel('{','}', s, vt);
+		vertex[i] = POGEL::VERTEX(v);
 		free(vt);
 	}
 	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
@@ -19,7 +20,8 @@ POGEL::TRIANGLE::TRIANGLE(std::string s) {
 	sscanf(s.c_str(), "{[%u],", &properties);
 	for(int i = 0; i < 3; i++) {
 		char* vt = POGEL::string("0 %d",i);
-		vertex[i] = POGEL::VERTEX(POGEL::getStringComponentLevel('{','}', s, vt));
+		std::string v = POGEL::getStringComponentLevel('{','}', s, vt);
+		vertex[i] = POGEL::VERTEX(v);
 		free(vt);
 	}
 	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
@@ -163,6 +165,7 @@ void POGEL::TRIANGLE::getbounding() {
 };
 
 void POGEL::TRIANGLE::draw() {
+	#ifdef OPENGL
 	if(texture!=NULL)
 		texture->set();
 	if(((hasproperty(TRIANGLE_LIT)) || (hasproperty(TRIANGLE_VERTEX_NORMALS))) /*&& !POGEL::hasproperty(POGEL_WIREFRAME)*/)
@@ -181,9 +184,9 @@ void POGEL::TRIANGLE::draw() {
 			else
 				glNormal3f( normal.x, normal.y, normal.z);
 		}
-		for(int i=0;i<(POGEL::hasproperty(POGEL_WIREFRAME) ? 4 : 3);i++) {
+		for(unsigned int i = 0; i < ( POGEL::hasproperty(POGEL_WIREFRAME) ? 4 : 3 ) ; i++) {
 			if(vertex[i%3].usable) {
-				if(hasproperty(TRIANGLE_COLORED))
+				if(hasproperty(TRIANGLE_COLORED)) // the triangle will not be colored if GL_LIGHTING is enabled, dont know why.
 					vertex[i%3].color.set();
 				if(!(hasproperty(TRIANGLE_LIT)) && (hasproperty(TRIANGLE_VERTEX_NORMALS))) {
 					if(hasproperty(TRIANGLE_INVERT_NORMALS))
@@ -197,5 +200,6 @@ void POGEL::TRIANGLE::draw() {
 			}
 		}
 	glEnd();
+	#endif
 };
 

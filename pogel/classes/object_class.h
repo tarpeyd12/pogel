@@ -45,7 +45,7 @@ class OBJECT {
 		POGEL::POINT rotation; // the rotation arround the center of the object
 		POGEL::VECTOR direction; // the movement vector
 		POGEL::VECTOR spin; // the spin vector
-		GLuint base; // the pointer ot the compiled display list
+		unsigned int base; // the pointer ot the compiled display list
 		POGEL::MATRIX matrix;
 		bool visable;
 		

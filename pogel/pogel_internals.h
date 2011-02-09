@@ -1,6 +1,19 @@
 #ifndef _POGEL_INTERNALS_H
 #define _POGEL_INTERNALS_H
 
+// used to remove all OpenGL requirements throught the entire library.
+//#define NO_OPENGL
+
+#define OPENGL
+
+#ifdef NO_OPENGL
+#undef OPENGL
+#endif
+
+#ifdef OPENGL
+#include <GL/gl.h>
+#endif
+
 #include <time.h>
 #include <string.h>
 #include <stdio.h>
@@ -8,6 +21,7 @@
 
 #include <iostream>
 #include <string>
+
 
 #define		PROPERTIES_METHODS		unsigned int getproperties() {return properties;} \
 									void setproperties(unsigned int prop) {properties=prop;} \

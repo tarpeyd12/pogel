@@ -384,4 +384,3 @@ std::string POGEL::getStringComponentLevel(char startChar, char endChar, std::st
 	return POGEL::getStringComponentLevel(startChar, true, endChar, true, s, path_s);
 };
 
-

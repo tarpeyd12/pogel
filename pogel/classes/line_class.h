@@ -20,7 +20,7 @@ class LINE {
 		
 		bool stippled;
 		unsigned int stp_width;
-		GLushort patern;
+		unsigned short patern;
 		
 		LINE() { 
 				ends[0] = POGEL::POINT(); ends[1] = POGEL::POINT();
@@ -63,7 +63,7 @@ class LINE {
 			}
 			
 		
-		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c, unsigned int wdth, GLushort pat) {
+		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c, unsigned int wdth, unsigned short pat) {
 				ends[0] = a; ends[1] = b;
 				line_width = lw;
 				color = c;
@@ -80,6 +80,7 @@ class LINE {
 		
 		void draw()
 			{
+				#ifdef OPENGL
 				glDisable(GL_TEXTURE_2D);
 				glDisable(GL_LIGHTING);
 				glLineWidth(line_width);
@@ -101,6 +102,7 @@ class LINE {
 				}
 				glEnable(GL_LIGHTING);
 				glEnable(GL_TEXTURE_2D);
+				#endif
 			}
 };
 }

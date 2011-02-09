@@ -47,6 +47,7 @@ void POGEL::BOUNDING::offset(POGEL::POINT offs) {
 
 void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 	if(POGEL::hasproperty(POGEL_BOUNDING)) {
+		#ifdef OPENGL
 		glPushMatrix();
 			glDisable(GL_TEXTURE_2D);
 			glDisable(GL_LIGHTING);
@@ -72,6 +73,7 @@ void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 			glEnable(GL_LIGHTING);
 			glEnable(GL_TEXTURE_2D);
 		glPopMatrix();
+		#endif
 	}
 };
 

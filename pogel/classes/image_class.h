@@ -20,7 +20,7 @@ class IMAGE {
 		int filtertype;
 		char *data; // the bytes of data in the pixels
 		unsigned short int channels; // the number of bytes per pixel
-		GLuint base; // the opengl texture identification number
+		unsigned int base; // the opengl texture identification number
 	public:
 		unsigned long sizeX;
 		unsigned long sizeY;
@@ -35,10 +35,14 @@ class IMAGE {
 		
 		/* methods */
 		int load(const char*);
-		GLuint build();
-		GLuint loadandbuild(const char*);
-		GLuint getbase() {return base;}
-		void set() {glBindTexture(GL_TEXTURE_2D, getbase());}
+		unsigned int build();
+		unsigned int loadandbuild(const char*);
+		unsigned int getbase() {return base;}
+		void set() {
+			#ifdef OPENGL
+			glBindTexture(GL_TEXTURE_2D, getbase());
+			#endif
+		}
 		unsigned long getheight() {return sizeY;}
 		unsigned long getwidth() {return sizeX;}
 		void setfilter(int t) { filtertype = t; }

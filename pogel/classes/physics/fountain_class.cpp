@@ -41,7 +41,7 @@ void POGEL::PHYSICS::FOUNTAIN::build() {
 };
 
 void POGEL::PHYSICS::FOUNTAIN::draw() {
-	
+	#ifdef OPENGL
 	if(POGEL::hasproperty(POGEL_ANCESTORY)) {
 		POGEL::MATRIX mat(position, rotation);
 		for(unsigned long i=0;i<numobjects;i++)
@@ -81,4 +81,5 @@ void POGEL::PHYSICS::FOUNTAIN::draw() {
 	}
 	glTranslatef(-position.x, -position.y, -position.z);
 	#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
+	#endif
 };
