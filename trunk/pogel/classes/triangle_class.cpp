@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "triangle_class.h"
+#include "physics/physics.h"
 
 POGEL::TRIANGLE::TRIANGLE(std::string s, POGEL::IMAGE* im) {
 	texture = im;
@@ -74,6 +75,9 @@ POGEL::POINT POGEL::TRIANGLE::middle() {
 };
 
 bool POGEL::TRIANGLE::isinfront(POGEL::POINT p) {
+	//float d = p.distance(middle());
+	//POGEL::POINT r;
+	//return !POGEL::PHYSICS::line_triangle_collision(p, p+normal.normal()*d, *this, &r, &r);
 	POGEL::POINT closest = middle();
 	POGEL::POINT points[] = {
 		vertex[0].topoint(), \
@@ -188,6 +192,8 @@ void POGEL::TRIANGLE::draw() {
 			if(vertex[i%3].usable) {
 				if(hasproperty(TRIANGLE_COLORED)) // the triangle will not be colored if GL_LIGHTING is enabled, dont know why.
 					vertex[i%3].color.set();
+				else
+					POGEL::COLOR(1,1,1,1).set();
 				if(!(hasproperty(TRIANGLE_LIT)) && (hasproperty(TRIANGLE_VERTEX_NORMALS))) {
 					if(hasproperty(TRIANGLE_INVERT_NORMALS))
 						glNormal3f(-vertex[i%3].normal.x,-vertex[i%3].normal.y,-vertex[i%3].normal.z);

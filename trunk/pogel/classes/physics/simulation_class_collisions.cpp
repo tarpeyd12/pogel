@@ -240,7 +240,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SO
 	
 	POGEL::POINT c3d, c2d;
 	
-	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_LEAST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
+	POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_LEAST, obj2, obj1->position, obj1->position+POGEL::VECTOR(obj2->position,obj1->position), &tmptri, &c2d, &tmp_2);
 	
 	POGEL::VECTOR v;
 	float d;

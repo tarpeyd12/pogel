@@ -33,8 +33,8 @@ unsigned int objnum;
 
 #define svfrq 1000/numobjs
 
-#define sps 1.0f/2
-#define size 1.0f/20
+#define sps 1.0f/1
+#define size 1.0f/1
 OBJECT *obj;
 POGEL::PHYSICS::SOLID **sphs;
 POGEL::PHYSICS::SOLID *border;
@@ -66,8 +66,6 @@ bool sc = false;
 #ifdef th
 bool ef = false;
 void* sim_runner(void* arg) {
-	//int i = (int)arg;
-	//printf("\nstarting thread %d\n", i);
 	for(;;) {
 		if(keypres) {
 			keypres = false;
@@ -78,41 +76,24 @@ void* sim_runner(void* arg) {
 			sim.increment();
 			updts++;
 		}
-		//POGEL::PrintFps();
-		//printf("thread %d: updates = %ld\n", i, updts-1);
-		/*if(keys[';'] || updts%svfrq == 0)
-		{
-			char *flnm = POGEL::string("log%d.txt",numobjs);
-			std::ofstream outfile (flnm, std::ios_base::trunc);
-			free(flnm);
-			for(unsigned long a=0;a<numobjs;a++) {
-				//printf("%s\n",sphs[a]->toString().c_str());
-				outfile << sphs[a]->toString() << "\n";
-			}
-			outfile.close();
-		}*/
 		if(POGEL::hasproperty(POGEL_TIMEBASIS)) POGEL::removeproperty(POGEL_TIMEBASIS);
 		if(ef) break;
+		if(keys['c']) {
+			keys['c'] = false;
+			sim.deactivation = !sim.deactivation;
+		}
+		if(sim.deactivation)
+			std::cout << " deactivation enabled" << std::endl;
+		else
+			std::cout << " deactivation disabled" << std::endl;
 	}
 	pthread_exit(NULL);
-};
-
-void exitingfunction() {
-	ef = true;
-	simulator_runner->joinThread();
-	char *flnm = POGEL::string("log%d.txt",numobjs);
-	std::ofstream outfile (flnm, std::ios_base::trunc);
-	free(flnm);
-	for(unsigned long a=0;a<numobjs;a++) {
-		//printf("%s\n",sphs[a]->toString().c_str());
-		outfile << sphs[a]->toString() << "\n";
-	}
-	outfile.close();
 };
 
 #endif
 
 void oob(SOLID_FNC_DEF) {
+		//if(obj->behavior.mass > -1000.0) obj->behavior.mass -= 100.0f;
         /*if(obj->position.distance(POGEL::POINT()) > border->bounding.maxdistance + 1) {
                 obj->moveto(POGEL::POINT(POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5,POGEL::FloatRand(1.0)-0.5)*POGEL::FloatRand(20.0f));
                 //obj->moveto(POGEL::POINT());
@@ -171,6 +152,15 @@ void oob(SOLID_FNC_DEF) {
         obj->position.z = 0.0;
         obj->direction.z = 0.0f;
         }
+        
+        for(unsigned int a = 0; a < obj->getnumfaces(); a++) {
+           	POGEL::TRIANGLE t = obj->gettriangle(a);
+           	//t.addproperty(TRIANGLE_COLORED|TRIANGLE_LIT);
+           	for(int b = 0; b < 3; b++) {
+           		t.vertex[b].color = obj->getLabelColor();
+           	}
+           	obj->settriangle(a, t);
+		}
 };
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
@@ -203,7 +193,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();                               // Reset The Projection Matrix
         
-        gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,500.0f);       // Calculate The Aspect Ratio Of The Window
+        gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.01f,500.0f);       // Calculate The Aspect Ratio Of The Window
     	
         glMatrixMode(GL_MODELVIEW);
         /*glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
@@ -214,9 +204,9 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         //POGEL::addproperty(POGEL_TIMEBASIS);
         //sim = new POGEL::PHYSICS::SIMULATION();
-        //sim.deactivation = !true;
-        //sim.precision = 0.0075f;
-        //sim.inactive_index = 20;
+        sim.deactivation = !false;
+        sim.precision = 0.00075f;
+        sim.inactive_index = 250;
         
         sim.boundingskips = 0;
         
@@ -279,7 +269,8 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //obj[i].moveto(POINT(0.0f,(float)(i)*2.75f,0.0f));
                 //obj[i].turnto(POINT(POGEL::FloatRand(360.0), POGEL::FloatRand(360.0), POGEL::FloatRand(360.0)) * POINT(1.0f,1.0f,1.0f));
                 //obj[i].turnto(POINT());
-                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 5000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
+                sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 50000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
+//                if(i%2==0) sphs[i]->behavior.mass = 5000.0f;
                 //sphs[i]->moveto(POINT(POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5,POGEL::FloatRand(5.0)-2.5));
                 //sphs[i]->position.print();
                 //sphs[i]->turnto(POINT(POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10,POGEL::FloatRand(20.0)-10));
@@ -307,7 +298,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i]->setstepstaken(0);
                 
-                //sphs[i]->resizetrail(100);
+                sphs[i]->resizetrail(sim.inactive_index);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -319,26 +310,8 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),25000.0f) );
         //sim.addsingularity( POGEL::PHYSICS::SINGULARITY(POGEL::POINT(0.0f,0.0f,0.0f),-10000000000000.0f) );
         //sim.addfan(POGEL::PHYSICS::FAN(POINT(0.0f,0.0f,0.0f), VECTOR(0.0f,1.0f,0.0f), 50000.0f));
-        //sim.gravity = POGEL::VECTOR(0.0f,-1.0f,0.0f).normal()*1.8f/120000;
+        //sim.gravity = POGEL::VECTOR(0.0f,1.0f,0.0f).normal()*1.8f/120000;
         //sim.air_dencity = 1000;
-        char *flnm = POGEL::string("log%d.txt",numobjs);
-        std::ifstream ifs ( flnm , std::ifstream::in );
-		free(flnm);
-		if(ifs.good()) {
-			
-			std::string line;
-			std::string pos_str, dir_str;
-			for(unsigned int i=0;i<numobjs;i++) {
-				if(!ifs.good())break;
-				line.clear();
-				std::getline(ifs,line,'\n');
-		    	sphs[i]->position = POGEL::POINT(POGEL::getStringComponentLevel('{','}',line,"0 0"));
-		    	sphs[i]->direction = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}',line,"0 2"));
-		    	//std::cout << "pos:  " + sphs[i]->position.toString() + ", dir:  " + sphs[i]->direction.toString() + "\n";
-	    	}
-  		}
-        
-        ifs.close();
         
         //POGEL::addproperty(POGEL_WIREFRAME);
         
@@ -353,22 +326,24 @@ void InitGL(int Width, int Height)              // We call this right after our 
         //addCylinder(ring, 4, 1, 5.0f, 20.0f, 5.0f, defaultimg, 1.0f, 1.0f, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,-2.5f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
         
         //addCube(ring, 20.0f,200.0f,200.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
-        //addCube(ring, 30.0f,30.0f,30.0f, defaultimg, 1,1,0,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
+        
+        addCube(ring, 5.0f,5.0f,5.0f, defaultimg, 1,1,0,POGEL::MATRIX(POGEL::POINT(0.0f,0.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
+        
         //
         /*addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));
         addCube(ring, 20.0f,20.0f,20.0f, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX(POGEL::POINT(-20.0f,10.0f,0.0f),POGEL::POINT(0.0f,0.0f,0.0f)));*/
         
-        addSphere(ring,16,16, 50.0f, NULL,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        //addSphere(ring,32,32, 5.0f, defaultimg,2,4, 0 , MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         
         //addCylinder(ring, 16, 1, 20.0f, 20.0f, 20.0f, defaultimg, 4.0f, 4.0f, 0 | TRIANGLE_LIT | TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
         //addDisk(ring, 16, 1, 20.0f, 17.5f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,10.0f), VERTEX(0.0f,0.0f,180.0f)));
         //addDisk(ring, 16, 1, 20.0f, 0.0f, defaultimg,1, 1, 0 | TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,-10.0f), VERTEX(0.0f,0.0f,180.0f)));
         
-        ring->setproperties(0);
+        ring->setproperties(0|OBJECT_DRAW_DISPLAYLIST);
         ring->moveto(POGEL::POINT(0.0f,0.0f,0.0f));
         //ring->turnto(POGEL::POINT(POGEL::FloatRand(360.0),POGEL::FloatRand(360.0),POGEL::FloatRand(360.0))*1);
         ring->build();
-        border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), 1|PHYSICS_SOLID_CONCAVE|16);
+        border = new POGEL::PHYSICS::SOLID(ring, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(), 1|PHYSICS_SOLID_CONCAVE|0);
         //border->spin = POGEL::VECTOR(POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f),POGEL::FloatRand(1.0f))*1.0f;
         //border->spin = POGEL::VECTOR(0.0f,0.0f,1.0f);
         //border->direction = POGEL::VECTOR(0,1,0)/10;
@@ -379,12 +354,26 @@ void InitGL(int Width, int Height)              // We call this right after our 
         border->behavior.magnetic = false;
         border->behavior.charge = -0.01f;
         border->resizetrail(10);
-        border->build();
         //border->visable = false;
         //border->spin = POGEL::VECTOR(0.0f,1.0f,0.0f);
-        //sim.addSolid(border);
+        sim.addSolid(border);
         
-        border->visable = !true;
+        for(unsigned int a = 0; a < border->getnumfaces(); a++) {
+                	POGEL::TRIANGLE t = border->gettriangle(a);
+                	t.addproperty(TRIANGLE_COLORED);
+                	for(int b = 0; b < 3; b++) {
+                		t.vertex[b].color = POGEL::COLOR(1,1,1,0.25);
+                	}
+                	border->settriangle(a, t);
+                }
+        
+        POGEL::addproperty(POGEL_WIREFRAME);
+        border->build();
+        POGEL::removeproperty(POGEL_WIREFRAME);
+        
+        border->visable = true;
+        
+        //for(int i = 0; i < numobjs; i++) sim.addSolid(sphs[i]);
         
         
         POGEL::OBJECT* sp = new POGEL::OBJECT();
@@ -446,13 +435,13 @@ void InitGL(int Width, int Height)              // We call this right after our 
        	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
        	simulator_runner->startThread();
-       	exfnc = exitingfunction;
+       	//exfnc = exitingfunction;
        	#endif
 }
 
 //unsigned long frames=0;
 
-POGEL::POINT camrot(0,0,0), campos;
+POGEL::POINT camrot(0,90,0), campos;
 bool p = false;
 /* The main drawing function. */
 void DrawGLScene()
@@ -548,8 +537,8 @@ void DrawGLScene()
                 
         if(frames%frameskip == 0) {
                 sim.draw();
-                //if(!keys['m'])
-	                //sim.drawGravityGrid(10000, .075*10, POGEL::POINT(0,0,0), 15);
+                if(keys['m'])
+	                sim.drawGravityGrid(10000, .075*10, POGEL::POINT(0,0,0), 20);
                 //unsigned int op = POGEL::getproperties();
                 //POGEL::addproperty(POGEL_BOUNDING);
                 //border->bounding.draw(POGEL::POINT());
@@ -567,17 +556,6 @@ void DrawGLScene()
                 //if(POGEL::GetTimePassed() < 60.0f)
                        sim.increment();
                 }
-        if(keys[';'] || frames%svfrq == 0)
-		{
-			char *flnm = POGEL::string("log%d.txt",numobjs);
-			std::ofstream outfile (flnm, std::ios_base::trunc);
-			free(flnm);
-			for(unsigned long a=0;a<numobjs;a++) {
-				//printf("%s\n",sphs[a]->toString().c_str());
-				outfile << sphs[a]->toString() << "\n";
-			}
-			outfile.close();
-		}
         #endif
         if(keys['t']) {
         	keys['t'] = false;
@@ -630,7 +608,17 @@ void DrawGLScene()
         	}
         	
         	
+		if(keys['c']) {
+			keys['c'] = false;
+			sim.deactivation = !sim.deactivation;
+		}
+		if(sim.deactivation)
+			std::cout << " deactivation enabled" << std::endl;
+		else
+			std::cout << " deactivation disabled" << std::endl;
+        	
         //sim.gravity.print();
+        
         //sphs[0]->position.print();
         //POGEL::message("duration = %f\n", POGEL::duration);
         
@@ -640,7 +628,7 @@ void DrawGLScene()
 		}*/
         
         //message("\n");
-        border->bounding.draw(POGEL::POINT());
+        //border->bounding.draw(POGEL::POINT());
         // since this is double buffered, swap the buffers to display what just got drawn.
         if(frames%frameskip == 0) {
         glutSwapBuffers();

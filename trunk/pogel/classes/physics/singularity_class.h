@@ -47,6 +47,7 @@ class POGEL::PHYSICS::SINGULARITY {
 					v.normalize();
 					v *= getIntencity()*mass * GRAVITYCONSTANT;
 					v /= (dist*dist);
+					if(mass < 0.0) v*=-1.0;
 					return v;
 				}
 				return POGEL::VECTOR();

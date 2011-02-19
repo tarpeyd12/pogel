@@ -163,7 +163,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 5000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
                 sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
-                sphs[i]->build();
+                //sphs[i]->build();
                 sphs[i]->setstepstaken(0);
                 
                 sphs[i]->visable = true;
@@ -185,6 +185,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 		    	sphs[i]->position = POGEL::POINT(POGEL::getStringComponentLevel('{','}',line,"0 0"));
 		    	sphs[i]->direction = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}',line,"0 2"));
 		    	//std::cout << "pos:  " + sphs[i]->position.toString() + ", dir:  " + sphs[i]->direction.toString() + "\n";
+		    	sphs[i]->build();
 	    	}
   		}
         

@@ -25,7 +25,7 @@ class SOLID;
 #define			PHYSICS_SOLID_TRAILINDEX		10
 
 #define			SOLID_DISPLAY_TRAIL_FADING
-//#define			SOLID_DISPLAY_ROTATION_TRAIL
+#define			SOLID_DISPLAY_ROTATION_TRAIL
 //#define			SOLID_DISPLAY_NEGATIVE_ROTATION_TRAIL
 //#define			SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL
 
@@ -150,6 +150,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		void getbounding();
 		void setboundingskips();
 		void forcegetbounding();
+		
+		POGEL::COLOR getLabelColor();
 		
 		void build();
 		void draw();

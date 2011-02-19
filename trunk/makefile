@@ -25,7 +25,7 @@ OTHER = main.o window.o
 TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o loader.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) gravity.o
+OBJ =  $(OTHER) simulation.o
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
@@ -107,6 +107,8 @@ clean_bins:
 	@echo "Removing Test Binary Files ..."
 	-@rm $(wildcard $(TESTOBJS) $(patsubst %,bin/%,$(TESTBINARYS)))
 
+# in pogel_internals.h NO_OPENGL must be defined
+#  to build do make clean pogel lib spec_bin
 spec_bin:
 	@echo "Building special binary ..."
 	@$(CC) $(LIBDIR) -L./bin/ quietsim.cpp -lpogel -o bin/sb
