@@ -39,9 +39,18 @@ int main (int argc, char const* argv[])
 {
 	POGEL::getcmd(argc,(char**)argv);
 	unsigned int savefreq;
-	cout << "number of times to loop: "; cin >> loopnum;
-	cout << "number of objects(will be cubed): "; cin >> objnum;
-	cout << "number of itterations between saves: "; cin >> savefreq;
+	bool minput = true;
+	for(unsigned int i = 0; i < argc; i++)
+		if(!strncmp(argv[i],"-runprops[loops:%u,objnum:%u,savefrq:%u]", 16)) {
+			minput = false;
+			sscanf(argv[i], "-runprops[loops:%u,objnum:%u,savefrq:%u]", &loopnum, &objnum, &savefreq);
+			break;
+		}
+	if(minput) {
+		cout << "number of times to loop: "; cin >> loopnum;
+		cout << "number of objects(will be cubed): "; cin >> objnum;
+		cout << "number of itterations between saves: "; cin >> savefreq;
+	}
 	sim.boundingskips = 0;
     addproperty(POGEL_DEBUG);
 	srand((unsigned)time(NULL));
@@ -65,7 +74,7 @@ int main (int argc, char const* argv[])
 		}
 		sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 5000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
 		sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
-		sphs[i]->build();
+		//sphs[i]->build();
 		sphs[i]->setstepstaken(0);
 		sphs[i]->visable = true;
 		sim.addSolid(sphs[i]);
@@ -79,6 +88,7 @@ int main (int argc, char const* argv[])
 			line.clear(); std::getline(ifs,line,'\n');
 			sphs[i]->position  = POGEL::POINT (POGEL::getStringComponentLevel('{','}',line,"0 0"));
 			sphs[i]->direction = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}',line,"0 2"));
+			sphs[i]->build();
 		}
 	} ifs.close();
 	POGEL::InitFps();

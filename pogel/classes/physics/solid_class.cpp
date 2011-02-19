@@ -276,6 +276,14 @@ void POGEL::PHYSICS::SOLID::forcegetbounding() {
 	stepsatboundingcheck = stepstaken;
 };
 
+POGEL::COLOR POGEL::PHYSICS::SOLID::getLabelColor() {
+	if(behavior.magnetic && behavior.charge != 0.0f) {
+			if(behavior.charge < 0.0f)	return POGEL::COLOR( 1,.5,.2,1);
+			else						return POGEL::COLOR(.5, 1,.2,1);
+		}	else if(sleeping)			return POGEL::COLOR( 1, 0,.5,1);
+	return POGEL::COLOR(.2,.5, 1,1);
+};
+
 void POGEL::PHYSICS::SOLID::build()  {
 	POGEL::OBJECT::build();
 	forcegetbounding();
@@ -299,11 +307,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 		POGEL::LINE( position, 
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
 			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
-		if(behavior.magnetic && behavior.charge != 0.0f) {
-			if(behavior.charge < 0.0f)	position.draw(3, POGEL::COLOR( 1,.5,.2,1));
-			else						position.draw(3, POGEL::COLOR(.5, 1,.2,1));
-		}	else if(sleeping)			position.draw(3, POGEL::COLOR( 1, 0,.5,1));
-			else						position.draw(3, POGEL::COLOR(.2,.5, 1,1));
+		position.draw(3, getLabelColor());
 	}
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
@@ -317,13 +321,13 @@ void POGEL::PHYSICS::SOLID::draw() {
 			#endif /* SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL */
 		#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		
-		for(unsigned int i = 0 ; i < trailsize - 1 && i < stepstaken ; i++) {	
+		for(unsigned int i = 0 ; i < trailsize - 1 && i < stepstaken && i < 64; i++) {	
 			float color = 1.0f;
 			#ifdef SOLID_DISPLAY_TRAIL_FADING
 				color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
-			if((stepstaken-i)%20==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
+			if((stepstaken-i)%16==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
 			
 			if(trail[i].distance(trail[i+1]) > 1) continue;
 			

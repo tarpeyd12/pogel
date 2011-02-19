@@ -17,17 +17,34 @@ void POGEL::PHYSICS::SIMULATION::addpulls() {
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			
 			if(
-				(deactivation && 
-				((objects[a]->direction+objects[a]->force).getdistance() <= precision*r || 
-				objects[a]->sameposlegacy(precision*r, inactive_index)) && 
-				objects[a]->stepstaken > objects[a]->trailsize && 
-				stepstaken > 100) ||
-				objects[a]->napping()
+				(
+					deactivation
+					&&
+					(
+						(
+							(objects[a]->direction+objects[a]->force).getdistance() <= precision*r
+							&&
+							objects[a]->sameposlegacy(precision*r, inactive_index)
+						)
+						&&
+						objects[a]->stepstaken > objects[a]->trailsize
+						&&
+						stepstaken > 100
+						&&
+						objects[a]->stepstaken > inactive_index
+					)
+					//||
+					//objects[a]->napping()
+				)
 			) {
 				objects[a]->direction = POGEL::VECTOR();
 				if(!objects[a]->napping()) { objects[a]->forcegetbounding(); objects[a]->sleep(); }
 			}
-			//else if(objects[a]->napping()) { }
+			else if(!deactivation) {
+				objects[a]->direction += getpull(objects[a]);
+				if(objects[a]->napping()) objects[a]->wake();
+			}
+			else if(objects[a]->napping()) { }
 			else {
 				objects[a]->direction += getpull(objects[a]);
 				if(objects[a]->napping()) objects[a]->wake();
@@ -45,7 +62,7 @@ void POGEL::PHYSICS::SIMULATION::addpulls() {
 
 void POGEL::PHYSICS::SIMULATION::checkcollisions() {
 	for( unsigned long a = 0; a < numobjects; a++ ) {
-		if(!objects[a]->napping())
+		if(!objects[a]->napping() || objects[a]->hasOption(PHYSICS_SOLID_STATIONARY))
 			for( unsigned long b = 0; b < numobjects; b++ )
 				if( a!=b && boundingcheck(objects[a], objects[b]) ) {
 					if( processcollision(objects[a], objects[b])) {
@@ -99,7 +116,12 @@ void POGEL::PHYSICS::SIMULATION::checkcollisions() {
 };
 
 void POGEL::PHYSICS::SIMULATION::stepobjs() {
-	for(unsigned long a=0;a<numobjects;a++) if(!objects[a]->napping()) objects[a]->step();
+	for(unsigned long a=0;a<numobjects;a++)
+		if(!objects[a]->napping())
+			objects[a]->step();
+		else if(objects[a]->function)
+			objects[a]->function(objects[a]);
+			
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
