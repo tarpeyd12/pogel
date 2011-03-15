@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define itterations 15
+#define itterations 10
 #define startsize	2.0f
 #define size    	0.6f
 POGEL::FRACTAL* obj;

@@ -23,14 +23,14 @@ POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPR
 	physproperties = prop;
 	maximumdistance = 0.0f;
 	stepstaken = objboundingskips = stepsatboundingcheck = 0;
-	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
+	bounding  = POGEL::BOUNDING(BOUNDING_OBJECT);
 	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
-	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	rots  = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
 	trailsize = PHYSICS_SOLID_TRAILSIZE;
 	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) trail[i] = rots[i] = POGEL::POINT();
 	container = NULL; callback = NULL; function = NULL;
-	force = POGEL::VECTOR();
-	sleeping = false;
+	force     = POGEL::VECTOR();
+	sleeping  = false;
 	cantsleep = false;
 };
 
@@ -44,23 +44,24 @@ POGEL::PHYSICS::SOLID::SOLID(std::string s) {
 	direction = POGEL::VECTOR                          (POGEL::getStringComponentLevel('{','}',s,"0 2"));
 	spin      = POGEL::VECTOR                          (POGEL::getStringComponentLevel('{','}',s,"0 3"));
 	behavior  = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(POGEL::getStringComponentLevel('{','}',s,"0 4"));
-	std::string curtri = trianglestring = POGEL::getStringSection('<',1,false,'>',1,false, s); 
+	std::string curtri = trianglestring = POGEL::getStringSection('<',1,false,'>',1,false, s);
 	unsigned int numendintri = POGEL::getOccurrencesInString('}', POGEL::TRIANGLE().toString());
+	addtrianglespace(POGEL::getOccurrencesInString('}', curtri)/numendintri);
 	while(!curtri.empty()) {
 		POGEL::message("\rLoading triangles: %0.2f%%",(((float)trianglestring.length()-(float)curtri.length())/(float)trianglestring.length())*100);
-		addtriangle(POGEL::TRIANGLE(curtri, NULL));
-		for(i = 0, bpos = 0, nbcs = 0; i < curtri.length(); i++) if(curtri[i] == '}' && nbcs++ == numendintri-1 ) { bpos = i; break; }
+		addtriangle(POGEL::TRIANGLE(curtri));
+		for(i = bpos = nbcs = 0; i < curtri.length(); i++) if(curtri[i] == '}' && nbcs++ == numendintri-1 ) { bpos = i; break; }
 		std::string trtmp = curtri; curtri.clear(); if(bpos+2 <= trtmp.length()) curtri = trtmp.substr(bpos+2);
 	}
 	maximumdistance = 0.0f;
 	stepstaken = objboundingskips = stepsatboundingcheck = 0;
-	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
+	bounding  = POGEL::BOUNDING(BOUNDING_OBJECT);
 	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
-	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	rots  = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
 	trailsize = PHYSICS_SOLID_TRAILSIZE;
 	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) trail[i] = rots[i] = POGEL::POINT();
 	container = NULL; callback = NULL; function = NULL;
-	force = POGEL::VECTOR();
+	force     = POGEL::VECTOR();
 };
 
 POGEL::PHYSICS::SOLID::~SOLID() {
@@ -304,10 +305,10 @@ void POGEL::PHYSICS::SOLID::draw() {
 	refbounding.draw(position);
 	
 	if(POGEL::hasproperty(POGEL_LABEL)) {
-		POGEL::LINE( position, 
+		/*POGEL::LINE( position, 
 			position + (direction*2*(POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1) ), 
-			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();
-		position.draw(3, getLabelColor());
+			1, POGEL::COLOR( 1,.5, 0, 1) ).draw();*/
+		position.draw(2, getLabelColor());
 	}
 	
 	if(POGEL::hasproperty(POGEL_TRAILS)) {
@@ -321,19 +322,23 @@ void POGEL::PHYSICS::SOLID::draw() {
 			#endif /* SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL */
 		#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		
-		for(unsigned int i = 0 ; i < trailsize - 1 && i < stepstaken && i < 64; i++) {	
+		for(unsigned int i = 0 ; i < trailsize-1 && i < stepstaken && i < 64; i++) {	
 			float color = 1.0f;
 			#ifdef SOLID_DISPLAY_TRAIL_FADING
-				color = ((float)((trailsize-1)-i)/(float)(trailsize-1));
+				if(trailsize - 1 < 64)
+					color = ((float)(( trailsize-1 )-i)/(float)( trailsize-1 ));
+				else
+					color = ((float)(( 64 )-i)/(float)( 64 ));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
 			if((stepstaken-i)%16==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
 			
-			if(trail[i].distance(trail[i+1]) > 1) continue;
+			//if(trail[i].distance(trail[i+1]) > 1) continue;
 			
 			POGEL::LINE(trail[i], trail[i+1], 1, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
 			
 			#ifdef SOLID_DISPLAY_ROTATION_TRAIL // draw the rotation trail
+			if(!hasproperty(OBJECT_ROTATE_TOCAMERA)) {
 				mat[0] = mat[1];
 				mat[1] = POGEL::MATRIX(rots[i+1], MATRIX_CONSTRUCT_ROTATION);
 				POGEL::POINT x[3], y[3], z[3];
@@ -345,7 +350,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 					z[a+1] = mat[a+0].transformPoint(POGEL::POINT(0,0,len));
 				}
 				
-				for(int a = ((stepstaken-i)%20==0 ? 0 : 1); a < 2; a++) {
+				for(int a = ((stepstaken-i)%16==0 ? 0 : 1); a < 2; a++) {
 					POGEL::LINE(trail[i]+x[a], trail[i+a]+x[a+1], POGEL::COLOR(1,0,0,color)).draw(); // x axis positive
 					POGEL::LINE(trail[i]+y[a], trail[i+a]+y[a+1], POGEL::COLOR(0,1,0,color)).draw(); // y axis positive
 					POGEL::LINE(trail[i]+z[a], trail[i+a]+z[a+1], POGEL::COLOR(0,0,1,color)).draw(); // z axis positive
@@ -365,6 +370,7 @@ void POGEL::PHYSICS::SOLID::draw() {
 					#endif /* SOLID_DISPLAY_NEGATIVE_ROTATION_TRAIL */
 					
 				}
+			}
 			#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		}
 		
@@ -454,7 +460,7 @@ std::string POGEL::PHYSICS::SOLID::toString() {
 			""  + direction.toString() + ","
 			""  + spin.toString()      + ","
 			""  + behavior.toString()  + ","
-			"<"+trianglestring+">"
+			"<" + trianglestring       + ">"
 		"}";
 	free(pprp); free(prp); free(slping); free(cntslp);
 	return s;

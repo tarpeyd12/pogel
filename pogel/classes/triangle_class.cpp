@@ -6,26 +6,25 @@
 
 POGEL::TRIANGLE::TRIANGLE(std::string s, POGEL::IMAGE* im) {
 	texture = im;
-	sscanf(s.c_str(), "{[%u],", &properties);
+	sscanf(s.c_str(), "{[%u],", &this->properties);
 	for(int i = 0; i < 3; i++) {
 		char* vt = POGEL::string("0 %d",i);
 		std::string v = POGEL::getStringComponentLevel('{','}', s, vt);
-		vertex[i] = POGEL::VERTEX(v);
-		free(vt);
+		vertex[i] = POGEL::VERTEX(v); free(vt);
 	}
 	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
 };
 
 POGEL::TRIANGLE::TRIANGLE(std::string s) {
-	texture = NULL;
-	sscanf(s.c_str(), "{[%u],", &properties);
+	//texture = NULL;
+	sscanf(s.c_str(), "{[%u],", &this->properties);
 	for(int i = 0; i < 3; i++) {
 		char* vt = POGEL::string("0 %d",i);
 		std::string v = POGEL::getStringComponentLevel('{','}', s, vt);
-		vertex[i] = POGEL::VERTEX(v);
-		free(vt);
+		vertex[i] = POGEL::VERTEX(v); free(vt);
 	}
 	normal = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}', s, "0 3"));
+	texture = POGEL::requestImage(POGEL::getStringComponentLevel('{','}', s, "0 4"));
 };
 
 void POGEL::TRIANGLE::load(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop) {
@@ -170,6 +169,8 @@ void POGEL::TRIANGLE::getbounding() {
 
 void POGEL::TRIANGLE::draw() {
 	#ifdef OPENGL
+	//if(POGEL::hasproperty(POGEL_BOUNDING))
+		//bounding.draw(POGEL::POINT());
 	if(texture!=NULL)
 		texture->set();
 	if(((hasproperty(TRIANGLE_LIT)) || (hasproperty(TRIANGLE_VERTEX_NORMALS))) /*&& !POGEL::hasproperty(POGEL_WIREFRAME)*/)

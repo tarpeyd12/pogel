@@ -17,12 +17,12 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		masses[0] = obj1->behavior.mass;
 		masses[1] = obj2->behavior.mass;
 		
-		if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-			obj1->behavior.mass = masses[1];
-		else if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY))
-			obj2->behavior.mass = masses[0];
+		if(obj1->hasOption(PHYSICS_SOLID_STATIONARY) && !obj2->hasOption(PHYSICS_SOLID_STATIONARY)) obj1->behavior.mass = masses[1];
+		else
+		if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY)) obj2->behavior.mass = masses[0];
 		
 		POGEL::PHYSICS::calcInelasticDirections(obj1vect, obj1, obj2, vtmp);
+		//POGEL::PHYSICS::calcElasticDirections(obj1vect, obj1, obj2, vtmp);
 		
 		obj1->behavior.mass = masses[0];
 		obj2->behavior.mass = masses[1];
@@ -59,7 +59,6 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 				obj1->direction = vtmp[0] + vtmp[1]*-1;
 			else
 				obj1->direction = vtmp[0];
-			//obj2->direction = vtmp[1];
 			
 			POGEL::POINT p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(col-obj1->position);
 			obj1->direction -= (POGEL::VECTOR(p)*obj1->spin.getdistance())/PARTICLE_SLOWDOWN;

@@ -3,17 +3,8 @@
 #include "singularity_class.h"
 
 unsigned long POGEL::PHYSICS::FLOW::addfan(POGEL::PHYSICS::FAN fan) {
-	POGEL::PHYSICS::FAN *tmp = new POGEL::PHYSICS::FAN[numgusts+1];
-	if(numgusts > 0)
-		memcpy(tmp, gusts, sizeof(POGEL::PHYSICS::FAN)*numgusts);
-	tmp[numgusts]=fan;
-	//printf("reallocating fans from %p to: %p\n",gusts,tmp);
-	if(gusts)
-		delete[] gusts;
-	gusts = NULL;
-	gusts=tmp;
-	numgusts++;
-	return numgusts-1;
+	gusts.add(fan);
+	return numgusts++;
 };
 
 void POGEL::PHYSICS::FLOW::addfans(POGEL::PHYSICS::FAN *fan, unsigned long num) {
@@ -34,16 +25,8 @@ void POGEL::PHYSICS::FLOW::generatecurve(POGEL::POINT* waypoints, unsigned long 
 };
 
 unsigned long POGEL::PHYSICS::GRAVITYCLUSTER::addsingularity(POGEL::PHYSICS::SINGULARITY sig) {
-	POGEL::PHYSICS::SINGULARITY *tmp = new POGEL::PHYSICS::SINGULARITY[numsingularities+1];
-	if(numsingularities > 0) memcpy(tmp, singularities, sizeof(POGEL::PHYSICS::SINGULARITY)*numsingularities);
-	tmp[numsingularities]=sig;
-	//printf("reallocating singularities from %p to: %p\n",singularities,tmp);
-	if(singularities)
-		delete[] singularities;
-	singularities = NULL;
-	singularities=tmp;
-	numsingularities++;
-	return numsingularities-1;
+	singularities.add(sig);
+	return numsingularities++;
 };
 
 void POGEL::PHYSICS::GRAVITYCLUSTER::addsingularities(POGEL::PHYSICS::SINGULARITY* sig, unsigned long num) {

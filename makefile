@@ -22,10 +22,10 @@ POGEL = pogel/pogel.o $(POGEL_SUPPORT) $(POGEL_OBJECT) $(POGEL_PHYSICS)
 
 OTHER = main.o window.o 
 
-TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o loader.o
+TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o loader.o viewport.o viewer.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) simulation.o
+OBJ =  $(OTHER) gravity.o
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
@@ -111,7 +111,7 @@ clean_bins:
 #  to build do make clean pogel lib spec_bin
 spec_bin:
 	@echo "Building special binary ..."
-	@$(CC) $(LIBDIR) -L./bin/ quietsim.cpp -lpogel -o bin/sb
+	@$(CC) $(LIBDIR) -L./bin/ quietsim.cpp -lpogel -lpthread -o bin/sb
 
 
 # for running the test code

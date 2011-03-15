@@ -4,10 +4,11 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 #define		THREADTYPE		void*
 #define		THREADARGS		void*
-
+namespace POGEL {
 class THREAD {
 	private:
 		void* (*thread_function)(void* arg);
@@ -70,6 +71,7 @@ class THREAD {
 		
 		//void detachThread();
 };
+}
 
 #endif /* _THREADS_H */
 

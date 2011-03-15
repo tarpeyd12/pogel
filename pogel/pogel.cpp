@@ -12,9 +12,13 @@ namespace POGEL {
 	char *logfilefilename;
 	unsigned int properties;
 	
-	clock_t start, finish, start_long, finish_long;
+	float start, finish, start_long, finish_long;
 	unsigned long frames;
-	float duration, fps, fps_long;
+	float fps, fps_long;
+	
+	clock_t inittime, curtime;
+	float duration;
+	unsigned long inittmpst;
 	
 	float framerate_throtling_correction = 1.0f;
 }
@@ -266,30 +270,29 @@ bool POGEL::about(float a, float b, float pres) {
 };
 
 void POGEL::InitFps() {
-	POGEL::start = clock();
-	POGEL::start_long = clock();
+	POGEL::start =  POGEL::start_long = 0.0f;
+	POGEL::inittime = POGEL::curtime = clock();
+	POGEL::inittmpst = 0;
 	POGEL::duration = 0.0f;
 };
 
 void POGEL::IncrementFps() {
-	POGEL::finish = clock();
-	//POGEL::duration += (float)(POGEL::finish - POGEL::start)/CLOCKS_PER_SEC;
+	float cur = POGEL::GetTimePassed();
+	POGEL::finish = cur;
 	if(frames%POGEL_FPS_UPDATE_AVERAGE == 0) {
-		POGEL::finish_long = clock();
-		POGEL::fps_long = 1.0f/((float)(POGEL::finish_long - POGEL::start_long)/CLOCKS_PER_SEC);
-		POGEL::start_long = clock();
+		POGEL::finish_long = cur;
+		POGEL::fps_long = 1.0/fabs(POGEL::finish_long - POGEL::start_long);
+		POGEL::start_long = cur;
 	}
 	POGEL::frames++;
-	//POGEL::fps = ((POGEL::frames/POGEL::duration)+((float)(POGEL::finish - POGEL::start)/CLOCKS_PER_SEC))/2.0f;
-	POGEL::fps = 1.0f/((float)(POGEL::finish - POGEL::start)/CLOCKS_PER_SEC);
-	POGEL::fps += POGEL::fps_long;
-	POGEL::fps /= 2.0f;
-	duration += POGEL::GetSecondsPerFrame();
-	POGEL::start = clock();
+	POGEL::fps = 1.0/fabs(POGEL::finish - POGEL::start);
+	//POGEL::fps += POGEL::fps_long;
+	//POGEL::fps /= 2.0f;
+	POGEL::start = cur;
 };
 
 float POGEL::GetFps() {
-	return fps;
+	return (POGEL::fps+POGEL::fps_long)/2.0;
 };
 
 void POGEL::PrintFps() {
@@ -301,13 +304,12 @@ void POGEL::PrintFps() {
 	for (int i = 0; i < Nb; i++)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
 	glEnable(GL_LIGHTING);*/
-	POGEL::message("\rFrame: %u, Fps: %4.1f, Spf: %4.3f, Duration = %0.2fs (%d:%05.2f)",
+	float timepassed = POGEL::GetTimePassed();
+	POGEL::message("\rFrame: %u, Fps: %6.2f, Spf: %6.2f, Duration = %0.2fs (%d:%02d:%05.2f)",
 		POGEL::frames,
-		POGEL::GetFps(),
-		POGEL::GetSecondsPerFrame(),
-		POGEL::GetTimePassed(),
-		(int)POGEL::GetTimePassed()/60,
-		fmod(POGEL::GetTimePassed(),60)
+		(POGEL::GetFps()>999.99?999.99:POGEL::GetFps()), POGEL::GetSecondsPerFrame(),
+		timepassed,
+		(unsigned int)timepassed/3600, ((unsigned int)timepassed/60)%60, fmod(timepassed,60)
 	);
 };
 
@@ -320,7 +322,11 @@ float POGEL::GetSecondsPerFrame() {
 };
 
 float POGEL::GetTimePassed() {
-	return duration;
+	clock_t c = clock();
+	float t = float(c-POGEL::curtime)/float(CLOCKS_PER_SEC);
+	if(t >= 1000.0f) { POGEL::curtime = c; POGEL::duration += t; t = 0.0f;}
+	return t + duration;
+	//return duration;
 };
 
 void POGEL::ThrotleFps(int desitredFramerate) {

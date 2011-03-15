@@ -9,11 +9,14 @@
 
 namespace POGEL {
 class VIEW;
+class VIEWPORT;
 }
 
 #include "../pogel_internals.h"
 #include "misc_class.h"
 #include "image_class.h"
+
+#define			VIEW_NORESET		1
 
 #define			VIEW_SAVE_BMP		1
 #define			VIEW_SAVE_TGA		2
@@ -28,6 +31,9 @@ class VIEW : public IMAGE {
 		
 		void (*renderfunc)(void);
 		void (*sceneinit)(void);
+		
+		unsigned long viewportX;
+		unsigned long viewportY;
 	public:
 		POGEL::COLOR imgbgcolor;
 		
@@ -38,6 +44,11 @@ class VIEW : public IMAGE {
 			{ sizeX = x, sizeY = y; }
 		void setretscreensize(int* x, int* y)
 			{ screensizeX = x; screensizeY = y; }
+		void setviewoffset(unsigned long x, unsigned long y)
+			{ viewportX = x, viewportY = y; }
+			
+		void setviewport(unsigned long sx, unsigned long sy, unsigned long ex, unsigned long ey)
+			{ settexsize(ex-sx,ey-sy); setviewoffset(sx,sy); }
 		
 		void setrenderfunc(void (*f)(void))
 			{ renderfunc = f; }
@@ -47,7 +58,7 @@ class VIEW : public IMAGE {
 		void setbgcolor(POGEL::COLOR c)
 			{ imgbgcolor = c; }
 		
-		GLuint build();
+		unsigned int build();
 		
 		void initscene()
 			{
@@ -56,7 +67,7 @@ class VIEW : public IMAGE {
 					sceneinit();
 			}
 		
-		GLuint render()
+		unsigned int render()
 			{
 				startrender();
 				scene();
@@ -72,13 +83,20 @@ class VIEW : public IMAGE {
 			{ }
 		
 		void startrender();
-		GLuint endrender();
+		unsigned int endrender();
+		
+		void resetscreen();
 		
 		void save(unsigned int, const char*);
 		
 		PROPERTIES_METHODS;
-		
-		
+};
+
+class VIEWPORT : public POGEL::VIEW {
+	public:
+		VIEWPORT() {
+			addproperty(VIEW_NORESET);
+		}
 };
 }
 

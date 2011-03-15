@@ -10,14 +10,14 @@
 // the version number
 #define POGEL_VERSION "version 0.0.0-01"
 
-#define POGEL_FPS_UPDATE_AVERAGE 10
+#define POGEL_FPS_UPDATE_AVERAGE 1
 
 namespace POGEL {
 	// pogel global variables
 	extern char *logfilefilename;
 	extern unsigned int properties;
 	
-	extern clock_t start, finish, start_long, finish_long;
+	extern float start, finish, start_long, finish_long;
 	extern unsigned long frames;
 	extern float duration, fps, fps_long;
 	

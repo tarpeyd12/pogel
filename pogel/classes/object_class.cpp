@@ -238,6 +238,11 @@ void POGEL::OBJECT::addtrianglespace(unsigned long num) {
 	triangle_allocation_total += num;
 };
 
+void POGEL::OBJECT::cleartriangles() {
+	delete[] face; face = NULL;
+	numfaces = triangle_allocation_total = 0;	
+};
+
 unsigned long POGEL::OBJECT::addobject(POGEL::OBJECT *obj) {
 	if(obj == (POGEL::OBJECT*)NULL)
 		POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM,"%s to object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING);
@@ -476,7 +481,7 @@ void POGEL::OBJECT::draw() {
 		glTranslatef(-position.x, -position.y, -position.z);
 		#endif /* OBJECT_USE_OPNEGL_MATRIX_RECURSION */
 	}
-	if(POGEL::hasproperty(POGEL_LABEL)) position.draw(4, POGEL::COLOR(.2,.5,1,1));
+	if(POGEL::hasproperty(POGEL_LABEL)) position.draw(2, POGEL::COLOR(.2,.5,1,1));
 	#endif
 };
 

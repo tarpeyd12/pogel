@@ -58,7 +58,8 @@ class TRIANGLE {
 					""  + vertex[0].toString() + ","
 					""  + vertex[1].toString() + ","
 					""  + vertex[2].toString() + ","
-					""  + normal.toString()    + ""
+					""  + normal.toString()    + ","
+					""  + (texture==NULL?"{IMAGE_NULL}":texture->toString()) + ""
 				"}";
 			free(p);
 			return s;

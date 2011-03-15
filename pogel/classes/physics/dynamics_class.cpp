@@ -4,22 +4,29 @@
 
 POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 	numobjects=0;
-	objects=(POGEL::PHYSICS::SOLID**)NULL;
+	//objects=(POGEL::PHYSICS::SOLID**)NULL;
 	boundingskips = 5;
 };
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
-	POGEL::PHYSICS::SOLID **tmp = new POGEL::PHYSICS::SOLID*[numobjects+1];
-	for(unsigned long i=0;i<numobjects;i++) tmp[i]=objects[i];
+	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
+	objectmasses.addsingularity(POGEL::PHYSICS::SINGULARITY(&obj->position, &obj->behavior.mass));
 	obj->container = this;
 	obj->getbounding();
-	tmp[numobjects]=obj;
-	objectmasses.addsingularity(POGEL::PHYSICS::SINGULARITY(&obj->position, &obj->behavior.mass));
-	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
-	if(objects) delete[] objects;
-	objects = NULL;
-	objects=tmp;
+	objects.add(obj);
 	return numobjects++;
+};
+
+unsigned long POGEL::PHYSICS::DYNAMICS::addSolidHoldGravity(POGEL::PHYSICS::SOLID* obj) {
+	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
+	obj->container = this;
+	obj->getbounding();
+	objects.add(obj);
+	return numobjects++;
+};
+
+void POGEL::PHYSICS::DYNAMICS::addSolidsGravity(POGEL::PHYSICS::SOLID* obj) {
+	objectmasses.addsingularity(POGEL::PHYSICS::SINGULARITY(&obj->position, &obj->behavior.mass));
 };
 
 void POGEL::PHYSICS::DYNAMICS::addSolids(POGEL::PHYSICS::SOLID **obj, unsigned long num) {
@@ -29,6 +36,33 @@ void POGEL::PHYSICS::DYNAMICS::addSolids(POGEL::PHYSICS::SOLID **obj, unsigned l
 		if(obj[i] == (POGEL::PHYSICS::SOLID*)NULL)
 			POGEL::fatality(POGEL_FATALITY_NULL_OBJECT_POINTER_RETNUM|POGEL_FATALITY_NULL_LIST_POINTER_RETNUM,"%s & %s to Solid Object.",POGEL_FATALITY_NULL_OBJECT_POINTER_STRING, POGEL_FATALITY_NULL_LIST_POINTER_STRING);
 		else addSolid(obj[i]);
+};
+
+POGEL::PHYSICS::SOLID* POGEL::PHYSICS::DYNAMICS::getSolid(char* n) {
+	for(unsigned int i = 0; i < objects.length(); i++)
+		if( strlen(n) == strlen(objects[i]->getname()) && !strncmp(objects[i]->getname(), n, strlen(n)) )
+			return objects[i];
+	return NULL;
+};
+
+void POGEL::PHYSICS::DYNAMICS::removeSolid(POGEL::PHYSICS::SOLID* obj) {
+	if(obj == NULL) return;
+	for(unsigned int i = 0; i < objects.length(); i++)
+		if(obj == objects[i]) {
+			objects[i]->container = NULL;
+			objects.remove(i); objectmasses.remove(i); numobjects--;
+			return;
+		}
+};
+
+void POGEL::PHYSICS::DYNAMICS::removeSolidKeepGravity(POGEL::PHYSICS::SOLID* obj) {
+	if(obj == NULL) return;
+	for(unsigned int i = 0; i < objects.length(); i++)
+		if(obj == objects[i]) {
+			objects[i]->container = NULL;
+			objects.remove(i); numobjects--;
+			return;
+		}
 };
 
 POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
@@ -96,9 +130,9 @@ void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POI
 		);
 		POGEL::VECTOR v = objectmasses.getpull(p, pntms)/(numobjects);//PARTICLE_SLOWDOWN_RATIO;
 		if(v.getdistance() > sps*2) v = v.normal()*sps*2;
-		POGEL::COLOR c(0,.5,1,v.getdistance());
+		POGEL::COLOR c(1,.25,0,v.getdistance());
 		POGEL::POINT pv = p+v;
-		//pv.draw(5, c);
+		pv.draw(5, c);
 		if( imgrd != 0 && i/(grd*grd) != 0 && (i/grd)%grd != 0 ) {
 			POGEL::LINE(prev_pv, pv, 2, c).draw();
 			POGEL::LINE(prev_pv_a[imgrd], pv, 2, c).draw();

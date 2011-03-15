@@ -72,17 +72,17 @@ void keyPressed(unsigned char key, int x, int y)
 		camrot.z-=1.0f;
 	
 	if(key == 'W')
-		campos.x+=1.0f;
+		campos.x+=1.0f/8;
 	if(key == 'S')
-		campos.x-=1.0f;
+		campos.x-=1.0f/8;
 	if(key == 'A')
-		campos.y+=1.0f;
+		campos.y+=1.0f/8;
 	if(key == 'D')
-		campos.y-=1.0f;
+		campos.y-=1.0f/8;
 	if(key == 'Q')
-		campos.z+=1.0f;
+		campos.z+=1.0f/8;
 	if(key == 'E')
-		campos.z-=1.0f;
+		campos.z-=1.0f/8;
 	
 	if(key == ' ')
 		keypres = true;
