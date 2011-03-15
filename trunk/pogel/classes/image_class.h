@@ -14,9 +14,13 @@ class IMAGE;
 #define				IMAGE_MIPMAP		2
 
 namespace POGEL {
+
+POGEL::IMAGE* requestImage(std::string);
+
 class IMAGE {
 	protected:
 		/* properties */
+		std::string fileid;
 		int filtertype;
 		char *data; // the bytes of data in the pixels
 		unsigned short int channels; // the number of bytes per pixel
@@ -29,6 +33,7 @@ class IMAGE {
 		IMAGE();
 		IMAGE(const char*);
 		IMAGE(const char*,int);
+		IMAGE(std::string);
 
 		/* deconstructor */
 		~IMAGE();
@@ -48,6 +53,7 @@ class IMAGE {
 		void setfilter(int t) { filtertype = t; }
 		int getfilter() { return filtertype; }
 		
+		std::string toString();
 };
 }
 

@@ -91,15 +91,14 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		POGEL::POINT *trail;
 		POGEL::POINT *rots;
 		
-		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
-		void (*function)(POGEL::PHYSICS::SOLID*);
-		
 		unsigned long objboundingskips;
 		unsigned long stepstaken;
 		unsigned long stepsatboundingcheck;
 		
 		std::string trianglestring;
 	public:
+		void (*callback)(POGEL::PHYSICS::SOLID*,char*);
+		void (*function)(POGEL::PHYSICS::SOLID*);
 		POGEL::VECTOR force;
 		POGEL::BOUNDING bounding;
 		POGEL::BOUNDING refbounding;
@@ -113,6 +112,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		~SOLID();
 		
 		//PROPERTIES_METHODS;
+		
+		POGEL::PHYSICS::DYNAMICS* getcontainer() { return container; }
 		
 		unsigned int getOptions() {return physproperties;}
 		void setOptions(unsigned int prop) {physproperties=prop;}

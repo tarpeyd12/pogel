@@ -12,6 +12,7 @@ class GRAVITYCLUSTER;
 }
 }
 
+#include "../../templates/classlist_template.h"
 #include "physics.h"
 #include "../point_class.h"
 
@@ -76,17 +77,19 @@ class POGEL::PHYSICS::FAN : public POGEL::PHYSICS::SINGULARITY {
 };
 
 class POGEL::PHYSICS::GRAVITYCLUSTER {
-		POGEL::PHYSICS::SINGULARITY* singularities;
+		CLASSLIST<POGEL::PHYSICS::SINGULARITY> singularities;
 		unsigned long numsingularities;
 	public:
 		
 		GRAVITYCLUSTER()
-			{ singularities=(POGEL::PHYSICS::SINGULARITY*)NULL; numsingularities = 0; }
+			{  numsingularities = 0; }
 		~GRAVITYCLUSTER()
-			{ free(singularities); }
+			{ singularities.clear(); }
 		
 		unsigned long addsingularity(POGEL::PHYSICS::SINGULARITY);
 		void addsingularities(POGEL::PHYSICS::SINGULARITY*,unsigned long);
+		
+		void remove(unsigned long i) { singularities.remove(i); numsingularities--; }
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(numsingularities==0) return POGEL::VECTOR();
@@ -97,16 +100,18 @@ class POGEL::PHYSICS::GRAVITYCLUSTER {
 };
 
 class POGEL::PHYSICS::FLOW {
-		POGEL::PHYSICS::FAN* gusts;
+		CLASSLIST<POGEL::PHYSICS::FAN> gusts;
 		unsigned long numgusts;
 	public:
 		
-		FLOW() {gusts=(POGEL::PHYSICS::FAN*)NULL; numgusts = 0; }
+		FLOW() { numgusts = 0; }
 		FLOW(POGEL::POINT* waypoints,unsigned long num,bool forwards) {generatecurve(waypoints,num,forwards);}
-		~FLOW() {free(gusts);}
+		~FLOW() { gusts.clear(); }
 		
 		unsigned long addfan(POGEL::PHYSICS::FAN);
 		void addfans(POGEL::PHYSICS::FAN*,unsigned long);
+		
+		void remove(unsigned long i) { gusts.remove(i); numgusts--; }
 		
 		void generatecurve(POGEL::POINT*,unsigned long,bool);
 		

@@ -19,11 +19,17 @@ using namespace POGEL;
 PHYSICS::SOLID* obj;
 PHYSICS::SIMULATION sim;
 
-IMAGE *img;
+IMAGE *img, *glass, *particle, *defaultimg;
 
 GLfloat LightAmbient[]= { 1.0f, 1.0f, 1.0f, 1.0f };
 GLfloat LightDiffuse[]= { 5.0f, 5.0f, 5.0f, 5.0f };
 GLfloat LightPosition[]= { 5.0f, 0.0f, 0.0f, 1.0f };
+
+void exitingfunction() {
+	std::ofstream outfile ("Data/object_file.txt", std::ios_base::trunc);
+	outfile << obj->toString() << "\n";
+	outfile.close();
+};
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)	        // We call this right after our OpenGL window is created.
@@ -52,35 +58,42 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	glEnable(GL_LIGHT1);
 	glEnable(GL_LIGHTING);
 	
-	img = new IMAGE("Data/default_2.bmp", IMAGE_LINEAR);
 	
-	//char *flnm = POGEL::string("log0.txt",numobjs);
     std::ifstream ifs ( "Data/object_file.txt" , std::ifstream::in );
-	//free(flnm);
 	if(ifs.good()) {
 		std::string line;
 		std::getline(ifs,line,'\n');
 		obj = new POGEL::PHYSICS::SOLID(line);
-		
-		for(unsigned int a = 0; a < obj->getnumfaces(); a++) {
-            POGEL::TRIANGLE t = obj->gettriangle(a);
-            t.texture = img;
-            obj->settriangle(a, t);
-        }
         obj->build();
 	}
 	else {
-		printf("not good, exiting\n");
-		exit(0);
+		img = new IMAGE("Data/default_2.bmp", IMAGE_LINEAR);
+		glass = new IMAGE("Data/Glass.bmp", IMAGE_LINEAR);
+		particle = new IMAGE("Data/particle.bmp", IMAGE_LINEAR);
+		defaultimg = new IMAGE("Data/default.bmp", IMAGE_LINEAR);
+		obj = new POGEL::PHYSICS::SOLID();
+		obj->setname("object_thing");
+		obj->spin = POGEL::VECTOR(FloatRand(1),FloatRand(1),FloatRand(1));
+		addDisk(obj, 32, 1, 3.5, 2.5, particle,10, 1, 0|TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f, 0.001f), VERTEX(0.0f,0.0f,0.0f)));
+		addDisk(obj, 32, 1, 3.5, 2.5, glass,10, 1, 0|TRIANGLE_LIT, true, MATRIX(VERTEX(0.0f,0.0f,-0.001f), VERTEX(0.0f,180.0f,0.0f)));
+		addSphere(obj,16,16, 2, img,2,4, 0|TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+		addCylinder(obj, 32, 1, 1, 3, 3, defaultimg, 10, 1, 0|TRIANGLE_LIT, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
+		addCylinder(obj, 32, 1, 1, 2.99, 2.99, defaultimg, 10, 1, 0|TRIANGLE_LIT|TRIANGLE_INVERT_NORMALS, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(90.0f,0.0f,0.0f)));
+		obj->build();
+		exitingfunction();
 	}
+	ifs.close();
+	obj->resizetrail(100000);
 	
 	//sim.addSolid(obj);
-	
+	exfnc=exitingfunction;
 	//POGEL::addproperty(POGEL_DEBUG);
-}
+};
+
 float x = POGEL::FloatRand(2.0)-1.0, y = POGEL::FloatRand(2.0)-1.0, z = POGEL::FloatRand(2.0)-1.0;
 bool keypres, go = true;
 POGEL::POINT camrot(0,0,0), campos(0,0,-10);
+
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -101,6 +114,7 @@ void DrawGLScene()
 	//rings.rotate(VECTOR(0.0f,0.6f,0.0f));
 	//glRotatef(23.0f,0.0f,0.0f,-1.0f);
 	obj->draw();
+	obj->step();
 	//std::cout << obj->toString() << std::endl;
 	//sim.increment();
 	//obj.scroll_all_tex_values(0.0004f,0.0005f);

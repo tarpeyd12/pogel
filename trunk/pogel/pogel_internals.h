@@ -2,7 +2,7 @@
 #define _POGEL_INTERNALS_H
 
 // used to remove all OpenGL requirements throught the entire library.
-//#define NO_OPENGL
+#define NO_OPENGL
 
 #define OPENGL
 
@@ -94,7 +94,7 @@ namespace POGEL {
 	extern char *logfilefilename;
 	extern unsigned int properties;
 	
-	extern clock_t start, finish, start_long, finish_long;
+	extern float start, finish, start_long, finish_long;
 	extern unsigned long frames;
 	extern float duration, fps, fps_long;
 	
@@ -122,6 +122,7 @@ namespace POGEL {
 	extern void IncrementFps();
 	extern float GetFps();
 	extern float GetSecondsPerFrame();
+	extern float GetTimePassed();
 	extern void PrintFps();
 	
 	extern unsigned int getOccurrencesInString(char, std::string);

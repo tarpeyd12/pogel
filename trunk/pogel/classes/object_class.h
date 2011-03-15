@@ -101,6 +101,8 @@ class OBJECT {
 		void addtriangles(POGEL::TRIANGLE*,unsigned long);
 		void addtrianglespace(unsigned long);
 		
+		void cleartriangles();
+		
 		unsigned long addobject(POGEL::OBJECT*);
 		void addobjects(POGEL::OBJECT**,unsigned long);
 		

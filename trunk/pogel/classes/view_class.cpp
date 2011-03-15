@@ -12,8 +12,9 @@
 int* POGEL::VIEW::screensizeX;
 int* POGEL::VIEW::screensizeY;
 
-POGEL::VIEW::VIEW() : POGEL::IMAGE(){
+POGEL::VIEW::VIEW() : POGEL::IMAGE() {
 	settexsize(128,128);
+	setviewoffset(0,0);
 	renderfunc = NULL;
 	sceneinit = NULL;
 	imgbgcolor = POGEL::COLOR(0.5f,0.5f,0.5f,0.5f);
@@ -64,13 +65,12 @@ GLuint POGEL::VIEW::build() {
 
 void POGEL::VIEW::startrender() {
 	#ifdef OPENGL
-	//glClearColor(0.5f, 0.0f, 0.5f, 0.5f); // background color of the to be rendered texture
 	imgbgcolor.setasbgcolor(); // background color of the to be rendered texture
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	
-		// Clear The Screen And The Depth Buffer
-	//gluPerspective(45.0f,1.0f,0.1f,500.0f);
-	//glLoadIdentity();
-	glViewport(0,0,sizeX,sizeY);					// Set Our Viewport to match texture size
+	if(!hasproperty(VIEW_NORESET))
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	else
+		glClear(GL_DEPTH_BUFFER_BIT);
+	glViewport(viewportX,viewportY,sizeX,sizeY);
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -83,11 +83,22 @@ void POGEL::VIEW::startrender() {
 
 unsigned int POGEL::VIEW::endrender() {
 	#ifdef OPENGL
-	glBindTexture(GL_TEXTURE_2D,base);			// Bind To The Texture
+	if(!hasproperty(VIEW_NORESET)) {
+		glBindTexture(GL_TEXTURE_2D,base);			// Bind To The Texture
+		
+		// Copy Our ViewPort To The Texture (From 0,0 To sizeX,sizeY... No Border)
+		glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, viewportX, viewportY, sizeX, sizeY, 0);
+		
 	
-	// Copy Our ViewPort To The Texture (From 0,0 To sizeX,sizeY... No Border)
-	glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 0, 0, sizeX, sizeY, 0);
-	
+		POGEL::VIEW::resetscreen();
+	}
+	//else glFlush();
+	#endif
+	return base;
+};
+
+void POGEL::VIEW::resetscreen() {
+	#ifdef OPENGL
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// Clear The Screen And The Depth Buffer
 	glLoadIdentity();				// Reset The View
 	
@@ -99,7 +110,6 @@ unsigned int POGEL::VIEW::endrender() {
 	gluPerspective(45.0f,(float)*screensizeX/(float)*screensizeY,0.1f,100.0f);
 	glMatrixMode(GL_MODELVIEW);
 	#endif
-	return base;
 };
 
 // the folowing code is from the Simple OpenGL Image Library (SOIL):

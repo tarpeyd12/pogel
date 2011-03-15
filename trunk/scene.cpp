@@ -82,7 +82,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//circles=(OBJECT*)malloc(sizeof(OBJECT));
 	for(int i=0;i<numrings;i++) {
 		printf("building_%d\n",i);
-		cur=new OBJECT(string("%d",i));
+		cur=new OBJECT(POGEL::string("%d",i));
 		addDisk(
 			cur, \
 			divisions, 1, \
@@ -239,7 +239,7 @@ void DrawGLScene()
 	circles->draw();
 	circles->rotate(VECTOR(0.4f,0.5f,0.1f)*speed);
 	for(int i=0;i<numrings-1;i++) {
-		char *n = string("%d",i);
+		char *n = POGEL::string("%d",i);
 		switch(i%4) {
 			case 1:
 				circles->getdecendant(n)->rotate(VECTOR(0.0f,0.2f*((float)numrings-(float)i),0.0f)*speed);

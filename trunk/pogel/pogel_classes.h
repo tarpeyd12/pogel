@@ -1,6 +1,12 @@
 #ifndef _POGEL_CLASSES_H
 #define _POGEL_CLASSES_H
 
+// template classes
+#include "templates/templates.h"
+
+// thread class
+#include "classes/threads.h"
+
 // normal classes
 #include "classes/bounding_class.h"
 #include "classes/image_class.h"

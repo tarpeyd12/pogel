@@ -21,7 +21,7 @@ using namespace POGEL;
 #define th
 
 #ifdef th
-#include "threads.h"
+//#include "threads.h"
 
 THREAD *simulator_runner;
 #endif
@@ -42,6 +42,9 @@ POGEL::PHYSICS::SIMULATION sim;
 
 IMAGE *particle;
 
+bool sterio = false;
+
+VIEWPORT viewport[2];
 
 #define rndrnge 2.0f
 
@@ -166,10 +169,12 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 //sphs[i]->build();
                 sphs[i]->setstepstaken(0);
                 
-                sphs[i]->visable = true;
+                sphs[i]->visable = !true;
                 
                 sim.addSolid(sphs[i]);
         }
+        
+        POGEL::addproperty(POGEL_LABEL);
         
         char *flnm = POGEL::string("log%d.txt",numobjs);
         std::ifstream ifs ( flnm , std::ifstream::in );
@@ -184,6 +189,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 				std::getline(ifs,line,'\n');
 		    	sphs[i]->position = POGEL::POINT(POGEL::getStringComponentLevel('{','}',line,"0 0"));
 		    	sphs[i]->direction = POGEL::VECTOR(POGEL::getStringComponentLevel('{','}',line,"0 2"));
+		    	sphs[i]->behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(POGEL::getStringComponentLevel('{','}',line,"0 4"));
 		    	//std::cout << "pos:  " + sphs[i]->position.toString() + ", dir:  " + sphs[i]->direction.toString() + "\n";
 		    	sphs[i]->build();
 	    	}
@@ -194,18 +200,32 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         POGEL::InitFps();
         printf("\n");
-        
+        sim.FORCEfastAccessList();
        	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
+       	//sim.setThreadsNum(2);
        	simulator_runner->startThread();
        	exfnc = exitingfunction;
        	#endif
+       	
+       	viewport[0].setretscreensize(&screenx, &screeny);
+		viewport[0].setviewport(0,0,Width/2,Height);
+		viewport[0].setbgcolor(POGEL::COLOR(0.0f,0.0f,0.0f,0.5f));
+		viewport[0].setfilter(IMAGE_MIPMAP);
+		viewport[0].build();
+		
+		viewport[1].setretscreensize(&screenx, &screeny);
+		viewport[1].setviewport(Width/2,0,Width,Height);
+		viewport[1].setbgcolor(POGEL::COLOR(0.0f,0.0f,0.0f,0.5f));
+		viewport[1].setfilter(IMAGE_MIPMAP);
+		viewport[1].build();
 }
 
 //unsigned long frames=0;
-
+float rtcmv = 0.0;
 POGEL::POINT camrot(0,0,0), campos;
 bool p = false;
+float diff = -1.0;
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -219,22 +239,78 @@ void DrawGLScene()
         glLightfv(GL_LIGHT1, GL_POSITION,LightPosition);
         glEnable(GL_LIGHT1);
         glEnable(GL_LIGHTING);
+        
+        if(keys['p']) { sterio = !sterio; keys['p'] = false; }
+        
+        if(sterio) {
+        if(keys['c'])
+			diff+=0.005;
+		if(keys['v'])
+			diff-=0.005;
+        viewport[0].setviewport(0,0,screenx/2,screeny);
+		viewport[1].setviewport(screenx/2,0,screenx,screeny);
+        
+        viewport[0].startrender();	
+			glPushMatrix();
+			glTranslatef(0.0f+campos.x,0.0f+campos.y,-12.5f+campos.z);
+			//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
+			glRotatef( camrot.x + ((float)frames)*0.0f,  1.0f, 0.0f, 0.0f );
+			glRotatef( camrot.y + ((float)frames)*0.0f +diff ,  0.0f, 1.0f, 0.0f );        
+			glRotatef( camrot.z + ((float)frames)*0.0f,  0.0f, 0.0f, 1.0f );
+			if(frames%frameskip == 0) {
+				sim.draw();
+				if(keys['m'])
+					sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
+     		}
+			glPopMatrix();
+		viewport[0].endrender();
+		
+		viewport[1].startrender();
+			glPushMatrix();
+			glTranslatef(0.0f+campos.x,0.0f+campos.y,-12.5f+campos.z);
+       		 //glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
+       		 glRotatef( camrot.x + ((float)frames)*0.0f,  1.0f, 0.0f, 0.0f );
+       		 glRotatef( camrot.y + ((float)frames)*0.0f -diff,  0.0f, 1.0f, 0.0f );   
+   		     glRotatef( camrot.z + ((float)frames)*0.0f,  0.0f, 0.0f, 1.0f );
+   		     if(frames%frameskip == 0) {
+    	    	sim.draw();
+   		     	 if(keys['m'])
+		         	sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
+	        }
+			glPopMatrix();
+		viewport[1].endrender();
+        
+        } else {
+        viewport[0].resetscreen();
 		
         glTranslatef(0.0f+campos.x,0.0f+campos.y,-12.5f+campos.z);
         //glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
         glRotatef( camrot.x + ((float)frames)*0.0f,  1.0f, 0.0f, 0.0f );
         glRotatef( camrot.y + ((float)frames)*0.0f,  0.0f, 1.0f, 0.0f );        
+        
         glRotatef( camrot.z + ((float)frames)*0.0f,  0.0f, 0.0f, 1.0f );
         //glRotatef( 90.0f,  0.0f, 1.0f, 0.0f );
         //message("%ld: ",frames);
         //if(POGEL::frames >= 1000) go = false;
         
+        
+        
+        if(frames%frameskip == 0) {
+        	sim.draw();
+        	 if(keys['m'])
+	         	sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
+        }
+        }
+        
+        camrot.y+=rtcmv;
+        if(keys[','])
+        	rtcmv += 0.1f;
+        if(keys['.'])
+        	rtcmv -= 0.1f;
+        
         POGEL::IncrementFps();
         if(frames%frameskip == 0)
-        POGEL::PrintFps();
-        
-        if(frames%frameskip == 0)
-                sim.draw();
+	        POGEL::PrintFps();
         #ifndef th
         if(keypres) {
         				//if(POGEL::GetTimePassed() < 60.0f)
