@@ -24,6 +24,7 @@ POGEL::VIEW::VIEW() : POGEL::IMAGE() {
 POGEL::VIEW::~VIEW() {
 	renderfunc = NULL;
 	sceneinit = NULL;
+	screensizeX = screensizeY = NULL;
 };
 
 GLuint POGEL::VIEW::build() {
@@ -59,6 +60,7 @@ GLuint POGEL::VIEW::build() {
 	//glTexImage2D(GL_TEXTURE_2D, 0, 3, sizeX, sizeY, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 	
 	delete data;
+	data = NULL;
 	#endif
 	return base;
 };

@@ -135,6 +135,13 @@ class OBJECT {
 			this->addtriangles(o->gettrianglelist(), o->getnumfaces());
 		}
 		
+		void referencetriangles(POGEL::OBJECT* o) {
+			cleartriangles();
+			face = o->gettrianglelist();
+			numfaces = o->getnumfaces();
+			triangle_allocation_total = o->triangle_allocation_total;
+		}
+		
 		void settriangle(unsigned long i, POGEL::TRIANGLE t) {
 			face[i] = t;
 		}

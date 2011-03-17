@@ -2,7 +2,7 @@
 #define _POGEL_INTERNALS_H
 
 // used to remove all OpenGL requirements throught the entire library.
-#define NO_OPENGL
+//#define NO_OPENGL
 
 #define OPENGL
 

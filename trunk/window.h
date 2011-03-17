@@ -25,6 +25,7 @@ extern POGEL::POINT prot;
 
 
 void ReSizeGLScene(int Width, int Height);
+void quit();
 void keyPressed(unsigned char key, int x, int y);
 void keyUnpressed(unsigned char key, int x, int y);
 void mouseClicked(int button, int state, int x, int y);

@@ -20,6 +20,14 @@ HASHLIST<PHYSICS::SOLID*> objs;
 
 std::string file;
 
+bool sterio = false;
+bool rendandquit = false;
+bool sametri = false;
+
+std::string rendfile = "viewer_out.bmp";
+
+POGEL::POINT camrot, campos;
+
 VIEWPORT viewport[2];
 
 VIEW *view;
@@ -31,8 +39,39 @@ GLfloat LightPosition[]= { 5.0f, 0.0f, 0.0f, 1.0f };
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)	        // We call this right after our OpenGL window is created.
 {
-	cout << "enter the file to load: ";
-	cin >> file;
+	bool fincmd = false;
+	for(int i = 0; i < numcmdargs; i++) {
+		if(strlen(cmdargs[i]) == 2 && !strncmp(cmdargs[i], "-f", 2)) {
+			file = cmdargs[++i];
+			fincmd = true; continue;
+		} else
+		
+		if(strlen(cmdargs[i]) == 7 && !strncmp(cmdargs[i], "-stereo", 7)) {
+			sterio = true; continue;
+		} else
+		
+		if(strlen(cmdargs[i]) == 2 && !strncmp(cmdargs[i], "-o", 2)) {
+			rendfile = cmdargs[++i];
+			rendandquit = true; continue;
+		} else
+		
+		if(strlen(cmdargs[i]) == 7 && !strncmp(cmdargs[i], "-campos", 7)) {
+			campos = POGEL::POINT(cmdargs[++i]);
+		} else
+		
+		if(strlen(cmdargs[i]) == 7 && !strncmp(cmdargs[i], "-camrot", 7)) {
+			camrot = POGEL::POINT(cmdargs[++i]);
+		} else
+		
+		if(strlen(cmdargs[i]) == 8 && !strncmp(cmdargs[i], "-sametri", 8)) {
+			sametri = true;
+		} else
+		
+		{ continue; }
+	}
+	if(!fincmd) {
+		cout << "enter the file to load: "; cin >> file;
+	}
 	
 	glEnable(GL_TEXTURE_2D);				// Enable Texture Mapping
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);	// Clear The Background Color To Blue 
@@ -65,19 +104,28 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	std::ifstream ifs ( file.c_str(), std::ifstream::in );
 	std::string line;
+	POGEL::PHYSICS::SOLID* fst = NULL;
+	unsigned int i = 0;
 	if(ifs.good())
 	while(ifs.good()) {
 		line.clear();
 		std::getline(ifs,line,'\n');
 		if(!ifs.good() || !line.length()) break;
 		PHYSICS::SOLID *s = new POGEL::PHYSICS::SOLID(line);
-		if(POGEL::hasproperty(POGEL_LABEL)) {
+		if(!sametri && POGEL::hasproperty(POGEL_LABEL)) {
 			s->cleartriangles();
 			s->visable = false;
 		}
+		else if(sametri && fst != NULL) {
+			s->cleartriangles();
+			s->referencetriangles(fst);
+			s->visable = true;
+		}
+		if(i < 1) fst = s;
 		objs += s;
 		s->build();
 		printf("\t%u\r",objs.length());
+		i++;
 	}
 	else
 		exit(0);
@@ -93,15 +141,10 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	viewport[1].setbgcolor(POGEL::COLOR(0.0f,0.0f,0.0f,0.5f));
 	viewport[1].setfilter(IMAGE_MIPMAP);
 	viewport[1].build();
-	
-	
-	
 }
 bool keypres, go = true;
-POGEL::POINT camrot, campos;
 POGEL::POINT camrotvect;
-float diff = -1.0;
-bool sterio = false;
+float diff = -0.85f;
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -110,8 +153,6 @@ void DrawGLScene()
 	
 	POGEL::IncrementFps();
 	POGEL::PrintFps();
-	//rings.rotate(VECTOR(0.0f,0.6f,0.0f));
-	//glRotatef(23.0f,0.0f,0.0f,-1.0f);
 	
 	MOUSE_ROT_FUNC
 	
@@ -133,33 +174,20 @@ void DrawGLScene()
 	if(sterio) {
 		viewport[0].setviewport(0,0,screenx/2,screeny);
 		viewport[1].setviewport(screenx/2,0,screenx,screeny);
-		
-		if(keys['c'])
-			diff+=0.005;
-		if(keys['v'])
-			diff-=0.005;
-			
-		viewport[0].startrender();	
-			glPushMatrix();
-			glTranslatef(campos.x,campos.y,campos.z);
-			glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
-			glRotatef( camrot.y+diff,  0.0f, 1.0f, 0.0f );
-			glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
-			for(unsigned int i = 0; i < objs.length(); i++)
-				objs[i]->draw();
-			glPopMatrix();
-		viewport[0].endrender();
-		
-		viewport[1].startrender();
-			glPushMatrix();
-			glTranslatef(campos.x,campos.y,campos.z);
-			glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
-			glRotatef( camrot.y-diff,  0.0f, 1.0f, 0.0f );
-			glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
-			for(unsigned int i = 0; i < objs.length(); i++)
-				objs[i]->draw();
-			glPopMatrix();
-		viewport[1].endrender();
+		if(keys['c']) diff+=0.005;
+		if(keys['v']) diff-=0.005;
+		for(int v = 0; v < 2; v++) {
+			viewport[v].startrender();	
+				glPushMatrix();
+				glTranslatef(campos.x,campos.y,campos.z);
+				glRotatef( camrot.x,  1.0f, 0.0f, 0.0f );
+				glRotatef( camrot.y + (v==0 ? diff : -diff),  0.0f, 1.0f, 0.0f );
+				glRotatef( camrot.z,  0.0f, 0.0f, 1.0f );
+				for(unsigned int i = 0; i < objs.length(); i++)
+					objs[i]->draw();
+				glPopMatrix();
+			viewport[v].endrender();
+		}
 	}
 	else {
 		viewport[0].resetscreen();
@@ -171,15 +199,14 @@ void DrawGLScene()
 			objs[i]->draw();
 	}
 	
-	/*view->startrender();
-	glPushMatrix();
-	glPopMatrix();
-	view->endrender();*/
-	
-	if(keys['r']) {
+	if(keys['r'] || (rendandquit && POGEL::frames > 1)) {
 		view = new VIEW();
 		view->setretscreensize(&screenx, &screeny);
-		view->save(1,"hello.bmp");
+		std::string fmt = rendfile.substr(rendfile.find_last_of('.'));
+		if(fmt.compare(".bmp") || fmt.compare("bmp")) view->save(VIEW_SAVE_BMP,rendfile.c_str());
+		else if(fmt.compare(".tga") || fmt.compare("tga")) view->save(VIEW_SAVE_TGA,rendfile.c_str());
+		else view->save(VIEW_SAVE_BMP,(rendfile + ".bmp").c_str());
+		if(rendandquit && POGEL::frames > 1) quit();
 	}
 	
 	//obj.scroll_all_tex_values(0.0004f,0.0005f);

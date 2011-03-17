@@ -31,6 +31,10 @@ void ReSizeGLScene(int Width, int Height)
 	screeny = Height;
 }
 
+void quit() {
+	keyPressed(ESCAPE,0,0);
+};
+
 void (*exfnc)(void);
 
 extern POGEL::POINT camrot, campos;
