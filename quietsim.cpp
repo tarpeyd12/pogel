@@ -24,6 +24,7 @@ using namespace POGEL;
 #define SZE  6
 #define KTRI 7
 #define L2D  8
+#define RPOS 9
 
 namespace qsim {
 	bool minput[10];
@@ -32,6 +33,7 @@ namespace qsim {
 	bool usetime = false;
 	bool savenotri = false;
 	float massvar = 0.0;
+	float randpos = 0.0;
 	
 	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES objprps;
 	
@@ -83,7 +85,7 @@ void load(char* s) {
 				if(p<=1) fst = tmp;
 				else {
 					tmp->cleartriangles();
-					tmp->copytriangles(fst);
+					tmp->referencetriangles(fst);
 				}
 			sphs.add(tmp);
 			sim.addSolid(tmp);
@@ -109,13 +111,21 @@ void generate() {
 		if(i == 0)
 			addDisk(&obj[0], 6, 1, size/2.0f, 0.0f, img,1, 1, 0|TRIANGLE_COLORED, false, POGEL::MATRIX());
 		else
-			obj[i].copytriangles(&obj[0]);
+			obj[i].referencetriangles(&obj[0]);
 		obj[i].setproperties(OBJECT_ROTATE_TOCAMERA|OBJECT_DRAW_CHILDREN/*|OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
-		obj[i].moveto(POGEL::POINT(
-			((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
-			((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
-			(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f /* - (10.0f-(sps/2.0f)), \*/
-		));
+		if(minput[RPOS]) {
+			obj[i].moveto(POGEL::POINT(
+				POGEL::FloatRand(randpos*2.0)-randpos,
+				POGEL::FloatRand(randpos*2.0)-randpos,
+				POGEL::FloatRand(randpos*2.0)-randpos
+			));
+		}
+		else
+			obj[i].moveto(POGEL::POINT(
+				((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
+				((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
+				(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f /* - (10.0f-(sps/2.0f)), \*/
+			));
 		
 		if(minput[L2D]) obj[i].position.z=0;
 		
@@ -156,15 +166,23 @@ void init(int argc, char** argv) {
 				"cmd optins:\n"
 				"\n"
 				"-usetime\tmakes the loops option use seconds instead of itterations as an arg\n"
-				"-keeptriangles\tforces all objects to fully load triangle data from specified file, see '-f'\n"
-				"-f filename\tloads all properties of objects in specified file, all their triangles will be identical to the first in the file\n"
+				"-keeptriangles\tforces all objects to fully load triangle data from specified file, assumes different shapes and sizes, see '-f'\n"
+				"-savenotri\tforces the saving of the data to not include triangle data in the save file for all particles except the\n"
+						"\t\t\tfirst, assumes identicle shape and size\n"
+				"-f filename\tloads all properties of objects in specified file, all their triangles will be identical to the triangles\n"
+						"\t\t\tof the first objects triangles in the file\n"
+				"-i bitmap\tpath to bitmap (*.bmp) file to put on the particles internaly for viewing later\n"
+				"-2d\t\tforces a 2 dimentional grid on init, makes '-objnum' squared not cubed\n"
 				"-objprps {[friction],[bounce],[mass],[air friction],[dencity],[volume],[magnetic 1:0],[magnetic charge]}\n"
 				"-gridspace=[space between particles on the initial grid]\n"
-				"-ballsize=[particle radius]\n"
+				"-ballsize=[particle radius at initilization]\n"
 				"-loops=[itteratins to loop, or time to loop]\n"
-				"-objnum=[number of objects to start with, will be cubed, ex: '-objnum=10' will be 1000 objects]\n"
+				"-objnum=[number of objects to start with, will be cubed, ex: '-objnum=10' will be 1000 objects, see '-2d']\n"
 				"-savefrq=[the number of itterations between data saves, 0 is never]\n"
 				"-threads=[number of POSIX threads to be used in calculations]\n"
+				"\n"
+				"example:\n"
+					"\tsb -f testfile.dat -usetime -loops=1:30:15 -savefrq=100 -2d -objnum=10 -objprps {[1.0],[0.5],[100.0],[0.0],[1.0],[1.0],[0],[0.0]} -gridspace=0.5 -ballsize=0.25 -savenotri -i ./Data/particle.bmp -threads=2\n"
 				"\n"
 			);
 			exit(0);
@@ -202,19 +220,13 @@ void init(int argc, char** argv) {
 	for(unsigned int i = 0; i < argc; i++) {
 		
 		if(!strncmp(argv[i],"-gridspace=%f", 10)) {
-			if(minput[FLE]) {
-				//printf("\n\ncannot redefine gridspace while loading from file.\n\n"); exit(0);
-				continue;
-			}
+			if(minput[FLE]) continue;
 			sscanf(argv[i], "-gridspace=%f", &grid_space);
 			minput[GRD] = true; continue;
 		} else
 		
 		if(!strncmp(argv[i],"-ballsize=%f", 9)) {
-			if(minput[FLE]) {
-				//printf("\n\ncannot redefine ballsize while loading from file.\n\n"); exit(0);
-				continue;
-			}
+			if(minput[FLE]) continue;
 			sscanf(argv[i], "-ballsize=%f", &ball_size);
 			minput[SZE] = true; continue;
 		} else
@@ -252,6 +264,11 @@ void init(int argc, char** argv) {
 			continue;
 		} else
 		
+		if(!strncmp(argv[i],"-randpos=%f", 8)) {
+			sscanf(argv[i], "-randpos=%f", &randpos);
+			minput[RPOS] = true; continue;
+		} else
+		
 		if(!strncmp(argv[i],"-2d", 3)) {
 			minput[L2D] = true; continue;
 		} else
@@ -260,7 +277,7 @@ void init(int argc, char** argv) {
 	}
 	
 	if(!minput[LOOP]) { cout << "number of times to loop: "; cin >> loopnum; }
-	if(!minput[NUM ]) { cout << "number of objects(will be " + (minput[L2D]? "squared" : "cubed") + "): "; cin >> objnum; }
+	if(!minput[NUM ]) { cout << "number of objects(will be " << (minput[L2D]? "squared" : "cubed") << "): "; cin >> objnum; }
 	if(!minput[FRQ ]) { cout << "number of itterations between saves: "; cin >> savefreq; }
 	
 	sim.boundingskips = 0;
@@ -269,15 +286,18 @@ void init(int argc, char** argv) {
 	
 	if(!minput[3])
 		generate();
-	
-	sim.FORCEfastAccessList();
+	printf("Rebuilding Data Lists ...\n");
 	unsigned int thnum = 1;
 	for(unsigned int i = 0; i < argc; i++)
 		if(!strncmp(argv[i],"-threads=%u", 8)) {
 			sscanf(argv[i], "-threads=%u", &thnum);
 			break;
 		}
-	sim.setThreadsNum(thnum);
+	if(thnum > 1)
+		sim.setThreadsNum(thnum);
+	else
+		sim.FORCEfastAccessList();
+	
 	POGEL::InitFps();
 };
 

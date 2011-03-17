@@ -18,12 +18,17 @@
 #include "window.h"
 #include "pogel/pogel.h"
 
+int numcmdargs;
+char** cmdargs;
+
 int main(int argc, char **argv) 
 {  
     /* Initialize GLUT state - glut will take any command line arguments that pertain to it or 
        X Windows - look at its documentation at http://reality.sgi.com/mjk/spec3/spec3.html */
     glutInit(&argc, argv);
     POGEL::getcmd(argc,argv);
+    numcmdargs = argc;
+    cmdargs = argv;
 
     /* Select type of Display mode:   
      Double buffer 
@@ -31,9 +36,16 @@ int main(int argc, char **argv)
      Alpha components supported 
      Depth buffer */  
     glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);  
-
+	
+	int sx=800, sy=600;
+	
+	for(int i = 0; i < argc; i++)
+    	if(!strncmp(argv[i], "-winsize=%dx%d", 8)) {
+    		sscanf(argv[i], "-winsize=%dx%d", &sx, &sy); break;
+    	}
+	
     /* get a 640 x 480 window */
-    glutInitWindowSize(800, 600);
+    glutInitWindowSize(sx, sy);
 
     /* the window starts at the upper left corner of the screen */
     glutInitWindowPosition(0, 0);  
@@ -45,7 +57,9 @@ int main(int argc, char **argv)
     glutDisplayFunc(&DrawGLScene);  
 
     /* Go fullscreen.  This is as soon as possible. */
-    //glutFullScreen();
+    for(int i = 0; i < argc; i++)
+    	if(strlen(argv[i]) == 11 && !strncmp(argv[i], "-fullscreen", 11))
+    		glutFullScreen();
 
     /* Even if there are no events, redraw our gl scene. */
     glutIdleFunc(&DrawGLScene);
@@ -61,7 +75,7 @@ int main(int argc, char **argv)
     glutPassiveMotionFunc(&mouseMoved);
 
     /* Initialize our window. */
-    InitGL(800, 600);
+    InitGL(sx, sy);
   
     /* Start Event Processing Engine */  
     glutMainLoop();  

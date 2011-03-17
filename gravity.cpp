@@ -147,7 +147,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 if(i == 0) {
                 addDisk(&obj[0], 6, 1, size/2.0f, 0.0f, particle,1, 1, 0|TRIANGLE_COLORED, false, MATRIX(VERTEX(0.0f,0.0f,0.0f), VERTEX(0.0f,0.0f,0.0f)));
                 }
-                else obj[i].copytriangles(&obj[0]);
+                else obj[i].referencetriangles(&obj[0]);
                 obj[i].setproperties(OBJECT_ROTATE_TOCAMERA|OBJECT_DRAW_CHILDREN/*|OBJECT_DEBUG|OBJECT_DRAW_DISPLAYLIST*/);
                 obj[i].moveto(POINT(
 						((float)(i%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
@@ -166,10 +166,10 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i] = new POGEL::PHYSICS::SOLID(&obj[i], POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1.0f, 0.75f, 5000.0f, 1.0f, 1.0f, 1.0f, false, (i%2==0?-1.0f:1.0f)), 2|4|(i%2==0 && false ? 0 : 16));
                 sphs[i]->turnto(POINT(0.0f,0.0f,0.0f));
-                //sphs[i]->build();
+                sphs[i]->build();
                 sphs[i]->setstepstaken(0);
                 
-                sphs[i]->visable = !true;
+                //sphs[i]->visable = !true;
                 
                 sim.addSolid(sphs[i]);
         }
@@ -250,12 +250,13 @@ void DrawGLScene()
         viewport[0].setviewport(0,0,screenx/2,screeny);
 		viewport[1].setviewport(screenx/2,0,screenx,screeny);
         
-        viewport[0].startrender();	
+        for(int i = 0; i < 2; i++) {
+        viewport[i].startrender();	
 			glPushMatrix();
 			glTranslatef(0.0f+campos.x,0.0f+campos.y,-12.5f+campos.z);
 			//glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
 			glRotatef( camrot.x + ((float)frames)*0.0f,  1.0f, 0.0f, 0.0f );
-			glRotatef( camrot.y + ((float)frames)*0.0f +diff ,  0.0f, 1.0f, 0.0f );        
+			glRotatef( camrot.y + ((float)frames)*0.0f +(i==0?diff:-diff) ,  0.0f, 1.0f, 0.0f );        
 			glRotatef( camrot.z + ((float)frames)*0.0f,  0.0f, 0.0f, 1.0f );
 			if(frames%frameskip == 0) {
 				sim.draw();
@@ -263,22 +264,8 @@ void DrawGLScene()
 					sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
      		}
 			glPopMatrix();
-		viewport[0].endrender();
-		
-		viewport[1].startrender();
-			glPushMatrix();
-			glTranslatef(0.0f+campos.x,0.0f+campos.y,-12.5f+campos.z);
-       		 //glRotatef( 90.0f,  1.0f, 0.0f, 0.0f );
-       		 glRotatef( camrot.x + ((float)frames)*0.0f,  1.0f, 0.0f, 0.0f );
-       		 glRotatef( camrot.y + ((float)frames)*0.0f -diff,  0.0f, 1.0f, 0.0f );   
-   		     glRotatef( camrot.z + ((float)frames)*0.0f,  0.0f, 0.0f, 1.0f );
-   		     if(frames%frameskip == 0) {
-    	    	sim.draw();
-   		     	 if(keys['m'])
-		         	sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
-	        }
-			glPopMatrix();
-		viewport[1].endrender();
+		viewport[i].endrender();
+		}
         
         } else {
         viewport[0].resetscreen();
