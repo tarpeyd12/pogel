@@ -62,6 +62,7 @@ class OBJECT {
 		OBJECT(POGEL::OBJECT* obj) {
 			face=obj->face;
 			numfaces=obj->numfaces;
+			triangle_allocation_total=obj->triangle_allocation_total;
 			children=obj->children;
 			parent=obj->parent;
 			numchildren=obj->numchildren;

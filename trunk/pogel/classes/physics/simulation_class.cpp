@@ -77,7 +77,7 @@ class thdat {
 THREADTYPE pullrun(THREADARGS data) {
 	thdat *dat = (thdat*)data;
 	//printf("calculating: %u to %u\n", dat->itt*dat->nth, (dat->itt+1)*dat->nth);
-	dat->sim->addpulls(dat->itt*dat->nth, (dat->itt+1)*dat->nth + (dat->itt==dat->sim->numThreads()-1?dat->nth:0));
+	dat->sim->addpulls(dat->itt*dat->nth, (dat->itt+1)*dat->nth + (dat->itt==dat->sim->numThreads()-1?dat->sim->numobjs():0));
 	delete dat;
 	return NULL;
 };
@@ -167,7 +167,7 @@ inline void checkcollision(POGEL::PHYSICS::SIMULATION* sim) { checkcollision(sim
 THREADTYPE collrun(THREADARGS data) {
 	thdat *dat = (thdat*)data;
 	//printf("calculating: %u to %u\n", dat->itt*dat->nth, (dat->itt+1)*dat->nth);
-	checkcollision(dat->sim, dat->itt*dat->nth, (dat->itt+1)*dat->nth + (dat->itt==dat->sim->numThreads()-1?dat->nth:0));
+	checkcollision(dat->sim, dat->itt*dat->nth, (dat->itt+1)*dat->nth + (dat->itt==dat->sim->numThreads()-1?dat->sim->numobjs():0));
 	delete dat;
 	return NULL;
 };
