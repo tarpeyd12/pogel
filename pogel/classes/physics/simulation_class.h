@@ -30,12 +30,18 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 		unsigned int threads;
 		#endif
 		//coll collisionindex[numobjects][numobjects];
+		unsigned char collitters;
 	public:
 		float precision;
 		bool deactivation;
 		unsigned long inactive_index;
 		
 		SIMULATION();
+		
+		void setCollItters(unsigned char i) {
+			collitters = i;
+			if(collitters < 1) collitters = 1;
+		}
 		
 		void setThreadsNum(unsigned int t) {
 			#ifdef THREADSOK

@@ -347,8 +347,8 @@ inline float POGEL::PHYSICS::getvf(float m1, float m2, float v1, float v2, float
 void POGEL::PHYSICS::calcInelasticDirections(POGEL::VECTOR vn, POGEL::PHYSICS::SOLID* s1, POGEL::PHYSICS::SOLID* s2, POGEL::VECTOR* v) {
 	
 	// these next two lines of code are to compensate for a weard bug, that when the bounce of a solid object that is PHYSICS_SOLID_CONVEX, is 4, and the other objects bounce is 1, that then it is as if both were set to 1.
-	float b1 = s1->behavior.bounce *(s1->hasOption(PHYSICS_SOLID_CONCAVE) && s1->hasOption(PHYSICS_SOLID_SPHERE) ? 5 : 1);
-	float b2 = s2->behavior.bounce *(s2->hasOption(PHYSICS_SOLID_CONCAVE) && s2->hasOption(PHYSICS_SOLID_SPHERE) ? 5 : 1);
+	float b1 = s1->behavior.bounce *(s1->hasOption(PHYSICS_SOLID_CONCAVE) && s1->hasOption(PHYSICS_SOLID_SPHERE) ? 1 : 1);
+	float b2 = s2->behavior.bounce *(s2->hasOption(PHYSICS_SOLID_CONCAVE) && s2->hasOption(PHYSICS_SOLID_SPHERE) ? 1 : 1);
 	
 	float cn = (b1+b2)/2;
 	float cn1 = cn;
