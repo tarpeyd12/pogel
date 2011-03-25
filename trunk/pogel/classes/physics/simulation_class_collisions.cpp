@@ -188,7 +188,7 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_GENERAL(POGEL::PHYSICS::SOLID* ob
 	return false;
 };
 
-/*bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
+bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
 	// make object 1 the sphere
 	if(obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE))
 		return processSPHERE_CONVEXGENERAL(obj2, obj1);
@@ -199,11 +199,12 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_GENERAL(POGEL::PHYSICS::SOLID* ob
 	POGEL::TRIANGLE tmptri_dist, tmptri_line;
 	POGEL::POINT c2d;
 	
-	obj2->closest(
+	/*obj2->closest(
 		POGEL::VECTOR(obj1->position,obj2->position).normal()*50+obj1->position, 
 		&disttest, &tmptri_dist
-	);
-	bool lc = POGEL::PHYSICS::solid_line_collision(
+	);*/
+	//bool lc = 
+	POGEL::PHYSICS::solid_line_collision(
 		PHYSICS_LINESOLID_COLLISION_GREATEST, 
 		obj2, obj2->position, obj1->position, 
 		&tmptri_line, &c2d, &linetest
@@ -220,10 +221,10 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_GENERAL(POGEL::PHYSICS::SOLID* ob
 		if(v.getdistance() == 0.0f) v = POGEL::VECTOR(obj2->position, linetest);//obj1->position-obj2->position;
 		d = (obj1->bounding.maxdistance + linetest.distance(obj2->position)) - obj1->position.distance(obj2->position);
 		unocupyobjs(obj1,obj2,v,d);
-		obj2->closest(obj1->position, &disttest, &tmptri_dist);
+		//obj2->closest(obj1->position, &disttest, &tmptri_dist);
 		inside = true;
 	}
-	
+	obj2->closest(obj1->position, &disttest, &tmptri_dist);
 	if(
 		//inside || 
 		obj1->position.distance(disttest) < radius || 
@@ -232,69 +233,19 @@ bool POGEL::PHYSICS::SIMULATION::processSPHERE_GENERAL(POGEL::PHYSICS::SOLID* ob
 		//tmptri_dist.isinfront(obj1->position) != tmptri_dist.isinfront(obj2->position)
 	) {
 		if(POGEL::hasproperty(POGEL_COLLISIONS))
-			(lc?linetest:disttest).draw();
-		v = POGEL::VECTOR(obj1->position, (lc?linetest:disttest));
-		d = obj1->position.distance(lc?linetest:disttest) - radius;
+			(/*lc?linetest:*/disttest).draw();
+		v = POGEL::VECTOR(obj1->position, (/*lc?linetest:*/disttest));
+		d = obj1->position.distance(/*lc?linetest:*/disttest) - radius;
 		unocupyobjs(obj1,obj2,v,d);
-		POGEL::POINT p = linetest;
+		POGEL::POINT p = disttest;
 		if(obj2->hasOption(PHYSICS_SOLID_STATIONARY))
-			v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + (lc?tmptri_line:tmptri_dist).normal*1;
+			v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + (/*lc?tmptri_line:*/tmptri_dist).normal*1;
 		v.normalize();
 		reactcollision(obj1, obj2, v*-1, v, p);
 		return true;
 	}
 	
 	return false;
-};*/
-
-bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONVEXGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
-        // make object 1 the sphere
-        if(obj2->hasOption(PHYSICS_SOLID_SPHERE) && !obj1->hasOption(PHYSICS_SOLID_SPHERE))
-                return processSPHERE_CONVEXGENERAL(obj2, obj1);
-        
-        POGEL::POINT tmp_1, tmp_2;
-        POGEL::TRIANGLE tmptri;
-        
-        POGEL::POINT c3d, c2d;
-        
-        //obj2->closest(obj1->position, &tmp_2, &tmptri);
-        POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
-        
-        POGEL::VECTOR v;
-        float d;
-        bool inside = false;
-        if(obj2->position.distance(tmp_2) > obj2->position.distance(obj1->position))//-obj1->bounding.maxdistance)
-        if(tmp_2 == obj2->position || tmptri.isinfront(obj2->position) == tmptri.isinfront(obj1->position)) {
-                POGEL::PHYSICS::solid_line_collision(PHYSICS_LINESOLID_COLLISION_GREATEST, obj2, obj2->position, obj1->position, &tmptri, &c2d, &tmp_2);
-                v = obj1->direction.normal() - obj2->direction.normal();
-                if(v.getdistance() == 0.0f) v = POGEL::VECTOR(obj2->position, tmp_2);//obj1->position-obj2->position;
-                d = (obj1->bounding.maxdistance + tmp_2.distance(obj2->position)) - obj1->position.distance(obj2->position);
-                unocupyobjs(obj1,obj2,v,d);
-                //obj2->closest(obj1->position, &tmp_2, &tmptri);
-                inside = true;
-        }
-        obj2->closest(obj1->position, &tmp_2, &tmptri);
-        
-        if(inside || (obj1->position.distance(tmp_2) < obj1->bounding.maxdistance && tmptri.isinfront(obj1->position) != tmptri.isinfront(obj2->position))) {
-                if(POGEL::hasproperty(POGEL_COLLISIONS))
-                        tmp_2.draw();
-                v = POGEL::VECTOR(obj1->position, tmp_2).normal();
-                d = obj1->position.distance(tmp_2);
-                
-                unocupyobjs(obj1,obj2,v,d);
-                
-                if(tmptri.isinfront(v.normal().topoint()+tmptri.middle()))
-                        unocupyobjs(obj1, obj2, v,  obj1->bounding.maxdistance);
-                else
-                        unocupyobjs(obj1, obj2, v, -obj1->bounding.maxdistance);
-                        
-                v = POGEL::VECTOR(obj1->position,obj2->position).normal()*0 + tmptri.normal*1;
-                v.normalize();
-                reactcollision(obj1, obj2, v, v * -1, tmp_2);
-                return true;
-        }
-        
-        return false;
 };
 
 bool POGEL::PHYSICS::SIMULATION::processSPHERE_CONCAVEGENERAL(POGEL::PHYSICS::SOLID* obj1, POGEL::PHYSICS::SOLID* obj2) {
