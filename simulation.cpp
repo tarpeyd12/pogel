@@ -71,7 +71,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES defprp(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0);
 	POGEL::PHYSICS::SOLID *tmp;
-	for(unsigned int i = 0; i < 20; i++) {
+	for(unsigned int i = 0; i < 50; i++) {
 		printf("%u\r", i);
 		tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_VOLITAL|PHYSICS_SOLID_CONVEX);
 		switch(i) {
@@ -99,8 +99,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 		//tmp->visable=false;
 	}
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONCAVE|PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_STATIONARY);
-	addSphere(tmp, 16,16, 10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
-	//tmp->visable=false;
+	addSphere(tmp, 24,24, 10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
+	tmp->visable=false;
 	tmp->setname("border");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
 	POGEL::addproperty(POGEL_WIREFRAME);
@@ -109,8 +109,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	simulation.addSolid(tmp);
 	
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONVEX|PHYSICS_SOLID_STATIONARY);
-	addCube(tmp, 3,3,3, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, POGEL::MATRIX());
-	tmp->moveto(POGEL::POINT(0,-8,0));
+	addCube(tmp, 6,6,6, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, POGEL::MATRIX());
+	tmp->moveto(POGEL::POINT(0,-6,0));
 	tmp->spin.y = 1;
 	tmp->setname("box");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
@@ -120,12 +120,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	simulation.gravity = POGEL::VECTOR(0,-9.8,0);
 	//simulation.addsingularity(POGEL::PHYSICS::SINGULARITY(0,0,0, 2000000000));
 	
-	POGEL::addproperty(POGEL_WIREFRAME);
+	//POGEL::addproperty(POGEL_WIREFRAME);
 	
 	simulation.setThreadsNum(1);
 	
-	simulation.deactivation = true;
-	simulation.precision = 0.05;
+	//simulation.deactivation = true;
+	//simulation.precision = 0.05;
 	
 	simulation.boundingskips = 0;
 	
