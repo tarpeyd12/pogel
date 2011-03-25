@@ -32,6 +32,7 @@ namespace qsim {
 	
 	bool usetime = false;
 	bool savenotri = false;
+	bool rendatsave = false;
 	float massvar = 0.0;
 	float randpos = 0.0;
 	
@@ -39,6 +40,7 @@ namespace qsim {
 	
 	std::string flnm;
 	std::string imgflnm;
+	std::string rendpath, rendcpos = "{[0],[0],[-1]}";
 	
 	POGEL::OBJECT *obj;
 	HASHLIST<POGEL::PHYSICS::SOLID*> sphs;
@@ -213,7 +215,17 @@ void init(int argc, char** argv) {
 			for(int p = 0; p < 8; p++) s += std::string(argv[++i]) + (p!=7?",":"}");
 			objprps = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(s);
 			minput[PRP] = true; continue;
-		} else { continue; }
+		} else 
+		
+		if(strlen(argv[i]) == 5 && !strncmp(argv[i],"-rend", 5)) {
+			rendatsave = true;
+			rendpath = argv[++i];
+			if(i+1 < argc && argv[i+1][0] == '{' && argv[i+1][strlen(argv[i+1])-1] == '}')
+				rendcpos = argv[++i];
+			continue;
+		} else
+		
+		{ continue; }
 	}
 	
 	// standard cmd options
@@ -313,6 +325,14 @@ void loop() {
 			printf("\tSaving at itteration: %u ...\n", i);
 			save();
 			printf("\t\tDone.\n");
+			if(rendatsave) {
+				printf("\tRendering ...\n");
+				char* frm = POGEL::string("%u", POGEL::frames);
+				std::string fl = rendpath + "out." + flnm + "." + std::string(frm) + ".bmp"; free(frm);
+				std::string command = "./viewer -label -f "+flnm+" -o "+fl+" -campos " + rendcpos;
+				system(command.c_str());
+				printf("\t\tDone.\n");
+			}
 		}
 		i++;
 	}

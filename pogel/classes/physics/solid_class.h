@@ -105,6 +105,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES behavior;
 		
 		SOLID();
+		SOLID(const char*);
+		SOLID(POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES, unsigned int);
 		SOLID(POGEL::OBJECT*, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES, unsigned int);
 		
 		SOLID(std::string);
@@ -164,6 +166,8 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		void closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* obj1pt, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri1, POGEL::TRIANGLE* tri2);
 		void closest(POGEL::POINT point, POGEL::POINT* obj2pt, POGEL::TRIANGLE* tri);
+		
+		void cleartriangles();
 		
 		std::string toString();
 		

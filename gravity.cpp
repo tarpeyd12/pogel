@@ -18,7 +18,7 @@
 
 using namespace POGEL;
 
-#define th
+//#define th
 
 #ifdef th
 //#include "threads.h"
@@ -29,7 +29,7 @@ THREAD *simulator_runner;
 #define frameskip 1
 unsigned int objnum;
 #define grd objnum
-#define numobjs (grd*grd*grd)
+#define numobjs (grd*grd)
 
 #define svfrq 1000/numobjs
 
@@ -154,6 +154,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f /* - (10.0f-(sps/2.0f)), \*/
                 ));
+                obj[i].position.z=0.0;
                 if(i==0)
                 for(unsigned int a = 0; a < obj[i].getnumfaces(); a++) {
                 	POGEL::TRIANGLE t = obj[i].gettriangle(a);
@@ -261,7 +262,7 @@ void DrawGLScene()
 			if(frames%frameskip == 0) {
 				sim.draw();
 				if(keys['m'])
-					sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
+					sim.drawGravityGrid(1000, .075*10, POGEL::POINT(0,0,0), 10);
      		}
 			glPopMatrix();
 		viewport[i].endrender();
@@ -285,7 +286,7 @@ void DrawGLScene()
         if(frames%frameskip == 0) {
         	sim.draw();
         	 if(keys['m'])
-	         	sim.drawGravityGrid(100000, .075*10, POGEL::POINT(0,0,0), 8);
+	         	sim.drawGravityGrid(1000, .075*10, POGEL::POINT(0,0,0), 10);
         }
         }
         

@@ -120,7 +120,7 @@ void POGEL::PHYSICS::DYNAMICS::draw() {
 void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POINT center, unsigned int grd) {
 	unsigned long numpoints = grd*grd*grd;
 	POGEL::POINT prev_pv, prev_pv_a[grd], prev_pv_b[grd*grd];
-	float pntms = mass*PARTICLE_SLOWDOWN_RATIO;//*PARTICLE_SLOWDOWN_RATIO;
+	float pntms = mass*PARTICLE_SLOWDOWN_RATIO;
 	for(unsigned long i = 0; i < numpoints; i++) {
 		unsigned int imgrd = i%grd;
 		POGEL::POINT p(
@@ -128,15 +128,18 @@ void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POI
 			(((float)((i/grd)%grd)*sps) - ((float(grd)*sps)/2.0f - sps/2.0f) +center.y),
 			((float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f +center.z)
 		);
-		POGEL::VECTOR v = objectmasses.getpull(p, pntms)/(numobjects);//PARTICLE_SLOWDOWN_RATIO;
+		POGEL::VECTOR v = objectmasses.getpull(p, pntms)/(1);
 		if(v.getdistance() > sps*2) v = v.normal()*sps*2;
-		POGEL::COLOR c(1,.25,0,v.getdistance());
+		POGEL::COLOR c(1,.25,0,v.getdistance()/(sps*4));
 		POGEL::POINT pv = p+v;
-		pv.draw(5, c);
-		if( imgrd != 0 && i/(grd*grd) != 0 && (i/grd)%grd != 0 ) {
-			POGEL::LINE(prev_pv, pv, 2, c).draw();
-			POGEL::LINE(prev_pv_a[imgrd], pv, 2, c).draw();
-			POGEL::LINE(prev_pv_b[i%(grd*grd)], pv, 2, c).draw();
+		if(c.a > 0.05 && c.a < sps*4) {
+			pv.draw(4, c);
+			if(imgrd)
+				POGEL::LINE(prev_pv, pv, 2, c).draw();
+			if((i/grd)%grd)
+				POGEL::LINE(prev_pv_a[imgrd], pv, 2, c).draw();
+			if(i/(grd*grd))
+				POGEL::LINE(prev_pv_b[i%(grd*grd)], pv, 2, c).draw();
 		}
 		prev_pv_b[i%(grd*grd)] = prev_pv_a[imgrd] = prev_pv = pv;
 	}

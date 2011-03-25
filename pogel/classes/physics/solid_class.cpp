@@ -18,6 +18,38 @@ POGEL::PHYSICS::SOLID::SOLID() : POGEL::OBJECT() {
 	cantsleep = false;
 };
 
+POGEL::PHYSICS::SOLID::SOLID(const char * n) : POGEL::OBJECT(n) {
+	behavior = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES();
+	physproperties = 0;
+	maximumdistance = 0.0f;
+	stepstaken = objboundingskips = stepsatboundingcheck = 0;
+	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
+	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	trailsize = PHYSICS_SOLID_TRAILSIZE;
+	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) trail[i] = rots[i] = POGEL::POINT();
+	container = NULL; callback = NULL; function = NULL;
+	force = POGEL::VECTOR();
+	sleeping = false;
+	cantsleep = false;
+};
+
+POGEL::PHYSICS::SOLID::SOLID(POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES attr, unsigned int prop) : POGEL::OBJECT() {
+	behavior = attr;
+	physproperties = prop;
+	maximumdistance = 0.0f;
+	stepstaken = objboundingskips = stepsatboundingcheck = 0;
+	bounding = POGEL::BOUNDING(BOUNDING_OBJECT);
+	trail = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	rots = new POGEL::POINT[PHYSICS_SOLID_TRAILSIZE];
+	trailsize = PHYSICS_SOLID_TRAILSIZE;
+	for( int i = 0; i < PHYSICS_SOLID_TRAILSIZE; i++ ) trail[i] = rots[i] = POGEL::POINT();
+	container = NULL; callback = NULL; function = NULL;
+	force = POGEL::VECTOR();
+	sleeping = false;
+	cantsleep = false;
+};
+
 POGEL::PHYSICS::SOLID::SOLID(POGEL::OBJECT* obj, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES attr, unsigned int prop) : POGEL::OBJECT(obj) {
 	behavior = attr;
 	physproperties = prop;
@@ -443,6 +475,11 @@ void POGEL::PHYSICS::SOLID::closest(POGEL::PHYSICS::SOLID* other, POGEL::POINT* 
 		this->closest(*obj2pt, obj1pt, tri1);
 	}
 	//POGEL::LINE(*obj1pt, *obj2pt, POGEL::COLOR(0,1,0,1)).draw();
+};
+
+void POGEL::PHYSICS::SOLID::cleartriangles() {
+	trianglestring.clear();
+	POGEL::OBJECT::cleartriangles();
 };
 
 std::string POGEL::PHYSICS::SOLID::toString() {
