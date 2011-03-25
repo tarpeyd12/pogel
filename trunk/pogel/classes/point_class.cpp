@@ -63,6 +63,22 @@ POGEL::VECTOR POGEL::VECTOR::normal() {
 	return *this/getdistance();
 };
 
+void POGEL::VECTOR::anglenormalize() {
+	while(x >=  180.0) x -= 180.0;
+	while(y >=  180.0) y -= 180.0;
+	while(z >=  180.0) z -= 180.0;
+	
+	while(x <= -180.0) x += 180.0;
+	while(y <= -180.0) y += 180.0;
+	while(z <= -180.0) z += 180.0;
+};
+
+POGEL::VECTOR POGEL::VECTOR::anglenormal() {
+	POGEL::VECTOR ret = *this;
+	ret.anglenormalize();
+	return ret;
+};
+
 float POGEL::VECTOR::getdistance() {
 	float r = (float)sqrt(x*x+y*y+z*z);
 	if(isnan(r))

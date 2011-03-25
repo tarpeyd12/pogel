@@ -81,6 +81,8 @@ class VECTOR: public POGEL::POINT {
 		
 		void normalize();
 		POGEL::VECTOR normal();
+		void anglenormalize();
+		POGEL::VECTOR anglenormal();
 		float getdistance();
 		float getangle(POGEL::VECTOR,POGEL::VECTOR);
 		POGEL::VECTOR& dodotproduct(POGEL::VECTOR);

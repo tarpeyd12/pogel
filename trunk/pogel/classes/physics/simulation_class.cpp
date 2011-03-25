@@ -11,6 +11,7 @@ POGEL::PHYSICS::SIMULATION::SIMULATION() : POGEL::PHYSICS::DYNAMICS() {
 	deactivation = false;
 	inactive_index = 25;
 	stepstaken = 0;
+	collitters = 1;
 	#ifdef THREADSOK
 	threads = 1;
 	#endif
@@ -206,7 +207,7 @@ void POGEL::PHYSICS::SIMULATION::stepobjs() {
 
 void POGEL::PHYSICS::SIMULATION::increment() {
 	addpulls();
-	for(int g = 0; g < 1; g++) checkcollisions();
+	for(int g = 0; g < 3; g++) checkcollisions();
 	stepobjs();
 	stepstaken++;
 };
