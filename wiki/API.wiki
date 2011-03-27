@@ -53,6 +53,7 @@ bool visable;
   * `visable` weather or not to draw the object.
 
 === methods: ===
+
 {{{
 void killchildren();
 }}}
