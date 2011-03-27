@@ -1,5 +1,10 @@
 #summary One-sentence summary of this page.
+#labels Featured
 
-= Introduction =
+= Videos =
 
-<wiki:video url="<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/tgzpnIq4A74" frameborder="0" allowfullscreen></iframe>"/>
+<wiki:video url="http://www.youtube.com/watch?v=tgzpnIq4A74"/>
+a rendering of some 3375 particles, or 15^3 particles.
+
+<wiki:video url="http://www.youtube.com/watch?v=X_mwZPQHgqA"/>
+a video of me debugging some stuff in pogel.
