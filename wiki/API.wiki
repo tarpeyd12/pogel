@@ -17,7 +17,7 @@ POGEL::POINT(std::string s);
   * `a` desired x co-ordinate.
   * `b` desired y co-ordinate.
   * `c` desired z co-ordinate.
-  * `s` c++ standard string with the desired coordinates. it must have this format: "{[x],[y],[z]}", where `x`, `y`, and `z` are decimal values in string form refrering to their respective dimentions.
+  * `s` c++ standard string with the desired coordinates. it must have this format: `"{[x],[y],[z]}"`, where `x`, `y`, and `z` are decimal values in string form refrering to their respective dimentions.
 
 == attributes: ==
 {{{
@@ -47,7 +47,7 @@ calls `POGEL::message()` to print the co-ordinates to stdout.
 {{{
 std::string toString();
 }}}
-retruns a c++ standard string with the points co-ordinates in the format: "{[x],[y],[z]}".
+retruns a c++ standard string with the points co-ordinates in the format: `"{[x],[y],[z]}"`.
 {{{
 void draw();
 void draw(unsigned int s);
@@ -206,7 +206,7 @@ POGEL::VERTEX(std::string s);
   * `s` is the u texture co-ordinate.
   * `t` is the v texture co-ordinate.
   * `p` is the point to set the vertex as, u and v are set to 0.0.
-  * `s` c++ standard string with the desired coordinates. it must have this format: "{[x],[y],[z],[u],[v],normal,color}", where `x`, `y`, `z`, `u`, and `v` are decimal values in string form refrering to their respective dimentions, `normal` is a vector with its respective string format, the same for `color`, bot refering to their respective attributes.
+  * `s` c++ standard string with the desired coordinates. it must have this format: `"{[x],[y],[z],[u],[v],normal,color}"`, where `x`, `y`, `z`, `u`, and `v` are decimal values in string form refrering to their respective dimentions, `normal` is a vector with its respective string format, the same for `color`, bot refering to their respective attributes.
 
 == attributes: ==
 `POGEL::VERTEX` has all the same attributes as `POGEL::POINT`.
@@ -228,7 +228,7 @@ bool usable;
 {{{
 std::string toString();
 }}}
-retruns a c++ standard string with the vertex co-ordinates and information in the format: "{[x],[y],[z],[u],[v],normal,color}".
+retruns a c++ standard string with the vertex co-ordinates and information in the format: `"{[x],[y],[z],[u],[v],normal,color}"`.
 {{{
 void get_values(float *a, float *b, float *c, float *s, float *t);
 void set_values(float a, float b, float c, float s, float t);
