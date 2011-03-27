@@ -1,0 +1,81 @@
+= Vertex class=
+`class POGEL::VERTEX` is an extention of `class POGEL::POINT`
+== constructors: ==
+`POGEL::VERTEX` has all the constructors from `POGEL::POINT`.
+{{{
+POGEL::VERTEX(float a, float b, float c, float s, float t);
+POGEL::VERTEX(POGEL::POINT p);
+POGEL::VERTEX(std::string s);
+}}}
+  * `a` is the x co-ordinate.
+  * `b` is the y co-ordinate.
+  * `c` is the z co-ordinate.
+  * `s` is the u texture co-ordinate.
+  * `t` is the v texture co-ordinate.
+  * `p` is the point to set the vertex as, u and v are set to 0.0.
+  * `s` c++ standard string with the desired coordinates. it must have this format: `"{[x],[y],[z],[u],[v],normal,color}"`, where `x`, `y`, `z`, `u`, and `v` are decimal values in string form refrering to their respective dimentions, `normal` is a vector with its respective string format, the same for `color`, bot refering to their respective attributes.
+
+== attributes: ==
+`POGEL::VERTEX` has all the same attributes as `POGEL::POINT`.
+{{{
+float u;
+float v;
+POGEL::COLOR color;
+POGEL::VECTOR normal;
+bool usable;
+}}}
+  * `u` is the x co-ordinate for texture mapping.
+  * `v` is the y co-ordinate for texture mapping.
+  * `color` is the color to make the vertex when drawing, if the triangle is set to do so.
+  * `normal` is a vector to light the vertex if the triangle this vertex is in is set to have vertex defined lighting.
+  * `usable` is a legacy attribute, keep it set to `true` at all times.
+
+== methods: ==
+`POGEL::VERTEX` has all the same methods as `POGEL::POINT`.
+{{{
+std::string toString();
+}}}
+retruns a c++ standard string with the vertex co-ordinates and information in the format: `"{[x],[y],[z],[u],[v],normal,color}"`.
+{{{
+void get_values(float *a, float *b, float *c, float *s, float *t);
+void set_values(float a, float b, float c, float s, float t);
+void get_point_values(float *a, float *b, float *c);
+void set_point_values(float a, float b, float c);
+void get_tex_values(float *s, float *t);
+void set_tex_values(float s, float t);
+}}}
+for retrieving  and setting the x, y, z, u, and v values of the vertex.
+{{{
+void scroll_tex_values(float s, float t);
+}}}
+adds `s` to the u value, and adds `t` to the v value of the vertex.
+{{{
+POGEL::POINT topoint()
+}}}
+returns a point object with the same x, y, and z co-ordinates as this vertex.
+
+== operators: ==
+`POGEL::VERTEX` has all the same operators as `POGEL::POINT`.
+note:
+{{{
+POGEL::VERTEX& operator=(const POGEL::VERTEX& p);
+}}}
+modifies all the attributes.
+{{{
+POGEL::VERTEX& operator+=(const POGEL::VERTEX& p);
+POGEL::VERTEX& operator-=(const POGEL::VERTEX& p);
+}}}
+modify the `x, `y`, `z`, `normal`, and `color` attributes, but not the `u`, and `v` attributes.
+{{{
+POGEL::VERTEX operator*(float a);
+POGEL::VERTEX operator/(float a);
+POGEL::VERTEX operator*(POGEL::VERTEX p);
+POGEL::VERTEX operator/(POGEL::VERTEX p);
+POGEL::VERTEX operator+(POGEL::VERTEX p);
+POGEL::VERTEX operator-(POGEL::VERTEX p);
+POGEL::VERTEX& operator*=(const float& a);
+POGEL::VERTEX& operator/=(const float& a);
+POGEL::VERTEX& operator*=(const POGEL::VERTEX& p);
+POGEL::VERTEX& operator/=(const POGEL::VERTEX& p);
+}}}
+only modify the `x`, `y`, and `z` attributes.
