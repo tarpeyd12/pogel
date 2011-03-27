@@ -5,7 +5,7 @@
 
 = Object class =
 
-=== constructors: ===
+== constructors: ==
 {{{
 POGEL::OBJECT();
 POGEL::OBJECT(unsigned int p);
@@ -35,7 +35,7 @@ OBJECT(POGEL::OBJECT* obj);
   * `name` a char array for the name of the object.
   * `obj` pointer to object to copy, beware all pointers are referenced.
 
-=== attributes: ===
+== attributes: ==
 {{{
 POGEL::POINT position; // the center position of the object
 POGEL::POINT rotation; // the rotation arround the center of the object
@@ -54,7 +54,7 @@ bool visable;
   * `matrix` the matrix for getting rotation and position modifications, will be overwitten at each call of `draw()`.
   * `visable` weather or not to draw the object.
 
-=== methods: ===
+== methods: ==
 
   {{{
 void killchildren();
