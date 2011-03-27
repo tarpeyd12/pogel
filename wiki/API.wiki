@@ -50,3 +50,51 @@ bool visable;
   * `base` the opengl draw list pointer thingy...
   * `matrix` the matrix for getting rotation and position modifications, will be overwitten at each call of `draw()`.
   * `visable` weather or not to draw the object.
+
+=== methods: ===
+{{{void killchildren();}}}
+  destroys all child objects.
+{{{PROPERTIES_METHODS;}}}
+  modifies the properties.
+{{{void setname(const char *n);}}}
+  sets the name of the object.
+{{{char* getname();}}}
+  returns the pointer to the char string of the object's name.
+{{{std::string getsname();}}}
+  returns a c++ std::string of the object's name.
+{{{unsigned long getchildslot();}}}
+  
+void translate(POGEL::VECTOR);
+void translate(POGEL::VECTOR,float);
+void moveto(POGEL::POINT p);
+void rotate(POGEL::VECTOR);
+void rotate(POGEL::VECTOR,float);
+void turnto(POGEL::POINT r);                
+unsigned long addtriangle(POGEL::TRIANGLE);
+void addtriangles(POGEL::TRIANGLE*,unsigned long);
+void addtrianglespace(unsigned long);
+void cleartriangles();
+unsigned long addobject(POGEL::OBJECT*);
+void addobjects(POGEL::OBJECT**,unsigned long);                
+void scroll_all_tex_values(float,float);                
+POGEL::OBJECT* getchild(const char*);
+POGEL::OBJECT* getdecendant(const char*,bool);
+POGEL::OBJECT* getdecendant(const char*);               
+POGEL::OBJECT* getancestor(const char*);
+POGEL::OBJECT* getprogenitor();
+char *getancestory();
+char *getancestoryhash();
+POGEL::MATRIX getancestorialmatrix();                
+unsigned long getnumfaces();                
+POGEL::TRIANGLE gettriangle(unsigned long i);                
+POGEL::TRIANGLE* gettrianglelist();                
+void copytriangles(POGEL::OBJECT* o);                
+void referencetriangles(POGEL::OBJECT* o);
+void settriangle(unsigned long i, POGEL::TRIANGLE t);                
+void increment();
+virtual void build();
+virtual void draw();
+virtual void stepFunc();
+virtual void step();
+virtual void create();
+virtual void destroy();
