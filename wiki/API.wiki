@@ -39,3 +39,11 @@ unsigned int base; // the pointer ot the compiled display list
 POGEL::MATRIX matrix;
 bool visable;
 }}}
+
+  * `position` the position of the object, is modifiable.
+  * `rotation` the rotation of the object.
+  * `direction` the direction and velocity vector.
+  * `spin` the rotation velovity.
+  * `base` the opengl draw list pointer thingy...
+  * `matrix` the matrix for getting rotation and position modifications, will be overwitten at each call of `draw()`.
+  * `visable` weather or not to draw the object.
