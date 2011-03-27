@@ -13,6 +13,7 @@ POGEL::OBJECT(const char* name);
 POGEL::OBJECT(const char* name, unsigned int p);
 POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p);
 POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p, POGEL::POINT pos, POGEL::POINT rot);
+OBJECT(POGEL::OBJECT* obj);
 }}}
 
   * `p` properties. appropriate values are:
@@ -28,6 +29,7 @@ POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsi
   * `pos` a point object that is the object's position.
   * `rot` a point object for the object's rotation.
   * `name` a char array for the name of the object.
+  * `obj` pointer to object to copy, beware all pointers are referenced.
 
 === attributes: ===
 {{{
