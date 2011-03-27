@@ -1,0 +1,28 @@
+#summary some definitions of the pogel API.
+
+= Object class =
+
+constructors:
+{{{
+OBJECT();
+OBJECT(unsigned int p);
+OBJECT(POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p);
+OBJECT(POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p, POGEL::POINT pos, POGEL::POINT rot);
+                
+OBJECT(const char* name);
+OBJECT(const char* name, unsigned int p);
+OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p);
+OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p, POGEL::POINT pos, POGEL::POINT rot);
+}}}
+
+'p' properties.
+
+'tri' an array of triangles.
+
+'trinum' number of triangles in the array 'tri'.
+
+'pos' a point object that is the object's position.
+
+'rot' a point object for the object's rotation.
+
+'name' a char array for the name of the object.
