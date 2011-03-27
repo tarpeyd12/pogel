@@ -1,3 +1,4 @@
+#summary some definitions of the pogel API.
 = Object class =
 'class POGEL::OBJECT'
 == constructors: ==
