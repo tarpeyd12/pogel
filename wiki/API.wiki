@@ -3,4 +3,4 @@
 
 <wiki:toc max_depth="3" />
 
-[http://code.google.com/p/pogel/wiki/api/object.wiki Object class]
+[http://code.google.com/p/pogel/wiki/api Object class]

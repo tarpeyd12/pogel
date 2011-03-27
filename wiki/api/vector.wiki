@@ -1,3 +1,4 @@
+<wiki:toc max_depth="3" />
 = Vector class =
 `class POGEL::VECTOR` is an extention of `class POGEL::POINT`
 == constructors: ==
