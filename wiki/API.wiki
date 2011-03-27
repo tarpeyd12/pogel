@@ -54,7 +54,7 @@ bool visable;
 
 === methods: ===
 
-{{{
+  {{{
 void killchildren();
 }}}
   destroys all child objects.
