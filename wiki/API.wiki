@@ -15,14 +15,14 @@ OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned in
 OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p, POGEL::POINT pos, POGEL::POINT rot);
 }}}
 
-'p' properties.
+`p` properties.
 
-'tri' an array of triangles.
+`tri` an array of triangles.
 
-'trinum' number of triangles in the array 'tri'.
+`trinum` number of triangles in the array 'tri'.
 
-'pos' a point object that is the object's position.
+`pos` a point object that is the object's position.
 
-'rot' a point object for the object's rotation.
+`rot` a point object for the object's rotation.
 
-'name' a char array for the name of the object.
+`name` a char array for the name of the object.
