@@ -2,7 +2,7 @@
 
 = Object class =
 
-constructors:
+=== constructors: ===
 {{{
 POGEL::OBJECT();
 POGEL::OBJECT(unsigned int p);
@@ -28,3 +28,14 @@ POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsi
   * `pos` a point object that is the object's position.
   * `rot` a point object for the object's rotation.
   * `name` a char array for the name of the object.
+
+=== attributes: ===
+{{{
+POGEL::POINT position; // the center position of the object
+POGEL::POINT rotation; // the rotation arround the center of the object
+POGEL::VECTOR direction; // the movement vector
+POGEL::VECTOR spin; // the spin vector
+unsigned int base; // the pointer ot the compiled display list
+POGEL::MATRIX matrix;
+bool visable;
+}}}
