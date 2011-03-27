@@ -57,148 +57,148 @@ bool visable;
   {{{
 void killchildren();
 }}}
-  destroys all child objects.
+destroys all child objects.
 {{{
 PROPERTIES_METHODS;
 }}}
-  modifies the properties.
+modifies the properties.
 {{{
 void setname(const char *n);
 }}}
-  sets the name of the object.
+sets the name of the object.
 {{{
 char* getname();
 }}}
-  returns the pointer to the char string of the object's name.
+returns the pointer to the char string of the object's name.
 {{{
 std::string getsname();
 }}}
-  returns a c++ std::string of the object's name.
+returns a c++ std::string of the object's name.
 {{{
 unsigned long getchildslot();
 }}}
-  returns the index of this object's position in its parents children.
+returns the index of this object's position in its parents children.
 {{{
 void translate(POGEL::VECTOR);
 void translate(POGEL::VECTOR,float);
 }}}
-  moves the object by the vector.
+moves the object by the vector.
 {{{
 void moveto(POGEL::POINT p);
 }}}
-  moves the object to point p.
+moves the object to point `p`.
 {{{
 void rotate(POGEL::VECTOR);
 void rotate(POGEL::VECTOR,float);
 }}}
-  turns the object by the vector.
+turns the object by the vector.
 {{{
 void turnto(POGEL::POINT r);
 }}}
-  rotates the object to r.
+rotates the object to `r`.
 {{{
 unsigned long addtriangle(POGEL::TRIANGLE);
 }}}
-  adds a triangle to the object.
+adds a triangle to the object.
 {{{
 void addtriangles(POGEL::TRIANGLE* tri, unsigned long l);
 }}}
-  adds `l` number of triangles from array `tri`.
+adds `l` number of triangles from array `tri`.
 {{{
 void addtrianglespace(unsigned long);
 }}}
-  allocates empty space for a batch of triangles to be added.
+allocates empty space for a batch of triangles to be added.
 {{{
 void cleartriangles();
 }}}
-  destroys and removes all triangles from the object.
+destroys and removes all triangles from the object.
 {{{
 unsigned long addobject(POGEL::OBJECT* obj);
 }}}
-  adds `obj` as a child object.
+adds `obj` as a child object.
 {{{
 void addobjects(POGEL::OBJECT** objs, unsigned long n);
 }}}
-  adds `n` objects from `objs` as child objects.
+adds `n` objects from `objs` as child objects.
 {{{
 void scroll_all_tex_values(float u, float v);
 }}}
-  adds `u` and `v` to the texture positions on all verticies of all triangles in the object.
+adds `u` and `v` to the texture positions on all verticies of all triangles in the object.
 {{{
 POGEL::OBJECT* getchild(const char* n);
 }}}
-  returns child object of name `n`.
+returns child object of name `n`.
 {{{
 POGEL::OBJECT* getdecendant(const char* n, bool self);
 POGEL::OBJECT* getdecendant(const char* n);
 }}}
-  returns descendant object of name `n`.
+returns descendant object of name `n`.
 {{{
 POGEL::OBJECT* getancestor(const char* n);
 }}}
-  returns ancestral object of name `n`.
+returns ancestral object of name `n`.
 {{{
 POGEL::OBJECT* getprogenitor();
 }}}
-  returns the object at the top of the 'family' tree of objects.
+returns the object at the top of the 'family' tree of objects.
 {{{
 char *getancestory();
 }}}
-  returns a char string of all the names of all the objects from the progenitor object to this object.
+returns a char string of all the names of all the objects from the progenitor object to this object.
 {{{
 char *getancestoryhash();
 }}}
-  returns a char string off the name of the progenitor object and the child slot indices to this object.
+returns a char string off the name of the progenitor object and the child slot indices to this object.
 {{{
 POGEL::MATRIX getancestorialmatrix();
 }}}
-  returns the complete matrix transforms of the ancestory of this object.
+returns the complete matrix transforms of the ancestory of this object.
 {{{
 unsigned long getnumfaces();
 }}}
-  returns the number of triangles in this object.
+returns the number of triangles in this object.
 {{{
 POGEL::TRIANGLE gettriangle(unsigned long i);
 }}}
-  returns triangle of index `i`.
+returns triangle of index `i`.
 {{{
 POGEL::TRIANGLE* gettrianglelist();
 }}}
-  returns the pointer to the array of triangles. beware not safe to modify, only for access.
+returns the pointer to the array of triangles. beware not safe to modify, only for access.
 {{{
 void copytriangles(POGEL::OBJECT* o);
 }}}
-  copies all the triangles of object `o` rel=placing this objects triangles. note: allocates new space for these triangles.
+copies all the triangles of object `o` rel=placing this objects triangles. note: allocates new space for these triangles.
 {{{
 void referencetriangles(POGEL::OBJECT* o);
 }}}
-  copies the pointers to the triangles of object `o`, clearing all of this objects triangles.
+copies the pointers to the triangles of object `o`, clearing all of this objects triangles.
 {{{
 void settriangle(unsigned long i, POGEL::TRIANGLE t);
 }}}
-  replaces triangle of index `i` with triangle `t`.
+replaces triangle of index `i` with triangle `t`.
 {{{
 void increment();
 }}}
-  adds `direction` to `position`, and adds `spin` to `rotation`.
+adds `direction` to `position`, and adds `spin` to `rotation`.
 {{{
 virtual void build();
 }}}
-  initializes the object for drawing, checking for fatal errors in initialization.
+initializes the object for drawing, checking for fatal errors in initialization.
 {{{
 virtual void draw();
 }}}
-  draws the object.
+draws the object.
 {{{
 virtual void stepFunc();
 }}}
-  stub.
+stub.
 {{{
 virtual void step();
 }}}
-  calls `increment()` then calls `stepFunc()`.
+calls `increment()` then calls `stepFunc()`.
 {{{
 virtual void create();
 virtual void destroy();
 }}}
-  stubs for `POGEL::FRACTAL`.
+stubs for `POGEL::FRACTAL`.
