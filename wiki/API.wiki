@@ -13,6 +13,7 @@ POGEL::OBJECT(const char* name);
 POGEL::OBJECT(const char* name, unsigned int p);
 POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p);
 POGEL::OBJECT(const char* name, POGEL::TRIANGLE* tri, unsigned long trinum, unsigned int p, POGEL::POINT pos, POGEL::POINT rot);
+
 OBJECT(POGEL::OBJECT* obj);
 }}}
 
