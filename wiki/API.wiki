@@ -26,7 +26,7 @@ float y;
 float z;
 }}}
 
-  * `x` x co-ordinate.
+  * {{{x}}} x co-ordinate.
   * `y` y co-ordinate.
   * `z` z co-ordinate.
 
