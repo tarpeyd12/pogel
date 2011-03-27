@@ -1,4 +1,5 @@
 #summary some definitions of the pogel API.
+#labels Featured
 
 = Object class =
 
@@ -190,12 +191,13 @@ virtual void draw();
 {{{
 virtual void stepFunc();
 }}}
+  stub.
 {{{
 virtual void step();
 }}}
+  calls `increment()` then calls `stepFunc()`.
 {{{
 virtual void create();
-}}}
-{{{
 virtual void destroy();
 }}}
+  stubs for `POGEL::FRACTAL`.
