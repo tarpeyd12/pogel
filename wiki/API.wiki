@@ -4,3 +4,8 @@
 <wiki:toc max_depth="3" />
 
 [http://code.google.com/p/pogel/wiki/api_object Object class]
+[http://code.google.com/p/pogel/wiki/api_point Point class]
+[http://code.google.com/p/pogel/wiki/api_vector Vector class]
+[http://code.google.com/p/pogel/wiki/api_vertex Vertex class]
+[http://code.google.com/p/pogel/wiki/api_triangle Triangle class]
+

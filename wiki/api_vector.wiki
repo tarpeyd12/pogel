@@ -1,0 +1,59 @@
+#summary Vector class
+<wiki:toc max_depth="3" />
+= Vector class =
+`class POGEL::VECTOR` is an extention of `class POGEL::POINT`
+== constructors: ==
+`POGEL::VECTOR` has all the constructors from `POGEL::POINT`.
+{{{
+POGEL::VECTOR(POGEL::POINT p);
+}}}
+the vector will point from the origin `(0,0,0)` to point `p`.
+{{{
+POGEL::VECTOR(POGEL::POINT p1, POGEL::POINT p2);
+}}}
+the vector will point in the direction from `p1` to `p2`.
+
+== attributes: ==
+`POGEL::VECTOR` has all the same attributes as `POGEL::POINT`.
+
+== methods: ==
+{{{
+void normalize();
+}}}
+modifies this vector to have a distance of 1.0.
+{{{
+POGEL::VECTOR normal();
+}}}
+retruns a vector with this vectors direction but with a length of 1.0. does not modify this vector.
+{{{
+void anglenormalize();
+}}}
+modifies the vector to have its x, y, and z values to be less than 180.0, but greater than -180.0.
+{{{
+POGEL::VECTOR anglenormal();
+}}}
+returns a copy of this vector that `anglenormalize()` was called for.
+{{{
+float getdistance();
+}}}
+retruns the lingth of the vector.
+{{{
+float getangle(POGEL::VECTOR,POGEL::VECTOR);
+}}}
+EXPIRAMENTAL: retruns the angle in degreess between this vector and another referencing a third vector.
+{{{
+POGEL::VECTOR& dodotproduct(POGEL::VECTOR v);
+}}}
+returns the perpindicular vector between this vector and `v`.
+{{{
+float dotproduct(POGEL::VECTOR v);
+}}}
+retruns how far this vector travels allong vector `v`.
+{{{
+void frompoints(POGEL::POINT a, POGEL::POINT b);
+}}}
+sets this vector to the direction from vector `a` to vector `b`.
+
+== operators: ==
+`POGEL::VECTOR` has all the same operators as `POGEL::POINT`.
+

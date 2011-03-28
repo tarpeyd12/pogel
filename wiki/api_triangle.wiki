@@ -1,0 +1,101 @@
+#summary Triangle class
+<wiki:toc max_depth="3" />
+= Triangle class=
+`class POGEL::TRIANGLE`
+== constructors: ==
+{{{
+TRIANGLE();
+TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c);
+TRIANGLE(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL::IMAGE *tex,unsigned int prop);
+TRIANGLE(POGEL::POINT a,POGEL::POINT b,POGEL::POINT c,POGEL::IMAGE *tex,unsigned int prop);
+TRIANGLE(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop);
+TRIANGLE(std::string s, POGEL::IMAGE *tex);
+TRIANGLE(std::string s);
+}}}
+  * `a` first vertex.
+  * `b` second vertex.
+  * `c` third vertex.
+  * `tex` a pointer to the image to draw on the triangle.
+  * `prop` option properties for the triangle. valid options are:
+    * `TRIANGLE_LIT`
+    * `TRIANGLE_COLORED`
+    * `TRIANGLE_VERTEX_NORMALS`
+    * `TRIANGLE_INVERT_NORMALS`
+  * `verts` an array of three vertices's.
+  * `s` a c++ standard string that defines the triangle. format: `"{[properties],vertex1,vertex2,vertex3,normal,texture}"`.
+
+== attributes: ==
+{{{
+POGEL::BOUNDING bounding;
+POGEL::VERTEX vertex[3]; // the 3 verticies of the triangle
+POGEL::IMAGE *texture; // a pointer to the image to use as the texture
+POGEL::VECTOR normal; // the normal vector
+}}}
+  * `bounding` a bounding box that encompasses the entire triangle.
+  * `vertex` the array of verticies.
+  * `texture` the pointer to the image to paste on to the triangle.
+  * `normal` the vector perpindicular to the triangle, for lighting.
+
+== methods: ==
+{{{
+void load(POGEL::VERTEX,POGEL::VERTEX,POGEL::VERTEX,POGEL::IMAGE*,unsigned int);
+void load(POGEL::VERTEX*,POGEL::IMAGE*,unsigned int);
+}}}
+sets all values of this triangle, like the constructors.
+{{{
+void settexture(POGEL::IMAGE *tex);
+}}}
+sets the texture image to `tex`.
+{{{
+POGEL::IMAGE *gettexture() {return texture;}
+}}}
+returns the pointer to the texture of the triangle.
+{{{
+PROPERTIES_METHODS;
+}}}
+the property modification methods.
+{{{
+std::string toString();
+}}}
+returns a c++ standard string that defines the triangle. format: `"{[properties],vertex1,vertex2,vertex3,normal,texture}"` if the texture is null it would be `"{IMAGE_NULL}"`.
+{{{
+void scroll_tex_values(float,float);
+}}}
+calls the `scroll_tex_values()` of all the triangles verticies.
+{{{
+void print();
+}}}
+prints the data in the triangle to stdout using `POGEL::message()`.
+{{{
+POGEL::LINE getEdge(unsigned int l);
+}}}
+returns a line that is edge `l` of the triangle.
+{{{
+POGEL::TRIANGLE transform(POGEL::MATRIX* m);
+}}}
+transform all verticies and the normals of them, by matrix `m`.
+{{{
+POGEL::POINT middle();
+}}}
+returns the middl of the triangle.
+{{{
+bool isinfront(POGEL::POINT p);
+}}}
+returns true if point `p` is infront of the triangle. front is defined by the direction of attribute `normal`.
+{{{
+bool distcheck(POGEL::POINT p, float d);
+}}}
+a quick inacurate way to see if point `p` is closer than distance `d` to the triangle.
+{{{
+float distance(POGEL::POINT p);
+}}}
+a quick and inacurate distance checker.
+{{{
+void getbounding();
+}}}
+updates the `bounding` attribute.
+{{{
+void draw();
+}}}
+draws the triangle.
+

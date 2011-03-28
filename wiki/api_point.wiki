@@ -1,0 +1,127 @@
+#summary Point class
+<wiki:toc max_depth="3" />
+= Point class =
+`class POGEL::POINT`
+== constructors: ==
+{{{
+POGEL::POINT();
+POGEL::POINT(float a, float b, float c);
+POGEL::POINT(std::string s);
+}}}
+
+  * `a` desired x co-ordinate.
+  * `b` desired y co-ordinate.
+  * `c` desired z co-ordinate.
+  * `s` c++ standard string with the desired coordinates. it must have this format: `"{[x],[y],[z]}"`, where `x`, `y`, and `z` are decimal values in string form refrering to their respective dimentions.
+
+== attributes: ==
+{{{
+float x;
+float y;
+float z;
+}}}
+
+  * `x` x co-ordinate.
+  * `y` y co-ordinate.
+  * `z` z co-ordinate.
+
+== methods: ==
+
+{{{
+void get_values(float *a, float *b, float *c);
+}}}
+inserts the values of the x, y, and z co-ordinates of the point into `a`, `b`, and `c`, respectively.
+{{{
+void set_values(float a, float b, float c);
+}}}
+sets the x, y, and z, values to `a`, `b`, and `c`, respectively.
+{{{
+void print();
+}}}
+calls `POGEL::message()` to print the co-ordinates to stdout.
+{{{
+std::string toString();
+}}}
+retruns a c++ standard string with the points co-ordinates in the format: `"{[x],[y],[z]}"`.
+{{{
+void draw();
+void draw(unsigned int s);
+void draw(unsigned int s, POGEL::COLOR c);
+}}}
+draws the point, with size `s` and color `c`.
+{{{
+void drawto(POGEL::POINT p);
+}}}
+draws a line from this point to point `p`.
+{{{
+void translate();
+}}}
+calls `glTranslatef()` for this points co-ordinates.
+{{{
+float distance(POGEL::POINT p);
+}}}
+returns the distance ftom this point to point `p`.
+{{{
+bool isbad();
+}}}
+returns false if all co-ordinates are numbers, true if any are `nan` or "not a number".
+
+== operators: ==
+{{{
+POGEL::POINT operator*(float a);
+}}}
+returns a point object with the co-ordinates of this point, but miltiplied by `a`.
+{{{
+POGEL::POINT operator/(float a);
+}}}
+returns a point object with the co-ordinates of this point, but divided by `a`.
+{{{
+POGEL::POINT operator*(POGEL::POINT p);
+}}}
+returns a point object with the co-ordinates of this point, but with x, y, and z miltiplied by the x, y, and z of point `p`.
+{{{
+POGEL::POINT operator/(POGEL::POINT p);
+}}}
+returns a point object with the co-ordinates of this point, but with x, y, and z divided by the x, y, and z of point `p`.
+{{{
+POGEL::POINT operator+(POGEL::POINT p);
+}}}
+returns a point object with co-ordinates that are the sums of this points and those of point `p`.
+{{{
+POGEL::POINT operator-(POGEL::POINT p);
+}}}
+returns a point object with co-ordinates that are the differences of this points and those of point `p`.
+{{{
+POGEL::POINT& operator=(const POGEL::POINT& p);
+}}}
+assignes this points co-ordinates to those of point `p`.
+{{{
+POGEL::POINT& operator*=(const float& a);
+}}}
+assignes this points co-ordinates as this points co-ordinates multiplied by `a`.
+{{{
+POGEL::POINT& operator/=(const float& a);
+}}}
+assignes this points co-ordinates as this points co-ordinates divided by `a`.
+{{{
+POGEL::POINT& operator*=(const POGEL::POINT& p);
+}}}
+assignes this points co-ordinates as this points co-ordinates multiplied by the respective co-ordinates of point `p`.
+{{{
+POGEL::POINT& operator/=(const POGEL::POINT& p);
+}}}
+assignes this points co-ordinates as this points co-ordinates divided by the respective co-ordinates of point `p`.
+{{{
+POGEL::POINT& operator+=(const POGEL::POINT& p);
+}}}
+assignes this points co-ordinates as this points co-ordinates added to the respective co-ordinates of point `p`.
+{{{
+POGEL::POINT& operator-=(const POGEL::POINT& p);
+}}}
+assignes this points co-ordinates as this points co-ordinates minus the respective co-ordinates of point `p`.
+{{{
+bool operator==(POGEL::POINT p);
+bool operator!=(POGEL::POINT p);
+}}}
+compares this points co-ordinates to those of point `p`.
+

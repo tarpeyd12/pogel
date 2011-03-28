@@ -5,7 +5,7 @@
 
 <wiki:video url="http://www.youtube.com/watch?v=tgzpnIq4A74"/>
 
-a rendering of some 3375 particles, or 15^3 particles.
+a rendering of some 3375 particles, or 15^3^ particles.
 
 <wiki:video url="http://www.youtube.com/watch?v=X_mwZPQHgqA"/>
 
