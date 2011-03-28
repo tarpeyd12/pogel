@@ -1,3 +1,4 @@
+#summary some definitions of the pogel API.
 <wiki:toc max_depth="3" />
 = Object class =
 'class POGEL::OBJECT'
