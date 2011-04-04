@@ -55,6 +55,7 @@ class POGEL::PHYSICS::DYNAMICS {
 		
 		unsigned long numobjs() { return objects.length(); }
 		POGEL::PHYSICS::SOLID* objs(unsigned long a) { return objects[a]; }
+		HASHLIST<POGEL::PHYSICS::SOLID*> objslst() { return objects; }
 		
 		unsigned long addsingularity(POGEL::PHYSICS::SINGULARITY sig) {return singularities.addsingularity(sig);}
 		void addsingularities(POGEL::PHYSICS::SINGULARITY* sig, unsigned long num) {singularities.addsingularities(sig,num);}

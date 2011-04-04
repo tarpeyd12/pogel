@@ -11,6 +11,7 @@ class SIMULATION;
 #include "dynamics_class.h"
 //#include "singularity_class.h"
 #include "solid_class.h"
+#include "otree_class.h"
 
 #define				BUPMAX						10
 
@@ -31,6 +32,8 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 		#endif
 		//coll collisionindex[numobjects][numobjects];
 		unsigned char collitters;
+		
+		POGEL::otree *ot;
 	public:
 		float precision;
 		bool deactivation;
@@ -58,12 +61,16 @@ class POGEL::PHYSICS::SIMULATION : public POGEL::PHYSICS::DYNAMICS {
 			#endif
 		}
 		
+		POGEL::otree* getotree() {
+			return ot;
+		}
 		
 		unsigned long getStepsTaken() { return stepstaken; }
 		
 		void addpulls(unsigned long, unsigned long);
 		void addpulls();
 		void checkcollisions();
+		void collincrement();
 		void stepobjs();
 		
 		void increment();

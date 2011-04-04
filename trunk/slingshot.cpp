@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define frameskip 100
+#define frameskip 10
 
 #define numobjs 10
 #define sps 5.0
@@ -165,7 +165,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         sp->setname("ball");
         addSphere(sp,2,4, size/2, defaultimg,1,1, 0 | TRIANGLE_LIT, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         //addCube(sp, 10,6,4, defaultimg, 1,1,0|TRIANGLE_LIT,POGEL::MATRIX());
-        sp->setproperties(0);
+        sp->setproperties(0|OBJECT_ROTATE_TOCAMERA);
         sp->moveto(POGEL::POINT(0.0f,0.0f,0.0f));
         sp->build();
         ball = new POGEL::PHYSICS::SOLID(sp, POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(1, 1, 1, 1, 1, 1, false, 0), 2|PHYSICS_SOLID_CONVEX|16);

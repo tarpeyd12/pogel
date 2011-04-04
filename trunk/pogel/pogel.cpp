@@ -305,9 +305,11 @@ void POGEL::PrintFps() {
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, (int)buffer[i]);
 	glEnable(GL_LIGHTING);*/
 	float timepassed = POGEL::GetTimePassed();
-	POGEL::message("\rFrame: %u, Fps: %6.2f, Spf: %6.2f, Duration = %0.2fs (%d:%02d:%05.2f)",
+	POGEL::message("\rFrame: %u, Fps: %6.2f(%6.2favg), Spf: %6.2f, Duration = %0.2fs (%d:%02d:%05.2f)",
 		POGEL::frames,
-		(POGEL::GetFps()>999.99?999.99:POGEL::GetFps()), POGEL::GetSecondsPerFrame(),
+		(POGEL::GetFps()>999.99?999.99:POGEL::GetFps()), 
+		POGEL::GetAverageFps(), 
+		POGEL::GetSecondsPerFrame(),
 		timepassed,
 		(unsigned int)timepassed/3600, ((unsigned int)timepassed/60)%60, fmod(timepassed,60)
 	);
@@ -315,6 +317,10 @@ void POGEL::PrintFps() {
 
 void POGEL::SetFramerateThrotle(float framerate) {
 	POGEL::framerate_throtling_correction = framerate;
+};
+
+float POGEL::GetAverageFps() {
+	return float(POGEL::frames)/POGEL::GetTimePassed();
 };
 
 float POGEL::GetSecondsPerFrame() {

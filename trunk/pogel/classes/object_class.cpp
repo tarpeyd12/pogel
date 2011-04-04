@@ -198,14 +198,14 @@ void POGEL::OBJECT::rotate(POGEL::VECTOR v) {
 	rotation.y+=v.y;
 	rotation.z+=v.z;*/
 	
-	/*if(rotation.x<0.0f) rotation.x+=360.0f;
+	if(rotation.x<0.0f) rotation.x+=360.0f;
 	if(rotation.x>360.0f) rotation.x-=360.0f;
 	
 	if(rotation.y<0.0f) rotation.y+=360.0f;
 	if(rotation.y>360.0f) rotation.y-=360.0f;
 	
 	if(rotation.z<0.0f) rotation.z+=360.0f;
-	if(rotation.z>360.0f) rotation.z-=360.0f;*/
+	if(rotation.z>360.0f) rotation.z-=360.0f;
 };
 
 void POGEL::OBJECT::rotate(POGEL::VECTOR v, float s) {
