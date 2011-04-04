@@ -29,7 +29,7 @@ THREAD *simulator_runner;
 #define frameskip 1
 unsigned int objnum;
 #define grd objnum
-#define numobjs (grd*grd)
+#define numobjs (grd*grd*grd)
 
 #define svfrq 1000/numobjs
 
@@ -61,8 +61,8 @@ bool keypres, go = true;
 unsigned long int updts = 0;
 
 bool sc = false;
-#ifdef th
 bool ef = false;
+#ifdef th
 void* sim_runner(void* arg) {
 	for(;;) {
 		if(keypres) {
@@ -80,9 +80,13 @@ void* sim_runner(void* arg) {
 	pthread_exit(NULL);
 };
 
+#endif
+
 void exitingfunction() {
 	ef = true;
+	#ifdef th
 	simulator_runner->joinThread();
+	#endif
 	char *flnm = POGEL::string("log%d.txt",numobjs);
 	std::ofstream outfile (flnm, std::ios_base::trunc);
 	free(flnm);
@@ -91,9 +95,8 @@ void exitingfunction() {
 		outfile << sphs[a]->toString() << "\n";
 	}
 	outfile.close();
+	printf("\n\n\tAverage FPS: %8.3f\n\n", POGEL::GetAverageFps());
 };
-
-#endif
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)              // We call this right after our OpenGL window is created.
@@ -154,7 +157,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
 						((float)((i/grd)%grd)*sps)-( (float(grd)*sps)/2.0f-sps/2.0f),
 						(float)(i/(grd*grd))*(sps) - sps*float(grd)/2.0f + sps/2.0f /* - (10.0f-(sps/2.0f)), \*/
                 ));
-                obj[i].position.z=0.0;
+                //obj[i].position.z=0.0;
                 if(i==0)
                 for(unsigned int a = 0; a < obj[i].getnumfaces(); a++) {
                 	POGEL::TRIANGLE t = obj[i].gettriangle(a);
@@ -202,12 +205,14 @@ void InitGL(int Width, int Height)              // We call this right after our 
         POGEL::InitFps();
         printf("\n");
         sim.FORCEfastAccessList();
+        //sim.setThreadsNum(4);
        	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
        	//sim.setThreadsNum(2);
        	simulator_runner->startThread();
-       	exfnc = exitingfunction;
        	#endif
+       	
+       	exfnc = exitingfunction;
        	
        	viewport[0].setretscreensize(&screenx, &screeny);
 		viewport[0].setviewport(0,0,Width/2,Height);
@@ -322,6 +327,8 @@ void DrawGLScene()
 			outfile.close();
 		}
         #endif
+        
+        //if(POGEL::frames >= 1000) quit();
         
         // since this is double buffered, swap the buffers to display what just got drawn.
         if(frames%frameskip == 0) {

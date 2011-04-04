@@ -1,7 +1,6 @@
 #include <string.h>
 
 #include "simulation_class.h"
-
 #include "../threads.h"
 
 /* Just remember, in here, there is usualy no method to the madenss. */
@@ -156,9 +155,13 @@ inline void objectIntersectionProcessing(POGEL::PHYSICS::SIMULATION* sim, unsign
 
 inline void checkcollision(POGEL::PHYSICS::SIMULATION* sim, unsigned long s, unsigned long e) {
 	for( unsigned long a = s; a < e && a < sim->numobjs(); a++ ) {
-		if(!sim->objs(a)->napping() || sim->objs(a)->hasOption(PHYSICS_SOLID_STATIONARY))
-			for( unsigned long b = 0; b < sim->numobjs(); b++ )
-				objectIntersectionProcessing(sim, a, b);
+		if(!sim->objs(a)->napping() || sim->objs(a)->hasOption(PHYSICS_SOLID_STATIONARY)) {
+			HASHLIST<unsigned int> *objs = sim->getotree()->releventIndicies(sim->objs(a)->bounding);
+			for( unsigned long b = 0; b < objs->length(); b++ )
+				if(objs->get(b) < sim->numobjs())
+					objectIntersectionProcessing(sim, a, objs->get(b));
+			delete objs;
+		}
 	}
 };
 
@@ -205,9 +208,28 @@ void POGEL::PHYSICS::SIMULATION::stepobjs() {
 	}
 };
 
+void POGEL::PHYSICS::SIMULATION::collincrement() {
+	HASHLIST<POGEL::PHYSICS::SOLID*> *oltmp = new HASHLIST<POGEL::PHYSICS::SOLID*>();
+	for(unsigned int i = 0; i < objects.length(); i++)
+		oltmp->add(objects[i]);
+	ot = new POGEL::otree(oltmp, 5);
+	ot->grow();
+	#ifdef THREADSOK
+	if(threads > 1)
+		ot->FORCEfastlist();
+	#endif
+	#ifdef OPENGL
+	glLineWidth(2); ot->draw(); glLineWidth(1);
+	#endif
+	
+	for(int g = 0; g < collitters; g++) checkcollisions();
+	
+	delete ot; ot = NULL; delete oltmp;
+};
+
 void POGEL::PHYSICS::SIMULATION::increment() {
 	addpulls();
-	for(int g = 0; g < 3; g++) checkcollisions();
+	collincrement();
 	stepobjs();
 	stepstaken++;
 };

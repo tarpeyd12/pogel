@@ -211,9 +211,13 @@ void init(int argc, char** argv) {
 		} else
 		
 		if(strlen(argv[i]) == 8 && !strncmp(argv[i],"-objprps", 8)) {
-			std::string s = "{";
-			for(int p = 0; p < 8; p++) s += std::string(argv[++i]) + (p!=7?",":"}");
-			objprps = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(s);
+			if(i+1<argc && argv[i+1][0] == '{')
+				objprps = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(std::string(argv[++i]));
+			else {
+				std::string s = "{";
+				for(int p = 0; p < 8; p++) s += std::string(argv[++i]) + (p!=7?",":"}");
+				objprps = POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES(s);
+			}
 			minput[PRP] = true; continue;
 		} else 
 		

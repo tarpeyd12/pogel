@@ -13,11 +13,9 @@
 
 using namespace POGEL;
 
-#define th
+//#define th
 
 #ifdef th
-//#include "threads.h"
-
 THREAD *simulator_runner;
 #endif
 
@@ -55,8 +53,7 @@ bool dimlock = !true;
 
 void oob(SOLID_FNC_DEF) {
 	if(dimlock) {
-		obj->position.z = 0.0;
-		obj->direction.z = 0.0f;
+		obj->position.z = obj->direction.z = 0.0f;
 	}
 }
 
@@ -67,6 +64,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);	// Clear The Background Color To Blue 
 	glClearDepth(1.0);						// Enables Clearing Of The Depth Buffer
 	glDepthFunc(GL_LESS);					// The Type Of Depth Test To Do
+	glCullFace(GL_BACK);
+	glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);				// Enables Depth Testing
 	glShadeModel(GL_SMOOTH);				// Enables Smooth Color Shading
 	//glShadeModel(GL_FLAT);				// Enables flat Color Shading
@@ -96,12 +95,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	addCube(&cube, 1,1,1, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, POGEL::MATRIX());
 	cube.addproperty(OBJECT_DRAW_DISPLAYLIST); cube.build();
-	addSphere(&sphere, 8,8, .5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
+	addSphere(&sphere, 10,10, .5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
 	sphere.addproperty(OBJECT_DRAW_DISPLAYLIST); sphere.build();
 	
-	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES defprp(1.0f, 0.5f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0);
+	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES defprp(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0);
 	POGEL::PHYSICS::SOLID *tmp;
-	for(unsigned int i = 0; i < 20; i++) {
+	for(unsigned int i = 0; i < 50; i++) {
 		printf("%u\r", i);
 		tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_VOLITAL|PHYSICS_SOLID_CONVEX);
 		switch(i) {
@@ -119,32 +118,35 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 			break;
 		};
 		do {
-		tmp->position = POGEL::POINT(POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1)*10;
+			tmp->position = POGEL::POINT(POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1)*10;
 		} while(tmp->position.distance(POGEL::POINT()) > 9.5);
 		//tmp->direction = POGEL::VECTOR(POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1, POGEL::FloatRand(2)-1).normal()/2;
 		if(dimlock)
 			tmp->position.z = tmp->direction.z = 0.0;
-		tmp->position.y=0;
+		tmp->position.y = 0.0;
 		tmp->build();
 		tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
+		//tmp->addproperty(glCullFaceOBJECT_ROTATE_TOCAMERA);
 		tmp->setStepFunc(oob);
 		simulation.addSolid(tmp);
 		//tmp->visable=false;
 	}
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONCAVE|PHYSICS_SOLID_SPHERE|PHYSICS_SOLID_STATIONARY);
-	addSphere(tmp, 10,10, 10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
+	addSphere(tmp, 24,24, 10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
 	//tmp->visable=false;
+	//tmp->spin.y = -5;
 	tmp->setname("border");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
 	POGEL::addproperty(POGEL_WIREFRAME);
 	tmp->build();
 	POGEL::removeproperty(POGEL_WIREFRAME);
+	//tmp->behavior.friction = 1.0;
 	simulation.addSolid(tmp);
 	
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONVEX|PHYSICS_SOLID_STATIONARY);
-	addCube(tmp, 1,20,20, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, POGEL::MATRIX());
+	addCube(tmp, 1,20,20, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),5,5, TRIANGLE_LIT, POGEL::MATRIX());
 	tmp->moveto(POGEL::POINT(0,-1,0));
-	//tmp->spin.y = 1;
+	tmp->spin.y = 1;
 	tmp->setname("box_botom");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
 	tmp->build();
@@ -152,10 +154,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONVEX|PHYSICS_SOLID_STATIONARY);
 	//addCube(tmp, 6,.5,17.75, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POINT(0,2.5,0),POINT()));
-	addCube(tmp, 1,.5,22, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
-	addCube(tmp, 1,22,.5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
-	addSphere(tmp, 2,4, 3,POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),2,4, TRIANGLE_LIT, MATRIX(POINT(0,-.5,0),POGEL::POINT()));
+	addCube(tmp, 1,1,11, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(0,0,5.5),POGEL::POINT()));
+	//addCube(tmp, 3,.5,22, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
+	//addCube(tmp, 3,22,.5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
+	//addSphere(tmp, 2,6, 3,POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),4,12, TRIANGLE_LIT, MATRIX(POINT(0,-.5,0),POGEL::POINT()));
 	tmp->moveto(POGEL::POINT(0,0,0));
+	tmp->turnto(POGEL::POINT(0,90,0));
 	tmp->spin.y = -1;
 	tmp->setname("box_top");
 	//tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
@@ -163,37 +167,37 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	simulation.addSolid(tmp);
 	
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONVEX|PHYSICS_SOLID_STATIONARY);
-	addCube(tmp, 1,4,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT(0,0,35)));
-	tmp->moveto(POGEL::POINT(0,0,-5));
+	addCube(tmp, 1,2,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT(0,0,30)));
+	//addCube(tmp, 1.8,1,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POINT(1.05,-.02,0),POGEL::POINT()));
+	tmp->moveto(POGEL::POINT(0,-.5,-5));
 	tmp->spin.y = 0;
-	tmp->setname("box_pusher");
+	tmp->setname("box_ramp1");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
 	tmp->build();
 	simulation.addSolid(tmp);
 	
 	tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_CONVEX|PHYSICS_SOLID_STATIONARY);
-	addCube(tmp, 1,4,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT(0,0,-35)));
-	tmp->moveto(POGEL::POINT(0,0,5));
+	addCube(tmp, 1,2,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT(0,0,-30)));
+	//addCube(tmp, 1.8,1,10, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POINT(-1.05,-.02,0),POGEL::POINT()));
+	tmp->moveto(POGEL::POINT(0,-.5,5));
 	tmp->spin.y = 0;
-	tmp->setname("box_pusher2");
+	tmp->setname("box_ramp2");
 	tmp->addproperty(OBJECT_DRAW_DISPLAYLIST);
 	tmp->build();
 	simulation.addSolid(tmp);
 	
-	simulation.gravity = POGEL::VECTOR(0,-9.8,0);
+	//simulation.gravity = POGEL::VECTOR(0,-9.8,0);
 	//simulation.addsingularity(POGEL::PHYSICS::SINGULARITY(0,0,0, 2000000000));
 	
 	//POGEL::addproperty(POGEL_WIREFRAME);
 	
-	simulation.setThreadsNum(5);
+	simulation.setThreadsNum(1);
 	
 	//simulation.deactivation = true;
 	//simulation.precision = 0.05;
 	
 	simulation.boundingskips = 0;
-	simulation.setCollItters(3);
-	
-	POGEL::InitFps();
+	simulation.setCollItters(1);
 	
 	simulation.FORCEfastAccessList();
 	#ifdef th
@@ -201,6 +205,8 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	//simulation.setThreadsNum(1);
 	simulator_runner->startThread();
 	#endif
+	
+	POGEL::InitFps();
 }
 
 /* The main drawing function. */
@@ -218,9 +224,9 @@ void DrawGLScene()
 	POGEL::IncrementFps();
 	POGEL::PrintFps();
 	
-	LightPosition[0] = cos((float)frames/200)*20;
+	LightPosition[0] = cos((float)frames/200*PI)*20;
 	LightPosition[1] = 5.0;
-	LightPosition[2] = sin((float)frames/200)*20;
+	LightPosition[2] = sin((float)frames/200*PI)*20;
 	
 	glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);
@@ -236,4 +242,6 @@ void DrawGLScene()
 	// since this is double buffered, swap the buffers to display what just got drawn.
 	glutSwapBuffers();
 }
+
+// Frame: 121740, Fps:   5.89, Spf:   0.17, Duration = 21615.02s (6:00:15.02)deconstructing sphere
 

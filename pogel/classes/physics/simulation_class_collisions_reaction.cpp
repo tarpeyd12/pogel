@@ -21,7 +21,7 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 		else
 		if(obj2->hasOption(PHYSICS_SOLID_STATIONARY) && !obj1->hasOption(PHYSICS_SOLID_STATIONARY)) obj2->behavior.mass = masses[0];
 		
-		POGEL::VECTOR vel[] = { obj1->direction, obj2->direction };
+		//POGEL::VECTOR vel[] = { obj1->direction, obj2->direction };
 		
 		POGEL::VECTOR resvel[2];
 		POGEL::PHYSICS::calcInelasticDirections(obj1vect, obj1, obj2, vtmp);
@@ -42,10 +42,10 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 			obj1->direction = vtmp[0];
 			obj2->direction = vtmp[1];
 			
-			if(obj1->spin.getdistance() != 0.0f && !spvel[0].isbad() && obj2->direction.getdistance() < spvel[0].getdistance())
-				obj2->direction += spvel[0]*obj2->direction.getdistance()*obj1->behavior.friction;
-			if(obj2->spin.getdistance() != 0.0f && !spvel[1].isbad() && obj1->direction.getdistance() < spvel[1].getdistance())
-				obj1->direction += spvel[1]*obj1->direction.getdistance()*obj2->behavior.friction;
+			if(obj1->spin.getdistance() != 0.0f && !spvel[0].isbad() && spvel[0].getdistance() > spvel[0].normal().dotproduct(obj2->direction))
+				obj2->direction += spvel[0]*obj1->behavior.friction;
+			if(obj2->spin.getdistance() != 0.0f && !spvel[1].isbad() && spvel[1].getdistance() > spvel[1].normal().dotproduct(obj1->direction))
+				obj1->direction += spvel[1]*obj2->behavior.friction;
 			
 			POGEL::POINT p;
 			p = POGEL::MATRIX(POGEL::POINT(),obj1->spin).transformPoint(col-obj1->position);
@@ -64,8 +64,8 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 			else
 				obj2->direction = vtmp[1];
 			
-			if(obj1->spin.getdistance() != 0.0f && !spvel[0].isbad() && obj2->direction.getdistance() < spvel[0].getdistance()) {
-				obj2->direction += spvel[0]*obj2->direction.getdistance()*obj1->behavior.friction;
+			if(obj1->spin.getdistance() != 0.0f && !spvel[0].isbad() && spvel[0].getdistance() > spvel[0].normal().dotproduct(obj2->direction)) {
+				obj2->direction += spvel[0]*obj1->behavior.friction;
 				//obj2->spin = (obj2->spin+obj1->spin)/2;
 			}
 			
@@ -80,8 +80,8 @@ void POGEL::PHYSICS::SIMULATION::reactcollision(POGEL::PHYSICS::SOLID* obj1, POG
 			else
 				obj1->direction = vtmp[0];
 			
-			if(obj2->spin.getdistance() != 0.0f && !spvel[1].isbad() && obj1->direction.getdistance() < spvel[1].getdistance()) {
-				obj1->direction += spvel[1]*obj1->direction.getdistance()*obj2->behavior.friction;
+			if(obj2->spin.getdistance() != 0.0f && !spvel[1].isbad() && spvel[1].getdistance() > spvel[1].normal().dotproduct(obj1->direction)) {
+				obj1->direction += spvel[1]*obj2->behavior.friction;
 				//obj1->spin = (obj1->spin+obj2->spin)/2;
 			}
 			

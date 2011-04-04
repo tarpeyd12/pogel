@@ -6,6 +6,7 @@ class LINE;
 }
 
 #include "point_class.h"
+#include "bounding_class.h"
 #include "misc_class.h"
 #include "../pogel_internals.h"
 
@@ -17,6 +18,7 @@ class LINE {
 		POGEL::POINT ends[2]; // the 2 ends of the line
 		POGEL::COLOR color;
 		unsigned int line_width;
+		POGEL::BOUNDING bounding;
 		
 		bool stippled;
 		unsigned int stp_width;
@@ -36,6 +38,7 @@ class LINE {
 				color = POGEL::COLOR(1,1,1,1);
 				stippled = false; stp_width = 1;
 				patern = 0xFFFF;
+				bounding.addpoint(a); bounding.addpoint(b);
 			}
 			
 		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw) {
@@ -44,6 +47,7 @@ class LINE {
 				color = POGEL::COLOR(1,1,1,1);
 				stippled = false; stp_width = 1;
 				patern = 0xFFFF;
+				bounding.addpoint(a); bounding.addpoint(b);
 			}
 			
 		LINE(POGEL::POINT a, POGEL::POINT b, POGEL::COLOR c) {
@@ -52,6 +56,7 @@ class LINE {
 				color = c;
 				stippled = false; stp_width = 1;
 				patern = 0xFFFF;
+				bounding.addpoint(a); bounding.addpoint(b);
 			}
 			
 		LINE(POGEL::POINT a, POGEL::POINT b, unsigned int lw, POGEL::COLOR c) {
@@ -60,6 +65,7 @@ class LINE {
 				color = c;
 				stippled = false; stp_width = 1;
 				patern = 0xFFFF;
+				bounding.addpoint(a); bounding.addpoint(b);
 			}
 			
 		
@@ -69,6 +75,7 @@ class LINE {
 				color = c;
 				stippled = true; stp_width = wdth;
 				patern = pat;
+				bounding.addpoint(a); bounding.addpoint(b);
 			}
 		
 		POGEL::POINT getStart() { return ends[0]; }

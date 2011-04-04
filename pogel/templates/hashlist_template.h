@@ -33,25 +33,36 @@ class HASHLIST {
 		
 		void add(T l) { if(pos%insize==0)list+=new arraylist<T>(); list[pos/insize]->add(l); pos++; }
 		
-		void add(HASHLIST<T> l) {
-			/*unsigned int g = 0;
-			while(pos%insize && g < l.length())
-				add(l[g++]);
-			if(g >= l.length()) return;
-			for(unsigned int i = 0; i < ( (l.length()-g) /insize) + 0; i++) {
-				list += new arraylist<T>();
-				do {
-					list[pos/insize]->add(l[g]);
-				} while(g++ <= l.length() && pos++%insize);
-			}*/
-			for(unsigned int i = 0; i < l.length(); i++) add(l[i]);
+		void add(HASHLIST<T> l) { for(unsigned int i = 0; i < l.length(); i++) add(l[i]); }
+		void add(HASHLIST<T> *l) {
+			unsigned int g = 0;
+			while(pos%insize && g < l->length())
+				add(l->get(g++));
+			if(g >= l->length())
+				return;
+			g-=1;
+			unsigned int lstln = l->length()-(g+1);
+			unsigned int numtoplsts = lstln/insize + 1;
+			unsigned int toplststrtln = list.length();
+			for(unsigned int i = 0; i < numtoplsts; i++)
+				list+=new arraylist<T>();
+			for(unsigned int p = 0; p < lstln; p++) {
+				if(toplststrtln + p/insize >= list.length())
+					list+=new arraylist<T>();
+				list[toplststrtln + p/insize]->add(l->get(p));
+			}
+			pos+=lstln;
 		}
+		
+		void steal(HASHLIST<T> *l) { add(l); while(l->length()) l->remove(0); }
+		void faststeal(HASHLIST<T> *l) { add(l); while(l->length()) l->remove(l->length()-1); }
+		void pillage(HASHLIST<T> *l) { add(l); delete l; }
 		
 		T get(unsigned int l) { return list[ l/insize ]->operator[]( l%insize ); }
 		
 		void insert(T l, unsigned int c) {
 			if(pos == 0 || c >= pos) { add(l); return; }
-			unsigned int out = c/insize, in  = c%insize;
+			unsigned int out = c/insize, in = c%insize;
 			if(insize == 1) { arraylist<T>* p = new arraylist<T>(); p->add(l); list.insert(p,c); pos++; return; }
 			list[out]->insert(l,in);
 			if((unsigned int)list[out]->length() >= insize) {
@@ -81,7 +92,11 @@ class HASHLIST {
 			pos--;
 		}
 		
-		void FORCEresizeInternalList(unsigned int s) { insize = s; /*if(length() > 0) { insert(get(0),0); remove(0); }*/ }
+		void FORCEresizeInternalList(unsigned int s) {
+			HASHLIST<T> tmp; tmp.faststeal(this);
+			insize = s;
+			faststeal(&tmp);
+		}
 		
 		T operator[] (unsigned int l) { return get(l); }
 		

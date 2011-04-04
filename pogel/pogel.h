@@ -51,7 +51,7 @@ namespace POGEL {
 	
 	void SetFramerateThrotle(float);
 	float GetSecondsPerFrame();
-	
+	float GetAverageFps();
 	float GetTimePassed();
 	
 	void ThrotleFps(int);

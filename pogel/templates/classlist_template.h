@@ -19,7 +19,7 @@ class CLASSLIST {
 		~CLASSLIST() { if(list!=NULL)delete[]list; list=NULL; len=0; }
 		
 		void clear() { if(list!=NULL)delete[]list; list=NULL; len=0; }
-		void safeclear() { sc=true; }
+		void safeclear() { if(list!=NULL)delete list; list=NULL; len=0; }
 		
 		unsigned int length() { return len; }
 		

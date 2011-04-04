@@ -9,6 +9,9 @@
 #include "collision.h"
 
 bool POGEL::PHYSICS::line_triangle_collision(POGEL::POINT start, POGEL::POINT end, POGEL::TRIANGLE triangle, POGEL::POINT* collision2d, POGEL::POINT* collision3d) {
+	triangle.getbounding();
+	if(!POGEL::LINE(start,end).bounding.checkbounding(triangle.bounding)) return false;
+	
 	float orig[] = { start.x, start.y, start.z };
 	POGEL::VECTOR vct(start,end);
 	vct.normalize();
@@ -39,6 +42,9 @@ bool POGEL::PHYSICS::line_triangle_collision(POGEL::POINT start, POGEL::POINT en
 };
 
 bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE trib, POGEL::POINT* p1, POGEL::POINT* p2) {
+	tria.getbounding(); trib.getbounding();
+	if(!trib.bounding.checkbounding(tria.bounding)) return false;
+	
 	POGEL::POINT p3d[6], p2d[6];
 	bool collided;
 	int cols = 0, colpos[2];
@@ -67,6 +73,9 @@ bool POGEL::PHYSICS::triangle_collision(POGEL::TRIANGLE tria, POGEL::TRIANGLE tr
 };
 
 bool POGEL::PHYSICS::solid_line_collision(int type, POGEL::PHYSICS::SOLID* obj, POGEL::POINT start, POGEL::POINT end, POGEL::TRIANGLE* tri, POGEL::POINT* col2d, POGEL::POINT* col3d) {
+	obj->getbounding();
+	if(!POGEL::LINE(start,end).bounding.checkbounding(obj->bounding)) return false;
+	
 	POGEL::MATRIX mat = POGEL::MATRIX(obj->position, obj->rotation);
 	
 	if(type == PHYSICS_LINESOLID_COLLISION_GREATEST) {
@@ -112,6 +121,9 @@ bool POGEL::PHYSICS::solid_line_collision(int type, POGEL::PHYSICS::SOLID* obj, 
 };
 
 bool POGEL::PHYSICS::solid_line_collision(POGEL::PHYSICS::SOLID* obj, POGEL::POINT start, POGEL::POINT end, POGEL::TRIANGLE* tri, POGEL::POINT* col2d, POGEL::POINT* col3d) {
+	obj->getbounding();
+	if(!POGEL::LINE(start,end).bounding.checkbounding(obj->bounding)) return false;
+	
 	POGEL::MATRIX mat = POGEL::MATRIX(obj->position, obj->rotation);
 	for(unsigned long i = 0; i < obj->getnumfaces(); i++)
 		if(POGEL::PHYSICS::line_triangle_collision(start, end, obj->gettriangle(i).transform(&mat), col2d, col3d)) {
