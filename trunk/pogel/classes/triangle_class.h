@@ -95,7 +95,10 @@ class TRIANGLE {
 		
 		float distance(POGEL::POINT);
 		
-		void getbounding();
+		void makebounding();
+		
+		POGEL::POINT getposition() { return middle(); }
+		POGEL::BOUNDING getbounding() { return bounding; }
 		
 		void draw();
 };

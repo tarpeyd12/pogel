@@ -6,13 +6,15 @@ POGEL::PHYSICS::DYNAMICS::DYNAMICS() {
 	numobjects=0;
 	//objects=(POGEL::PHYSICS::SOLID**)NULL;
 	boundingskips = 5;
+	oltmp = NULL;
+	ot = NULL;
 };
 
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
 	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
 	objectmasses.addsingularity(POGEL::PHYSICS::SINGULARITY(&obj->position, &obj->behavior.mass));
 	obj->container = this;
-	obj->getbounding();
+	obj->makebounding();
 	objects.add(obj);
 	return numobjects++;
 };
@@ -20,7 +22,7 @@ unsigned long POGEL::PHYSICS::DYNAMICS::addSolid(POGEL::PHYSICS::SOLID* obj) {
 unsigned long POGEL::PHYSICS::DYNAMICS::addSolidHoldGravity(POGEL::PHYSICS::SOLID* obj) {
 	if(obj->behavior.magnetic) addproperty(DYNAMICS_HAS_MAGNETIC_OBJECT);
 	obj->container = this;
-	obj->getbounding();
+	obj->makebounding();
 	objects.add(obj);
 	return numobjects++;
 };
@@ -69,7 +71,7 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	POGEL::VECTOR pull;
 	POGEL::PHYSICS::GRAVITYCLUSTER pulls;
 	
-	if(hasproperty(DYNAMICS_HAS_MAGNETIC_OBJECT))
+	if(hasproperty(DYNAMICS_HAS_MAGNETIC_OBJECT)) // TODO: get the real magnetic physics ...
 	for(unsigned long a=0;a<numobjects;a++) {
 		//pulls.addsingularity(POGEL::PHYSICS::SINGULARITY(objects[a]->position, objects[a]->behavior.mass));
 		// the magnetic charge attraction
@@ -82,7 +84,7 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 					fabs(objects[a]->behavior.charge)))/(objects[a]->position.distance(obj->position));
 			
 			else if((obj->behavior.charge < 0.0f && objects[a]->behavior.charge < 0.0f) || \
-				(obj->behavior.charge > 0.0f && objects[a]->behavior.charge > 0.0f))
+				 (obj->behavior.charge > 0.0f && objects[a]->behavior.charge > 0.0f))
 				pull += (POGEL::VECTOR(objects[a]->position, obj->position).normal()*(fabs(obj->behavior.charge) + \
 					fabs(objects[a]->behavior.charge)))/(objects[a]->position.distance(obj->position));
 			
@@ -94,16 +96,18 @@ POGEL::VECTOR POGEL::PHYSICS::DYNAMICS::getpull(POGEL::PHYSICS::SOLID* obj) {
 	pull += gusts.getpull(obj->position, obj->behavior.mass);
 	pull += singularities.getpull(obj->position, obj->behavior.mass);
 	pull += gravity*obj->behavior.mass;
-	pull += objectmasses.getpull(obj->position, obj->behavior.mass);
+	//pull += objectmasses.getpull(obj->position, obj->behavior.mass);
+	pull += ot->getpull(obj->position, obj->behavior.mass);
 	return pull/PARTICLE_SLOWDOWN*(POGEL::hasproperty(POGEL_TIMEBASIS) ? PARTICLE_SLOWDOWN_RATIO : 1);
 };
 
 void POGEL::PHYSICS::DYNAMICS::increment() {
+	buildot();
 	
 	for(unsigned long a=0;a<numobjects;a++) {
+		//POGEL::message("Adding forces to object[%u] in the simulation ...\r", a);
 		if(objects[a]->hasOption(PHYSICS_SOLID_VOLITAL) && !objects[a]->hasOption(PHYSICS_SOLID_STATIONARY)) {
 			objects[a]->direction += getpull(objects[a]);
-			
 			float airslowdown = ( ( objects[a]->behavior.air_friction * air_dencity ) / PARTICLE_SLOWDOWN ) + 1.0f;
 			objects[a]->spin /= airslowdown;
 			objects[a]->direction /= airslowdown;
@@ -111,10 +115,16 @@ void POGEL::PHYSICS::DYNAMICS::increment() {
 		//objects[a]->step();
 	}
 	for(unsigned long a=0;a<numobjects;a++) objects[a]->step();
+	//POGEL::message("\n");
+	destroyot();
 };
 
 void POGEL::PHYSICS::DYNAMICS::draw() {
-	for(unsigned long i = 0; i < numobjects; i++) objects[i]->draw();
+	for(unsigned long i = 0; i < numobjects; i++) {
+		//POGEL::message("Drawing object[%u] in the simulation ...\r", i);
+		objects[i]->draw();
+	}
+	//POGEL::message("\n");
 };
 
 void POGEL::PHYSICS::DYNAMICS::drawGravityGrid(float mass, float sps, POGEL::POINT center, unsigned int grd) {

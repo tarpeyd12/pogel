@@ -226,7 +226,7 @@ void POGEL::PHYSICS::SOLID::offsettrail(POGEL::VECTOR v) {
 	for(unsigned long i = trailsize-1;i>0;i--) trail[i] += v;
 }
 
-void POGEL::PHYSICS::SOLID::getbounding() {
+void POGEL::PHYSICS::SOLID::makebounding() {
 	setboundingskips();
 	//refbounding.draw(position);
 	float r = (POGEL::hasproperty(POGEL_TIMEBASIS) ? POGEL::GetSecondsPerFrame() : 1);
@@ -332,9 +332,9 @@ void POGEL::PHYSICS::SOLID::draw() {
 	POGEL::OBJECT::draw();
 	POGEL::setproperties(prp);
 	glLineWidth(2);
-	bounding.draw(POGEL::POINT());
+	//bounding.draw(POGEL::POINT());
 	glLineWidth(1);
-	refbounding.draw(position);
+	//refbounding.draw(position);
 	
 	if(POGEL::hasproperty(POGEL_LABEL)) {
 		/*POGEL::LINE( position, 
@@ -354,18 +354,21 @@ void POGEL::PHYSICS::SOLID::draw() {
 			#endif /* SOLID_DISPLAY_STIPPLED_NEGATIVE_ROTATION_TRAIL */
 		#endif /* SOLID_DISPLAY_ROTATION_TRAIL */
 		
-		for(unsigned int i = 0 ; i < trailsize-1 && i < stepstaken && i < 64; i++) {	
+		for(unsigned int i = 0 ; i < trailsize-1 && i < stepstaken /*&& i < 64*/; i++) {	
 			float color = 1.0f;
 			#ifdef SOLID_DISPLAY_TRAIL_FADING
-				if(trailsize - 1 < 64)
+				//if(trailsize - 1 < 64)
+				if(trailsize - 1 < stepstaken)
 					color = ((float)(( trailsize-1 )-i)/(float)( trailsize-1 ));
 				else
-					color = ((float)(( 64 )-i)/(float)( 64 ));
+					color = ((float)(( stepstaken-1 )-i)/(float)( stepstaken-1 ));
+				//else
+					//color = ((float)(( 64 )-i)/(float)( 64 ));
 			#endif /* SOLID_DISPLAY_TRAIL_FADING */
 			
-			if((stepstaken-i)%16==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
+			//if((stepstaken-i)%16==0) trail[i].draw(3, POGEL::COLOR(1,1,0,color));
 			
-			//if(trail[i].distance(trail[i+1]) > 1) continue;
+			if(trail[i].distance(trail[i+1]) > 1) continue;
 			
 			POGEL::LINE(trail[i], trail[i+1], 1, POGEL::COLOR(1,1,0,color)).draw(); // draw the position trail
 			
@@ -432,7 +435,7 @@ void POGEL::PHYSICS::SOLID::addForce() {
 void POGEL::PHYSICS::SOLID::step() {
 	increment();
 	steptrail();
-	getbounding();
+	makebounding();
 	if(function != NULL) function(this);
 };
 

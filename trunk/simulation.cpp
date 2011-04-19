@@ -95,12 +95,12 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	
 	addCube(&cube, 1,1,1, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, POGEL::MATRIX());
 	cube.addproperty(OBJECT_DRAW_DISPLAYLIST); cube.build();
-	addSphere(&sphere, 10,10, .5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
+	addSphere(&sphere, 10,10, 1, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),2,4, TRIANGLE_VERTEX_NORMALS, POGEL::MATRIX());
 	sphere.addproperty(OBJECT_DRAW_DISPLAYLIST); sphere.build();
 	
-	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES defprp(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0);
+	POGEL::PHYSICS::SOLIDPHYSICALPROPERTIES defprp(0.5f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, false, 0.0);
 	POGEL::PHYSICS::SOLID *tmp;
-	for(unsigned int i = 0; i < 50; i++) {
+	for(unsigned int i = 0; i < 20; i++) {
 		printf("%u\r", i);
 		tmp = new POGEL::PHYSICS::SOLID(defprp, PHYSICS_SOLID_VOLITAL|PHYSICS_SOLID_CONVEX);
 		switch(i) {
@@ -157,7 +157,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	addCube(tmp, 1,1,11, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(0,0,5.5),POGEL::POINT()));
 	//addCube(tmp, 3,.5,22, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
 	//addCube(tmp, 3,22,.5, POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[1]}"),1,1, TRIANGLE_LIT, MATRIX(POGEL::POINT(),POGEL::POINT()));
-	//addSphere(tmp, 2,6, 3,POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),4,12, TRIANGLE_LIT, MATRIX(POINT(0,-.5,0),POGEL::POINT()));
+	addSphere(tmp, 2,6, 3,POGEL::requestImage("{[Data/default_2.bmp],[32],[32],[2]}"),4,12, TRIANGLE_LIT, MATRIX(POINT(0,-.5,0),POGEL::POINT()));
 	tmp->moveto(POGEL::POINT(0,0,0));
 	tmp->turnto(POGEL::POINT(0,90,0));
 	tmp->spin.y = -1;
@@ -186,7 +186,7 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
 	tmp->build();
 	simulation.addSolid(tmp);
 	
-	//simulation.gravity = POGEL::VECTOR(0,-9.8,0);
+	simulation.gravity = POGEL::VECTOR(0,-9.8,0);
 	//simulation.addsingularity(POGEL::PHYSICS::SINGULARITY(0,0,0, 2000000000));
 	
 	//POGEL::addproperty(POGEL_WIREFRAME);

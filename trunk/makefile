@@ -25,7 +25,26 @@ OTHER = main.o window.o
 TESTOBJS = condtree.o cosm.o lightning.o orbit.o simulation.o tree.o scene.o simulation_2.o distchk.o in.o sprite.o texrend.o orbittexrend.o simpsheer.o firelike.o function.o fract.o slingshot.o gravity.o loader.o viewport.o viewer.o runner.o
 
 #OBJ =  $(POGEL) $(OTHER) lightning.o
-OBJ =  $(OTHER) gravity.o
+OBJ =  $(OTHER) runner.o
+
+SRCS=$(POGELSRC)
+DEPS=$(SRCS:.$(EXTENTION)=.d)
+
+%.d : %.$(EXTENTION)
+	@echo "\033[32mBuilding File Dependancies: \033[34m\"$@\"\033[31m"
+	@set -e; rm -f $@; \
+	$(CC) -MM $(CFLAGS) $< > $@.tmp; \
+	sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.tmp > $@ ; \
+	rm -f $@.tmp
+	@echo -n "\033[0m"
+
+depend: $(DEPS)
+	@make -s $(DEPS)
+	@echo -n "\033[0m"
+	
+
+clean_depend:
+	-@rm $(wildcard $(DEPS) )
 
 %.o : %.$(EXTENTION)
 	@echo "\033[32mCompiling File: \033[34m\"$@\"\033[31m"
@@ -35,14 +54,14 @@ OBJ =  $(OTHER) gravity.o
 
 all: pogel lib bins test
 
-clean: clean_pogel clean_lib clean_test clean_bins
+clean: clean_pogel clean_lib clean_test clean_bins clean_depend
+
+include $(DEPS)
 
 POGELSRC := $(patsubst %.o,%.$(EXTENTION),$(POGEL))
 
-
-
 # to compile the main sections of code without too much hassle
-pogel: $(POGEL)
+pogel: $(DEPS) $(POGEL)
 	@make -s $(POGEL)
 	@echo -n "\033[0m"
 
@@ -133,5 +152,4 @@ clear:
 
 todo:
 	-@for file in $(POGELSRC); do fgrep -H -e TODO -e FIXME $$file; done; true
-
 

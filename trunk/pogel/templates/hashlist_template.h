@@ -17,6 +17,27 @@ class HASHLIST {
 	public:
 		HASHLIST() { pos = 0; insize = 256; }
 		HASHLIST(unsigned int s) { pos = 0; insize = s; }
+		HASHLIST(CLASSLIST<T> *l) {
+			pos = 0; insize = 256;
+			unsigned int g = 0;
+			while(pos%insize && g < l->length())
+				add(l->get(g++));
+			if(g >= l->length())
+				return;
+			g-=1;
+			unsigned int lstln = l->length()-(g+1);
+			unsigned int numtoplsts = lstln/insize + 1;
+			unsigned int toplststrtln = list.length();
+			for(unsigned int i = 0; i < numtoplsts; i++)
+				list+=new arraylist<T>();
+			for(unsigned int p = 0; p < lstln; p++) {
+				if(toplststrtln + p/insize >= list.length())
+					list+=new arraylist<T>();
+				list[toplststrtln + p/insize]->add(l->get(p));
+			}
+			pos+=lstln;
+		}
+		
 		~HASHLIST() { 
 			for(unsigned int i=0;i<list.length();i++) { delete list[i]; list -= i; }
 			list.clear(); pos = 0; insize = 256;

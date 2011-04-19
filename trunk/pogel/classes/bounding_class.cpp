@@ -14,8 +14,6 @@ void POGEL::BOUNDING::addpoint(POGEL::POINT middle, POGEL::POINT point) {
 		if(middle.x >= min.x) min.x = middle.x;
 		if(middle.y >= min.y) min.y = middle.y;
 		if(middle.z >= min.z) min.z = middle.z;
-		//max=middle;
-		//min=middle;
 	}
 	
 	if(point.x >= max.x/* && point.x >= min.x*/) max.x = point.x;
@@ -75,6 +73,34 @@ void POGEL::BOUNDING::draw(POGEL::POINT mid) {
 		glPopMatrix();
 		#endif
 	}
+};
+
+void POGEL::BOUNDING::draw() {
+	#ifdef OPENGL
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_LIGHTING);
+	//glColor3f(0.0f,1.0f,1.0f);
+	color.set();
+	glBegin(GL_QUADS);
+		glVertex3f(min.x,min.y,min.z); glVertex3f(max.x,min.y,min.z);
+		glVertex3f(max.x,max.y,min.z); glVertex3f(min.x,max.y,min.z);
+		glVertex3f(min.x,min.y,max.z); glVertex3f(max.x,min.y,max.z);
+		glVertex3f(max.x,max.y,max.z); glVertex3f(min.x,max.y,max.z);
+		
+		glVertex3f(min.x,min.y,min.z); glVertex3f(max.x,min.y,min.z);
+		glVertex3f(max.x,min.y,max.z); glVertex3f(min.x,min.y,max.z);
+		glVertex3f(min.x,max.y,min.z); glVertex3f(max.x,max.y,min.z);
+		glVertex3f(max.x,max.y,max.z); glVertex3f(min.x,max.y,max.z);
+		
+		glVertex3f(min.x,min.y,min.z); glVertex3f(min.x,max.y,min.z);
+		glVertex3f(min.x,max.y,max.z); glVertex3f(min.x,min.y,max.z);
+		glVertex3f(max.x,min.y,min.z); glVertex3f(max.x,max.y,min.z);
+		glVertex3f(max.x,max.y,max.z); glVertex3f(max.x,min.y,max.z);
+	glEnd();
+	glColor3f(1.0f,1.0f,1.0f);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_TEXTURE_2D);
+	#endif
 };
 
 bool POGEL::BOUNDING::checkbounding(POGEL::POINT thiscenter, POGEL::POINT thatcenter, POGEL::BOUNDING thatbounding) {

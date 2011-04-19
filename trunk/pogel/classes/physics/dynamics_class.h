@@ -27,11 +27,37 @@ class POGEL::PHYSICS::DYNAMICS {
 		POGEL::PHYSICS::GRAVITYCLUSTER singularities;
 		POGEL::PHYSICS::FLOW gusts;
 		
-		//POGEL::PHYSICS::FLOW** currents;
-		//unsigned long numcurrents;
+		POGEL::OCTREE<POGEL::PHYSICS::SOLID> *ot;
+		HASHLIST<POGEL::PHYSICS::SOLID*> *oltmp;
 		
-		//POGEL::PHYSICS::GRAVITYCLUSTER** ;
-		//unsigned long ;
+		void buildot() {
+			oltmp = new HASHLIST<POGEL::PHYSICS::SOLID*>();
+			oltmp->add(&objects);
+			ot = new POGEL::OCTREE<POGEL::PHYSICS::SOLID>(oltmp, 1, true);
+			ot->grow();
+			#ifdef THREADSOK
+			if(threads > 1)
+				ot->FORCEfastlist();
+			#endif
+			#ifdef OPENGL
+			glLineWidth(2);
+			if(POGEL::hasproperty(POGEL_BOUNDING))
+				ot->draw();
+			glLineWidth(1);
+			#endif
+		}
+		
+		void destroyot() {
+			//if(ot) {
+				delete ot;
+				ot = NULL;
+			//}
+			//if(oltmp) {
+				delete oltmp;
+				oltmp = NULL;
+			//}
+		}
+		
 	public:
 		unsigned long boundingskips;
 		
@@ -42,6 +68,11 @@ class POGEL::PHYSICS::DYNAMICS {
 		~DYNAMICS() {
 			//if(objects) delete[] objects;
 			objects.clear();
+			destroyot();
+		}
+		
+		POGEL::OCTREE<POGEL::PHYSICS::SOLID>* getotree() {
+			return ot;
 		}
 		
 		PROPERTIES_METHODS;

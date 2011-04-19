@@ -5,5 +5,7 @@
 #include "classlist_template.h"
 #include "hashlist_template.h"
 
+#include "octree_template.h"
+
 #endif /* _TEMPLATES_H */
 

@@ -45,7 +45,7 @@ void POGEL::TRIANGLE::load(POGEL::VERTEX a,POGEL::VERTEX b,POGEL::VERTEX c,POGEL
 	normal=vct[0];
 	normal.normalize();
 	bounding = POGEL::BOUNDING(BOUNDING_TRIANGLE);
-	getbounding();
+	makebounding();
 };
 
 void POGEL::TRIANGLE::load(POGEL::VERTEX* verts,POGEL::IMAGE *tex,unsigned int prop) {
@@ -61,7 +61,7 @@ void POGEL::TRIANGLE::scroll_tex_values(float s, float t) {
 POGEL::TRIANGLE POGEL::TRIANGLE::transform(POGEL::MATRIX* m) {
 	POGEL::TRIANGLE t(vertex, texture, properties);
 	m->transformTriangle(&t);
-	t.getbounding();
+	t.makebounding();
 	return t;
 };
 
@@ -159,7 +159,7 @@ float POGEL::TRIANGLE::distance(POGEL::POINT p) {
 	return dist/10.0f;
 };
 
-void POGEL::TRIANGLE::getbounding() {
+void POGEL::TRIANGLE::makebounding() {
 	bounding.clear();
 	POGEL::POINT mid = middle();
 	for(int i=0;i<3;i++)
@@ -184,21 +184,26 @@ void POGEL::TRIANGLE::draw() {
 		glBegin(GL_TRIANGLES);
 		
 		if((hasproperty(TRIANGLE_LIT)) && !(hasproperty(TRIANGLE_VERTEX_NORMALS))) {
-			if(hasproperty(TRIANGLE_INVERT_NORMALS))
-				glNormal3f(-normal.x,-normal.y,-normal.z);
-			else
+			//if(hasproperty(TRIANGLE_INVERT_NORMALS))
+				//glNormal3f(-normal.x,-normal.y,-normal.z);
+			//else
 				glNormal3f( normal.x, normal.y, normal.z);
 		}
-		for(unsigned int i = 0; i < ( POGEL::hasproperty(POGEL_WIREFRAME) ? 4 : 3 ) ; i++) {
+		unsigned int max = ( POGEL::hasproperty(POGEL_WIREFRAME) ? 4 : 3 );
+		for(
+			unsigned int i = hasproperty(TRIANGLE_INVERT_NORMALS) ? max : 0 ;
+			hasproperty(TRIANGLE_INVERT_NORMALS) ? i > 0 : i < max ;
+			hasproperty(TRIANGLE_INVERT_NORMALS) ? i-- : i++
+		) {
 			if(vertex[i%3].usable) {
 				if(hasproperty(TRIANGLE_COLORED)) // the triangle will not be colored if GL_LIGHTING is enabled, dont know why.
 					vertex[i%3].color.set();
 				else
 					POGEL::COLOR(1,1,1,1).set();
 				if(!(hasproperty(TRIANGLE_LIT)) && (hasproperty(TRIANGLE_VERTEX_NORMALS))) {
-					if(hasproperty(TRIANGLE_INVERT_NORMALS))
-						glNormal3f(-vertex[i%3].normal.x,-vertex[i%3].normal.y,-vertex[i%3].normal.z);
-					else
+					//if(hasproperty(TRIANGLE_INVERT_NORMALS))
+						//glNormal3f(-vertex[i%3].normal.x,-vertex[i%3].normal.y,-vertex[i%3].normal.z);
+					//else
 						glNormal3f( vertex[i%3].normal.x, vertex[i%3].normal.y, vertex[i%3].normal.z);
 				}
 				if(texture!=NULL)
