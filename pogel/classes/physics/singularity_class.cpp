@@ -25,7 +25,7 @@ void POGEL::PHYSICS::FLOW::generatecurve(POGEL::POINT* waypoints, unsigned long 
 };
 
 unsigned long POGEL::PHYSICS::GRAVITYCLUSTER::addsingularity(POGEL::PHYSICS::SINGULARITY sig) {
-	singularities.add(sig);
+	singularities->add(sig);
 	return numsingularities++;
 };
 

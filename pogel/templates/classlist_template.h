@@ -57,7 +57,7 @@ class CLASSLIST {
 		
 		T operator[] (unsigned int i) { return get(i); }
 		
-		CLASSLIST<T>& operator = (CLASSLIST<T> c)	{ if(list!=NULL)delete[]list; list=c.getList(); len=c.length(); }
+		CLASSLIST<T>& operator = (CLASSLIST<T> c)	{ if(list!=NULL)delete[]list; list=c.getList(); len=c.length(); return *this;}
 		
 		CLASSLIST<T>  operator + (T l)				{ CLASSLIST<T> v; v.add(getList(),length()); v.add(l); return v; }
 		CLASSLIST<T>& operator+= (T l)				{ add(l); return*this; }

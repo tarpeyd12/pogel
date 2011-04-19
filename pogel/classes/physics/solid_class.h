@@ -115,6 +115,9 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		
 		//PROPERTIES_METHODS;
 		
+		POGEL::POINT getposition() { return position; }
+		POGEL::BOUNDING getbounding() { return bounding; }
+		
 		POGEL::PHYSICS::DYNAMICS* getcontainer() { return container; }
 		
 		unsigned int getOptions() {return physproperties;}
@@ -150,7 +153,7 @@ class POGEL::PHYSICS::SOLID : public POGEL::OBJECT {
 		bool samelegacy(float,unsigned long);
 		void offsettrail(POGEL::VECTOR);
 		
-		void getbounding();
+		void makebounding();
 		void setboundingskips();
 		void forcegetbounding();
 		

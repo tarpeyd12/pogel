@@ -57,6 +57,7 @@ class BOUNDING {
 		void unsetactual() {isactual = true;}
 		
 		void draw(POGEL::POINT);
+		void draw();
 		
 		bool checkbounding(POGEL::POINT,POGEL::POINT,POGEL::BOUNDING);
 		bool checkbounding(POGEL::BOUNDING b) { return checkbounding(POGEL::POINT(), POGEL::POINT(), b); }

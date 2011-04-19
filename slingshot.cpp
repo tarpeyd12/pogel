@@ -15,7 +15,7 @@
 
 using namespace POGEL;
 
-#define frameskip 10
+#define frameskip 1
 
 #define numobjs 10
 #define sps 5.0
@@ -32,14 +32,39 @@ IMAGE *defaultimg;
 
 #define rndrnge 2.0f
 
+POGEL::POINT camrot, campos;
+bool keypres, go = true;
+
+#define th
+
+#ifdef th
+THREAD *simulator_runner;
+#endif
+
+#ifdef th
+unsigned int updts = 0;
+void* sim_runner(void* arg) {
+	for(;;) {
+		if(keypres) {
+			keypres = false;
+			sim.increment();
+			updts++;
+		}
+		else if(go) {
+			sim.increment();
+			updts++;
+		}
+		if(POGEL::hasproperty(POGEL_TIMEBASIS)) POGEL::removeproperty(POGEL_TIMEBASIS);
+	}
+	pthread_exit(NULL);
+};
+#endif
+
 float x = POGEL::FloatRand(2)-1, y = POGEL::FloatRand(2)-1, z = POGEL::FloatRand(2)-1;
 
 GLfloat LightAmbient[]= { 0.5f, 0.5f, 0.5f, 1.0f };
 GLfloat LightDiffuse[]= { 2.0f, 2.0f, 2.0f, 1.0f };
 GLfloat LightPosition[]= { 100.0f, 100.0f, 100.0f, 1.0f };
-
-POGEL::POINT camrot, campos;
-bool keypres, go = true;
 
 void oob(SOLID_FNC_DEF) {
     //obj->position.z = 0.0;
@@ -53,8 +78,8 @@ void callb(SOLID_CALLBACK_FNC_DEF) {
 	cnt++;
 	obj->moveto(POGEL::POINT(0,0,0));
 	
-	float spacev=180.0f/128;
-	float spaceh=360.0f/256;
+	float spacev=180.0f/64;
+	float spaceh=360.0f/128;
 	float a=0, b=0;
 	unsigned long cur_vert = 0;
 	bool bgr = false;
@@ -86,11 +111,18 @@ void InitGL(int Width, int Height)              // We call this right after our 
         glClearDepth(100.0);                                    // Enables Clearing Of The Depth Buffer
         glDepthFunc(GL_LESS);                                   // The Type Of Depth Test To Do
         glEnable(GL_DEPTH_TEST);                                // Enables Depth Testing
+        glCullFace(GL_BACK);
+		glEnable(GL_CULL_FACE);
         glShadeModel(GL_SMOOTH);                                // Enables Smooth Color Shading
         //glShadeModel(GL_FLAT);                                // Enables flat Color Shading
         glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
         glHint(GL_POLYGON_SMOOTH,GL_NICEST);
         glEnable(GL_POLYGON_SMOOTH);
+        
+        glColor4f(1.0f,1.0f,1.0f,0.5f);			// Full Brightness, 50% Alpha ( NEW )
+		glBlendFunc(GL_SRC_ALPHA,GL_ONE);
+		glEnable(GL_BLEND);
+		glDisable(GL_DEPTH_TEST);
         
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();                               // Reset The Projection Matrix
@@ -132,7 +164,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
                 
                 sphs[i]->setstepstaken(0);
                 
-                sphs[i]->resizetrail(50);
+                sphs[i]->resizetrail(10);
                 
                 sphs[i]->setStepFunc(oob);
                 
@@ -143,7 +175,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         POGEL::OBJECT* ring = new POGEL::OBJECT();
         ring->setname("border");
-        addSphere(ring,32,32, 30.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
+        addSphere(ring,32,32, 30.0f, defaultimg,1,1, 0 | TRIANGLE_VERTEX_NORMALS|TRIANGLE_INVERT_NORMALS, MATRIX(POINT(0.0f,0.0f,0.0f), POINT(0.0f,0.0f,0.0f)));
         ring->setproperties(0);
         ring->moveto(POGEL::POINT(0.0f,0.0f,0.0f));
         ring->build();
@@ -172,7 +204,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         ball->behavior.bounce = 1.0f;
         ball->behavior.friction = 1.0f;
         ball->behavior.mass = 5000.0;
-        ball->resizetrail(2500);
+        ball->resizetrail(5000);
         
         ball->moveto(POGEL::POINT(0,0,0));
 		ball->direction = POGEL::VECTOR(0,1,0).normal()*.075;
@@ -183,6 +215,13 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         ball->visable = true;
         
+        sim.FORCEfastAccessList();
+		#ifdef th
+		simulator_runner = new THREAD(sim_runner);
+		//simulation.setThreadsNum(1);
+		simulator_runner->startThread();
+		#endif
+		
         POGEL::InitFps();
 }
 
@@ -224,6 +263,7 @@ void DrawGLScene()
                 //border->bounding.draw(POGEL::POINT());
                 //POGEL::setproperties(op);
         }
+        #ifndef th
         if(keypres) {
         				//if(POGEL::GetTimePassed() < 60.0f)
                         sim.increment();
@@ -233,7 +273,7 @@ void DrawGLScene()
                 //if(POGEL::GetTimePassed() < 60.0f)
                         sim.increment();
                 }
-		
+		#endif
         border->bounding.draw(POGEL::POINT());
         // since this is double buffered, swap the buffers to display what just got drawn.
         if(frames%frameskip == 0) {

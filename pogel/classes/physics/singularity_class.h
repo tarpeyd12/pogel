@@ -39,19 +39,27 @@ class POGEL::PHYSICS::SINGULARITY {
 		POGEL::POINT getCenter() { if(notpointing) return center; return *pcenter; }
 		float getIntencity() { if(notpointing) return intencity; return *pintencity; }
 		
+		POGEL::POINT getposition() { return getCenter(); }
+		POGEL::BOUNDING getbounding() {
+			return POGEL::BOUNDING( 0,
+				getposition().x,getposition().x,
+				getposition().y,getposition().y,
+				getposition().z,getposition().z);
+		}
+		
 		virtual POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(active) {
 				if(p==getCenter()) return POGEL::VECTOR();
 				float dist = p.distance(getCenter());
-				if(dist*dist > 0.00001) {
+				if(dist*dist > 0.00001 && 1/(dist*dist) > 0.00001) {
 					POGEL::VECTOR v (p, getCenter());
 					v.normalize();
-					v *= getIntencity()*mass * GRAVITYCONSTANT;
+					v *= getIntencity() * mass * GRAVITYCONSTANT;
 					v /= (dist*dist);
 					if(mass < 0.0) v*=-1.0;
 					return v;
 				}
-				return POGEL::VECTOR();
+				//return POGEL::VECTOR();
 			}
 			return POGEL::VECTOR();
 		}
@@ -77,25 +85,42 @@ class POGEL::PHYSICS::FAN : public POGEL::PHYSICS::SINGULARITY {
 };
 
 class POGEL::PHYSICS::GRAVITYCLUSTER {
-		CLASSLIST<POGEL::PHYSICS::SINGULARITY> singularities;
+		CLASSLIST<POGEL::PHYSICS::SINGULARITY>* singularities;
 		unsigned long numsingularities;
 	public:
 		
 		GRAVITYCLUSTER()
-			{  numsingularities = 0; }
+			{  numsingularities = 0; singularities = new CLASSLIST<POGEL::PHYSICS::SINGULARITY>(); }
 		~GRAVITYCLUSTER()
-			{ singularities.clear(); }
+			{ singularities->clear(); if(singularities) delete singularities; }
 		
 		unsigned long addsingularity(POGEL::PHYSICS::SINGULARITY);
 		void addsingularities(POGEL::PHYSICS::SINGULARITY*,unsigned long);
 		
-		void remove(unsigned long i) { singularities.remove(i); numsingularities--; }
+		void remove(unsigned long i) { singularities->remove(i); numsingularities--; }
 		
 		POGEL::VECTOR getpull(POGEL::POINT p, float mass) {
 			if(numsingularities==0) return POGEL::VECTOR();
 			POGEL::VECTOR v;
+			for(unsigned int i=0;i<numsingularities;i++) v+=singularities->get(i).getpull(p, mass);
+			return v;
+		}
+		
+		/*POGEL::VECTOR fgetpull(POGEL::POINT p, float mass, HASHLIST<POGEL::OCTREE<POGEL::PHYSICS::SOLID>*> *otlst) {
+			
+			if(numsingularities==0) return POGEL::VECTOR();
+			POGEL::VECTOR v;
 			for(unsigned int i=0;i<numsingularities;i++) v+=singularities[i].getpull(p, mass);
 			return v;
+		}*/
+		
+		POGEL::PHYSICS::GRAVITYCLUSTER& operator = (POGEL::PHYSICS::GRAVITYCLUSTER g) {
+			singularities->clear();
+			if(singularities)
+				delete singularities;
+			singularities = g.singularities;
+			numsingularities = g.numsingularities;
+			return *this;
 		}
 };
 

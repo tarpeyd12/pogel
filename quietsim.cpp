@@ -182,9 +182,12 @@ void init(int argc, char** argv) {
 				"-objnum=[number of objects to start with, will be cubed, ex: '-objnum=10' will be 1000 objects, see '-2d']\n"
 				"-savefrq=[the number of itterations between data saves, 0 is never]\n"
 				"-threads=[number of POSIX threads to be used in calculations]\n"
+				"-massvar=[the ammount to vary the mass of each particle]\n"
+				"-randpos=[tha x, y, and z varience from origin to palce the particle at init]\n"
+				"-rend path"
 				"\n"
 				"example:\n"
-					"\tsb -f testfile.dat -usetime -loops=1:30:15 -savefrq=100 -2d -objnum=10 -objprps {[1.0],[0.5],[100.0],[0.0],[1.0],[1.0],[0],[0.0]} -gridspace=0.5 -ballsize=0.25 -savenotri -i ./Data/particle.bmp -threads=2\n"
+					"\tsb -f testfile.dat -usetime -loops=1:30:15 -savefrq=100 -2d -objnum=10 -objprps {[1.0],[0.5],[100.0],[0.0],[1.0],[1.0],[0],[0.0]} -gridspace=0.5 -ballsize=0.25 -savenotri -i ./Data/particle.bmp -threads=2 -rend ./reders/ {[0],[0],[-2]}\n"
 				"\n"
 			);
 			exit(0);

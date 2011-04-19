@@ -209,28 +209,17 @@ void POGEL::PHYSICS::SIMULATION::stepobjs() {
 };
 
 void POGEL::PHYSICS::SIMULATION::collincrement() {
-	HASHLIST<POGEL::PHYSICS::SOLID*> *oltmp = new HASHLIST<POGEL::PHYSICS::SOLID*>();
-	for(unsigned int i = 0; i < objects.length(); i++)
-		oltmp->add(objects[i]);
-	ot = new POGEL::otree(oltmp, 5);
-	ot->grow();
-	#ifdef THREADSOK
-	if(threads > 1)
-		ot->FORCEfastlist();
-	#endif
-	#ifdef OPENGL
-	glLineWidth(2); ot->draw(); glLineWidth(1);
-	#endif
-	
 	for(int g = 0; g < collitters; g++) checkcollisions();
-	
-	delete ot; ot = NULL; delete oltmp;
 };
 
 void POGEL::PHYSICS::SIMULATION::increment() {
+	buildot();
+	
 	addpulls();
 	collincrement();
 	stepobjs();
 	stepstaken++;
+	
+	destroyot();
 };
 

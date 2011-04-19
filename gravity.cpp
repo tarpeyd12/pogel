@@ -204,7 +204,7 @@ void InitGL(int Width, int Height)              // We call this right after our 
         
         POGEL::InitFps();
         printf("\n");
-        sim.FORCEfastAccessList();
+        //sim.FORCEfastAccessList();
         //sim.setThreadsNum(4);
        	#ifdef th
        	simulator_runner = new THREAD(sim_runner);
