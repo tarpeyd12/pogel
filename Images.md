@@ -1,0 +1,38 @@
+# Images #
+
+## rendering ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_earth.png](http://pogel.googlecode.com/svn/wiki/pogel_earth.png)
+
+## fractal tree generational algorithm ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_tree.png](http://pogel.googlecode.com/svn/wiki/pogel_tree.png)
+
+## physics ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_physics.png](http://pogel.googlecode.com/svn/wiki/pogel_physics.png)
+
+## hierarchical physics ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_cosmos_4.png](http://pogel.googlecode.com/svn/wiki/pogel_cosmos_4.png)
+
+![http://pogel.googlecode.com/svn/wiki/pogel_cosmos_5.png](http://pogel.googlecode.com/svn/wiki/pogel_cosmos_5.png)
+
+## gravity wells ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_spagetty.png](http://pogel.googlecode.com/svn/wiki/pogel_spagetty.png)
+
+
+![http://pogel.googlecode.com/svn/wiki/pogel_gravspin_3.png](http://pogel.googlecode.com/svn/wiki/pogel_gravspin_3.png)
+
+## rotational tracing ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_flower_sphere.png](http://pogel.googlecode.com/svn/wiki/pogel_flower_sphere.png)
+
+![http://pogel.googlecode.com/svn/wiki/pogel_flower_ball_2.png](http://pogel.googlecode.com/svn/wiki/pogel_flower_ball_2.png)
+
+## render to texture ##
+
+![http://pogel.googlecode.com/svn/wiki/pogel_texrend_2.png](http://pogel.googlecode.com/svn/wiki/pogel_texrend_2.png)
+
+![http://pogel.googlecode.com/svn/wiki/pogel_texrend.png](http://pogel.googlecode.com/svn/wiki/pogel_texrend.png)
